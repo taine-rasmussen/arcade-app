@@ -1,8 +1,10 @@
+import Login from './components/login'
+
 
 const App = () => {
   return (
     <div className="App">
-      Arcade app!!
+      <Login />
     </div>
   )
 }

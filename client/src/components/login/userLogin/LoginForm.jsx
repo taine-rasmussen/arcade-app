@@ -1,5 +1,12 @@
 import { Box, useTheme, Typography } from '@mui/material'
 import WidgetWrapper from '../../../wrapper/WidgetWrapper'
+import FormControl from '@mui/material/FormControl';
+import InputLabel from '@mui/material/InputLabel';
+import OutlinedInput from '@mui/material/OutlinedInput';
+import IconButton from '@mui/material/IconButton';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import TextField from '@mui/material/TextField';
 import { useState } from 'react';
 
 
@@ -42,12 +49,20 @@ const LoginForm = (props) => {
         >
           Login to your account
           </Typography>
-        Login
-        <button
-          onClick={() => setIsOnSignUpForm(!isOnSignUpForm)}
-        >
-          change form
-        </button>
+
+        <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
+          <OutlinedInput
+            id="outlined-adornment-weight"
+            aria-describedby="outlined-weight-helper-text"
+            inputProps={{
+              'aria-label': 'weight',
+            }}
+          />
+        </FormControl>
+
+
+
+
       </WidgetWrapper>
     </Box>
   )

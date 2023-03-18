@@ -12,8 +12,17 @@ import { useState } from 'react';
 
 const LoginForm = (props) => {
 
+  const [showPassword, setShowPassword] = useState(false)
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+
+  const handleClickShowPassword = () => {
+    setShowPassword(!showPassword)
+  };
+
+  const handleMouseDownPassword = (e) => {
+    e.preventDefault();
+  };
 
   const theme = useTheme();
   const primaryLight = theme.palette.primary.light
@@ -68,20 +77,17 @@ const LoginForm = (props) => {
             <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
             <OutlinedInput
               id="outlined-adornment-password"
-              // type={showPassword ? 'text' : 'password'}
-              type='password'
+              type={showPassword ? 'text' : 'password'}
               endAdornment={
                 <InputAdornment position="end">
                   <IconButton
                     aria-label="toggle password visibility"
-                    // onClick={handleClickShowPassword}
-                    // onMouseDown={handleMouseDownPassword}
+                    onClick={handleClickShowPassword}
+                    onMouseDown={handleMouseDownPassword}
                     edge="end"
                   >
-                    {/* {showPassword ? <VisibilityOff /> : <Visibility />}
-                      */}
-                      asdf
-                    </IconButton>
+                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                  </IconButton>
                 </InputAdornment>
               }
               label="Password"

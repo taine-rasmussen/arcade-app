@@ -6,7 +6,6 @@ const LoginForm = (props) => {
 
   const theme = useTheme();
   const primaryLight = theme.palette.primary.light
-  const alt = theme.palette.neutral.alt;
 
   const {
     setIsOnSignUpForm,

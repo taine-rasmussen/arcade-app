@@ -9,7 +9,6 @@ const SignUpPreview = (props) => {
 
   const theme = useTheme();
   const primaryLight = theme.palette.primary.light
-  const alt = theme.palette.neutral.alt;
 
 
   return (
@@ -19,11 +18,11 @@ const SignUpPreview = (props) => {
       backgroundColor={primaryLight}
     >
       Sign up
-      < button
+      <button
         onClick={() => setIsOnSignUpForm(!isOnSignUpForm)}
       >
         change form
-              </button >
+      </button >
     </Box >
   )
 }

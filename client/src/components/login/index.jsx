@@ -11,8 +11,6 @@ const Login = () => {
   const [isOnSignUpForm, setIsOnSignUpForm] = useState(false);
   const isNonMobileScreens = useMediaQuery("(min-width: 1000px)")
 
-  const theme = useTheme();
-
   return (
     <>
       {

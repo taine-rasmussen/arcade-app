@@ -4,6 +4,9 @@ import { useState } from 'react';
 
 const LoginForm = (props) => {
 
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
+
   const theme = useTheme();
   const primaryLight = theme.palette.primary.light
 

@@ -3,9 +3,10 @@ import SignUp from './SignUp'
 
 const Login = () => {
   return (
-    <div>
-      Login page
-    </div>
+    <>
+      <LoginForm />
+      <SignUp />
+    </>
   )
 }
 

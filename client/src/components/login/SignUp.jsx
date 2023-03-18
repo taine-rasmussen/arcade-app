@@ -1,17 +1,26 @@
+import { Box, useTheme } from '@mui/material'
 import { useState } from 'react';
 
 const SignUp = (props) => {
 
   const {
-    setIsOnRegisterForm,
-    isOnRegisterForm
+    setIsOnSignUpForm,
+    isOnSignUpForm
   } = props;
+
+  const theme = useTheme();
+  const primaryLight = theme.palette.primary.light
+  const alt = theme.palette.neutral.alt;
 
 
   return (
-    <div>
+    <Box
+      width='33%'
+      border='1px solid #000'
+      backgroundColor={primaryLight}
+    >
       Sign up
-    </div>
+    </Box>
   )
 }
 

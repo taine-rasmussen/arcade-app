@@ -8,7 +8,7 @@ import SignUp from './SignUp'
 
 const Login = () => {
 
-  const [isOnRegisterForm, setIsOnRegisterForm] = useState(false);
+  const [isOnSignUpForm, setIsOnSignUpForm] = useState(false);
   const isNonMobileScreens = useMediaQuery("(min-width: 1000px)")
 
   const theme = useTheme();
@@ -20,15 +20,18 @@ const Login = () => {
       width='100%'
       height='100%'
       textAlign='center'
-      backgroundColor={primaryLight}
+      sx={{
+        display: 'flex',
+        flexDirection: 'row'
+      }}
     >
       <LoginForm
-        setIsOnRegisterForm={setIsOnRegisterForm}
-        isOnRegisterForm={isOnRegisterForm}
+        setIsOnSignUpForm={setIsOnSignUpForm}
+        isOnSignUpForm={isOnSignUpForm}
       />
       <SignUp
-        setIsOnRegisterForm={setIsOnRegisterForm}
-        isOnRegisterForm={isOnRegisterForm}
+        setIsOnSignUpForm={setIsOnSignUpForm}
+        isOnSignUpForm={isOnSignUpForm}
       />
     </Box >
   )

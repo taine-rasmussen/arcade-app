@@ -14,7 +14,7 @@ const SignUpPreview = (props) => {
 
   return (
     <Box
-      width='33%'
+      width='40%'
       border='1px solid #000'
       backgroundColor={primaryLight}
     >

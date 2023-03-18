@@ -16,7 +16,7 @@ const LoginForm = (props) => {
 
   return (
     <Box
-      width='77%'
+      width='60%'
       border='1px solid #000'
       backgroundColor={primaryLight}
     >

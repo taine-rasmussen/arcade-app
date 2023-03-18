@@ -25,7 +25,6 @@ const LoginForm = (props) => {
   };
 
   const theme = useTheme();
-  const primaryLight = theme.palette.primary.light
 
   const {
     setIsOnSignUpForm,
@@ -36,65 +35,61 @@ const LoginForm = (props) => {
   return (
     <Box
       width='60%'
-      border='1px solid #000'
-      margin='1rem'
       sx={{
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center'
       }}
     >
-      <WidgetWrapper theme={theme}>
-        <Typography
-          fontWeight='bold'
-          fontSize='4rem'
-          color='primary'
-        >
-          Login to your account
+      <Typography
+        fontWeight='bold'
+        fontSize='4rem'
+        color='primary'
+      >
+        Login to your account
           </Typography>
 
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center'
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center'
 
-          }}
-        >
-          <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
-            <InputLabel htmlFor="outlined-adornment-password">Username</InputLabel>
-            <OutlinedInput
-              id="outlined-adornment-weight"
-              aria-describedby="outlined-weight-helper-text"
-              inputProps={{
-                'aria-label': 'weight',
-              }}
-              label="Password"
-            />
-          </FormControl>
-          <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
-            <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
-            <OutlinedInput
-              id="outlined-adornment-password"
-              type={showPassword ? 'text' : 'password'}
-              endAdornment={
-                <InputAdornment position="end">
-                  <IconButton
-                    aria-label="toggle password visibility"
-                    onClick={handleClickShowPassword}
-                    onMouseDown={handleMouseDownPassword}
-                    edge="end"
-                  >
-                    {showPassword ? <VisibilityOff /> : <Visibility />}
-                  </IconButton>
-                </InputAdornment>
-              }
-              label="Password"
-            />
-          </FormControl >
-        </Box>
-      </WidgetWrapper>
+        }}
+      >
+        <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
+          <InputLabel htmlFor="outlined-adornment-password">Username</InputLabel>
+          <OutlinedInput
+            id="outlined-adornment-weight"
+            aria-describedby="outlined-weight-helper-text"
+            inputProps={{
+              'aria-label': 'weight',
+            }}
+            label="Password"
+          />
+        </FormControl>
+        <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
+          <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+          <OutlinedInput
+            id="outlined-adornment-password"
+            type={showPassword ? 'text' : 'password'}
+            endAdornment={
+              <InputAdornment position="end">
+                <IconButton
+                  aria-label="toggle password visibility"
+                  onClick={handleClickShowPassword}
+                  onMouseDown={handleMouseDownPassword}
+                  edge="end"
+                >
+                  {showPassword ? <VisibilityOff /> : <Visibility />}
+                </IconButton>
+              </InputAdornment>
+            }
+            label="Password"
+          />
+        </FormControl >
+      </Box>
     </Box>
   )
 }

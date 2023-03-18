@@ -3,8 +3,8 @@ import { Box, Typography, useTheme, useMediaQuery } from '@mui/material'
 import { useState } from 'react';
 
 
-import LoginForm from './LoginForm'
-import SignUp from './signup/SignUp'
+import LoginForm from './userLogin/LoginForm'
+import SignUp from './userSignup/SignUp'
 
 const Login = () => {
 

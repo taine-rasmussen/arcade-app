@@ -1,32 +1,30 @@
 import { Box, useTheme } from '@mui/material'
-import { useState } from 'react';
 
-
-const LoginForm = (props) => {
-
-  const theme = useTheme();
-  const primaryLight = theme.palette.primary.light
+const SignUpPreview = (props) => {
 
   const {
     setIsOnSignUpForm,
     isOnSignUpForm
   } = props;
 
+  const theme = useTheme();
+  const primaryLight = theme.palette.primary.light
+
 
   return (
     <Box
-      width='60%'
+      width='40%'
       border='1px solid #000'
       backgroundColor={primaryLight}
     >
-      Login
+      Sign up
       <button
         onClick={() => setIsOnSignUpForm(!isOnSignUpForm)}
       >
         change form
-      </button>
-    </Box>
+      </button >
+    </Box >
   )
 }
 
-export default LoginForm
+export default SignUpPreview

@@ -4,16 +4,12 @@ import { useState } from 'react';
 
 
 import LoginForm from './LoginForm'
-import SignUp from './SignUp'
+import SignUp from './signup/SignUp'
 
 const Login = () => {
 
   const [isOnSignUpForm, setIsOnSignUpForm] = useState(false);
   const isNonMobileScreens = useMediaQuery("(min-width: 1000px)")
-
-  const theme = useTheme();
-  const primaryLight = theme.palette.primary.light
-  const alt = theme.palette.neutral.alt;
 
   return (
     <>

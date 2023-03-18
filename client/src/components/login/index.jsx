@@ -1,4 +1,5 @@
-import Box from '@mui/material/Box';
+import { Box, Typography, useTheme, useMediaQuery } from '@mui/material'
+
 import { useState } from 'react';
 
 
@@ -8,14 +9,18 @@ import SignUp from './SignUp'
 const Login = () => {
 
   const [isOnRegisterForm, setIsOnRegisterForm] = useState(false);
+  const isNonMobileScreens = useMediaQuery("(min-width: 1000px)")
+
+  const theme = useTheme();
+  const primaryLight = theme.palette.primary.light
+  const alt = theme.palette.neutral.alt;
 
   return (
     <Box
-      sx={{
-        width: '100%',
-        height: '100%',
-        backgroundColor: 'primary.dark',
-      }}
+      width='100%'
+      height='100%'
+      textAlign='center'
+      backgroundColor={primaryLight}
     >
       <LoginForm
         setIsOnRegisterForm={setIsOnRegisterForm}
@@ -25,7 +30,7 @@ const Login = () => {
         setIsOnRegisterForm={setIsOnRegisterForm}
         isOnRegisterForm={isOnRegisterForm}
       />
-    </Box>
+    </Box >
   )
 }
 

@@ -14,6 +14,7 @@ const App = () => {
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
+        <CssBaseline />
         <Login />
       </ThemeProvider>
     </div>

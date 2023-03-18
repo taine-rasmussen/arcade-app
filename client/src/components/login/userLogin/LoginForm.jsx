@@ -1,4 +1,5 @@
-import { Box, useTheme } from '@mui/material'
+import { Box, useTheme, Typography } from '@mui/material'
+import WidgetWrapper from '../../../wrapper/WidgetWrapper'
 import { useState } from 'react';
 
 
@@ -20,14 +21,34 @@ const LoginForm = (props) => {
     <Box
       width='60%'
       border='1px solid #000'
-      backgroundColor={primaryLight}
+      // backgroundColor={primaryLight}
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center'
+      }}
     >
-      Login
-      <button
-        onClick={() => setIsOnSignUpForm(!isOnSignUpForm)}
-      >
-        change form
-      </button>
+      <WidgetWrapper theme={theme}>
+        <Typography
+          fontWeight='bold'
+          fontSize='4rem'
+          color='primary'
+          sx={{
+            '&:hover': {
+              color: primaryLight,
+              cursor: 'pointer'
+            }
+          }}
+        >
+          Login to your account
+          </Typography>
+        Login
+        <button
+          onClick={() => setIsOnSignUpForm(!isOnSignUpForm)}
+        >
+          change form
+        </button>
+      </WidgetWrapper>
     </Box>
   )
 }

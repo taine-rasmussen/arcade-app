@@ -1,3 +1,5 @@
+import LoginForm from './LoginForm'
+import SignUp from './SignUp'
 
 const Login = () => {
   return (

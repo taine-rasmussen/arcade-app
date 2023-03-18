@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 
 import LoginForm from './LoginForm'
-import SignUp from './SignUp'
+import SignUp from './signup/SignUp'
 
 const Login = () => {
 

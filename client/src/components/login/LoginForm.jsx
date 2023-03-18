@@ -10,9 +10,13 @@ const LoginForm = (props) => {
 
 
   return (
-    <div>
+    <Box
+      sx={{
+
+      }}
+    >
       Login
-    </div>
+    </Box>
   )
 }
 

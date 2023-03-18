@@ -14,13 +14,38 @@ const SignUp = (props) => {
 
 
   return (
-    <Box
-      width='33%'
-      border='1px solid #000'
-      backgroundColor={primaryLight}
-    >
-      Sign up
-    </Box>
+
+    <>
+      {isOnSignUpForm ?
+        (
+          <Box
+            width='100%'
+            height='100%'
+            textAlign='center'
+            backgroundColor={primaryLight}
+          >
+            This is the full screen form
+            <button
+              onClick={() => setIsOnSignUpForm(!isOnSignUpForm)}
+            >
+              change form
+          </button>
+          </Box>
+        ) : (
+          <Box
+            width='33%'
+            border='1px solid #000'
+            backgroundColor={primaryLight}
+          >
+            Sign up
+            <button
+              onClick={() => setIsOnSignUpForm(!isOnSignUpForm)}
+            >
+              change form
+              </button>
+          </Box>
+        )}
+    </>
   )
 }
 

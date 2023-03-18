@@ -16,24 +16,35 @@ const Login = () => {
   const alt = theme.palette.neutral.alt;
 
   return (
-    <Box
-      width='100%'
-      height='100%'
-      textAlign='center'
-      sx={{
-        display: 'flex',
-        flexDirection: 'row'
-      }}
-    >
-      <LoginForm
-        setIsOnSignUpForm={setIsOnSignUpForm}
-        isOnSignUpForm={isOnSignUpForm}
-      />
-      <SignUp
-        setIsOnSignUpForm={setIsOnSignUpForm}
-        isOnSignUpForm={isOnSignUpForm}
-      />
-    </Box >
+    <>
+      {
+        isOnSignUpForm ?
+          (
+            <SignUp
+              setIsOnSignUpForm={setIsOnSignUpForm}
+              isOnSignUpForm={isOnSignUpForm}
+            />
+          ) : (
+            <Box
+              width='100%'
+              height='100%'
+              textAlign='center'
+              sx={{
+                display: 'flex',
+                flexDirection: 'row'
+              }}
+            >
+              <LoginForm
+                setIsOnSignUpForm={setIsOnSignUpForm}
+                isOnSignUpForm={isOnSignUpForm}
+              />
+              <SignUp
+                setIsOnSignUpForm={setIsOnSignUpForm}
+                isOnSignUpForm={isOnSignUpForm}
+              />
+            </Box >
+          )}
+    </>
   )
 }
 

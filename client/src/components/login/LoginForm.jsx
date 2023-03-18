@@ -21,6 +21,11 @@ const LoginForm = (props) => {
       backgroundColor={primaryLight}
     >
       Login
+      <button
+        onClick={() => setIsOnSignUpForm(!isOnSignUpForm)}
+      >
+        change form
+      </button>
     </Box>
   )
 }

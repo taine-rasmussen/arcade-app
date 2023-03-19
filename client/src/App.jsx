@@ -10,8 +10,8 @@ import Login from './components/login'
 const App = () => {
 
   const mode = useSelector(state => state.mode)
+  const isAuth = Boolean(useSelector((state) => state.token));
   const theme = useMemo(() => createTheme(themeSettings(mode)), [mode])
-
 
   return (
     <div className="App">

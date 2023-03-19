@@ -58,7 +58,7 @@ const LoginForm = (props) => {
 
         }}
       >
-        <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
+        <FormControl sx={{ m: 1, width: '50ch' }} variant="outlined">
           <InputLabel htmlFor="outlined-adornment-password">Username</InputLabel>
           <OutlinedInput
             id="outlined-adornment-weight"
@@ -69,7 +69,7 @@ const LoginForm = (props) => {
             label="Password"
           />
         </FormControl>
-        <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
+        <FormControl sx={{ m: 1, width: '50ch' }} variant="outlined">
           <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
           <OutlinedInput
             id="outlined-adornment-password"

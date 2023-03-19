@@ -31,13 +31,14 @@ const LoginForm = () => {
     setPassword('')
   };
 
+  console.log(username, password)
+
   const theme = useTheme();
   const bgLight = theme.palette.neutral.light
   const primaryMain = theme.palette.primary.main
 
   return (
     <Box
-      width='60%'
       sx={{
         display: 'flex',
         flexDirection: 'column',
@@ -73,12 +74,14 @@ const LoginForm = () => {
           <InputLabel htmlFor="outlined-adornment-password">Username</InputLabel>
           <OutlinedInput
             aria-describedby="outlined-weight-helper-text"
+            onChange={(e) => setUsername(e.target.value)}
             id="outlined-adornment-weight"
             sx={{ background: bgLight, fontSize: '1.1rem' }}
-            label="Password"
+            value={username}
             inputProps={{
               'aria-label': 'weight',
             }}
+            label="Username"
           />
         </FormControl>
         <FormControl sx={{ m: 1, width: '50ch' }} variant="outlined">
@@ -87,6 +90,8 @@ const LoginForm = () => {
             type={showPassword ? 'text' : 'password'}
             id="outlined-adornment-password"
             sx={{ background: bgLight, fontSize: '1.1rem' }}
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
             endAdornment={
               <InputAdornment position="end">
                 <IconButton

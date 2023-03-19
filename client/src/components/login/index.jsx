@@ -1,10 +1,10 @@
 import { Box, useTheme, useMediaQuery } from '@mui/material'
+import Divider from '@mui/material/Divider';
 import { useState } from 'react';
 
 
 import LoginForm from './userLogin/LoginForm'
 import SignUp from './userSignup/SignUp'
-import WidgetWrapper from '../../wrapper/WidgetWrapper'
 
 
 const Login = () => {
@@ -31,10 +31,14 @@ const Login = () => {
               backgroundColor={alt}
               sx={{
                 display: 'flex',
-                flexDirection: 'row'
+                flexDirection: 'row',
+                gap: '4rem',
+                alignItems: 'center',
+                justifyContent: 'center'
               }}
             >
               <LoginForm />
+              <Divider orientation="vertical" variant="middle" sx={{ height: '75ch', }} />
               <SignUp
                 setIsOnSignUpForm={setIsOnSignUpForm}
                 isOnSignUpForm={isOnSignUpForm}

@@ -29,7 +29,6 @@ const SignUpPreview = (props) => {
       <Typography
         fontWeight='bold'
         fontSize='4rem'
-        color='alt'
       >
         New here?
       </Typography>
@@ -37,12 +36,16 @@ const SignUpPreview = (props) => {
         variant="contained"
         fontSize='1.25rem'
         sx={{
-          backgroundColor: '#fff',
+          backgroundColor: primaryLight,
           borderRadius: '30px',
           fontSize: '0.9rem',
           height: '5ch',
           width: '33ch',
+          color: '#fff',
           m: 1,
+          '&:hover': {
+            color: primaryLight
+          }
         }}
         onClick={() => setIsOnSignUpForm(!isOnSignUpForm)}
       >

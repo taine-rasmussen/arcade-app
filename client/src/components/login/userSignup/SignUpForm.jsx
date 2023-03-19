@@ -104,6 +104,23 @@ const SignUpForm = (props) => {
             label="Password"
           />
         </FormControl >
+        <Button
+          variant="contained"
+          sx={{
+            backgroundColor: bgLight,
+            fontSize: '0.9rem',
+            height: '5ch',
+            width: '35ch',
+            color: '#fff',
+            m: 1,
+            '&:hover': {
+              color: primaryLight
+            }
+          }}
+          onClick={() => setIsOnSignUpForm(!isOnSignUpForm)}
+        >
+          Upload picture
+        </Button>
 
       </Box >
 

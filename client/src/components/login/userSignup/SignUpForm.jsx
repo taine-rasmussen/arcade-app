@@ -33,6 +33,7 @@ const SignUpForm = (props) => {
   const theme = useTheme();
   const bgLight = theme.palette.neutral.light
   const primaryMain = theme.palette.primary.main
+  const primaryLight = theme.palette.primary.light
   const alt = theme.palette.background.alt
 
 
@@ -107,15 +108,50 @@ const SignUpForm = (props) => {
       </Box >
 
       <Box
+        gap='1rem'
         sx={{
           display: 'flex',
           flexDirection: 'row',
           wrap: 'flex-wrap'
         }}
       >
+        <Button
+          variant="outlined"
+          onClick={() => setIsOnSignUpForm(!isOnSignUpForm)}
+          sx={{
+            backgroundColor: primaryLight,
+            borderRadius: '30px',
+            fontSize: '0.9rem',
+            height: '5ch',
+            width: '33ch',
+            color: '#fff',
+            m: 1,
+            '&:hover': {
+              color: primaryLight,
+              background: primaryMain
 
+            }
+          }}
+        >
+          Already have an account?
+        </Button>
+        <Button
+          variant="contained"
+          sx={{
+            borderRadius: '30px',
+            fontSize: '0.9rem',
+            height: '5ch',
+            width: '15ch',
+            color: '#fff',
+            m: 1,
+            '&:hover': {
+              color: primaryLight
+            }
+          }}
+        >
+          Sign Up
+        </Button>
       </Box>
-
     </Box >
   )
 }

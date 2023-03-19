@@ -39,7 +39,7 @@ const LoginForm = () => {
 
   return (
     <Box
-      width='60%'
+      // width='60%'
       sx={{
         display: 'flex',
         flexDirection: 'column',

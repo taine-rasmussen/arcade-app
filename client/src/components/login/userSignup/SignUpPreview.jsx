@@ -18,9 +18,9 @@ const SignUpPreview = (props) => {
 
   return (
     <Box
-      width='40%'
-      borderLeft={`7px solid ${bgLight}`}
-      backgroundColor={primaryLight}
+      // width='40%'
+      // borderLeft={`7px solid ${bgLight}`}
+      // backgroundColor={primaryLight}
       sx={{
         display: 'flex',
         flexDirection: 'column',

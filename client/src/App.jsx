@@ -1,3 +1,4 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { createTheme } from '@mui/material/styles';
 import { useMemo, useState } from 'react'
@@ -13,10 +14,14 @@ const App = () => {
 
   return (
     <div className="App">
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Login />
-      </ThemeProvider>
+      <BrowserRouter>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <Routes>
+            <Route path='/' element={<Login />} />
+          </Routes>
+        </ThemeProvider>
+      </BrowserRouter>
     </div>
   )
 }

@@ -1,5 +1,6 @@
 import { Box, useTheme, useMediaQuery } from '@mui/material'
 import Divider from '@mui/material/Divider';
+import Chip from '@mui/material/Chip';
 import { useState } from 'react';
 
 
@@ -38,7 +39,13 @@ const Login = () => {
               }}
             >
               <LoginForm />
-              <Divider orientation="vertical" variant="middle" sx={{ height: '75ch', }} />
+              <Divider
+                orientation="vertical"
+                variant="middle"
+                sx={{ height: '75ch', }}
+              >
+                <Chip label="OR" />
+              </Divider>
               <SignUp
                 setIsOnSignUpForm={setIsOnSignUpForm}
                 isOnSignUpForm={isOnSignUpForm}

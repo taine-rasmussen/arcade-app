@@ -116,37 +116,33 @@ const SignUpForm = (props) => {
         }}
       >
         <Button
-          variant="outlined"
-          onClick={() => setIsOnSignUpForm(!isOnSignUpForm)}
+          variant="contained"
           sx={{
             backgroundColor: primaryLight,
             borderRadius: '30px',
             fontSize: '0.9rem',
             height: '5ch',
-            width: '33ch',
-            color: '#fff',
-            m: 1,
-            '&:hover': {
-              color: primaryLight,
-              background: primaryMain
-
-            }
-          }}
-        >
-          Already have an account?
-        </Button>
-        <Button
-          variant="contained"
-          sx={{
-            borderRadius: '30px',
-            fontSize: '0.9rem',
-            height: '5ch',
-            width: '15ch',
+            width: '30ch',
             color: '#fff',
             m: 1,
             '&:hover': {
               color: primaryLight
             }
+          }}
+          onClick={() => setIsOnSignUpForm(!isOnSignUpForm)}
+        >
+          Already have an account?
+        </Button>
+        <Button
+          variant="contained"
+          fontSize='1.25rem'
+          sx={{
+            background: primaryMain,
+            borderRadius: '30px',
+            fontSize: '0.9rem',
+            height: '5ch',
+            width: '20ch',
+            m: 1,
           }}
         >
           Sign Up

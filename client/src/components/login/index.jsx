@@ -3,7 +3,6 @@ import Divider from '@mui/material/Divider';
 import Chip from '@mui/material/Chip';
 import { useState } from 'react';
 
-
 import LoginForm from './userLogin/LoginForm'
 import SignUp from './userSignup/SignUp'
 
@@ -51,7 +50,8 @@ const Login = () => {
                 isOnSignUpForm={isOnSignUpForm}
               />
             </Box >
-          )}
+          )
+      }
     </>
   )
 }

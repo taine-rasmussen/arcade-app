@@ -41,7 +41,8 @@ const LoginForm = (props) => {
       sx={{
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        gap: '1rem'
       }}
     >
       <Typography
@@ -52,15 +53,20 @@ const LoginForm = (props) => {
         Login to your account
       </Typography>
 
-      <Divider variant="middle" />
+      <Typography
+        fontWeight='bold'
+        fontSize='1.25rem'
+        color='neutral'
+      >
+        Sign in and start playing
+      </Typography>
 
       <Box
         sx={{
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
-          alignItems: 'center'
-
+          alignItems: 'center',
         }}
       >
         <FormControl sx={{ m: 1, width: '50ch' }} variant="outlined">

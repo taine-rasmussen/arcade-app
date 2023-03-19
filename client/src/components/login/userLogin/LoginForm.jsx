@@ -25,8 +25,15 @@ const LoginForm = () => {
     e.preventDefault();
   };
 
+  const handleSubmit = () => {
+    console.log('form submitted')
+    setUsername('')
+    setPassword('')
+  };
+
   const theme = useTheme();
   const bgLight = theme.palette.neutral.light
+  const primaryMain = theme.palette.primary.main
 
   return (
     <Box
@@ -67,7 +74,7 @@ const LoginForm = () => {
           <OutlinedInput
             aria-describedby="outlined-weight-helper-text"
             id="outlined-adornment-weight"
-            sx={{ background: bgLight, fontSize: '1rem' }}
+            sx={{ background: bgLight, fontSize: '1.1rem' }}
             label="Password"
             inputProps={{
               'aria-label': 'weight',
@@ -79,7 +86,7 @@ const LoginForm = () => {
           <OutlinedInput
             type={showPassword ? 'text' : 'password'}
             id="outlined-adornment-password"
-            sx={{ background: bgLight, fontSize: '1rem' }}
+            sx={{ background: bgLight, fontSize: '1.1rem' }}
             endAdornment={
               <InputAdornment position="end">
                 <IconButton
@@ -95,6 +102,21 @@ const LoginForm = () => {
             label="Password"
           />
         </FormControl >
+        <Button
+          variant="contained"
+          fontSize='1.25rem'
+          onClick={handleSubmit}
+          sx={{
+            background: primaryMain,
+            borderRadius: '30px',
+            fontSize: '0.9rem',
+            height: '5ch',
+            width: '33ch',
+            m: 1,
+          }}
+        >
+          Sign In
+        </Button>
       </Box >
     </Box >
   )

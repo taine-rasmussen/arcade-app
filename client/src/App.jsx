@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { createTheme } from '@mui/material/styles';
+import { useSelector } from 'react-redux';
 import { useMemo, useState } from 'react'
 import { themeSettings } from './theme'
 import Login from './components/login'
@@ -8,9 +9,9 @@ import Login from './components/login'
 
 const App = () => {
 
-  const [mode, setMode] = useState('dark')
+  const mode = useSelector(state => state.mode)
+  const isAuth = Boolean(useSelector((state) => state.token));
   const theme = useMemo(() => createTheme(themeSettings(mode)), [mode])
-
 
   return (
     <div className="App">

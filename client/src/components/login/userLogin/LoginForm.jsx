@@ -7,11 +7,11 @@ import OutlinedInput from '@mui/material/OutlinedInput';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import IconButton from '@mui/material/IconButton';
-import Divider from '@mui/material/Divider';
+import Button from '@mui/material/Button';
 import { useState } from 'react';
 
 
-const LoginForm = (props) => {
+const LoginForm = () => {
 
   const [showPassword, setShowPassword] = useState(false)
   const [username, setUsername] = useState('')
@@ -27,13 +27,6 @@ const LoginForm = (props) => {
 
   const theme = useTheme();
   const bgLight = theme.palette.neutral.light
-
-  const {
-    setIsOnSignUpForm,
-    isOnSignUpForm
-  } = props;
-
-
 
   return (
     <Box

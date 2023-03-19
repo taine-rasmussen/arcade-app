@@ -34,10 +34,7 @@ const Login = () => {
                 flexDirection: 'row'
               }}
             >
-              <LoginForm
-                setIsOnSignUpForm={setIsOnSignUpForm}
-                isOnSignUpForm={isOnSignUpForm}
-              />
+              <LoginForm />
               <SignUp
                 setIsOnSignUpForm={setIsOnSignUpForm}
                 isOnSignUpForm={isOnSignUpForm}

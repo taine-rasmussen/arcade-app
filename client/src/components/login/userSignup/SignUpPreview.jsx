@@ -34,7 +34,6 @@ const SignUpPreview = (props) => {
       </Typography>
       <Button
         variant="contained"
-        fontSize='1.25rem'
         sx={{
           backgroundColor: primaryLight,
           borderRadius: '30px',

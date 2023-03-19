@@ -9,7 +9,7 @@ import SignUp from './userSignup/SignUp'
 
 const Login = () => {
 
-  const [isOnSignUpForm, setIsOnSignUpForm] = useState(false);
+  const [isOnSignUpForm, setIsOnSignUpForm] = useState(true);
   const isNonMobileScreens = useMediaQuery("(min-width: 1000px)")
 
   const theme = useTheme();

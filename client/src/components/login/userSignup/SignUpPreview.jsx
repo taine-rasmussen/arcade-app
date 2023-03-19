@@ -25,7 +25,8 @@ const SignUpPreview = (props) => {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        gap: '1rem'
       }}
     >
       <Typography
@@ -34,14 +35,6 @@ const SignUpPreview = (props) => {
         color='alt'
       >
         New here?
-      </Typography>
-
-      <Typography
-        fontWeight='bold'
-        fontSize='1.15rem'
-        color='neutral'
-      >
-        Sign up and get right into the games
       </Typography>
       <Button
         variant="contained"

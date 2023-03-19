@@ -25,11 +25,13 @@ const LoginForm = (props) => {
   };
 
   const theme = useTheme();
+  const bgLight = theme.palette.neutral.light
 
   const {
     setIsOnSignUpForm,
     isOnSignUpForm
   } = props;
+
 
 
   return (
@@ -61,19 +63,21 @@ const LoginForm = (props) => {
         <FormControl sx={{ m: 1, width: '50ch' }} variant="outlined">
           <InputLabel htmlFor="outlined-adornment-password">Username</InputLabel>
           <OutlinedInput
-            id="outlined-adornment-weight"
             aria-describedby="outlined-weight-helper-text"
+            id="outlined-adornment-weight"
+            sx={{ background: bgLight, fontSize: '1rem' }}
+            label="Password"
             inputProps={{
               'aria-label': 'weight',
             }}
-            label="Password"
           />
         </FormControl>
         <FormControl sx={{ m: 1, width: '50ch' }} variant="outlined">
           <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
           <OutlinedInput
-            id="outlined-adornment-password"
             type={showPassword ? 'text' : 'password'}
+            id="outlined-adornment-password"
+            sx={{ background: bgLight, fontSize: '1rem' }}
             endAdornment={
               <InputAdornment position="end">
                 <IconButton

@@ -18,9 +18,25 @@ import {
   PURGE
 } from 'redux-persist';
 
+const persistConfig = { key: "root", storage, version: 1 };
+const persistedReducer = persistReducer(persistConfig, authReducer);
+const store = configureStore({
+  reducer: persistedReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [REHYDRATE, REGISTER, PERSIST, FLUSH, PAUSE, PURGE]
+      }
+    })
+});
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistStore(store)}>
+        <App />
+      </PersistGate>
+    </Provider>
   </React.StrictMode>,
 )

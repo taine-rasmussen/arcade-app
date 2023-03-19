@@ -10,13 +10,14 @@ const SignUpPreview = (props) => {
   const theme = useTheme();
   const primaryLight = theme.palette.primary.light
   const primaryMain = theme.palette.primary.main
+  const bgLight = theme.palette.neutral.light
 
 
 
   return (
     <Box
       width='40%'
-      borderLeft={`1px solid ${primaryMain}`}
+      borderLeft={`7px solid ${bgLight}`}
       backgroundColor={primaryLight}
     >
       Sign up

@@ -1,4 +1,6 @@
-import { Box, useTheme } from '@mui/material'
+import { Box, useTheme, Typography } from '@mui/material'
+import Button from '@mui/material/Button';
+
 
 const SignUpPreview = (props) => {
 
@@ -19,13 +21,36 @@ const SignUpPreview = (props) => {
       width='40%'
       borderLeft={`7px solid ${bgLight}`}
       backgroundColor={primaryLight}
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        gap: '1rem'
+      }}
     >
-      Sign up
-      <button
+      <Typography
+        fontWeight='bold'
+        fontSize='4rem'
+        color='alt'
+      >
+        New here?
+      </Typography>
+      <Button
+        variant="contained"
+        fontSize='1.25rem'
+        sx={{
+          backgroundColor: '#fff',
+          borderRadius: '30px',
+          fontSize: '0.9rem',
+          height: '5ch',
+          width: '33ch',
+          m: 1,
+        }}
         onClick={() => setIsOnSignUpForm(!isOnSignUpForm)}
       >
-        change form
-      </button >
+        Sign up
+      </Button >
     </Box >
   )
 }

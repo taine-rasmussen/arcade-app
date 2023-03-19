@@ -21,6 +21,12 @@ const SignUpPreview = (props) => {
       width='40%'
       borderLeft={`7px solid ${bgLight}`}
       backgroundColor={primaryLight}
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center'
+      }}
     >
       <Typography
         fontWeight='bold'
@@ -32,16 +38,26 @@ const SignUpPreview = (props) => {
 
       <Typography
         fontWeight='bold'
-        fontSize='1.25rem'
+        fontSize='1.15rem'
         color='neutral'
       >
         Sign up and get right into the games
       </Typography>
-      <button
+      <Button
+        variant="contained"
+        fontSize='1.25rem'
+        sx={{
+          backgroundColor: '#fff',
+          borderRadius: '30px',
+          fontSize: '0.9rem',
+          height: '5ch',
+          width: '33ch',
+          m: 1,
+        }}
         onClick={() => setIsOnSignUpForm(!isOnSignUpForm)}
       >
         Sign up
-      </button >
+      </Button >
     </Box >
   )
 }

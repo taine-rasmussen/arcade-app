@@ -7,6 +7,7 @@ import OutlinedInput from '@mui/material/OutlinedInput';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import IconButton from '@mui/material/IconButton';
+import Divider from '@mui/material/Divider';
 import { useState } from 'react';
 
 
@@ -49,7 +50,9 @@ const LoginForm = (props) => {
         color='primary'
       >
         Login to your account
-          </Typography>
+      </Typography>
+
+      <Divider variant="middle" />
 
       <Box
         sx={{
@@ -93,8 +96,8 @@ const LoginForm = (props) => {
             label="Password"
           />
         </FormControl >
-      </Box>
-    </Box>
+      </Box >
+    </Box >
   )
 }
 

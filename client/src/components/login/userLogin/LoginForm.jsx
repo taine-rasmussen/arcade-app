@@ -82,6 +82,7 @@ const LoginForm = () => {
             inputProps={{
               'aria-label': 'weight',
             }}
+            label="Username"
           />
         </FormControl>
         <FormControl sx={{ m: 1, width: '50ch' }} variant="outlined">

@@ -28,9 +28,9 @@ const SignUpPreview = (props) => {
     >
       <Typography
         fontWeight='bold'
-        fontSize='4rem'
+        fontSize='3.5rem'
       >
-        New here?
+        Create account
       </Typography>
       <Button
         variant="contained"

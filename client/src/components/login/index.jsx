@@ -13,6 +13,7 @@ const Login = () => {
   const isNonMobileScreens = useMediaQuery("(min-width: 1000px)")
 
   const theme = useTheme();
+  const alt = theme.palette.background.alt
 
   return (
     <>
@@ -24,25 +25,21 @@ const Login = () => {
               isOnSignUpForm={isOnSignUpForm}
             />
           ) : (
-            <WidgetWrapper theme={theme}>
-              <Box
-                height='90vh'
-                textAlign='center'
-                sx={{
-                  display: 'flex',
-                  flexDirection: 'row'
-                }}
-              >
-                <LoginForm
-                  setIsOnSignUpForm={setIsOnSignUpForm}
-                  isOnSignUpForm={isOnSignUpForm}
-                />
-                <SignUp
-                  setIsOnSignUpForm={setIsOnSignUpForm}
-                  isOnSignUpForm={isOnSignUpForm}
-                />
-              </Box >
-            </WidgetWrapper>
+            <Box
+              height='100vh'
+              textAlign='center'
+              backgroundColor={alt}
+              sx={{
+                display: 'flex',
+                flexDirection: 'row'
+              }}
+            >
+              <LoginForm />
+              <SignUp
+                setIsOnSignUpForm={setIsOnSignUpForm}
+                isOnSignUpForm={isOnSignUpForm}
+              />
+            </Box >
           )}
     </>
   )

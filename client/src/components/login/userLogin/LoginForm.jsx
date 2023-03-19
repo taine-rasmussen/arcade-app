@@ -7,10 +7,11 @@ import OutlinedInput from '@mui/material/OutlinedInput';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import IconButton from '@mui/material/IconButton';
+import Button from '@mui/material/Button';
 import { useState } from 'react';
 
 
-const LoginForm = (props) => {
+const LoginForm = () => {
 
   const [showPassword, setShowPassword] = useState(false)
   const [username, setUsername] = useState('')
@@ -24,13 +25,15 @@ const LoginForm = (props) => {
     e.preventDefault();
   };
 
+  const handleSubmit = () => {
+    console.log('form submitted')
+    setUsername('')
+    setPassword('')
+  };
+
   const theme = useTheme();
-
-  const {
-    setIsOnSignUpForm,
-    isOnSignUpForm
-  } = props;
-
+  const bgLight = theme.palette.neutral.light
+  const primaryMain = theme.palette.primary.main
 
   return (
     <Box
@@ -38,7 +41,8 @@ const LoginForm = (props) => {
       sx={{
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        gap: '1rem'
       }}
     >
       <Typography
@@ -47,33 +51,42 @@ const LoginForm = (props) => {
         color='primary'
       >
         Login to your account
-          </Typography>
+      </Typography>
+
+      <Typography
+        fontWeight='bold'
+        fontSize='1.25rem'
+        color='neutral'
+      >
+        Sign in and start playing
+      </Typography>
 
       <Box
         sx={{
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
-          alignItems: 'center'
-
+          alignItems: 'center',
         }}
       >
-        <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
+        <FormControl sx={{ m: 1, width: '50ch' }} variant="outlined">
           <InputLabel htmlFor="outlined-adornment-password">Username</InputLabel>
           <OutlinedInput
-            id="outlined-adornment-weight"
             aria-describedby="outlined-weight-helper-text"
+            id="outlined-adornment-weight"
+            sx={{ background: bgLight, fontSize: '1.1rem' }}
+            label="Password"
             inputProps={{
               'aria-label': 'weight',
             }}
-            label="Password"
           />
         </FormControl>
-        <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
+        <FormControl sx={{ m: 1, width: '50ch' }} variant="outlined">
           <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
           <OutlinedInput
-            id="outlined-adornment-password"
             type={showPassword ? 'text' : 'password'}
+            id="outlined-adornment-password"
+            sx={{ background: bgLight, fontSize: '1.1rem' }}
             endAdornment={
               <InputAdornment position="end">
                 <IconButton
@@ -89,8 +102,23 @@ const LoginForm = (props) => {
             label="Password"
           />
         </FormControl >
-      </Box>
-    </Box>
+        <Button
+          variant="contained"
+          fontSize='1.25rem'
+          onClick={handleSubmit}
+          sx={{
+            background: primaryMain,
+            borderRadius: '30px',
+            fontSize: '0.9rem',
+            height: '5ch',
+            width: '33ch',
+            m: 1,
+          }}
+        >
+          Sign In
+        </Button>
+      </Box >
+    </Box >
   )
 }
 

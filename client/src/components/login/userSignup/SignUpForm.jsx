@@ -8,8 +8,6 @@ import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import IconButton from '@mui/material/IconButton';
 import Button from '@mui/material/Button';
-import Dropzone from 'react-dropzone';
-import { useFormik } from 'Formik';
 import { useState } from 'react'
 
 
@@ -80,7 +78,7 @@ const SignUpForm = (props) => {
             inputProps={{
               'aria-label': 'weight',
             }}
-            label="Username"
+            label="Enter username"
           />
         </FormControl>
         <FormControl sx={{ m: 1, width: '50ch' }} variant="outlined">
@@ -103,44 +101,9 @@ const SignUpForm = (props) => {
                 </IconButton>
               </InputAdornment>
             }
-            label="Password"
+            label="Enter password"
           />
         </FormControl >
-        <Box
-          gridColumn="span 4"
-          border={`1px solid ${theme.palette.neutral.medium}`}
-          borderRadius="5px"
-          p="1rem"
-        >
-          <Dropzone
-            acceptedFiles=".jpg,.jpeg,.png"
-            multiple={false}
-            onDrop={(acceptedFiles) =>
-              setFieldValue("picture", acceptedFiles[0])
-            }
-          >
-            {({ getRootProps, getInputProps }) => (
-              <Box
-                {...getRootProps()}
-                border={`2px dashed ${theme.palette.primary.main}`}
-                p="1rem"
-                sx={{ "&:hover": { cursor: "pointer" } }}
-              >
-                <input {...getInputProps()} />
-                {false ? (
-                  <p>Add Picture Here</p>
-                ) : (
-                  <>
-                    {/* <Typography>{values.picture.name}</Typography> */}
-                    <Typography>picture name</Typography>
-                    <EditOutlinedIcon />
-                  </>
-                )}
-              </Box>
-            )}
-          </Dropzone>
-        </Box>
-
       </Box >
 
       <Box

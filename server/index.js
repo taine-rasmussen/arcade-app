@@ -5,9 +5,13 @@ import express from 'express';
 import helmet from 'helmet';
 import dotenv from 'dotenv';
 import morgan from 'morgan';
-import User from './models/User'
 import cors from 'cors';
 import path from 'path';
+
+import authRoutes from './routes/Auth.js'
+import userRoutes from './routes/User.js'
+import User from './models/User.js';
+
 
 
 // Config
@@ -25,6 +29,7 @@ app.use(cors());
 
 // Routes
 app.use('/auth', authRoutes)
+app.use('/users', userRoutes)
 
 // Mongoose config
 const PORT = process.env.PORT || 6001

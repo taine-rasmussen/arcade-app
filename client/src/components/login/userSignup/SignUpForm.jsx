@@ -9,8 +9,6 @@ import IconButton from '@mui/material/IconButton';
 import Button from '@mui/material/Button';
 import { useState } from 'react'
 
-
-
 const SignUpForm = (props) => {
   const {
     setIsOnSignUpForm,
@@ -21,6 +19,12 @@ const SignUpForm = (props) => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
 
+  const theme = useTheme();
+  const alt = theme.palette.background.alt
+  const bgLight = theme.palette.neutral.light
+  const primaryMain = theme.palette.primary.main
+  const primaryLight = theme.palette.primary.light
+
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword)
   };
@@ -28,13 +32,6 @@ const SignUpForm = (props) => {
   const handleMouseDownPassword = (e) => {
     e.preventDefault();
   };
-
-  const theme = useTheme();
-  const bgLight = theme.palette.neutral.light
-  const primaryMain = theme.palette.primary.main
-  const primaryLight = theme.palette.primary.light
-  const alt = theme.palette.background.alt
-
 
   return (
     <Box
@@ -67,7 +64,7 @@ const SignUpForm = (props) => {
         }}
       >
         <FormControl sx={{ m: 1, width: '50ch' }} variant="outlined">
-          <InputLabel htmlFor="outlined-adornment-password">Username</InputLabel>
+          <InputLabel htmlFor="outlined-adornment-password">Enter username</InputLabel>
           <OutlinedInput
             aria-describedby="outlined-weight-helper-text"
             onChange={(e) => setUsername(e.target.value)}
@@ -77,11 +74,11 @@ const SignUpForm = (props) => {
             inputProps={{
               'aria-label': 'weight',
             }}
-            label="Username"
+            label="Enter username"
           />
         </FormControl>
         <FormControl sx={{ m: 1, width: '50ch' }} variant="outlined">
-          <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+          <InputLabel htmlFor="outlined-adornment-password">Enter password</InputLabel>
           <OutlinedInput
             type={showPassword ? 'text' : 'password'}
             id="outlined-adornment-password"
@@ -100,23 +97,9 @@ const SignUpForm = (props) => {
                 </IconButton>
               </InputAdornment>
             }
-            label="Password"
+            label="Enter password"
           />
         </FormControl >
-        <Button
-          variant="outlined"
-          sx={{
-            backgroundColor: bgLight,
-            fontSize: '0.9rem',
-            height: '5ch',
-            width: '35ch',
-            color: '#fff',
-            m: 1
-          }}
-        >
-          Upload picture
-        </Button>
-
       </Box >
 
       <Box

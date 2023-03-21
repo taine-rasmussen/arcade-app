@@ -16,6 +16,7 @@ const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false)
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const [image, setImage] = useState(null);
 
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword)

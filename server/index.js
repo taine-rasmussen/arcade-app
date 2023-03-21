@@ -36,3 +36,16 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage })
+
+// Mongoose config
+const PORT = process.env.PORT || 6001
+const URL = process.env.MONGO_URL
+
+// removes console warning about changes on mongoose 7
+mongoose.set('strictQuery', true);
+mongoose.connect(URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+}).then(() => {
+  app.listen(PORT, () => console.log(`Server running on port: ${PORT}`));
+}).catch((error) => console.log(`${error} did not connect`))

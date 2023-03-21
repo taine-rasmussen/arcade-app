@@ -64,7 +64,7 @@ const SignUpForm = (props) => {
         }}
       >
         <FormControl sx={{ m: 1, width: '50ch' }} variant="outlined">
-          <InputLabel htmlFor="outlined-adornment-password">Username</InputLabel>
+          <InputLabel htmlFor="outlined-adornment-password">Enter username</InputLabel>
           <OutlinedInput
             aria-describedby="outlined-weight-helper-text"
             onChange={(e) => setUsername(e.target.value)}
@@ -78,7 +78,7 @@ const SignUpForm = (props) => {
           />
         </FormControl>
         <FormControl sx={{ m: 1, width: '50ch' }} variant="outlined">
-          <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+          <InputLabel htmlFor="outlined-adornment-password">Enter password</InputLabel>
           <OutlinedInput
             type={showPassword ? 'text' : 'password'}
             id="outlined-adornment-password"

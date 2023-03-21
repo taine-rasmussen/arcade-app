@@ -1,4 +1,3 @@
-import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import InputAdornment from '@mui/material/InputAdornment';
 import { Box, useTheme, Typography } from '@mui/material';
@@ -10,8 +9,6 @@ import IconButton from '@mui/material/IconButton';
 import Button from '@mui/material/Button';
 import { useState } from 'react'
 
-
-
 const SignUpForm = (props) => {
   const {
     setIsOnSignUpForm,
@@ -22,6 +19,12 @@ const SignUpForm = (props) => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
 
+  const theme = useTheme();
+  const alt = theme.palette.background.alt
+  const bgLight = theme.palette.neutral.light
+  const primaryMain = theme.palette.primary.main
+  const primaryLight = theme.palette.primary.light
+
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword)
   };
@@ -29,13 +32,6 @@ const SignUpForm = (props) => {
   const handleMouseDownPassword = (e) => {
     e.preventDefault();
   };
-
-  const theme = useTheme();
-  const bgLight = theme.palette.neutral.light
-  const primaryMain = theme.palette.primary.main
-  const primaryLight = theme.palette.primary.light
-  const alt = theme.palette.background.alt
-
 
   return (
     <Box

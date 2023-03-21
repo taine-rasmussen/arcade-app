@@ -1,7 +1,6 @@
 import { Box, useTheme, Typography } from '@mui/material'
 import Button from '@mui/material/Button';
 
-
 const SignUpPreview = (props) => {
 
   const {
@@ -11,10 +10,6 @@ const SignUpPreview = (props) => {
 
   const theme = useTheme();
   const primaryLight = theme.palette.primary.light
-  const primaryMain = theme.palette.primary.main
-  const bgLight = theme.palette.neutral.light
-
-
 
   return (
     <Box

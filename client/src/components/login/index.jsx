@@ -6,10 +6,9 @@ import { useState } from 'react';
 import LoginForm from './userLogin/LoginForm'
 import SignUp from './userSignup/SignUp'
 
-
 const Login = () => {
 
-  const [isOnSignUpForm, setIsOnSignUpForm] = useState(true);
+  const [isOnSignUpForm, setIsOnSignUpForm] = useState(false);
   const isNonMobileScreens = useMediaQuery("(min-width: 1000px)")
 
   const theme = useTheme();
@@ -38,6 +37,7 @@ const Login = () => {
               }}
             >
               <LoginForm />
+
               <Divider
                 orientation="vertical"
                 variant="middle"
@@ -45,6 +45,7 @@ const Login = () => {
               >
                 <Chip label="OR" />
               </Divider>
+
               <SignUp
                 setIsOnSignUpForm={setIsOnSignUpForm}
                 isOnSignUpForm={isOnSignUpForm}

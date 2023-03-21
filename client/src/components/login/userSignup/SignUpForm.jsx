@@ -29,7 +29,6 @@ const SignUpForm = (props) => {
     e.preventDefault();
   };
 
-
   const theme = useTheme();
   const bgLight = theme.palette.neutral.light
   const primaryMain = theme.palette.primary.main
@@ -105,19 +104,15 @@ const SignUpForm = (props) => {
           />
         </FormControl >
         <Button
-          variant="contained"
+          variant="outlined"
           sx={{
             backgroundColor: bgLight,
             fontSize: '0.9rem',
             height: '5ch',
             width: '35ch',
             color: '#fff',
-            m: 1,
-            '&:hover': {
-              color: primaryLight
-            }
+            m: 1
           }}
-          onClick={() => setIsOnSignUpForm(!isOnSignUpForm)}
         >
           Upload picture
         </Button>

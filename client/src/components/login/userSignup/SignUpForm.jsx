@@ -1,3 +1,4 @@
+import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import InputAdornment from '@mui/material/InputAdornment';
 import { Box, useTheme, Typography } from '@mui/material';
@@ -7,6 +8,8 @@ import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import IconButton from '@mui/material/IconButton';
 import Button from '@mui/material/Button';
+import Dropzone from 'react-dropzone';
+import { useFormik } from 'Formik';
 import { useState } from 'react'
 
 
@@ -103,19 +106,40 @@ const SignUpForm = (props) => {
             label="Password"
           />
         </FormControl >
-        <Button
-          variant="outlined"
-          sx={{
-            backgroundColor: bgLight,
-            fontSize: '0.9rem',
-            height: '5ch',
-            width: '35ch',
-            color: '#fff',
-            m: 1
-          }}
+        <Box
+          gridColumn="span 4"
+          border={`1px solid ${theme.palette.neutral.medium}`}
+          borderRadius="5px"
+          p="1rem"
         >
-          Upload picture
-        </Button>
+          <Dropzone
+            acceptedFiles=".jpg,.jpeg,.png"
+            multiple={false}
+            onDrop={(acceptedFiles) =>
+              setFieldValue("picture", acceptedFiles[0])
+            }
+          >
+            {({ getRootProps, getInputProps }) => (
+              <Box
+                {...getRootProps()}
+                border={`2px dashed ${theme.palette.primary.main}`}
+                p="1rem"
+                sx={{ "&:hover": { cursor: "pointer" } }}
+              >
+                <input {...getInputProps()} />
+                {false ? (
+                  <p>Add Picture Here</p>
+                ) : (
+                  <>
+                    {/* <Typography>{values.picture.name}</Typography> */}
+                    <Typography>picture name</Typography>
+                    <EditOutlinedIcon />
+                  </>
+                )}
+              </Box>
+            )}
+          </Dropzone>
+        </Box>
 
       </Box >
 

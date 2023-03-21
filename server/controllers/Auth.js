@@ -2,8 +2,6 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import User from '../Models/User.js'
 
-
-// Register User
 export const register = async (req, res) => {
   try {
     const {
@@ -28,15 +26,14 @@ export const register = async (req, res) => {
   }
 };
 
-// Login
 export const login = async (req, res) => {
   try {
     const {
-      email,
+      username,
       password
     } = req.body;
 
-    const user = await User.findOne({ email: email });
+    const user = await User.findOne({ username: username });
     if (!user) return res.status(400).json({ msg: 'User not found' })
 
     const isMatch = await bcrypt.compare(password, user.password);

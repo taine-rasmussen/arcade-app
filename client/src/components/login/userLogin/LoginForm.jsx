@@ -27,9 +27,9 @@ const LoginForm = () => {
   };
 
   const handleSubmit = () => {
-    console.log('form submitted')
     setUsername('')
     setPassword('')
+    console.log('form submitted')
   };
 
   console.log(username, password)

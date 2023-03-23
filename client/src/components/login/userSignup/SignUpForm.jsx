@@ -33,6 +33,12 @@ const SignUpForm = (props) => {
     e.preventDefault();
   };
 
+  const handleRegister = async () => {
+    const response = await fetch(
+      'http://localhost:'
+    )
+  };
+
   return (
     <Box
       width='100%'
@@ -131,6 +137,7 @@ const SignUpForm = (props) => {
         <Button
           variant="contained"
           fontSize='1.25rem'
+          onClick={handleRegister}
           sx={{
             background: primaryMain,
             borderRadius: '30px',

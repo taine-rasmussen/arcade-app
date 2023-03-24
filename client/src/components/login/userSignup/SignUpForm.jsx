@@ -36,7 +36,6 @@ const SignUpForm = (props) => {
 
   const handleRegister = async (e) => {
     e.preventDefault();
-
     axios.post('http://localhost:9000/auth/register', {
       username: username,
       password: password

@@ -8,6 +8,7 @@ import InputLabel from '@mui/material/InputLabel';
 import IconButton from '@mui/material/IconButton';
 import Button from '@mui/material/Button';
 import { useState } from 'react'
+import axios from 'axios';
 
 const SignUpForm = (props) => {
   const {
@@ -35,19 +36,17 @@ const SignUpForm = (props) => {
 
   const handleRegister = async (e) => {
     e.preventDefault();
-    const formData = { username, password }
-    const response = await fetch(
-      'http://localhost:9000/auth/register',
-      {
-        method: 'POST',
-        body: formData
-      },
-    )
-    const savedUser = await response.json();
-    console.log(savedUser)
-    // if (savedUser) {
-    //   setPageType('login');
-    // };
+
+    axios.post('http://localhost:9000/auth/register', {
+      username: username,
+      password: password
+    })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (

@@ -34,9 +34,21 @@ const SignUpForm = (props) => {
   };
 
   const handleRegister = async () => {
+
+    const formData = {username, password}
+
     const response = await fetch(
-      'http://localhost:'
+      'http://localhost:5173/auth/register',
+      {
+        method: 'POST',
+        body: formData
+      },
     )
+    const savedUser = await response.json();
+    console.log(savedUser)
+    // if (savedUser) {
+    //   setPageType('login');
+    // };
   };
 
   return (

@@ -10,6 +10,7 @@ import path from 'path';
 import authRoutes from './routes/Auth.js'
 import userRoutes from './routes/User.js'
 import User from './models/User.js';
+import { register } from './controllers/Auth/js'
 
 
 
@@ -25,6 +26,7 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
 // Routes
+app.post("/auth/register", register);
 app.use('/auth', authRoutes)
 app.use('/users', userRoutes)
 

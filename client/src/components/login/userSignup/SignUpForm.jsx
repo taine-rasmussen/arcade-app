@@ -38,7 +38,7 @@ const SignUpForm = (props) => {
     const formData = {username, password}
 
     const response = await fetch(
-      'http://localhost:5173/auth/register',
+      'http://localhost:9000/auth/register',
       {
         method: 'POST',
         body: formData

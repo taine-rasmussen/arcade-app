@@ -39,10 +39,11 @@ const SignUpForm = (props) => {
     axios.post('http://localhost:9000/auth/register', {
       username: username,
       password: password
+    }).then((response) => {
+      setPassword('')
+      setUsername('')
+      console.log(response);
     })
-      .then((response) => {
-        console.log(response);
-      })
       .catch((error) => {
         console.log(error);
       });

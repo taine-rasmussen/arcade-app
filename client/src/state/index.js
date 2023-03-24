@@ -22,17 +22,13 @@ export const authSlice = createSlice({
       state.user = null;
       state.token = null;
     },
-    setLoading: (state) => {
-      state.loading = !state.loading
-    }
   }
 });
 
 export const {
   setPost,
   setMode,
-  setLogin,
-  setLoading
+  setLogin
 } = authSlice.actions;
 
 export default authSlice.reducer;

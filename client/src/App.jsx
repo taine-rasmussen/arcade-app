@@ -15,8 +15,6 @@ const App = () => {
   const isAuth = Boolean(useSelector((state) => state.token));
   const theme = useMemo(() => createTheme(themeSettings(mode)), [mode])
 
-  console.log(isAuth)
-
   return (
     <div className="App">
       <BrowserRouter>

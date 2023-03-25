@@ -15,10 +15,11 @@ const Dashboard = () => {
         flexWrap: 'wrap',
         background: alt,
         height: '100%',
+        padding: '3rem',
       }}
     >
       <Profile />
-    </Box>
+    </Box >
   )
 }
 

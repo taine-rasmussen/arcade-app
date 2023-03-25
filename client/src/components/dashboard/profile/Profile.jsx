@@ -6,10 +6,11 @@ const Profile = () => {
   const theme = useTheme();
 
   return (
-    <WidgetWrapper theme={theme} width={35} height={50}>
+    <WidgetWrapper theme={theme} width={35}>
       <Box
         sx={{
           border: '2px solid #fff',
+          height: '60%'
         }}
       >
         Hello

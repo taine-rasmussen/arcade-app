@@ -73,58 +73,60 @@ const LoginForm = () => {
           alignItems: 'center',
         }}
       >
-        <FormControl sx={{ m: 1, width: '50ch' }} variant="outlined">
-          <InputLabel htmlFor="outlined-adornment-password">Username</InputLabel>
-          <OutlinedInput
-            aria-describedby="outlined-weight-helper-text"
-            onChange={(e) => setUsername(e.target.value)}
-            id="outlined-adornment-weight"
-            sx={{ background: bgLight, fontSize: '1.1rem' }}
-            value={username}
-            inputProps={{
-              'aria-label': 'weight',
+        <form>
+          <FormControl sx={{ m: 1, width: '50ch' }} variant="outlined">
+            <InputLabel htmlFor="outlined-adornment-password">Username</InputLabel>
+            <OutlinedInput
+              aria-describedby="outlined-weight-helper-text"
+              onChange={(e) => setUsername(e.target.value)}
+              id="outlined-adornment-weight"
+              sx={{ background: bgLight, fontSize: '1.1rem' }}
+              value={username}
+              inputProps={{
+                'aria-label': 'weight',
+              }}
+              label="Username"
+            />
+          </FormControl>
+          <FormControl sx={{ m: 1, width: '50ch' }} variant="outlined">
+            <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+            <OutlinedInput
+              type={showPassword ? 'text' : 'password'}
+              id="outlined-adornment-password"
+              sx={{ background: bgLight, fontSize: '1.1rem' }}
+              onChange={(e) => setPassword(e.target.value)}
+              value={password}
+              endAdornment={
+                <InputAdornment position="end">
+                  <IconButton
+                    aria-label="toggle password visibility"
+                    onClick={handleClickShowPassword}
+                    onMouseDown={handleMouseDownPassword}
+                    edge="end"
+                  >
+                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                  </IconButton>
+                </InputAdornment>
+              }
+              label="Password"
+            />
+          </FormControl >
+          <Button
+            variant="contained"
+            fontSize='1.25rem'
+            type='submit'
+            sx={{
+              background: primaryMain,
+              borderRadius: '30px',
+              fontSize: '0.9rem',
+              height: '5ch',
+              width: '33ch',
+              m: 1,
             }}
-            label="Username"
-          />
-        </FormControl>
-        <FormControl sx={{ m: 1, width: '50ch' }} variant="outlined">
-          <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
-          <OutlinedInput
-            type={showPassword ? 'text' : 'password'}
-            id="outlined-adornment-password"
-            sx={{ background: bgLight, fontSize: '1.1rem' }}
-            onChange={(e) => setPassword(e.target.value)}
-            value={password}
-            endAdornment={
-              <InputAdornment position="end">
-                <IconButton
-                  aria-label="toggle password visibility"
-                  onClick={handleClickShowPassword}
-                  onMouseDown={handleMouseDownPassword}
-                  edge="end"
-                >
-                  {showPassword ? <VisibilityOff /> : <Visibility />}
-                </IconButton>
-              </InputAdornment>
-            }
-            label="Password"
-          />
-        </FormControl >
-        <Button
-          variant="contained"
-          fontSize='1.25rem'
-          type='submit'
-          sx={{
-            background: primaryMain,
-            borderRadius: '30px',
-            fontSize: '0.9rem',
-            height: '5ch',
-            width: '33ch',
-            m: 1,
-          }}
-        >
-          Sign In
+          >
+            Sign In
         </Button>
+        </form>
       </Box >
     </Box >
   )

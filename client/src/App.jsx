@@ -24,7 +24,7 @@ const App = () => {
           <CssBaseline />
           <Routes>
             <Route path='/' element={<Login />} />
-            <Route path='/dashboard' element={<Dashboard />} />
+            <Route path={isAuth ? '/dashboard' : '/'} element={<Dashboard />} />
           </Routes>
         </ThemeProvider>
       </BrowserRouter>

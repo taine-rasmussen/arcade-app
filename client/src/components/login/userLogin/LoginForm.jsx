@@ -9,6 +9,7 @@ import InputLabel from '@mui/material/InputLabel';
 import IconButton from '@mui/material/IconButton';
 import Button from '@mui/material/Button';
 import { useState } from 'react';
+import axios from 'axios';
 
 
 const LoginForm = () => {
@@ -26,13 +27,19 @@ const LoginForm = () => {
     e.preventDefault();
   };
 
-  const handleSubmit = () => {
-    setUsername('')
-    setPassword('')
-    console.log('form submitted')
-  };
+  const handleSubmit = async () => {
 
-  console.log(username, password)
+    axios.post('http://localhost:9000/auth/login', {
+      username: username,
+      password: password
+    }).then((response) => {
+      setPassword('')
+      setUsername('')
+    })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   const theme = useTheme();
   const bgLight = theme.palette.neutral.light

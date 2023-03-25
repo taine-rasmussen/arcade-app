@@ -1,4 +1,7 @@
 import WidgetWrapper from '../../../wrapper/WidgetWrapper';
+import FlexBetween from '../../../wrapper/FlexBetween';
+
+
 import { Box, useTheme } from '@mui/material'
 
 
@@ -8,8 +11,13 @@ const Profile = () => {
 
   return (
     <WidgetWrapper theme={theme}>
-      <Box>
-
+      <Box
+        sx={{
+          border: '2px solid #fff',
+          width: '40%'
+        }}
+      >
+        Hello
       </Box>
 
     </WidgetWrapper>

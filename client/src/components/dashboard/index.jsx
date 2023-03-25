@@ -14,7 +14,7 @@ const Dashboard = () => {
         flexDirection: 'row',
         flexWrap: 'wrap',
         background: alt,
-        height: '100%'
+        height: '100%',
       }}
     >
       <Profile />

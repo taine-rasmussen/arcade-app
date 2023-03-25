@@ -6,8 +6,10 @@ import OutlinedInput from '@mui/material/OutlinedInput';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import IconButton from '@mui/material/IconButton';
+import { useDispatch } from 'react-redux';
 import Button from '@mui/material/Button';
 import { useState } from 'react';
+import { setLogin } from '../../../state';
 import axios from 'axios';
 
 
@@ -16,6 +18,8 @@ const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false)
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+
+  const dispatch = useDispatch();
 
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword)
@@ -31,12 +35,11 @@ const LoginForm = () => {
       username: username,
       password: password
     }).then((response) => {
+      const { token, user } = response.data
+      dispatch(setLogin({ user, token }));
+
       setPassword('')
       setUsername('')
-      console.log(response)
-
-      // set user
-      // setToken
       // nav to dashboard
     })
       .catch((error) => {

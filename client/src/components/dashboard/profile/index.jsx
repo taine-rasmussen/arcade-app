@@ -1,5 +1,7 @@
 import WidgetWrapper from '../../../wrapper/WidgetWrapper';
-import { Box, useTheme } from '@mui/material'
+import { Box, useTheme } from '@mui/material';
+
+import Header from './Header'
 
 const Profile = () => {
 
@@ -12,11 +14,14 @@ const Profile = () => {
           border: '2px solid #fff',
           borderRadius: '20px',
           padding: '1.5rem',
-          height: '60%'
+          height: '60%',
+          display: 'flex',
+          flexDirection: 'column'
+
         }}
       >
-        Hello
-        </Box>
+
+      </Box>
     </WidgetWrapper>
   )
 }

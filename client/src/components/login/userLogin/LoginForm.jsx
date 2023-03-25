@@ -1,5 +1,4 @@
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import WidgetWrapper from '../../../wrapper/WidgetWrapper'
 import InputAdornment from '@mui/material/InputAdornment';
 import { Box, useTheme, Typography } from '@mui/material'
 import Visibility from '@mui/icons-material/Visibility';
@@ -7,8 +6,11 @@ import OutlinedInput from '@mui/material/OutlinedInput';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import IconButton from '@mui/material/IconButton';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import Button from '@mui/material/Button';
 import { useState } from 'react';
+import { setLogin } from '../../../state';
 import axios from 'axios';
 
 
@@ -17,7 +19,9 @@ const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false)
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
-  const [image, setImage] = useState(null);
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword)
@@ -33,8 +37,15 @@ const LoginForm = () => {
       username: username,
       password: password
     }).then((response) => {
+      const { token, user } = response.data
+      dispatch(setLogin({ user, token }));
+
       setPassword('')
       setUsername('')
+      if (user && token) {
+        navigate('/dashboard')
+      }
+      // Handle incorrect login
     })
       .catch((error) => {
         console.log(error);

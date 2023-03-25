@@ -2,9 +2,11 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { createTheme } from '@mui/material/styles';
 import { useSelector } from 'react-redux';
-import { useMemo, useState } from 'react'
-import { themeSettings } from './theme'
-import Login from './components/login'
+import { themeSettings } from './theme';
+import { useMemo } from 'react';
+
+import Dashboard from './components/dashboard';
+import Login from './components/login';
 
 
 const App = () => {
@@ -20,6 +22,7 @@ const App = () => {
           <CssBaseline />
           <Routes>
             <Route path='/' element={<Login />} />
+            <Route path={isAuth ? '/dashboard' : '/'} element={<Dashboard />} />
           </Routes>
         </ThemeProvider>
       </BrowserRouter>

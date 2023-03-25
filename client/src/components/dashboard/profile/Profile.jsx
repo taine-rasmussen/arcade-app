@@ -3,7 +3,9 @@ import { Box, useTheme } from '@mui/material'
 
 
 const Profile = () => {
+
   const theme = useTheme();
+
   return (
     <WidgetWrapper theme={theme}>
       <Box>

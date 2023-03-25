@@ -9,6 +9,7 @@ import InputLabel from '@mui/material/InputLabel';
 import IconButton from '@mui/material/IconButton';
 import Button from '@mui/material/Button';
 import { useState } from 'react';
+import axios from 'axios';
 
 
 const LoginForm = () => {
@@ -27,6 +28,7 @@ const LoginForm = () => {
   };
 
   const handleSubmit = () => {
+
     setUsername('')
     setPassword('')
     console.log('form submitted')
@@ -111,7 +113,7 @@ const LoginForm = () => {
         <Button
           variant="contained"
           fontSize='1.25rem'
-          onClick={handleSubmit}
+          type='submit'
           sx={{
             background: primaryMain,
             borderRadius: '30px',

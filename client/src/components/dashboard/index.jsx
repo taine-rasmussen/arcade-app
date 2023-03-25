@@ -1,5 +1,5 @@
 import { Box, useTheme } from '@mui/material';
-import Profile from './profile/Profile';
+import Profile from './profile';
 
 
 const Dashboard = () => {

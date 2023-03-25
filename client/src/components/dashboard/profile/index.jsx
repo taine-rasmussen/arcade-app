@@ -10,6 +10,8 @@ const Profile = () => {
       <Box
         sx={{
           border: '2px solid #fff',
+          borderRadius: '20px',
+          padding: '1.5rem',
           height: '60%'
         }}
       >

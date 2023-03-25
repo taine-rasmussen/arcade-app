@@ -1,8 +1,25 @@
+import { Box, useTheme } from '@mui/material';
+import Profile from './profile';
+
+
 const Dashboard = () => {
+
+  const theme = useTheme();
+  const alt = theme.palette.background.alt
+
   return (
-    <div>
-      the dashboard!
-    </div>
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        background: alt,
+        height: '100%',
+        padding: '3rem',
+      }}
+    >
+      <Profile />
+    </Box >
   )
 }
 

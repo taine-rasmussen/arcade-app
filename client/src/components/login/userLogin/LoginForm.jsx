@@ -6,6 +6,7 @@ import OutlinedInput from '@mui/material/OutlinedInput';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import IconButton from '@mui/material/IconButton';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import Button from '@mui/material/Button';
 import { useState } from 'react';
@@ -20,6 +21,7 @@ const LoginForm = () => {
   const [password, setPassword] = useState('')
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword)
@@ -40,7 +42,10 @@ const LoginForm = () => {
 
       setPassword('')
       setUsername('')
-      // nav to dashboard
+      if (user && token) {
+        navigate('/dashboard')
+      }
+      // Handle incorrect login
     })
       .catch((error) => {
         console.log(error);

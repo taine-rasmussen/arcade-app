@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Navigate, Routes, Route } from 'react-router-dom';
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { createTheme } from '@mui/material/styles';
 import { useSelector } from 'react-redux';
@@ -22,7 +22,7 @@ const App = () => {
           <CssBaseline />
           <Routes>
             <Route path='/' element={<Login />} />
-            <Route path={isAuth ? '/dashboard' : '/'} element={<Dashboard />} />
+            <Route path='dashboard' element={isAuth ? <Dashboard /> : <Navigate to='/' />} />
           </Routes>
         </ThemeProvider>
       </BrowserRouter>

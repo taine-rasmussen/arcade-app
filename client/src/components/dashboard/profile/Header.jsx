@@ -12,6 +12,7 @@ const Header = () => {
     <Box
       sx={{
         width: '100%',
+        height: '10%',
         display: 'flex',
         flexWrap: 'wrap',
         flexDirection: 'row',
@@ -34,7 +35,7 @@ const Header = () => {
         <Typography
           variant="h3"
         >
-          Edit
+          EDIT
         </Typography>
         <EditIcon />
       </Box>

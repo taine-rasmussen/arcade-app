@@ -17,7 +17,6 @@ const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false)
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
-  const [image, setImage] = useState(null);
 
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword)
@@ -35,6 +34,9 @@ const LoginForm = () => {
     }).then((response) => {
       setPassword('')
       setUsername('')
+      console.log(response)
+      // set user
+      // nav to dashboard
     })
       .catch((error) => {
         console.log(error);

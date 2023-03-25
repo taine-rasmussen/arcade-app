@@ -1,8 +1,16 @@
-const Profile = () => {
-  return (
-    <div>
+import WidgetWrapper from '../../../wrapper/WidgetWrapper';
+import { Box, useTheme } from '@mui/material'
 
-    </div>
+
+const Profile = () => {
+  const theme = useTheme();
+  return (
+    <WidgetWrapper theme={theme}>
+      <Box>
+
+      </Box>
+
+    </WidgetWrapper>
   )
 }
 

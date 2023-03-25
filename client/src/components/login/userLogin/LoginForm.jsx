@@ -27,14 +27,19 @@ const LoginForm = () => {
     e.preventDefault();
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
 
-    setUsername('')
-    setPassword('')
-    console.log('form submitted')
+    axios.post('http://localhost:9000/auth/login', {
+      username: username,
+      password: password
+    }).then((response) => {
+      setPassword('')
+      setUsername('')
+    })
+      .catch((error) => {
+        console.log(error);
+      });
   };
-
-  console.log(username, password)
 
   const theme = useTheme();
   const bgLight = theme.palette.neutral.light

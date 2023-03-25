@@ -17,10 +17,9 @@ const Profile = () => {
           height: '60%',
           display: 'flex',
           flexDirection: 'column'
-
         }}
       >
-
+        <Header />
       </Box>
     </WidgetWrapper>
   )

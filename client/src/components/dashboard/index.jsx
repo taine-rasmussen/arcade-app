@@ -1,7 +1,9 @@
+import Profile from './profile/Profile'
+
 const Dashboard = () => {
   return (
     <div>
-      the dashboard!
+      <Profile />
     </div>
   )
 }

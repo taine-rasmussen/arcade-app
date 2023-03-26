@@ -9,6 +9,8 @@ const Profile = () => {
 
   const theme = useTheme();
   const light = theme.palette.primary.light
+  const main = theme.palette.primary.main
+
 
   return (
     <WidgetWrapper theme={theme} width={35}>
@@ -22,6 +24,7 @@ const Profile = () => {
           borderRadius: '40px',
           minWidth: 'max-content',
           flexDirection: 'column',
+          boxShadow: `${main} 3px -3px 7.5px`
         }}
       >
         <Header />

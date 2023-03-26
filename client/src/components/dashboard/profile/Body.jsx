@@ -1,17 +1,7 @@
 import { Box, useTheme } from '@mui/material';
 import { styled } from "@mui/system"
 
-const PillWrapper = styled(Box)(() => ({
-  height: '20%',
-  width: '100%',
-  padding: '1rem',
-  display: 'flex',
-  alignItems: 'center',
-  flexDirection: 'row',
-  justifyContent: 'center',
-  border: '2px solid red',
-}));
-
+import MenuItemWrapper from '../../../wrapper/MenuItemWrapper'
 
 const Body = () => {
   return (
@@ -49,15 +39,15 @@ const Body = () => {
           flexDirection: 'column',
         }}
       >
-        <PillWrapper>
+        <MenuItemWrapper width={100} height={20}>
           XP GOES HERE
-        </PillWrapper>
-        <PillWrapper>
+        </MenuItemWrapper>
+        <MenuItemWrapper width={100} height={20}>
           COINS GO HERE
-        </PillWrapper>
-        <PillWrapper>
+        </MenuItemWrapper>
+        <MenuItemWrapper width={100} height={20}>
           SOMETHING??
-        </PillWrapper>
+        </MenuItemWrapper>
       </Box>
     </Box>
   )

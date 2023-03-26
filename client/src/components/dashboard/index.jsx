@@ -1,7 +1,6 @@
 import { Box, useTheme } from '@mui/material';
 import Profile from './profile';
 
-
 const Dashboard = () => {
 
   const theme = useTheme();
@@ -10,12 +9,12 @@ const Dashboard = () => {
   return (
     <Box
       sx={{
-        display: 'flex',
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        background: alt,
         height: '100%',
+        display: 'flex',
         padding: '3rem',
+        background: alt,
+        flexWrap: 'wrap',
+        flexDirection: 'row',
       }}
     >
       <Profile />

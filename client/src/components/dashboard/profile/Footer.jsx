@@ -10,11 +10,10 @@ const Footer = () => {
         gap: '1rem',
         width: '100%',
         height: '50%',
-        alignItems: 'center',
-        display: 'flex',
         padding: '2rem',
+        display: 'flex',
+        alignItems: 'center',
         flexDirection: 'row',
-        border: '2px solid red',
         justifyContent: 'space-between'
       }}
     >

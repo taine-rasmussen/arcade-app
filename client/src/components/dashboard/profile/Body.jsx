@@ -14,7 +14,6 @@ const Body = () => {
         display: 'flex',
         padding: '2rem',
         flexDirection: 'row',
-        border: '2px solid red',
         justifyContent: 'space-between'
       }}
     >

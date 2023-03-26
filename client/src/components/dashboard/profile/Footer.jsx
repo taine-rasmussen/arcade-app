@@ -1,6 +1,8 @@
 import { Box, useTheme } from '@mui/material';
 import { styled } from "@mui/system"
 
+import MenuItemWrapper from '../../../wrapper/MenuItemWrapper'
+
 const Footer = () => {
   return (
     <Box
@@ -16,15 +18,15 @@ const Footer = () => {
         justifyContent: 'space-between'
       }}
     >
-      <PillWrapper>
+      <MenuItemWrapper width={100} height={95}>
         RANK
-        </PillWrapper>
-      <PillWrapper>
+        </MenuItemWrapper>
+      <MenuItemWrapper width={100} height={95}>
         SHOP
-        </PillWrapper>
-      <PillWrapper>
+        </MenuItemWrapper>
+      <MenuItemWrapper width={100} height={95}>
         SOMETHING??
-        </PillWrapper>
+        </MenuItemWrapper>
     </Box>
   )
 }

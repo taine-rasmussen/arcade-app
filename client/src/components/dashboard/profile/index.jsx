@@ -3,6 +3,7 @@ import { Box, useTheme } from '@mui/material';
 
 import Header from './Header'
 import Body from './Body'
+import Footer from './Footer'
 
 const Profile = () => {
 
@@ -23,6 +24,7 @@ const Profile = () => {
       >
         <Header />
         <Body />
+        <Footer />
       </Box>
     </WidgetWrapper>
   )

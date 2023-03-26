@@ -2,7 +2,7 @@ import { Box, useTheme } from '@mui/material';
 import { styled } from "@mui/system"
 
 const PillWrapper = styled(Box)(() => ({
-  height: '20%',
+  height: '95%',
   width: '100%',
   padding: '1rem',
   display: 'flex',
@@ -27,7 +27,15 @@ const Footer = () => {
         justifyContent: 'space-between'
       }}
     >
-
+      <PillWrapper>
+        RANK
+        </PillWrapper>
+      <PillWrapper>
+        SHOP
+        </PillWrapper>
+      <PillWrapper>
+        SOMETHING??
+        </PillWrapper>
     </Box>
   )
 }

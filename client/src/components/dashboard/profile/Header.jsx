@@ -17,7 +17,6 @@ const Header = () => {
         flexWrap: 'wrap',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        alignItems: 'center'
       }}
     >
       <Typography

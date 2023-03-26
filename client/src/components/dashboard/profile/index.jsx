@@ -20,7 +20,7 @@ const Profile = () => {
           borderRadius: '20px',
           flexDirection: 'column',
           minWidth: 'max-content',
-          border: '2px solid #fff',
+          border: '2px solid #fff'
         }}
       >
         <Header />

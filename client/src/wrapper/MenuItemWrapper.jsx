@@ -7,9 +7,12 @@ const MenuItemWrapper = styled(Box)(({ theme, width, height }) => ({
   alignItems: 'center',
   flexDirection: 'row',
   justifyContent: 'center',
-  border: '2px solid red',
+  border: `${theme.palette.primary.light} 2px solid`,
+  borderRadius: '20px',
   width: `${width}%`,
-  height: `${height}%`
+  height: `${height}%`,
+  background: theme.palette.primary.light,
+  maxWidth: 'max-content'
 }));
 
 export default MenuItemWrapper;

@@ -1,4 +1,4 @@
-import { Box, useTheme } from '@mui/material';
+import { Box, useTheme, Typography } from '@mui/material';
 import { styled } from "@mui/system"
 
 import MenuItemWrapper from '../../../wrapper/MenuItemWrapper'
@@ -12,9 +12,8 @@ const Body = () => {
         height: '50%',
         alignItems: 'center',
         display: 'flex',
-        padding: '2rem',
+        padding: '1rem',
         flexDirection: 'row',
-        border: '2px solid red',
         justifyContent: 'space-between'
       }}
     >
@@ -40,10 +39,29 @@ const Body = () => {
         }}
       >
         <MenuItemWrapper width={100} height={20}>
-          XP GOES HERE
+          <Box
+            sx={{
+              width: '100%',
+              padding: '5px',
+              display: 'flex',
+              flexDirection: 'row',
+              justifyContent: 'space-between'
+            }}
+          >
+            <Typography
+              variant="h4"
+            >
+              XP
+            </Typography>
+            <Typography
+              variant="h4"
+            >
+              34/50
+            </Typography>
+          </Box>
         </MenuItemWrapper>
         <MenuItemWrapper width={100} height={20}>
-          COINS GO HERE
+          COINS HERE
         </MenuItemWrapper>
         <MenuItemWrapper width={100} height={20}>
           SOMETHING??

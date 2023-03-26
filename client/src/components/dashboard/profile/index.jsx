@@ -8,6 +8,9 @@ import Footer from './Footer'
 const Profile = () => {
 
   const theme = useTheme();
+  const light = theme.palette.primary.light
+  const main = theme.palette.primary.main
+
 
   return (
     <WidgetWrapper theme={theme} width={35}>
@@ -17,10 +20,11 @@ const Profile = () => {
           height: '60%',
           display: 'flex',
           padding: '1.5rem',
-          borderRadius: '20px',
-          flexDirection: 'column',
+          background: light,
+          borderRadius: '40px',
           minWidth: 'max-content',
-          border: '2px solid #fff',
+          flexDirection: 'column',
+          boxShadow: `${main} 3px -3px 7.5px`
         }}
       >
         <Header />

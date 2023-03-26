@@ -19,6 +19,7 @@ const Profile = () => {
           padding: '1.5rem',
           borderRadius: '20px',
           flexDirection: 'column',
+          minWidth: 'max-content',
           border: '2px solid #fff',
         }}
       >

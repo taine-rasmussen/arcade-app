@@ -45,7 +45,8 @@ const Body = () => {
               padding: '5px',
               display: 'flex',
               flexDirection: 'row',
-              justifyContent: 'space-between'
+              border: '1.5px solid red',
+              justifyContent: 'space-between',
             }}
           >
             <Typography

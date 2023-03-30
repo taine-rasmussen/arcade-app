@@ -10,6 +10,10 @@ const Dashboard = () => {
   const theme = useTheme();
   const alt = theme.palette.background.alt
 
+
+
+  // use media query to change from row to column
+
   return (
     <Box
       sx={{

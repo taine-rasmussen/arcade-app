@@ -1,7 +1,8 @@
 import { Box, useTheme } from '@mui/material';
 
-import Profile from './profile';
+import Stats from './stats';
 import Games from './games';
+import Profile from './profile';
 import RecentlyPlayed from './recentlyPlayed';
 
 const Dashboard = () => {
@@ -12,6 +13,7 @@ const Dashboard = () => {
   return (
     <Box
       sx={{
+        gap: '1rem',
         height: '100%',
         width: '100%',
         display: 'flex',
@@ -27,7 +29,6 @@ const Dashboard = () => {
           display: 'flex',
           flexWrap: 'flex',
           flexDirection: 'row',
-          border: '2px solid red',
           justifyContent: 'space-between'
         }}
       >
@@ -40,12 +41,13 @@ const Dashboard = () => {
           height: '50%',
           display: 'flex',
           flexWrap: 'flex',
+          alignItems: 'center',
           flexDirection: 'row',
-          border: '2px solid red',
-          justifyContent: 'space-between'
+          justifyContent: 'space-between',
         }}
       >
         <RecentlyPlayed />
+        <Stats />
       </Box>
     </Box >
   )

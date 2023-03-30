@@ -1,17 +1,17 @@
 import { Box, useTheme } from '@mui/material';
 import WidgetWrapper from '../../../wrapper/WidgetWrapper'
 
-const RecentlyPlayed = () => {
+const Stats = () => {
 
   const theme = useTheme();
 
   return (
-    <WidgetWrapper theme={theme} height={80} width={55}>
+    <WidgetWrapper theme={theme} height={80} width={35}>
       <Box>
-        Recently played
+        STATS
       </Box>
     </WidgetWrapper>
   )
 }
 
-export default RecentlyPlayed
+export default Stats

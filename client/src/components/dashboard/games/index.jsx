@@ -7,11 +7,11 @@ const Games = () => {
   const theme = useTheme();
 
   return (
-    <WidgetWrapper theme={theme} height={40} width={35}>
+    <WidgetWrapper theme={theme} height={100} width={35} >
       <Box>
         GAMES GO HERE
       </Box>
-    </WidgetWrapper>
+    </WidgetWrapper >
   )
 }
 

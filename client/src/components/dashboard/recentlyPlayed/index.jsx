@@ -6,7 +6,7 @@ const RecentlyPlayed = () => {
   const theme = useTheme();
 
   return (
-    <WidgetWrapper theme={theme} height={40} width={75}>
+    <WidgetWrapper theme={theme} height={80} width={75}>
       <Box>
         Recently played
       </Box>

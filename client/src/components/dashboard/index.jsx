@@ -18,6 +18,7 @@ const Dashboard = () => {
         background: alt,
         flexWrap: 'wrap',
         flexDirection: 'row',
+        justifyContent: 'space-between'
       }}
     >
       <Profile />

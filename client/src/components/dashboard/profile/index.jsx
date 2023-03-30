@@ -10,7 +10,7 @@ const Profile = () => {
   const theme = useTheme();
 
   return (
-    <WidgetWrapper theme={theme} width={35}>
+    <WidgetWrapper theme={theme} height={40} width={35}>
       <Box
         sx={{
           gap: '1rem',

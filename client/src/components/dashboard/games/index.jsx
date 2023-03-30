@@ -8,12 +8,8 @@ const Games = () => {
 
   return (
     <WidgetWrapper theme={theme} height={40} width={35}>
-      <Box
-        sx={{
-
-        }}
-      >
-        hello
+      <Box>
+        GAMES GO HERE
       </Box>
     </WidgetWrapper>
   )

@@ -19,12 +19,8 @@ const Profile = () => {
           gap: '1rem',
           height: '60%',
           display: 'flex',
-          padding: '1.5rem',
-          background: light,
-          borderRadius: '40px',
           minWidth: 'max-content',
           flexDirection: 'column',
-          boxShadow: `${main} 3px -3px 7.5px`
         }}
       >
         <Header />

@@ -10,7 +10,6 @@ const WidgetWrapper = styled(Box)(({ theme, width, height }) => ({
   borderRadius: '0.75rem',
   padding: '1.5rem 1.5rem 0.75rem 1.5rem',
   background: theme.palette.primary.light,
-  backgroundColor: theme.palette.background.alt,
   boxShadow: `${theme.palette.primary.main} 3px -3px 7.5px`,
 }));
 

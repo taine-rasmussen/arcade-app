@@ -8,9 +8,6 @@ import Footer from './Footer'
 const Profile = () => {
 
   const theme = useTheme();
-  const light = theme.palette.primary.light
-  const main = theme.palette.primary.main
-
 
   return (
     <WidgetWrapper theme={theme} width={35}>

@@ -1,5 +1,7 @@
 import { Box, useTheme } from '@mui/material';
+
 import Profile from './profile';
+import Games from './games';
 
 const Dashboard = () => {
 
@@ -10,14 +12,17 @@ const Dashboard = () => {
     <Box
       sx={{
         height: '100%',
+        width: '100%',
         display: 'flex',
         padding: '3rem',
         background: alt,
         flexWrap: 'wrap',
         flexDirection: 'row',
+        justifyContent: 'space-between'
       }}
     >
       <Profile />
+      <Games />
     </Box >
   )
 }

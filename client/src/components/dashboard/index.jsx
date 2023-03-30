@@ -34,6 +34,19 @@ const Dashboard = () => {
         <Profile />
         <Games />
       </Box>
+
+      <Box
+        sx={{
+          height: '50%',
+          display: 'flex',
+          flexWrap: 'flex',
+          flexDirection: 'row',
+          border: '2px solid red',
+          justifyContent: 'space-between'
+        }}
+      >
+        <RecentlyPlayed />
+      </Box>
     </Box >
   )
 }

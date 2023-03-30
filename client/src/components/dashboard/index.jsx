@@ -16,7 +16,7 @@ const Dashboard = () => {
         gap: '1rem',
         height: '100%',
         width: '100%',
-        display: 'flex',
+        flexWrap: 'wrap',
         padding: '3rem',
         background: alt,
         flexDirection: 'column',
@@ -27,7 +27,6 @@ const Dashboard = () => {
         sx={{
           height: '50%',
           display: 'flex',
-          flexWrap: 'flex',
           flexDirection: 'row',
           justifyContent: 'space-between'
         }}
@@ -41,8 +40,8 @@ const Dashboard = () => {
           height: '50%',
           display: 'flex',
           flexWrap: 'flex',
-          alignItems: 'center',
           flexDirection: 'row',
+          alignItems: 'center',
           justifyContent: 'space-between',
         }}
       >

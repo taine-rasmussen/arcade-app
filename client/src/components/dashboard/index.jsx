@@ -32,8 +32,8 @@ const Dashboard = () => {
         sx={{
           height: '50%',
           display: 'flex',
+          justifyContent: 'space-between',
           flexDirection: !isNonMobileScreens ? 'column' : 'row',
-          justifyContent: 'space-between'
         }}
       >
         <Profile />
@@ -45,9 +45,9 @@ const Dashboard = () => {
           height: '50%',
           display: 'flex',
           flexWrap: 'flex',
-          flexDirection: 'row',
           alignItems: 'center',
           justifyContent: 'space-between',
+          flexDirection: !isNonMobileScreens ? 'column' : 'row',
         }}
       >
         <RecentlyPlayed />

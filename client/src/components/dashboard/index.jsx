@@ -12,9 +12,6 @@ const Dashboard = () => {
 
   const isNonMobileScreens = useMediaQuery('(min-width:1000px)');
 
-  console.log(isNonMobileScreens)
-
-
   return (
     <Box
       sx={{

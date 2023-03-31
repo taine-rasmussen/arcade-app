@@ -15,5 +15,3 @@ const WidgetWrapper = styled(Box)(({ theme, width, height }) => ({
 
 export default WidgetWrapper;
 
-// background: theme.palette.primary.light,
-//   boxShadow: `${theme.palette.primary.main} 3px -3px 7.5px`,

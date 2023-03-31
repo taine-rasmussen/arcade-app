@@ -14,7 +14,7 @@ const Profile = () => {
       <Box
         sx={{
           gap: '1rem',
-          height: '60%',
+          height: '100%',
           display: 'flex',
           minWidth: 'max-content',
           flexDirection: 'column',

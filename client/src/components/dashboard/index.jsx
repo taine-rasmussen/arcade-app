@@ -8,7 +8,7 @@ import RecentlyPlayed from './recentlyPlayed';
 const Dashboard = () => {
 
   const theme = useTheme();
-  const alt = theme.palette.background.alt
+  const main = theme.palette.background.main
 
   const isNonMobileScreens = useMediaQuery('(min-width:1000px)');
 
@@ -23,7 +23,7 @@ const Dashboard = () => {
         width: '100%',
         flexWrap: 'wrap',
         padding: '3rem',
-        background: alt,
+        background: main,
         flexDirection: 'column',
         justifyContent: 'space-between'
       }}

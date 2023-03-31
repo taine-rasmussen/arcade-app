@@ -10,7 +10,7 @@ const Profile = () => {
   const theme = useTheme();
 
   return (
-    <WidgetWrapper theme={theme} height={100} width={35}>
+    <WidgetWrapper theme={theme} height={100} width={35} sx={{ transition: 'ease-out all 0.35s' }}>
       <Box
         sx={{
           gap: '1rem',

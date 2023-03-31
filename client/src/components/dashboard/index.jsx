@@ -1,4 +1,4 @@
-import { Box, useTheme } from '@mui/material';
+import { Box, useTheme, useMediaQuery } from '@mui/material';
 
 import Stats from './stats';
 import Games from './games';
@@ -10,9 +10,10 @@ const Dashboard = () => {
   const theme = useTheme();
   const alt = theme.palette.background.alt
 
+  const isNonMobileScreens = useMediaQuery('(min-width:1000px)');
 
+  console.log(isNonMobileScreens)
 
-  // use media query to change from row to column
 
   return (
     <Box
@@ -31,8 +32,8 @@ const Dashboard = () => {
         sx={{
           height: '50%',
           display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'space-between'
+          justifyContent: 'space-between',
+          flexDirection: !isNonMobileScreens ? 'column' : 'row',
         }}
       >
         <Profile />
@@ -44,9 +45,9 @@ const Dashboard = () => {
           height: '50%',
           display: 'flex',
           flexWrap: 'flex',
-          flexDirection: 'row',
           alignItems: 'center',
           justifyContent: 'space-between',
+          flexDirection: !isNonMobileScreens ? 'column' : 'row',
         }}
       >
         <RecentlyPlayed />

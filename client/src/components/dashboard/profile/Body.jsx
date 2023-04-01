@@ -25,7 +25,6 @@ const Body = () => {
           borderRadius: '50%',
           alignItems: 'center',
           justifyContent: 'center',
-          border: '2px solid red',
         }}
       >
         IMAGE

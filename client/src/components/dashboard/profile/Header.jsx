@@ -33,7 +33,7 @@ const Header = () => {
         }}
       >
         <Typography
-          variant="h3"
+          variant="h2"
         >
           EDIT
         </Typography>

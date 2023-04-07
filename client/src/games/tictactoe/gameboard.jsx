@@ -48,6 +48,10 @@ const Gameboard = () => {
 
   const [game, setGame] = useState(INITGAME)
 
+  const handleCellClick = (cell) => {
+    console.log(cell)
+  }
+
   return (
     <WidgetWrapper
       width={45}
@@ -72,6 +76,7 @@ const Gameboard = () => {
               justifyContent: 'center',
               border: '1px solid white',
             }}
+            onClick={() => { handleCellClick(cell) }}
           >
             {cell.value}
           </Box>

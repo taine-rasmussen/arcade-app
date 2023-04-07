@@ -10,9 +10,9 @@ const Gameboard = () => {
 
   return (
     <WidgetWrapper
-      theme={theme}
       width={45}
       height={75}
+      theme={theme}
     >
       TIC TAC TOE
     </WidgetWrapper>

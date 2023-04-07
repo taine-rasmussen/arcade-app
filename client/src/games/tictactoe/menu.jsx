@@ -9,7 +9,11 @@ const Menu = () => {
 
 
   return (
-    <WidgetWrapper theme={theme}>
+    <WidgetWrapper
+      width={15}
+      height={75}
+      theme={theme}
+    >
       menu
     </WidgetWrapper>
   )

@@ -23,6 +23,9 @@ const TicTacToe = () => {
         justifyContent: 'center',
       }}
     >
+      <Box onClick={() => { navigate('/dashboard') }}>
+        Return
+      </Box>
       <Gameboard />
     </Box>
   )

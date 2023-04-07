@@ -9,8 +9,7 @@ const WidgetWrapper = styled(Box)(({ theme, width, height }) => ({
   minWidth: 'max-content',
   borderRadius: '0.75rem',
   padding: '1.5rem 1.5rem 0.75rem 1.5rem',
-  background: theme.palette.background.alt,
-  '&:hover': { boxShadow: `${theme.palette.primary.dark} 3px -3px 7.5px` },
+  background: theme.palette.background.alt
 }));
 
 export default WidgetWrapper;

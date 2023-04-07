@@ -2,7 +2,7 @@ import { Box, useTheme, useMediaQuery } from '@mui/material';
 import WidgetWrapper from '../../wrapper/WidgetWrapper';
 
 
-const Gameboard = () => {
+const Menu = () => {
 
   const theme = useTheme();
   const isNonMobileScreens = useMediaQuery('(min-width:1000px)');
@@ -10,13 +10,13 @@ const Gameboard = () => {
 
   return (
     <WidgetWrapper
-      width={45}
+      width={15}
       height={75}
       theme={theme}
     >
-      TIC TAC TOE
+      menu
     </WidgetWrapper>
   )
 }
 
-export default Gameboard
+export default Menu

@@ -1,7 +1,6 @@
 import Gameboard from './gameboard'
 
-
-const Tictactoe = () => {
+const TicTacToe = () => {
   return (
     <div>
       <Gameboard />
@@ -9,4 +8,4 @@ const Tictactoe = () => {
   )
 }
 
-export default Tictactoe
+export default TicTacToe

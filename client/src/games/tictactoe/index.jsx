@@ -2,6 +2,7 @@ import { Box, useTheme, useMediaQuery } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
 import Gameboard from './gameboard'
+import Menu from './menu';
 
 const TicTacToe = () => {
 
@@ -20,6 +21,7 @@ const TicTacToe = () => {
         flexWrap: 'wrap',
         background: main,
         alignItems: 'center',
+        flexDirection: 'row',
         justifyContent: 'center',
       }}
     >
@@ -27,6 +29,7 @@ const TicTacToe = () => {
         Return
       </Box>
       <Gameboard />
+      <Menu />
     </Box>
   )
 }

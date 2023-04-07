@@ -1,10 +1,11 @@
 import { Box, useTheme, useMediaQuery } from '@mui/material';
-
+import { useNavigate } from 'react-router-dom';
 
 import Gameboard from './gameboard'
 
 const TicTacToe = () => {
 
+  const navigate = useNavigate();
   const theme = useTheme();
   const main = theme.palette.background.main
 

@@ -21,7 +21,7 @@ const INITGAME = [
   },
   {
     id: 4,
-    value: '',
+    value: 'test',
   },
   {
     id: 5,
@@ -56,10 +56,26 @@ const Gameboard = () => {
     >
       <Box
         sx={{
+          width: '100%',
           height: '100%',
-          width: '100%'
+          display: 'grid',
+          gridTemplateRows: '1fr 1fr 1fr',
+          gridTemplateColumns: '1fr 1fr 1fr',
         }}
       >
+        {game.map((cell, i) => (
+          <Box
+            key={cell.id}
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              border: '1px solid white',
+            }}
+          >
+            {cell.value}
+          </Box>
+        ))}
 
       </Box>
     </WidgetWrapper>

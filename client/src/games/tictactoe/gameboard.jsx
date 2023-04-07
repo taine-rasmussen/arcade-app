@@ -51,6 +51,8 @@ const Gameboard = () => {
 
   const handleCellClick = (cell) => {
     if (!playerTurn) return;
+
+    setGame([...game], game[cell.id].value = 'X')
     console.log(cell)
   }
 

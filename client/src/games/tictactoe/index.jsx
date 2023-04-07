@@ -4,6 +4,12 @@ import { Box, useTheme, useMediaQuery } from '@mui/material';
 import Gameboard from './gameboard'
 
 const TicTacToe = () => {
+
+  const theme = useTheme();
+  const main = theme.palette.background.main
+
+  const isNonMobileScreens = useMediaQuery('(min-width:1000px)');
+
   return (
     <Box
       sx={{

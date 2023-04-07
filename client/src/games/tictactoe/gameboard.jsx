@@ -47,12 +47,13 @@ const Gameboard = () => {
   const isNonMobileScreens = useMediaQuery('(min-width:1000px)');
 
   const [game, setGame] = useState(INITGAME)
-  const [playerTurn, setPlayerTurn] = useState(true)
+  const [playerMoves, setPlayerMoves] = useState({ count: 0, turn: true })
 
   const handleCellClick = (cell) => {
     if (!playerTurn) return;
 
     setGame([...game], game[cell.id].value = 'X')
+    setPlayerTurn
     console.log(cell)
   }
 

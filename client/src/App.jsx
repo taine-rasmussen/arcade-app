@@ -8,6 +8,8 @@ import { useMemo } from 'react';
 import Dashboard from './components/dashboard';
 import Login from './components/login';
 
+import TicTacToe from './games/tictactoe';
+
 
 const App = () => {
 
@@ -23,6 +25,7 @@ const App = () => {
           <Routes>
             <Route path='/' element={<Login />} />
             <Route path='dashboard' element={isAuth ? <Dashboard /> : <Navigate to='/' />} />
+            <Route path='tictactoe' element={isAuth ? <TicTacToe /> : <Navigate to='/' />} />
           </Routes>
         </ThemeProvider>
       </BrowserRouter>

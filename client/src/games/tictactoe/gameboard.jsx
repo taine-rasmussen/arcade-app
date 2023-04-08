@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect } from 'react';
 import WidgetWrapper from '../../wrapper/WidgetWrapper';
 import { Box, useTheme, useMediaQuery } from '@mui/material';
 
@@ -22,6 +22,12 @@ const Gameboard = (props) => {
       setGame([...game], game[id].value = 'O')
     }
   }
+
+  useEffect(
+    () => {
+      setCurrentGame({ ...currentGame }, currentGame.currentTurn = !currentGame.currentTurn)
+    }, [handleTwoPlayerMove]
+  );
 
   return (
     <WidgetWrapper

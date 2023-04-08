@@ -7,8 +7,11 @@ const Gameboard = (props) => {
   const {
     game,
     setGame,
-    currentGame,
-    setCurrentGame
+    setCurrentGame,
+    currentGame: {
+      count,
+      currentTurn
+    }
   } = props
 
   const theme = useTheme();
@@ -19,7 +22,9 @@ const Gameboard = (props) => {
   }
 
   const handleTwoPlayerMove = ({ value, id }) => {
-    console.log(value, id)
+    console.log(value, id, count, currentTurn)
+
+
   }
 
   return (

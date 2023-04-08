@@ -15,11 +15,13 @@ const Gameboard = (props) => {
   const isNonMobileScreens = useMediaQuery('(min-width:1000px)');
 
   const handleCellClick = (cell) => {
+    if (cell.value != '') return;
     console.log(currentGame)
     handleTwoPlayerMove(cell)
+    setCurrentGame({ ...currentGame }, currentGame.count = currentGame.count + 1)
   }
 
-  const handleTwoPlayerMove = ({ value, id }) => {
+  const handleTwoPlayerMove = ({ id }) => {
     if (currentGame.currentTurn) {
       setGame([...game], game[id].value = 'X')
       setCurrentGame({ ...currentGame }, currentGame.currentTurn = false)

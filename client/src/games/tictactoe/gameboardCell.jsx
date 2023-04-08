@@ -13,7 +13,6 @@ const GameboardCell = (props) => {
     playerTurn,
     currentGame,
     setPlayerTurn,
-    setCurrentGame,
   } = props;
 
   const handleTwoPlayerMove = (value, id) => {

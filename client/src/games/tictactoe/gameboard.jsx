@@ -41,7 +41,6 @@ const Gameboard = (props) => {
             playerTurn={playerTurn}
             currentGame={currentGame}
             setPlayerTurn={setPlayerTurn}
-            setCurrentGame={setCurrentGame}
           />
         ))}
 

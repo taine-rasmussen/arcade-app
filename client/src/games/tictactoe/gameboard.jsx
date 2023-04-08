@@ -15,7 +15,11 @@ const Gameboard = (props) => {
   const isNonMobileScreens = useMediaQuery('(min-width:1000px)');
 
   const handleCellClick = (cell) => {
-    console.log(cell)
+    handleTwoPlayerMove(cell)
+  }
+
+  const handleTwoPlayerMove = ({ value, id }) => {
+    console.log(value, id)
   }
 
   return (

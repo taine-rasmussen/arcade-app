@@ -17,10 +17,13 @@ const Gameboard = (props) => {
   const handleCellClick = (cell) => {
     if (cell.value != '' || currentGame.gameOver) return;
 
-
+    if (currentGame.singlePlayerMode) {
+      console.log('single player mode!')
+    } else {
+      handleTwoPlayerMove(cell)
+    }
 
     console.log(currentGame)
-    handleTwoPlayerMove(cell)
   }
 
   const handleTwoPlayerMove = ({ id }) => {

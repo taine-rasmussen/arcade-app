@@ -1,6 +1,8 @@
-import { useEffect, useState } from 'react';
-import WidgetWrapper from '../../wrapper/WidgetWrapper';
 import { Box, useTheme, useMediaQuery } from '@mui/material';
+import WidgetWrapper from '../../wrapper/WidgetWrapper';
+import { useState } from 'react';
+
+import GameboardCell from './gameboardCell'
 
 const Gameboard = (props) => {
 
@@ -15,18 +17,6 @@ const Gameboard = (props) => {
 
   const theme = useTheme();
   const isNonMobileScreens = useMediaQuery('(min-width:1000px)');
-
-  const handleTwoPlayerMove = ({ value, id }) => {
-    console.log(currentGame)
-
-    if (value != '' || currentGame.gameOver) return;
-    if (playerTurn) {
-      setGame([...game], game[id].value = 'X')
-    } else {
-      setGame([...game], game[id].value = 'O')
-    }
-    setPlayerTurn(!playerTurn)
-  };
 
   return (
     <WidgetWrapper
@@ -44,18 +34,15 @@ const Gameboard = (props) => {
         }}
       >
         {game.map((cell, i) => (
-          <Box
-            key={cell.id}
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              border: '1px solid white',
-            }}
-            onClick={() => { currentGame.singlePlayerMode ? console.log('single') : handleTwoPlayerMove(cell) }}
-          >
-            {cell.value}
-          </Box>
+          <GameboardCell
+            key={i}
+            cell={cell}
+            game={game}
+            setGame={setGame}
+            playerTurn={playerTurn}
+            currentGame={currentGame}
+            setPlayerTurn={setPlayerTurn}
+          />
         ))}
 
       </Box>

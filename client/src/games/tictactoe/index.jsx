@@ -24,7 +24,7 @@ const INITGAME = [
   },
   {
     id: 4,
-    value: 'test',
+    value: '',
   },
   {
     id: 5,
@@ -47,7 +47,7 @@ const INITGAME = [
 const TicTacToe = () => {
 
   const [game, setGame] = useState(INITGAME)
-  const [currentGame, setCurrentGame] = useState({ count: 0, currentTurn: true })
+  const [currentGame, setCurrentGame] = useState({ singlePlayerMode: false, currentTurn: true, gameOver: false })
 
   const navigate = useNavigate();
   const theme = useTheme();

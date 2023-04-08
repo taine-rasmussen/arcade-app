@@ -9,29 +9,21 @@ const Gameboard = (props) => {
     setGame,
     currentGame,
     setCurrentGame,
-    currentGame: {
-      count,
-      currentTurn
-    }
   } = props
 
   const theme = useTheme();
   const isNonMobileScreens = useMediaQuery('(min-width:1000px)');
 
-  const handleCellClick = (cell) => {
-    handleTwoPlayerMove(cell)
-  }
-
   const handleTwoPlayerMove = ({ value, id }) => {
-    console.log(value, id, count, currentTurn)
-    if (currentTurn) {
+    if (value != '' || currentGame.gameOver) return;
+
+    if (currentGame.currentTurn) {
       setGame([...game], game[id].value = 'X')
       setCurrentGame({ ...currentGame }, currentGame.currentTurn = false)
     } else {
       setGame([...game], game[id].value = 'O')
       setCurrentGame({ ...currentGame }, currentGame.currentTurn = true)
     }
-    setCurrentGame({ ...currentGame }, currentGame.count = count + 1)
   }
 
   return (
@@ -58,7 +50,7 @@ const Gameboard = (props) => {
               justifyContent: 'center',
               border: '1px solid white',
             }}
-            onClick={() => { handleCellClick(cell) }}
+            onClick={() => { currentGame.singlePlayerMode ? console.log('single') : handleTwoPlayerMove(cell) }}
           >
             {cell.value}
           </Box>

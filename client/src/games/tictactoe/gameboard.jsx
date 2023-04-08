@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import WidgetWrapper from '../../wrapper/WidgetWrapper';
 import { Box, useTheme, useMediaQuery } from '@mui/material';
 
@@ -11,20 +11,22 @@ const Gameboard = (props) => {
     setCurrentGame,
   } = props
 
+  const [playerTurn, setPlayerTurn] = useState(true)
+
   const theme = useTheme();
   const isNonMobileScreens = useMediaQuery('(min-width:1000px)');
 
   const handleTwoPlayerMove = ({ value, id }) => {
-    if (value != '' || currentGame.gameOver) return;
+    console.log(currentGame)
 
-    if (currentGame.currentTurn) {
+    if (value != '' || currentGame.gameOver) return;
+    if (playerTurn) {
       setGame([...game], game[id].value = 'X')
-      setCurrentGame({ ...currentGame }, currentGame.currentTurn = false)
     } else {
       setGame([...game], game[id].value = 'O')
-      setCurrentGame({ ...currentGame }, currentGame.currentTurn = true)
     }
-  }
+    setPlayerTurn(!playerTurn)
+  };
 
   return (
     <WidgetWrapper

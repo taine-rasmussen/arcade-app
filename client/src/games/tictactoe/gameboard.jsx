@@ -8,14 +8,30 @@ const Gameboard = (props) => {
     game,
     setGame,
     currentGame,
-    setCurrentGame
+    setCurrentGame,
+    currentGame: {
+      count,
+      currentTurn
+    }
   } = props
 
   const theme = useTheme();
   const isNonMobileScreens = useMediaQuery('(min-width:1000px)');
 
   const handleCellClick = (cell) => {
-    console.log(cell)
+    handleTwoPlayerMove(cell)
+  }
+
+  const handleTwoPlayerMove = ({ value, id }) => {
+    console.log(value, id, count, currentTurn)
+    if (currentTurn) {
+      setGame([...game], game[id].value = 'X')
+      setCurrentGame({ ...currentGame }, currentGame.currentTurn = false)
+    } else {
+      setGame([...game], game[id].value = 'O')
+      setCurrentGame({ ...currentGame }, currentGame.currentTurn = true)
+    }
+    setCurrentGame({ ...currentGame }, currentGame.count = count + 1)
   }
 
   return (

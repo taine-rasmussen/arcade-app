@@ -7,6 +7,7 @@ const Gameboard = (props) => {
   const {
     game,
     setGame,
+    currentGame,
     setCurrentGame,
     currentGame: {
       count,
@@ -23,8 +24,14 @@ const Gameboard = (props) => {
 
   const handleTwoPlayerMove = ({ value, id }) => {
     console.log(value, id, count, currentTurn)
-
-
+    if (currentTurn) {
+      setGame([...game], game[id].value = 'X')
+      setCurrentGame({ ...currentGame }, currentGame.currentTurn = false)
+    } else {
+      setGame([...game], game[id].value = 'O')
+      setCurrentGame({ ...currentGame }, currentGame.currentTurn = true)
+    }
+    setCurrentGame({ ...currentGame }, currentGame.count = count + 1)
   }
 
   return (

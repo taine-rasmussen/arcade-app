@@ -14,19 +14,9 @@ const Gameboard = (props) => {
   const theme = useTheme();
   const isNonMobileScreens = useMediaQuery('(min-width:1000px)');
 
-  const handleCellClick = (cell) => {
-    if (cell.value != '' || currentGame.gameOver) return;
+  const handleTwoPlayerMove = ({ value, id }) => {
+    if (value != '' || currentGame.gameOver) return;
 
-    if (currentGame.singlePlayerMode) {
-      console.log('single player mode!')
-    } else {
-      handleTwoPlayerMove(cell)
-    }
-
-    console.log(currentGame)
-  }
-
-  const handleTwoPlayerMove = ({ id }) => {
     if (currentGame.currentTurn) {
       setGame([...game], game[id].value = 'X')
       setCurrentGame({ ...currentGame }, currentGame.currentTurn = false)
@@ -60,7 +50,7 @@ const Gameboard = (props) => {
               justifyContent: 'center',
               border: '1px solid white',
             }}
-            onClick={() => { handleCellClick(cell) }}
+            onClick={() => { currentGame.singlePlayerMode ? console.log('single') : handleTwoPlayerMove(cell) }}
           >
             {cell.value}
           </Box>

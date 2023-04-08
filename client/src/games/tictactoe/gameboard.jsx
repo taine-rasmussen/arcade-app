@@ -33,8 +33,9 @@ const Gameboard = (props) => {
           gridTemplateColumns: '1fr 1fr 1fr',
         }}
       >
-        {game.map((cell) => (
+        {game.map((cell, i) => (
           <GameboardCell
+            key={i}
             cell={cell}
             game={game}
             setGame={setGame}

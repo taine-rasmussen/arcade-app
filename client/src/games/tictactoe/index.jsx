@@ -24,7 +24,7 @@ const INITGAME = [
   },
   {
     id: 4,
-    value: 'test',
+    value: '',
   },
   {
     id: 5,

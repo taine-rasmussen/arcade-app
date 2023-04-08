@@ -16,13 +16,10 @@ const Gameboard = (props) => {
 
   const handleTwoPlayerMove = ({ value, id }) => {
     if (value != '' || currentGame.gameOver) return;
-
     if (currentGame.currentTurn) {
       setGame([...game], game[id].value = 'X')
-      setCurrentGame({ ...currentGame }, currentGame.currentTurn = false)
     } else {
       setGame([...game], game[id].value = 'O')
-      setCurrentGame({ ...currentGame }, currentGame.currentTurn = true)
     }
   }
 

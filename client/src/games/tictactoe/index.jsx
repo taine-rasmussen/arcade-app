@@ -1,10 +1,53 @@
-import { Box, useTheme, useMediaQuery } from '@mui/material';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Box, useTheme, useMediaQuery } from '@mui/material';
 
 import Gameboard from './gameboard'
 import Menu from './menu';
 
+const INITGAME = [
+  {
+    id: 0,
+    value: '',
+  },
+  {
+    id: 1,
+    value: '',
+  },
+  {
+    id: 2,
+    value: '',
+  },
+  {
+    id: 3,
+    value: '',
+  },
+  {
+    id: 4,
+    value: 'test',
+  },
+  {
+    id: 5,
+    value: '',
+  },
+  {
+    id: 6,
+    value: '',
+  },
+  {
+    id: 7,
+    value: '',
+  },
+  {
+    id: 8,
+    value: '',
+  },
+]
+
 const TicTacToe = () => {
+
+  const [game, setGame] = useState(INITGAME)
+  const [currentGame, setCurrentGame] = useState({ count: 0, currentTurn: true })
 
   const navigate = useNavigate();
   const theme = useTheme();
@@ -32,7 +75,12 @@ const TicTacToe = () => {
         }}
       >
         <Menu />
-        <Gameboard />
+        <Gameboard
+          game={game}
+          setGame={setGame}
+          currentGame={currentGame}
+          setCurrentGame={setCurrentGame}
+        />
       </Box>
     </>
   )

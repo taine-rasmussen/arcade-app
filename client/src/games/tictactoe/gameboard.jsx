@@ -18,7 +18,6 @@ const Gameboard = (props) => {
     if (cell.value != '') return;
     console.log(currentGame)
     handleTwoPlayerMove(cell)
-    setCurrentGame({ ...currentGame }, currentGame.count = currentGame.count + 1)
   }
 
   const handleTwoPlayerMove = ({ id }) => {

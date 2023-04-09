@@ -10,15 +10,16 @@ const GameboardCell = (props) => {
     game,
     setGame,
     playerTurn,
-    currentGame,
+    isGameOver,
     setPlayerTurn,
+    isSinglePlayerMode,
   } = props;
 
   const theme = useTheme();
   const alt = theme.palette.background.alt
 
   const handleTwoPlayerMove = (value, id) => {
-    if (value != '' || currentGame.gameOver) return;
+    if (value != '' || isGameOver) return;
     if (playerTurn) {
       setGame([...game], game[id].value = 'X')
     } else {
@@ -37,7 +38,7 @@ const GameboardCell = (props) => {
         backgroundColor: alt,
         justifyContent: 'center',
       }}
-      onClick={() => { currentGame.singlePlayerMode ? console.log('single') : handleTwoPlayerMove(value, id) }}
+      onClick={() => { isSinglePlayerMode ? console.log('single') : handleTwoPlayerMove(value, id) }}
     >
       <Typography
         variant="h1"

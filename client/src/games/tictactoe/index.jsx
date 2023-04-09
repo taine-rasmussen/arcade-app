@@ -47,12 +47,12 @@ const INITGAME = [
 const TicTacToe = () => {
 
   const [game, setGame] = useState(INITGAME)
-  const [currentGame, setCurrentGame] = useState({ singlePlayerMode: false, gameOver: false })
+  const [isGameOver, setIsGameOver] = useState(false)
+  const [isSinglePlayerMode, setIsSinglePlayerMode] = useState(false);
 
-  const navigate = useNavigate();
   const theme = useTheme();
+  const navigate = useNavigate();
   const main = theme.palette.background.main
-
   const isNonMobileScreens = useMediaQuery('(min-width:1000px)');
 
   return (
@@ -74,12 +74,16 @@ const TicTacToe = () => {
           justifyContent: 'center',
         }}
       >
-        <Menu />
+        <Menu
+          isSinglePlayerMode={isSinglePlayerMode}
+          setIsSinglePlayerMode={setIsSinglePlayerMode}
+        />
         <Gameboard
           game={game}
           setGame={setGame}
-          currentGame={currentGame}
-          setCurrentGame={setCurrentGame}
+          isGameOver={isGameOver}
+          setIsGameOver={setIsGameOver}
+          isSinglePlayerMode={isSinglePlayerMode}
         />
       </Box>
     </>

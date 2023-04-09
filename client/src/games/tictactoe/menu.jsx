@@ -10,6 +10,7 @@ const Menu = (props) => {
   const {
     players,
     setPlayers,
+    playerTurn,
     isSinglePlayerMode,
     setIsSinglePlayerMode,
   } = props;
@@ -78,6 +79,7 @@ const Menu = (props) => {
             {players.map((player) => {
               return (
                 <OutlinedInput
+                  key={player.name}
                   placeholder={player.name}
                 />
               )
@@ -85,6 +87,31 @@ const Menu = (props) => {
           </Box>
         </Box>
         <Divider />
+        <Box
+          sx={{
+            height: '15%',
+            display: 'flex',
+            alignItems: 'center',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+          }}
+        >
+          <Typography variant="h2">
+            Info
+          </Typography>
+          <Box
+            sx={{
+              height: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+            }}
+          >
+            <Typography variant="h3">
+              {`turn? -- ${playerTurn ? players[0].name : players[1].name}`}
+            </Typography>
+
+          </Box>
+        </Box>
       </Box>
     </WidgetWrapper >
   )

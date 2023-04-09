@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { Box, useTheme, useMediaQuery } from '@mui/material';
 
@@ -46,11 +47,13 @@ const INITGAME = [
 
 const TicTacToe = () => {
 
+  const loggedInUsername = useSelector((state) => state.user.username)
+
   const [game, setGame] = useState(INITGAME)
-  const [playerTurn, setPlayerTurn] = useState(0)
+  const [playerTurn, setPlayerTurn] = useState(1)
   const [isGameOver, setIsGameOver] = useState(false)
   const [isSinglePlayerMode, setIsSinglePlayerMode] = useState(false);
-  const [players, setPlayers] = useState([{ name: 'playerOne' }, { name: 'playerTwo' }])
+  const [players, setPlayers] = useState([{ name: loggedInUsername }, { name: 'playerTwo' }])
 
   const theme = useTheme();
   const navigate = useNavigate();

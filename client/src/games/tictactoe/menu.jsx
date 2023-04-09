@@ -55,9 +55,7 @@ const Menu = (props) => {
             {isSinglePlayerMode ? <PersonOutlineIcon sx={iconTheme} /> : <PeopleOutlineIcon sx={iconTheme} />}
           </Box>
         </Box>
-
         <Divider />
-
         <Box
           sx={{
             height: '15%',
@@ -70,7 +68,6 @@ const Menu = (props) => {
           <Typography variant="h2">
             Players
           </Typography>
-
           <Box
             sx={{
               height: '100%',
@@ -87,7 +84,6 @@ const Menu = (props) => {
             })}
           </Box>
         </Box>
-
         <Divider />
       </Box>
     </WidgetWrapper >

@@ -77,14 +77,13 @@ const Menu = (props) => {
               flexDirection: 'column',
             }}
           >
-            {players.map((player) => {
-              return (
-                <OutlinedInput
-                  key={player.name}
-                  placeholder={player.name}
-                />
-              )
-            })}
+            {players.map((player) => (
+              <OutlinedInput
+                key={player.name}
+                placeholder={player.name}
+              />
+            )
+            )}
           </Box>
         </Box>
         <Divider />

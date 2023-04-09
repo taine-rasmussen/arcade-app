@@ -16,6 +16,9 @@ const Gameboard = (props) => {
   const [playerTurn, setPlayerTurn] = useState(true)
 
   const theme = useTheme();
+  const main = theme.palette.primary.main
+
+
   const isNonMobileScreens = useMediaQuery('(min-width:1000px)');
 
   return (
@@ -28,9 +31,11 @@ const Gameboard = (props) => {
         sx={{
           width: '100%',
           height: '100%',
+          gridGap: '8px',
           display: 'grid',
-          gridTemplateRows: '1fr 1fr 1fr',
-          gridTemplateColumns: '1fr 1fr 1fr',
+          backgroundColor: main,
+          gridTemplateRows: 'repeat(3, 1fr)',
+          gridTemplateColumns: 'repeat(3, 1fr)',
         }}
       >
         {game.map((cell, i) => (

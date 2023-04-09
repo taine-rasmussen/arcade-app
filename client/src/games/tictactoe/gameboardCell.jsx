@@ -1,5 +1,4 @@
-import { Box, useTheme, useMediaQuery } from '@mui/material';
-
+import { Box, useTheme, useMediaQuery, Typography } from '@mui/material';
 
 const GameboardCell = (props) => {
 
@@ -14,6 +13,9 @@ const GameboardCell = (props) => {
     currentGame,
     setPlayerTurn,
   } = props;
+
+  const theme = useTheme();
+  const alt = theme.palette.background.alt
 
   const handleTwoPlayerMove = (value, id) => {
     if (value != '' || currentGame.gameOver) return;
@@ -32,13 +34,17 @@ const GameboardCell = (props) => {
       sx={{
         display: 'flex',
         alignItems: 'center',
+        backgroundColor: alt,
         justifyContent: 'center',
-        border: '1px solid white',
       }}
       onClick={() => { currentGame.singlePlayerMode ? console.log('single') : handleTwoPlayerMove(value, id) }}
     >
-      {value}
-    </Box>
+      <Typography
+        variant="h1"
+      >
+        {value}
+      </Typography>
+    </Box >
   )
 }
 

@@ -74,7 +74,10 @@ const TicTacToe = () => {
           justifyContent: 'center',
         }}
       >
-        <Menu />
+        <Menu
+          currentGame={currentGame}
+          setCurrentGame={setCurrentGame}
+        />
         <Gameboard
           game={game}
           setGame={setGame}

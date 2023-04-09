@@ -10,6 +10,7 @@ const Gameboard = (props) => {
     game,
     setGame,
     isGameOver,
+    setIsGameOver,
     isSinglePlayerMode
   } = props
 
@@ -46,6 +47,7 @@ const Gameboard = (props) => {
             setGame={setGame}
             isGameOver={isGameOver}
             playerTurn={playerTurn}
+            setIsGameOver={setIsGameOver}
             setPlayerTurn={setPlayerTurn}
             isSinglePlayerMode={isSinglePlayerMode}
           />

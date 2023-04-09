@@ -47,8 +47,10 @@ const INITGAME = [
 const TicTacToe = () => {
 
   const [game, setGame] = useState(INITGAME)
+  const [playerTurn, setPlayerTurn] = useState(0)
   const [isGameOver, setIsGameOver] = useState(false)
   const [isSinglePlayerMode, setIsSinglePlayerMode] = useState(false);
+  const [players, setPlayers] = useState([{ name: 'playerOne' }, { name: 'playerTwo' }])
 
   const theme = useTheme();
   const navigate = useNavigate();
@@ -75,6 +77,10 @@ const TicTacToe = () => {
         }}
       >
         <Menu
+          players={players}
+          setPlayers={setPlayers}
+          playerTurn={playerTurn}
+          isGameOver={isGameOver}
           isSinglePlayerMode={isSinglePlayerMode}
           setIsSinglePlayerMode={setIsSinglePlayerMode}
         />
@@ -82,7 +88,9 @@ const TicTacToe = () => {
           game={game}
           setGame={setGame}
           isGameOver={isGameOver}
+          playerTurn={playerTurn}
           setIsGameOver={setIsGameOver}
+          setPlayerTurn={setPlayerTurn}
           isSinglePlayerMode={isSinglePlayerMode}
         />
       </Box>

@@ -10,11 +10,11 @@ const Gameboard = (props) => {
     game,
     setGame,
     isGameOver,
+    playerTurn,
+    setPlayerTurn,
     setIsGameOver,
-    isSinglePlayerMode
+    isSinglePlayerMode,
   } = props
-
-  const [playerTurn, setPlayerTurn] = useState(true)
 
   const theme = useTheme();
   const main = theme.palette.primary.main

@@ -47,6 +47,7 @@ const INITGAME = [
 const TicTacToe = () => {
 
   const [game, setGame] = useState(INITGAME)
+  const [isSinglePlayerMode, setIsSinglePlayerMode] = useState(false);
   const [currentGame, setCurrentGame] = useState({ singlePlayerMode: false, gameOver: false })
 
   const navigate = useNavigate();
@@ -75,14 +76,15 @@ const TicTacToe = () => {
         }}
       >
         <Menu
-          currentGame={currentGame}
-          setCurrentGame={setCurrentGame}
+          isSinglePlayerMode={isSinglePlayerMode}
+          setIsSinglePlayerMode={setIsSinglePlayerMode}
         />
         <Gameboard
           game={game}
           setGame={setGame}
           currentGame={currentGame}
           setCurrentGame={setCurrentGame}
+          isSinglePlayerMode={isSinglePlayerMode}
         />
       </Box>
     </>

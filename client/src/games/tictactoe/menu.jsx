@@ -7,6 +7,8 @@ import WidgetWrapper from '../../wrapper/WidgetWrapper';
 const Menu = (props) => {
 
   const {
+    isSinglePlayerMode,
+    setIsSinglePlayerMode,
     currentGame,
     setCurrentGame
   } = props;
@@ -42,8 +44,11 @@ const Menu = (props) => {
           <Typography variant="h2">
             Game mode
           </Typography>
-          <Box sx={{ cursor: 'pointer' }}>
-            {currentGame.singlePlayerMode ? <PersonOutlineIcon sx={iconTheme} /> : <PeopleOutlineIcon sx={iconTheme} />}
+          <Box
+            sx={{ cursor: 'pointer' }}
+            onClick={() => { setIsSinglePlayerMode(!isSinglePlayerMode) }}
+          >
+            {isSinglePlayerMode ? <PersonOutlineIcon sx={iconTheme} /> : <PeopleOutlineIcon sx={iconTheme} />}
           </Box>
         </Box>
       </Box>

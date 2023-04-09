@@ -12,6 +12,7 @@ const GameboardCell = (props) => {
     playerTurn,
     currentGame,
     setPlayerTurn,
+    isSinglePlayerMode,
   } = props;
 
   const theme = useTheme();
@@ -37,7 +38,7 @@ const GameboardCell = (props) => {
         backgroundColor: alt,
         justifyContent: 'center',
       }}
-      onClick={() => { currentGame.singlePlayerMode ? console.log('single') : handleTwoPlayerMove(value, id) }}
+      onClick={() => { isSinglePlayerMode ? console.log('single') : handleTwoPlayerMove(value, id) }}
     >
       <Typography
         variant="h1"

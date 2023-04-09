@@ -11,6 +11,7 @@ const Gameboard = (props) => {
     setGame,
     currentGame,
     setCurrentGame,
+    isSinglePlayerMode
   } = props
 
   const [playerTurn, setPlayerTurn] = useState(true)
@@ -47,6 +48,7 @@ const Gameboard = (props) => {
             playerTurn={playerTurn}
             currentGame={currentGame}
             setPlayerTurn={setPlayerTurn}
+            isSinglePlayerMode={isSinglePlayerMode}
           />
         ))}
 

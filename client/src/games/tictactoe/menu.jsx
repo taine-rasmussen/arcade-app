@@ -28,6 +28,8 @@ const Menu = (props) => {
     fontSize: '2rem'
   }
 
+  console.log(newName)
+
   return (
     <WidgetWrapper
       width={20}
@@ -90,7 +92,10 @@ const Menu = (props) => {
 
             {toggleNameEdit ? (
               <OutlinedInput
+                value={newName}
                 placeholder='Enter new name'
+                onChange={(e) => { setNewName(e.target.value) }}
+                endAdornment={<EditIcon onClick={() => { setToggleNameEdit(!toggleNameEdit) }} />}
               />
             ) : (
               <Typography variant="h4" sx={{ display: 'flex', gap: '1rem' }}>

@@ -11,6 +11,7 @@ const Menu = (props) => {
     players,
     setPlayers,
     playerTurn,
+    isGameOver,
     isSinglePlayerMode,
     setIsSinglePlayerMode,
   } = props;
@@ -106,8 +107,11 @@ const Menu = (props) => {
               flexDirection: 'column',
             }}
           >
-            <Typography variant="h3">
-              {`turn? -- ${playerTurn ? players[0].name : players[1].name}`}
+            <Typography variant="h4">
+              {`Your move: ${playerTurn ? players[0].name : players[1].name}`}
+            </Typography>
+            <Typography variant="h4">
+              {`Winner: ${isGameOver ? players[playerTurn].name : ''}`}
             </Typography>
 
           </Box>

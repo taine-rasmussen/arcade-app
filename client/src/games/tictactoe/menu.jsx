@@ -5,15 +5,17 @@ import WidgetWrapper from '../../wrapper/WidgetWrapper';
 import EditIcon from '@mui/icons-material/Edit';
 import { OutlinedInput } from '@mui/material';
 import Divider from '@mui/material/Divider';
+import Button from '@mui/material/Button';
 import { useState } from 'react';
 
 const Menu = (props) => {
 
   const {
     players,
-    setPlayers,
+    setGame,
     playerTurn,
     isGameOver,
+    setPlayerTurn,
     isSinglePlayerMode,
     setIsSinglePlayerMode,
   } = props;
@@ -28,7 +30,6 @@ const Menu = (props) => {
     fontSize: '2rem'
   }
 
-  console.log(newName)
 
   return (
     <WidgetWrapper
@@ -135,6 +136,31 @@ const Menu = (props) => {
 
           </Box>
         </Box>
+
+        <Divider />
+
+        <Box
+          sx={{
+            height: '15%',
+            display: 'flex',
+            alignItems: 'center',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+          }}
+        >
+          <Typography variant="h2">
+            Controls
+          </Typography>
+          <Button
+            variant="text"
+          >
+            Reset
+          </Button>
+
+        </Box>
+
+
+
       </Box>
     </WidgetWrapper >
   )

@@ -80,10 +80,12 @@ const TicTacToe = () => {
         }}
       >
         <Menu
+          setGame={setGame}
           players={players}
           setPlayers={setPlayers}
           playerTurn={playerTurn}
           isGameOver={isGameOver}
+          setPlayerTurn={setPlayerTurn}
           isSinglePlayerMode={isSinglePlayerMode}
           setIsSinglePlayerMode={setIsSinglePlayerMode}
         />

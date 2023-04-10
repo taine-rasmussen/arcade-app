@@ -12,9 +12,10 @@ const Menu = (props) => {
 
   const {
     players,
-    setPlayers,
+    setGame,
     playerTurn,
     isGameOver,
+    setPlayerTurn,
     isSinglePlayerMode,
     setIsSinglePlayerMode,
   } = props;
@@ -29,7 +30,6 @@ const Menu = (props) => {
     fontSize: '2rem'
   }
 
-  console.log(newName)
 
   return (
     <WidgetWrapper
@@ -151,6 +151,11 @@ const Menu = (props) => {
           <Typography variant="h2">
             Controls
           </Typography>
+          <Button
+            variant="text"
+          >
+            Reset
+          </Button>
 
         </Box>
 

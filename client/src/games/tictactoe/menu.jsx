@@ -13,6 +13,7 @@ const Menu = (props) => {
   const {
     players,
     setGame,
+    setPlayers,
     playerTurn,
     isGameOver,
     setPlayerTurn,
@@ -30,6 +31,11 @@ const Menu = (props) => {
     fontSize: '2rem'
   }
 
+  const updatePlayerTwoName = () => {
+    setPlayers([...players], players[1].name = newName)
+    setNewName('')
+    setToggleNameEdit(!toggleNameEdit)
+  }
 
   return (
     <WidgetWrapper
@@ -96,7 +102,7 @@ const Menu = (props) => {
                 value={newName}
                 placeholder='Enter new name'
                 onChange={(e) => { setNewName(e.target.value) }}
-                endAdornment={<EditIcon onClick={() => { setToggleNameEdit(!toggleNameEdit) }} />}
+                endAdornment={<EditIcon onClick={updatePlayerTwoName} />}
               />
             ) : (
               <Typography variant="h4" sx={{ display: 'flex', gap: '1rem' }}>

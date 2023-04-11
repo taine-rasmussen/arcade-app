@@ -12,7 +12,7 @@ const Menu = (props) => {
 
   const {
     players,
-    setGame,
+    resetGame,
     setPlayers,
     playerTurn,
     isGameOver,
@@ -158,7 +158,7 @@ const Menu = (props) => {
             Controls
           </Typography>
           <Button
-            variant="text"
+            onClick={resetGame}
           >
             Reset
           </Button>

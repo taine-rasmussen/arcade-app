@@ -24,18 +24,17 @@ const ProfileCard = (props) => {
   const isActiveTurn = name === players[playerTurn].name
 
   const iconStlye = {
-    fontSize: '2rem'
+    fontSize: '4rem'
   }
 
   return (
     <WidgetWrapper
       theme={theme}
-      height={40}
       width={45}
       sx={
         isActiveTurn
-          ? { border: `4px solid ${borderColor}` }
-          : { border: `4px solid none` }
+          ? { border: `3px solid ${borderColor}` }
+          : { border: `3px solid none` }
       }
     >
       <Box

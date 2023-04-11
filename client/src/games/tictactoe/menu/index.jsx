@@ -44,14 +44,14 @@ const Menu = (props) => {
   return (
     <Box
       sx={{
-        gap: '1rem',
+        gap: '2rem',
         width: '30%',
         height: '75%',
         display: 'flex',
         flexDirection: 'column',
       }}
     >
-      <FlexBetween sx={{ width: '100%', height: '100%' }}>
+      <FlexBetween>
         {players.map((player, i) => (
           <ProfileCard
             key={i}

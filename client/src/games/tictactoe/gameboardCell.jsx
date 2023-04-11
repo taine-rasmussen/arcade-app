@@ -58,7 +58,6 @@ const GameboardCell = (props) => {
     return null;
   }
 
-
   return (
     <Box
       key={id}

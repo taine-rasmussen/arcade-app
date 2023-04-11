@@ -33,7 +33,9 @@ const ProfileCard = (props) => {
       height={40}
       width={45}
       sx={
-        isActiveTurn ? { border: `4px solid ${borderColor}` } : null
+        isActiveTurn
+          ? { border: `4px solid ${borderColor}` }
+          : { border: `4px solid none` }
       }
     >
       <Box

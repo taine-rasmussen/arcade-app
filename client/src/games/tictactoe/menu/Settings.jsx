@@ -23,10 +23,17 @@ const NavHeader = () => {
 }
 
 const Settings = () => {
+
+  const theme = useTheme();
+
   return (
-    <Box>
+    <WidgetWrapper
+      theme={theme}
+      width={100}
+      height={60}
+    >
       settings
-    </Box>
+    </WidgetWrapper>
   )
 }
 

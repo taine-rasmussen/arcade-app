@@ -30,7 +30,6 @@ const ProfileCard = (props) => {
   return (
     <WidgetWrapper
       theme={theme}
-      height={40}
       width={45}
       sx={
         isActiveTurn

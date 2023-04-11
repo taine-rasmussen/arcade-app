@@ -51,7 +51,7 @@ const Menu = (props) => {
         flexDirection: 'column',
       }}
     >
-      <FlexBetween sx={{ width: '100%', height: '100%' }}>
+      <FlexBetween >
         {players.map((player, i) => (
           <ProfileCard
             key={i}

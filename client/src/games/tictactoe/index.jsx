@@ -62,9 +62,6 @@ const TicTacToe = () => {
 
   return (
     <>
-      <Box onClick={() => { navigate('/dashboard') }}>
-        Return
-      </Box>
       <Box
         sx={{
           gap: '3rem',

@@ -13,7 +13,7 @@ import { useState } from 'react';
 
 import FlexBetween from '../../wrapper/FlexBetween'
 
-const NavHeader = ({ resetGame }) => {
+const NavHeader = () => {
   const navigate = useNavigate();
   return (
     <FlexBetween sx={{ maring: '20px 0' }}>
@@ -25,7 +25,7 @@ const NavHeader = ({ resetGame }) => {
     </Button>
       <Button
         variant='outlined'
-        onClick={resetGame}
+        onClick={() => { location.reload(); }}
       >
         Reset
     </Button>

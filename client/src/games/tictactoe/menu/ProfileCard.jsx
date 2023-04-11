@@ -14,6 +14,7 @@ const ProfileCard = (props) => {
   } = props
 
   const theme = useTheme()
+  const main = theme.palette.background.main
   const loggedInUsername = useSelector((state) => state.user.username)
   const isLoggedInUser = loggedInUsername === name;
 
@@ -28,10 +29,24 @@ const ProfileCard = (props) => {
           justifyContent: 'center',
         }}
       >
-        <Box>
+        <Box
+          sx={{
+            width: '100px',
+            height: '100px',
+            display: 'flex',
+            borderRadius: '50%',
+            alignItems: 'center',
+            backgroundColor: main,
+            justifyContent: 'center',
+          }}
+        >
           Pic
         </Box>
-        <Typography>{name}</Typography>
+        <Typography
+          variant='h2'
+        >
+          {name}
+        </Typography>
         <Typography></Typography>
 
 

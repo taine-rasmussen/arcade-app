@@ -39,8 +39,6 @@ const Menu = (props) => {
     players,
     resetGame,
     setPlayers,
-    playerTurn,
-    isGameOver,
     isSinglePlayerMode,
     setIsSinglePlayerMode,
   } = props;
@@ -52,9 +50,6 @@ const Menu = (props) => {
   const theme = useTheme();
   const isNonMobileScreens = useMediaQuery('(min-width:1000px)');
 
-  const iconTheme = {
-    fontSize: '2rem'
-  }
 
   const updatePlayerTwoName = () => {
     if (newName.length < 1) return setNewNamePlaceholder('Enter a name first');
@@ -64,6 +59,7 @@ const Menu = (props) => {
   }
 
   const wrapperMargin = { margin: '20px 0' }
+  const iconTheme = { fontSize: '2rem' }
 
   return (
     <WidgetWrapper
@@ -93,9 +89,7 @@ const Menu = (props) => {
             {isSinglePlayerMode ? <PersonOutlineIcon sx={iconTheme} /> : <PeopleOutlineIcon sx={iconTheme} />}
           </Box>
         </FlexBetween>
-
         <Divider />
-
         <FlexBetween sx={wrapperMargin} >
           <Typography variant="h3">
             {players[0].name}

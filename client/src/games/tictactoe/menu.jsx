@@ -35,7 +35,6 @@ const Menu = (props) => {
     setPlayers,
     playerTurn,
     isGameOver,
-    setPlayerTurn,
     isSinglePlayerMode,
     setIsSinglePlayerMode,
   } = props;
@@ -72,15 +71,10 @@ const Menu = (props) => {
         }}
       >
         <NavHeader />
-        <Box
-          sx={{
-            height: '15%',
-            display: 'flex',
-            alignItems: 'center',
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-          }}
-        >
+
+        <Divider />
+
+        <FlexBetween>
           <Typography variant="h2">
             Game mode
           </Typography>
@@ -90,17 +84,11 @@ const Menu = (props) => {
           >
             {isSinglePlayerMode ? <PersonOutlineIcon sx={iconTheme} /> : <PeopleOutlineIcon sx={iconTheme} />}
           </Box>
-        </Box>
+        </FlexBetween>
+
         <Divider />
-        <Box
-          sx={{
-            height: '15%',
-            display: 'flex',
-            alignItems: 'center',
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-          }}
-        >
+
+        <FlexBetween>
           <Typography variant="h2">
             Players
           </Typography>
@@ -132,17 +120,11 @@ const Menu = (props) => {
             )}
 
           </Box>
-        </Box>
+        </FlexBetween>
+
         <Divider />
-        <Box
-          sx={{
-            height: '15%',
-            display: 'flex',
-            alignItems: 'center',
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-          }}
-        >
+
+        <FlexBetween>
           <Typography variant="h2">
             Info
           </Typography>
@@ -161,19 +143,11 @@ const Menu = (props) => {
             </Typography>
 
           </Box>
-        </Box>
+        </FlexBetween>
 
         <Divider />
 
-        <Box
-          sx={{
-            height: '15%',
-            display: 'flex',
-            alignItems: 'center',
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-          }}
-        >
+        <FlexBetween>
           <Typography variant="h2">
             Controls
           </Typography>
@@ -182,11 +156,7 @@ const Menu = (props) => {
           >
             Reset
           </Button>
-
-        </Box>
-
-
-
+        </FlexBetween>
       </Box>
     </WidgetWrapper >
   )

@@ -51,7 +51,13 @@ const Menu = (props) => {
       }}
     >
       <FlexBetween sx={{ width: '100%', height: '100%' }}>
-        {players.map((player, i) => (<ProfileCard player={player} key={i} />))}
+        {players.map((player, i) => (
+          <ProfileCard
+            key={i}
+            player={player}
+            players={players}
+          />
+        ))}
       </FlexBetween>
       <Settings />
 

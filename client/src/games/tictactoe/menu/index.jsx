@@ -2,42 +2,23 @@ import { Box, useTheme, useMediaQuery, Typography } from '@mui/material';
 import KeyboardReturnIcon from '@mui/icons-material/KeyboardReturn';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
-import WidgetWrapper from '../../wrapper/WidgetWrapper';
+import FlexBetween from '../../../wrapper/FlexBetween'
 import EditIcon from '@mui/icons-material/Edit';
 import { useNavigate } from 'react-router-dom';
 import { OutlinedInput } from '@mui/material';
 import Divider from '@mui/material/Divider';
-
 import Button from '@mui/material/Button';
 import { useState } from 'react';
 
-import FlexBetween from '../../wrapper/FlexBetween'
-
-const NavHeader = () => {
-  const navigate = useNavigate();
-  return (
-    <FlexBetween sx={{ maring: '20px 0' }}>
-      <Button
-        variant='outlined'
-        onClick={() => { navigate('/dashboard') }}
-      >
-        Return
-    </Button>
-      <Button
-        variant='outlined'
-        onClick={() => { location.reload(); }}
-      >
-        Reset
-    </Button>
-    </FlexBetween>
-  )
-}
+import ProfileCard from './ProfileCard';
+import Settings from './Settings';
 
 const Menu = (props) => {
 
   const {
     players,
     resetGame,
+    playerTurn,
     setPlayers,
     isSinglePlayerMode,
     setIsSinglePlayerMode,
@@ -50,7 +31,6 @@ const Menu = (props) => {
   const theme = useTheme();
   const isNonMobileScreens = useMediaQuery('(min-width:1000px)');
 
-
   const updatePlayerTwoName = () => {
     if (newName.length < 1) return setNewNamePlaceholder('Enter a name first');
     setPlayers([...players], players[1].name = newName)
@@ -62,20 +42,28 @@ const Menu = (props) => {
   const iconTheme = { fontSize: '2rem' }
 
   return (
-    <WidgetWrapper
-      width={30}
-      height={75}
-      theme={theme}
+    <Box
+      sx={{
+        gap: '1rem',
+        width: '30%',
+        height: '75%',
+        display: 'flex',
+        flexDirection: 'column',
+      }}
     >
-      <Box
-        sx={{
-          gap: '1rem',
-          width: '100%',
-          height: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-        }}
-      >
+      <FlexBetween sx={{ width: '100%', height: '100%' }}>
+        {players.map((player, i) => (
+          <ProfileCard
+            key={i}
+            player={player}
+            players={players}
+            playerTurn={playerTurn}
+          />
+        ))}
+      </FlexBetween>
+      <Settings />
+
+      {/* 
         <NavHeader resetGame={resetGame} />
         <Divider />
         <FlexBetween sx={wrapperMargin} >
@@ -109,9 +97,8 @@ const Menu = (props) => {
             </Typography>
           )}
         </FlexBetween>
-        <Divider />
-      </Box>
-    </WidgetWrapper >
+        <Divider /> */}
+    </Box>
   )
 }
 

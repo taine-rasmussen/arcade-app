@@ -50,7 +50,7 @@ const TicTacToe = () => {
   const loggedInUsername = useSelector((state) => state.user.username)
 
   const [game, setGame] = useState(INITGAME)
-  const [playerTurn, setPlayerTurn] = useState(1)
+  const [playerTurn, setPlayerTurn] = useState(0)
   const [isGameOver, setIsGameOver] = useState(false)
   const [isSinglePlayerMode, setIsSinglePlayerMode] = useState(false);
   const [players, setPlayers] = useState([{ name: loggedInUsername }, { name: 'playerTwo' }])

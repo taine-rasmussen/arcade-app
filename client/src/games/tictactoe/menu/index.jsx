@@ -2,7 +2,6 @@ import { Box, useTheme, useMediaQuery, Typography } from '@mui/material';
 import KeyboardReturnIcon from '@mui/icons-material/KeyboardReturn';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
-import WidgetWrapper from '../../../wrapper/WidgetWrapper';
 import FlexBetween from '../../../wrapper/FlexBetween'
 import EditIcon from '@mui/icons-material/Edit';
 import { useNavigate } from 'react-router-dom';
@@ -51,7 +50,9 @@ const Menu = (props) => {
         flexDirection: 'column',
       }}
     >
-      <ProfileCard />
+      <FlexBetween sx={{ width: '100%', height: '100%' }}>
+        {players.map((player, i) => (<ProfileCard player={player} key={i} />))}
+      </FlexBetween>
       <Settings />
 
       {/* 

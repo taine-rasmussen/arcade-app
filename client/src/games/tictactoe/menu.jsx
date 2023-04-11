@@ -1,12 +1,29 @@
 import { Box, useTheme, useMediaQuery, Typography } from '@mui/material';
+import KeyboardReturnIcon from '@mui/icons-material/KeyboardReturn';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
 import WidgetWrapper from '../../wrapper/WidgetWrapper';
 import EditIcon from '@mui/icons-material/Edit';
+import { useNavigate } from 'react-router-dom';
 import { OutlinedInput } from '@mui/material';
 import Divider from '@mui/material/Divider';
+
 import Button from '@mui/material/Button';
 import { useState } from 'react';
+
+import FlexBetween from '../../wrapper/FlexBetween'
+
+const NavHeader = ({ navToHome }) => (
+  <FlexBetween>
+    <KeyboardReturnIcon onClick={navToHome} />
+    <Button
+      variant='text'
+      onClick={navToHome}
+    >
+      Return
+    </Button>
+  </FlexBetween>
+)
 
 const Menu = (props) => {
 
@@ -25,7 +42,10 @@ const Menu = (props) => {
   const [newName, setNewName] = useState('')
 
   const theme = useTheme();
+  const navigate = useNavigate();
   const isNonMobileScreens = useMediaQuery('(min-width:1000px)');
+
+  const navToHome = () => navigate('/dashboard');
 
   const iconTheme = {
     fontSize: '2rem'
@@ -52,6 +72,7 @@ const Menu = (props) => {
           flexDirection: 'column',
         }}
       >
+        <NavHeader navToHome={navToHome} />
         <Box
           sx={{
             height: '15%',

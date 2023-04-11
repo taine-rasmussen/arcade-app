@@ -56,7 +56,6 @@ const TicTacToe = () => {
   const [players, setPlayers] = useState([{ name: loggedInUsername }, { name: 'playerTwo' }])
 
   const theme = useTheme();
-  const navigate = useNavigate();
   const main = theme.palette.background.main
   const isNonMobileScreens = useMediaQuery('(min-width:1000px)');
 

@@ -33,12 +33,13 @@ const ProfileCard = (props) => {
       width={45}
       sx={
         isActiveTurn
-          ? { border: `4px solid ${borderColor}` }
-          : { border: `4px solid none` }
+          ? { border: `3px solid ${borderColor}` }
+          : { border: `3px solid none` }
       }
     >
       <Box
         sx={{
+          gap: '1rem',
           display: 'flex',
           alignItems: 'center',
           flexDirection: 'column',

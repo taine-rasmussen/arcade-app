@@ -1,18 +1,38 @@
 import { Box, useTheme, useMediaQuery, Typography } from '@mui/material';
+import KeyboardReturnIcon from '@mui/icons-material/KeyboardReturn';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
 import WidgetWrapper from '../../wrapper/WidgetWrapper';
 import EditIcon from '@mui/icons-material/Edit';
+import { useNavigate } from 'react-router-dom';
 import { OutlinedInput } from '@mui/material';
 import Divider from '@mui/material/Divider';
+
 import Button from '@mui/material/Button';
 import { useState } from 'react';
+
+import FlexBetween from '../../wrapper/FlexBetween'
+
+const NavHeader = () => {
+  const navigate = useNavigate();
+
+  return (
+    <FlexBetween>
+      <Button
+        variant='outlined'
+        onClick={() => { navigate('/dashboard') }}
+      >
+        Return
+    </Button>
+    </FlexBetween>
+  )
+}
 
 const Menu = (props) => {
 
   const {
     players,
-    setGame,
+    resetGame,
     setPlayers,
     playerTurn,
     isGameOver,
@@ -52,6 +72,7 @@ const Menu = (props) => {
           flexDirection: 'column',
         }}
       >
+        <NavHeader />
         <Box
           sx={{
             height: '15%',
@@ -158,7 +179,7 @@ const Menu = (props) => {
             Controls
           </Typography>
           <Button
-            variant="text"
+            onClick={resetGame}
           >
             Reset
           </Button>

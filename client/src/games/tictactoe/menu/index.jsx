@@ -18,6 +18,7 @@ const Menu = (props) => {
   const {
     players,
     resetGame,
+    playerTurn,
     setPlayers,
     isSinglePlayerMode,
     setIsSinglePlayerMode,
@@ -56,6 +57,7 @@ const Menu = (props) => {
             key={i}
             player={player}
             players={players}
+            playerTurn={playerTurn}
           />
         ))}
       </FlexBetween>

@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 const ProfileCard = (props) => {
 
   const {
+    playerTurn,
     players,
     player: {
       name
@@ -20,6 +21,8 @@ const ProfileCard = (props) => {
   const loggedInUsername = useSelector((state) => state.user.username)
   const isLoggedInUser = loggedInUsername === name;
 
+  const isActiveTurn = name === players[playerTurn].name
+
   const iconStlye = {
     fontSize: '2rem'
   }
@@ -30,7 +33,7 @@ const ProfileCard = (props) => {
       height={40}
       width={45}
       sx={
-        isLoggedInUser ? { border: `4px solid ${borderColor}` } : null
+        isActiveTurn ? { border: `4px solid ${borderColor}` } : null
       }
     >
       <Box

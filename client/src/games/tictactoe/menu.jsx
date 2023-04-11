@@ -15,7 +15,6 @@ import FlexBetween from '../../wrapper/FlexBetween'
 
 const NavHeader = () => {
   const navigate = useNavigate();
-
   return (
     <FlexBetween>
       <Button

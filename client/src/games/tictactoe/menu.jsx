@@ -57,7 +57,7 @@ const Menu = (props) => {
 
   return (
     <WidgetWrapper
-      width={20}
+      width={30}
       height={75}
       theme={theme}
     >

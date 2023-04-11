@@ -15,6 +15,7 @@ const ProfileCard = (props) => {
 
   const theme = useTheme()
   const loggedInUsername = useSelector((state) => state.user.username)
+  const isLoggedInUser = loggedInUsername === name;
 
   return (
     <WidgetWrapper theme={theme} height={40} width={45}>
@@ -30,7 +31,7 @@ const ProfileCard = (props) => {
         <Box>
           Pic
         </Box>
-        <Typography>{player.name}</Typography>
+        <Typography>{name}</Typography>
         <Typography></Typography>
 
 

@@ -16,7 +16,7 @@ import FlexBetween from '../../wrapper/FlexBetween'
 const NavHeader = ({ resetGame }) => {
   const navigate = useNavigate();
   return (
-    <FlexBetween>
+    <FlexBetween sx={{ maring: '20px 0' }}>
       <Button
         variant='outlined'
         onClick={() => { navigate('/dashboard') }}
@@ -61,6 +61,8 @@ const Menu = (props) => {
     setToggleNameEdit(!toggleNameEdit)
   }
 
+  const wrapperMargin = { margin: '20px 0' }
+
   return (
     <WidgetWrapper
       width={30}
@@ -78,52 +80,38 @@ const Menu = (props) => {
       >
         <NavHeader resetGame={resetGame} />
         <Divider />
-        <FlexBetween>
+        <FlexBetween sx={wrapperMargin} >
+          <Typography variant="h3">
+            Gamemode
+          </Typography>
           <Box
             sx={{ cursor: 'pointer' }}
             onClick={() => { setIsSinglePlayerMode(!isSinglePlayerMode) }}
           >
             {isSinglePlayerMode ? <PersonOutlineIcon sx={iconTheme} /> : <PeopleOutlineIcon sx={iconTheme} />}
           </Box>
-          <Typography variant="h4">
-            {`${playerTurn ? players[0].name : players[1].name}`}
-          </Typography>
         </FlexBetween>
 
         <Divider />
 
-        <FlexBetween>
-          <Typography variant="h2">
-            Players
+        <FlexBetween sx={wrapperMargin} >
+          <Typography variant="h3">
+            {players[0].name}
           </Typography>
-          <Box
-            sx={{
-              gap: '2rem',
-              height: '100%',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-            }}
-          >
-            <Typography variant="h4">
-              {players[0].name}
+
+          {toggleNameEdit ? (
+            <OutlinedInput
+              value={newName}
+              placeholder='Enter new name'
+              onChange={(e) => { setNewName(e.target.value) }}
+              endAdornment={<EditIcon onClick={updatePlayerTwoName} />}
+            />
+          ) : (
+            <Typography variant="h3" sx={{ display: 'flex', gap: '1rem' }}>
+              {players[1].name}
+              <EditIcon onClick={() => { setToggleNameEdit(!toggleNameEdit) }} />
             </Typography>
-
-            {toggleNameEdit ? (
-              <OutlinedInput
-                value={newName}
-                placeholder='Enter new name'
-                onChange={(e) => { setNewName(e.target.value) }}
-                endAdornment={<EditIcon onClick={updatePlayerTwoName} />}
-              />
-            ) : (
-              <Typography variant="h4" sx={{ display: 'flex', gap: '1rem' }}>
-                {players[1].name}
-                <EditIcon onClick={() => { setToggleNameEdit(!toggleNameEdit) }} />
-              </Typography>
-            )}
-
-          </Box>
+          )}
         </FlexBetween>
         <Divider />
       </Box>

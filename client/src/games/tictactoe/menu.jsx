@@ -56,6 +56,7 @@ const Menu = (props) => {
   }
 
   const updatePlayerTwoName = () => {
+    if (newName.length < 1) return;
     setPlayers([...players], players[1].name = newName)
     setNewName('')
     setToggleNameEdit(!toggleNameEdit)

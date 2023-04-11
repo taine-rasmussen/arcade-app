@@ -1,18 +1,20 @@
 import { Box, useTheme, useMediaQuery, Typography } from '@mui/material';
 import WidgetWrapper from '../../../wrapper/WidgetWrapper'
+import { useSelector } from 'react-redux';
+
 
 
 const ProfileCard = (props) => {
 
   const {
     players,
-    player,
-    i
+    player: {
+      name
+    }
   } = props
 
   const theme = useTheme()
-
-  console.log(player)
+  const loggedInUsername = useSelector((state) => state.user.username)
 
   return (
     <WidgetWrapper theme={theme} height={40} width={45}>

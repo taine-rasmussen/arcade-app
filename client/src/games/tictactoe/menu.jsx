@@ -13,17 +13,20 @@ import { useState } from 'react';
 
 import FlexBetween from '../../wrapper/FlexBetween'
 
-const NavHeader = ({ navToHome }) => (
-  <FlexBetween>
-    <KeyboardReturnIcon onClick={navToHome} />
-    <Button
-      variant='text'
-      onClick={navToHome}
-    >
-      Return
+const NavHeader = () => {
+  const navigate = useNavigate();
+
+  return (
+    <FlexBetween>
+      <Button
+        variant='outlined'
+        onClick={() => { navigate('/dashboard') }}
+      >
+        Return
     </Button>
-  </FlexBetween>
-)
+    </FlexBetween>
+  )
+}
 
 const Menu = (props) => {
 
@@ -42,10 +45,7 @@ const Menu = (props) => {
   const [newName, setNewName] = useState('')
 
   const theme = useTheme();
-  const navigate = useNavigate();
   const isNonMobileScreens = useMediaQuery('(min-width:1000px)');
-
-  const navToHome = () => navigate('/dashboard');
 
   const iconTheme = {
     fontSize: '2rem'
@@ -72,7 +72,7 @@ const Menu = (props) => {
           flexDirection: 'column',
         }}
       >
-        <NavHeader navToHome={navToHome} />
+        <NavHeader />
         <Box
           sx={{
             height: '15%',

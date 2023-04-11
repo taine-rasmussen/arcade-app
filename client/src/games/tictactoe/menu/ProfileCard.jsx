@@ -39,7 +39,6 @@ const ProfileCard = (props) => {
     >
       <Box
         sx={{
-          gap: '1rem',
           display: 'flex',
           alignItems: 'center',
           flexDirection: 'column',

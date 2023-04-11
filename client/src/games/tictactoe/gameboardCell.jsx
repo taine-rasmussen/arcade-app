@@ -19,6 +19,7 @@ const GameboardCell = (props) => {
   const theme = useTheme();
   const alt = theme.palette.background.alt
 
+
   const handleTwoPlayerMove = (value, id) => {
     if (value != '' || isGameOver) return;
     if (playerTurn === 0) {
@@ -65,7 +66,7 @@ const GameboardCell = (props) => {
         display: 'flex',
         alignItems: 'center',
         backgroundColor: alt,
-        justifyContent: 'center',
+        justifyContent: 'center'
       }}
       onClick={() => { isSinglePlayerMode ? console.log('single') : handleTwoPlayerMove(value, id) }}
     >

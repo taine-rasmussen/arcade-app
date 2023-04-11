@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 import { Box, useTheme, useMediaQuery } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import { useState, useCallback } from 'react';
+import { useSelector } from 'react-redux';
 
 import Gameboard from './gameboard'
 import Menu from './menu';
@@ -59,6 +59,10 @@ const TicTacToe = () => {
   const navigate = useNavigate();
   const main = theme.palette.background.main
   const isNonMobileScreens = useMediaQuery('(min-width:1000px)');
+
+  const restGame = () => {
+
+  }
 
   return (
     <>

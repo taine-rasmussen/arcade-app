@@ -47,6 +47,7 @@ const Menu = (props) => {
 
   const [toggleNameEdit, setToggleNameEdit] = useState(false)
   const [newName, setNewName] = useState('')
+  const [newNamePlaceholder, setNewNamePlaceholder] = useState('Enter new name...')
 
   const theme = useTheme();
   const isNonMobileScreens = useMediaQuery('(min-width:1000px)');
@@ -56,7 +57,7 @@ const Menu = (props) => {
   }
 
   const updatePlayerTwoName = () => {
-    if (newName.length < 1) return;
+    if (newName.length < 1) return setNewNamePlaceholder('Enter a name first');
     setPlayers([...players], players[1].name = newName)
     setNewName('')
     setToggleNameEdit(!toggleNameEdit)
@@ -103,7 +104,7 @@ const Menu = (props) => {
           {toggleNameEdit ? (
             <OutlinedInput
               value={newName}
-              placeholder='Enter new name'
+              placeholder={newNamePlaceholder}
               onChange={(e) => { setNewName(e.target.value) }}
               endAdornment={<EditIcon onClick={updatePlayerTwoName} />}
             />

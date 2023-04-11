@@ -1,4 +1,6 @@
 import { Box, useTheme, useMediaQuery, Typography } from '@mui/material';
+import WidgetWrapper from '../../../wrapper/WidgetWrapper'
+import FlexBetween from '../../../wrapper/FlexBetween'
 
 const NavHeader = () => {
   const navigate = useNavigate();

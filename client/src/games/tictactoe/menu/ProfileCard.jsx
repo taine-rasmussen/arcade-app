@@ -24,7 +24,7 @@ const ProfileCard = (props) => {
   const isActiveTurn = name === players[playerTurn].name
 
   const iconStlye = {
-    fontSize: '2rem'
+    fontSize: '4rem'
   }
 
   return (

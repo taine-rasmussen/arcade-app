@@ -1,7 +1,6 @@
 import { Box, useTheme, useMediaQuery } from '@mui/material';
-import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { motion } from "framer-motion"
+import { useState } from 'react';
 
 import Gameboard from './gameboard'
 import Menu from './menu';

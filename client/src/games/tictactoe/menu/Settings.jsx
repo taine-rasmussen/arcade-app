@@ -2,6 +2,7 @@ import { Box, useTheme, useMediaQuery, Typography, Button } from '@mui/material'
 import WidgetWrapper from '../../../wrapper/WidgetWrapper'
 import FlexBetween from '../../../wrapper/FlexBetween'
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const NavHeader = () => {
   const navigate = useNavigate();
@@ -28,14 +29,17 @@ const Settings = () => {
   const theme = useTheme();
 
   return (
-    <WidgetWrapper
-      theme={theme}
-      width={100}
-      height={60}
-      style={{ zIndex: '2' }}
+    <motion.div
+      style={{ height: '100%', width: '100%', zIndex: '2' }}
     >
-      <NavHeader />
-    </WidgetWrapper>
+      <WidgetWrapper
+        theme={theme}
+        width={100}
+        height={100}
+      >
+        <NavHeader />
+      </WidgetWrapper>
+    </motion.div>
   )
 }
 

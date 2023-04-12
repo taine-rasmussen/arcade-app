@@ -23,10 +23,9 @@ const Gameboard = (props) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0.25 }}
-      animate={{ opacity: 1 }}
+      animate={{ y: ['1000px', '0px'] }}
       style={{ height: '75%', width: '45%', zIndex: '3' }}
-      transition={{ duration: 2 }}
+      transition={{ duration: 1 }}
     >
       <WidgetWrapper
         width={100}

@@ -1,7 +1,6 @@
 import { Box, useTheme, useMediaQuery } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
-import { useState, useCallback } from 'react';
 import { useSelector } from 'react-redux';
+import { useState } from 'react';
 
 import Gameboard from './gameboard'
 import Menu from './menu';

@@ -1,5 +1,6 @@
 import { Box, useTheme, useMediaQuery } from '@mui/material';
 import WidgetWrapper from '../../wrapper/WidgetWrapper';
+import { motion } from "framer-motion";
 import { useState } from 'react';
 
 import GameboardCell from './gameboardCell'

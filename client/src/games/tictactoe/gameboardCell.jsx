@@ -1,4 +1,5 @@
 import { Box, useTheme, useMediaQuery, Typography } from '@mui/material';
+import { motion } from "framer-motion";
 
 const GameboardCell = (props) => {
 
@@ -59,9 +60,12 @@ const GameboardCell = (props) => {
   }
 
   return (
-    <Box
+    <motion.div
       key={id}
-      sx={{
+      initial={{ opacity: 0, scale: 2 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 1 }}
+      style={{
         display: 'flex',
         alignItems: 'center',
         backgroundColor: alt,
@@ -74,7 +78,7 @@ const GameboardCell = (props) => {
       >
         {value}
       </Typography>
-    </Box >
+    </motion.div >
   )
 }
 

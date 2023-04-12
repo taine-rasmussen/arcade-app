@@ -30,9 +30,6 @@ const Menu = (props) => {
     setToggleNameEdit(!toggleNameEdit)
   }
 
-  const wrapperMargin = { margin: '20px 0' }
-  const iconTheme = { fontSize: '2rem' }
-
   return (
     <Box
       sx={{

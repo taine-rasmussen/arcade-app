@@ -62,7 +62,10 @@ const GameboardCell = (props) => {
   return (
     <motion.div
       key={id}
-      sx={{
+      initial={{ opacity: 0, scale: 2 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 1 }}
+      style={{
         display: 'flex',
         alignItems: 'center',
         backgroundColor: alt,

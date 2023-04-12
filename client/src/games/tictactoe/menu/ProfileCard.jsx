@@ -3,7 +3,6 @@ import TripOriginIcon from '@mui/icons-material/TripOrigin';
 import WidgetWrapper from '../../../wrapper/WidgetWrapper'
 import CloseIcon from '@mui/icons-material/Close';
 import { useSelector } from 'react-redux';
-import { motion } from "framer-motion";
 
 const ProfileCard = (props) => {
 
@@ -67,8 +66,6 @@ const ProfileCard = (props) => {
             ? <TripOriginIcon sx={iconStlye} />
             : <CloseIcon sx={iconStlye} />}
         </Typography>
-
-
       </Box>
     </WidgetWrapper >
   )

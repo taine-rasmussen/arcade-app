@@ -26,6 +26,7 @@ const Menu = (props) => {
     >
       <FlexBetween>
         {players.map((player, i) => (
+
           <ProfileCard
             key={i}
             player={player}

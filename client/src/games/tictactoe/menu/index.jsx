@@ -30,7 +30,7 @@ const Menu = (props) => {
         initial={{ opacity: 0 }}
         style={{ zIndex: '1' }}
         animate={{ y: ['300px', '0px'], opacity: 1 }}
-        transition={{ type: 'tween', duration: 0.75, delay: 0.5 }}
+        transition={{ type: 'tween', duration: 0.75, delay: 1.15 }}
       >
         <FlexBetween>
           {players.map((player, i) => (

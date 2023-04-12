@@ -30,9 +30,10 @@ const Settings = () => {
 
   return (
     <motion.div
+      initial={{ opacity: 0 }}
       style={{ height: '100%', width: '100%', zIndex: '2' }}
-      animate={{ x: ['300px', '0px'] }}
-      transition={{ type: 'tween', duration: 0.5 }}
+      animate={{ x: ['300px', '0px'], opacity: 1 }}
+      transition={{ type: 'tween', duration: 0.5, delay: 0.75 }}
     >
       <WidgetWrapper
         theme={theme}

@@ -25,6 +25,7 @@ const Gameboard = (props) => {
       width={45}
       height={75}
       theme={theme}
+      style={{ zIndex: '3' }}
     >
       <Box
         sx={{

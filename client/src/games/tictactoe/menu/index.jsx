@@ -1,5 +1,7 @@
 import FlexBetween from '../../../wrapper/FlexBetween'
 import { Box, useMediaQuery } from '@mui/material';
+import { motion } from "framer-motion";
+
 
 import ProfileCard from './ProfileCard';
 import Settings from './Settings';
@@ -24,17 +26,23 @@ const Menu = (props) => {
         flexDirection: 'column',
       }}
     >
-      <FlexBetween>
-        {players.map((player, i) => (
-
-          <ProfileCard
-            key={i}
-            player={player}
-            players={players}
-            playerTurn={playerTurn}
-          />
-        ))}
-      </FlexBetween>
+      <motion.div
+        style={{ zIndex: '1' }}
+        animate={{ y: ['300px', '0px'] }}
+        transition={{ type: 'tween', duration: 0.75 }}
+        layout
+      >
+        <FlexBetween>
+          {players.map((player, i) => (
+            <ProfileCard
+              key={i}
+              player={player}
+              players={players}
+              playerTurn={playerTurn}
+            />
+          ))}
+        </FlexBetween>
+      </motion.div>
       <Settings />
     </Box>
   )

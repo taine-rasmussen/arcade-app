@@ -31,6 +31,7 @@ const Settings = () => {
       theme={theme}
       width={100}
       height={60}
+      style={{ zIndex: '2' }}
     >
       settings
     </WidgetWrapper>

@@ -17,7 +17,7 @@ const Gameboard = (props) => {
   } = props
 
   const theme = useTheme();
-  const main = theme.palette.primary.main
+  const main = theme.palette.background.main
 
   const isNonMobileScreens = useMediaQuery('(min-width:1000px)');
 
@@ -31,13 +31,14 @@ const Gameboard = (props) => {
         width={100}
         height={100}
         theme={theme}
+        style={{ padding: '0px' }}
       >
         <Box
           sx={{
             width: '100%',
             height: '100%',
-            gridGap: '8px',
             display: 'grid',
+            gridGap: '15px',
             backgroundColor: main,
             gridTemplateRows: 'repeat(3, 1fr)',
             gridTemplateColumns: 'repeat(3, 1fr)',

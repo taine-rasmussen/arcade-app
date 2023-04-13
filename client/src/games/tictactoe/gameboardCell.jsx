@@ -63,9 +63,10 @@ const GameboardCell = (props) => {
       key={id}
       sx={{
         display: 'flex',
-        alignItems: 'center',
         backgroundColor: alt,
-        justifyContent: 'center'
+        alignItems: 'center',
+        borderRadius: '0.75rem',
+        justifyContent: 'center',
       }}
       onClick={() => { isSinglePlayerMode ? console.log('single') : handleTwoPlayerMove(value, id) }}
     >

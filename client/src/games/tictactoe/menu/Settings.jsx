@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import Divider from '@mui/material/Divider';
 import { motion } from 'framer-motion';
 import Chip from '@mui/material/Chip';
+import { useState } from 'react'
 
 const SettingsHeader = () => {
   const navigate = useNavigate();

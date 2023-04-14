@@ -3,17 +3,23 @@ import TripOriginIcon from '@mui/icons-material/TripOrigin';
 import WidgetWrapper from '../../../wrapper/WidgetWrapper'
 import CloseIcon from '@mui/icons-material/Close';
 import { useSelector } from 'react-redux';
+import useTicTacToeApi from '../useTicTacToeApi';
 
 const ProfileCard = (props) => {
 
   const {
-    isGameOver,
-    playerTurn,
-    players,
     player: {
       name
     }
-  } = props
+  } = props;
+
+  const {
+    state: {
+      players,
+      isGameOver,
+      playerTurn,
+    }
+  } = useTicTacToeApi();
 
   const theme = useTheme()
   const main = theme.palette.background.main

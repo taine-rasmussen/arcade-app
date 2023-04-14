@@ -10,6 +10,7 @@ const Menu = (props) => {
 
   const {
     players,
+    isGameOver,
     playerTurn,
     setPlayers,
   } = props;
@@ -38,6 +39,7 @@ const Menu = (props) => {
               key={i}
               player={player}
               players={players}
+              isGameOver={isGameOver}
               playerTurn={playerTurn}
             />
           ))}

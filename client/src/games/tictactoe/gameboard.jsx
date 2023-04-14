@@ -38,15 +38,6 @@ const Gameboard = () => {
             <GameboardCell
               key={i}
               cell={cell}
-              game={game}
-              players={players}
-              setGame={setGame}
-              isGameOver={isGameOver}
-              playerTurn={playerTurn}
-              setIsGameOver={setIsGameOver}
-              setPlayerTurn={setPlayerTurn}
-              setCurrentWinner={setCurrentWinner}
-              isSinglePlayerMode={isSinglePlayerMode}
             />
           ))}
 

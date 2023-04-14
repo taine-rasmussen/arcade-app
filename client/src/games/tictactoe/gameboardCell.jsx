@@ -25,7 +25,6 @@ const GameboardCell = (props) => {
     if (playerTurn === 0) {
       setGame([...game], game[id].value = 'X')
       setPlayerTurn(1)
-
     } else {
       setGame([...game], game[id].value = 'O')
       setPlayerTurn(0)

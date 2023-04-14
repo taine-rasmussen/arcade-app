@@ -63,8 +63,8 @@ const ProfileCard = (props) => {
         </Typography>
         <Typography variant='h3'>
           {isLoggedInUser
-            ? <TripOriginIcon sx={iconStlye} />
-            : <CloseIcon sx={iconStlye} />}
+            ? < CloseIcon sx={iconStlye} />
+            : <TripOriginIcon sx={iconStlye} />}
         </Typography>
       </Box>
     </WidgetWrapper >

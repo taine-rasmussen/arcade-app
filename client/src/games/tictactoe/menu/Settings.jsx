@@ -27,9 +27,15 @@ const SettingsHeader = () => {
   )
 }
 
-const Settings = () => {
+const Settings = (props) => {
+
+  const {
+    currentWinner
+  } = props;
 
   const theme = useTheme();
+
+  console.log(currentWinner)
 
   return (
     <motion.div
@@ -63,7 +69,7 @@ const Settings = () => {
               <Typography
                 variant='h3'
               >
-                name
+                {currentWinner}
               </Typography>
             </FlexBetween>
           </Box>

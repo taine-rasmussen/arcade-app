@@ -13,6 +13,7 @@ const Menu = (props) => {
     isGameOver,
     playerTurn,
     setPlayers,
+    currentWinnder,
   } = props;
 
   const isNonMobileScreens = useMediaQuery('(min-width:1000px)');
@@ -45,7 +46,9 @@ const Menu = (props) => {
           ))}
         </FlexBetween>
       </motion.div>
-      <Settings />
+      <Settings
+        currentWinnder={currentWinnder}
+      />
     </Box>
   )
 }

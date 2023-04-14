@@ -5,7 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import Divider from '@mui/material/Divider';
 import { motion } from 'framer-motion';
 import Chip from '@mui/material/Chip';
-import { useState } from 'react'
+
+import useTicTacToeApi from '../useTicTacToeApi'
 
 const SettingsHeader = () => {
   const navigate = useNavigate();
@@ -29,7 +30,14 @@ const SettingsHeader = () => {
 
 const Settings = () => {
 
+  const {
+    state: { currentWinner }
+  } = useTicTacToeApi()
+
+
   const theme = useTheme();
+
+  console.log(currentWinner)
 
   return (
     <motion.div
@@ -63,7 +71,7 @@ const Settings = () => {
               <Typography
                 variant='h3'
               >
-                name
+                {currentWinner}
               </Typography>
             </FlexBetween>
           </Box>

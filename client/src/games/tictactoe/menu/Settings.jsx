@@ -2,12 +2,14 @@ import { Box, useTheme, useMediaQuery, Typography, Button } from '@mui/material'
 import WidgetWrapper from '../../../wrapper/WidgetWrapper'
 import FlexBetween from '../../../wrapper/FlexBetween'
 import { useNavigate } from 'react-router-dom';
+import Divider from '@mui/material/Divider';
 import { motion } from 'framer-motion';
+import Chip from '@mui/material/Chip';
 
 const NavHeader = () => {
   const navigate = useNavigate();
   return (
-    <FlexBetween sx={{ maring: '20px 0' }}>
+    <FlexBetween sx={{ padding: '10px 0px' }}>
       <Button
         variant='outlined'
         onClick={() => { navigate('/dashboard') }}
@@ -41,6 +43,37 @@ const Settings = () => {
         height={100}
       >
         <NavHeader />
+        <Divider />
+        <Box sx={{
+          height: '90%',
+          width: '100%',
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+        }}>
+          <Box sx={{ width: '45%' }}>
+            <Typography
+              variant='h3'
+            >
+              Winner:
+            </Typography>
+          </Box>
+
+          <Divider
+            orientation="vertical"
+            variant="middle"
+          >
+            <Chip label="Settings" />
+          </Divider>
+
+          <Box sx={{ width: '45%', display: 'flex', justifyContent: 'center' }}>
+            <Typography
+              variant='h3'
+            >
+              Current Session
+            </Typography>
+          </Box>
+        </Box>
       </WidgetWrapper>
     </motion.div>
   )

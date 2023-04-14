@@ -1,4 +1,5 @@
 import { Box, useTheme, useMediaQuery, Typography } from '@mui/material';
+import useTicTacToeApi from './useTicTacToeApi';
 
 const GameboardCell = (props) => {
 
@@ -6,31 +7,18 @@ const GameboardCell = (props) => {
     cell: {
       value,
       id
-    },
-    game,
-    setGame,
-    players,
-    playerTurn,
-    isGameOver,
-    setIsGameOver,
-    setPlayerTurn,
-    setCurrentWinner,
-    isSinglePlayerMode,
-  } = props;
+    }
+  } = props
+
+  const {
+    state,
+    funcs
+  } = useTicTacToeApi();
+  const { isSinglePlayerMode } = state
+  const { handleTwoPlayerMove } = funcs
 
   const theme = useTheme();
   const alt = theme.palette.background.alt
-
-  const handleTwoPlayerMove = (value, id) => {
-    if (value != '' || isGameOver) return;
-    if (playerTurn === 0) {
-      setGame([...game], game[id].value = 'X')
-    } else {
-      setGame([...game], game[id].value = 'O')
-    }
-    checkForWin()
-    playerTurn === 0 ? setPlayerTurn(1) : setPlayerTurn(0)
-  };
 
   return (
     <Box

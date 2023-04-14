@@ -13,6 +13,17 @@ const useTicTacToeApi = () => {
   const [isSinglePlayerMode, setIsSinglePlayerMode] = useState(false);
   const [players, setPlayers] = useState([{ name: loggedInUsername }, { name: 'playerTwo' }])
 
+  const handleTwoPlayerMove = (value, id) => {
+    if (value != '' || isGameOver) return;
+    if (playerTurn === 0) {
+      setGame([...game], game[id].value = 'X')
+    } else {
+      setGame([...game], game[id].value = 'O')
+    }
+    checkForWin()
+    playerTurn === 0 ? setPlayerTurn(1) : setPlayerTurn(0)
+  };
+
   const checkForWin = () => {
     const winningCombos = [
       [0, 1, 2],
@@ -39,7 +50,6 @@ const useTicTacToeApi = () => {
     return null;
   }
 
-
   const state = {
     game,
     players,
@@ -50,7 +60,8 @@ const useTicTacToeApi = () => {
   };
 
   const funcs = {
-    checkForWin
+    checkForWin,
+    handleTwoPlayerMove
   };
 
   return { state, funcs }

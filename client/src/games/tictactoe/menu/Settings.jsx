@@ -5,7 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import Divider from '@mui/material/Divider';
 import { motion } from 'framer-motion';
 import Chip from '@mui/material/Chip';
-import { useState } from 'react'
+
+import useTicTacToeApi from '../useTicTacToeApi'
 
 const SettingsHeader = () => {
   const navigate = useNavigate();
@@ -27,11 +28,12 @@ const SettingsHeader = () => {
   )
 }
 
-const Settings = (props) => {
+const Settings = () => {
 
   const {
-    currentWinner
-  } = props;
+    state: { currentWinner }
+  } = useTicTacToeApi()
+
 
   const theme = useTheme();
 

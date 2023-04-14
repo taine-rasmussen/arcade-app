@@ -1,13 +1,17 @@
 import { Box, useTheme, useMediaQuery } from '@mui/material';
 import WidgetWrapper from '../../wrapper/WidgetWrapper';
 import { motion } from 'framer-motion';
+import useTicTacToeApi from './useTicTacToeApi'
 
 import GameboardCell from './gameboardCell'
+
 
 const Gameboard = () => {
 
   const theme = useTheme();
   const main = theme.palette.background.main
+
+  const { state: { game } } = useTicTacToeApi();
 
   const isNonMobileScreens = useMediaQuery('(min-width:1000px)');
 

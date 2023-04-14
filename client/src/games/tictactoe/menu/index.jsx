@@ -1,20 +1,14 @@
 import FlexBetween from '../../../wrapper/FlexBetween'
 import { Box, useMediaQuery } from '@mui/material';
+import useTicTacToeApi from '../useTicTacToeApi';
 import { motion } from "framer-motion";
-
 
 import ProfileCard from './ProfileCard';
 import Settings from './Settings';
 
-const Menu = (props) => {
+const Menu = () => {
 
-  const {
-    players,
-    isGameOver,
-    playerTurn,
-    setPlayers,
-    currentWinnder,
-  } = props;
+  const { state: { players } } = useTicTacToeApi();
 
   const isNonMobileScreens = useMediaQuery('(min-width:1000px)');
 
@@ -39,16 +33,11 @@ const Menu = (props) => {
             <ProfileCard
               key={i}
               player={player}
-              players={players}
-              isGameOver={isGameOver}
-              playerTurn={playerTurn}
             />
           ))}
         </FlexBetween>
       </motion.div>
-      <Settings
-        currentWinnder={currentWinnder}
-      />
+      <Settings />
     </Box>
   )
 }

@@ -34,10 +34,7 @@ const Settings = () => {
     state: { currentWinner }
   } = useTicTacToeApi()
 
-
   const theme = useTheme();
-
-  console.log(currentWinner)
 
   return (
     <motion.div

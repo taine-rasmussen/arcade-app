@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
 const INITGAME = [
@@ -47,46 +47,60 @@ const useTicTacToeApi = () => {
   const [game, setGame] = useState(INITGAME)
   const [playerTurn, setPlayerTurn] = useState(0)
   const [isGameOver, setIsGameOver] = useState(false)
-  const [currentWinner, setCurrentWinner] = useState();
   const [isSinglePlayerMode, setIsSinglePlayerMode] = useState(false);
   const [players, setPlayers] = useState([{ name: loggedInUsername }, { name: 'playerTwo' }])
 
+  const currentWinner = useMemo(
+    () => {
+      if (isGameOver) return players[playerTurn].name
+    }, [isGameOver, playerTurn]
+  );
+
+  console.log(currentWinner)
+
+
   const handleTwoPlayerMove = (value, id) => {
     if (value != '' || isGameOver) return;
-    if (playerTurn === 0) {
+    if (playerTurn == 0) {
       setGame([...game], game[id].value = 'X')
     } else {
       setGame([...game], game[id].value = 'O')
     }
     checkForWin()
-    playerTurn === 0 ? setPlayerTurn(1) : setPlayerTurn(0)
-  };
-
-  const checkForWin = () => {
-    const winningCombos = [
-      [0, 1, 2],
-      [3, 4, 5],
-      [6, 7, 8],
-      [0, 3, 6],
-      [1, 4, 7],
-      [2, 5, 8],
-      [0, 4, 8],
-      [2, 4, 6]
-    ];
-
-    for (let i = 0; i < winningCombos.length; i++) {
-      const [a, b, c] = winningCombos[i];
-      const cellA = game.find(cell => cell.id === a);
-      const cellB = game.find(cell => cell.id === b);
-      const cellC = game.find(cell => cell.id === c);
-
-      if (cellA.value && cellA.value === cellB.value && cellB.value === cellC.value) {
-        setIsGameOver(true)
-        setCurrentWinner(players[playerTurn])
-      }
-    }
-    return null;
   }
+
+  const togglePlayerTurn = useCallback(
+    (currTurn) => {
+      return currTurn === 0 ? setPlayerTurn(1) : setPlayerTurn(0)
+    }, [handleTwoPlayerMove]
+  )
+
+  const checkForWin = useCallback(
+    () => {
+      const winningCombos = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6]
+      ];
+
+      for (let i = 0; i < winningCombos.length; i++) {
+        const [a, b, c] = winningCombos[i];
+        const cellA = game.find(cell => cell.id === a);
+        const cellB = game.find(cell => cell.id === b);
+        const cellC = game.find(cell => cell.id === c);
+
+        if (cellA.value && cellA.value === cellB.value && cellB.value === cellC.value) {
+          setIsGameOver(true)
+        }
+      }
+      return togglePlayerTurn(playerTurn);
+    }, [handleTwoPlayerMove]
+  )
 
   const state = {
     game,
@@ -99,7 +113,7 @@ const useTicTacToeApi = () => {
 
   const funcs = {
     checkForWin,
-    handleTwoPlayerMove
+    handleTwoPlayerMove,
   };
 
   return { state, funcs }

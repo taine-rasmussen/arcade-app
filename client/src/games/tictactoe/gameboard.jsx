@@ -4,19 +4,7 @@ import { motion } from 'framer-motion';
 
 import GameboardCell from './gameboardCell'
 
-const Gameboard = (props) => {
-
-  const {
-    game,
-    setGame,
-    players,
-    isGameOver,
-    playerTurn,
-    setPlayerTurn,
-    setIsGameOver,
-    setCurrentWinner,
-    isSinglePlayerMode,
-  } = props
+const Gameboard = () => {
 
   const theme = useTheme();
   const main = theme.palette.background.main

@@ -23,7 +23,7 @@ const Gameboard = (props) => {
 
   return (
     <motion.div
-      animate={{ y: ['1500px', '0px'] }}
+      animate={{ y: ['-1500px', '0px'] }}
       style={{ height: '75%', width: '45%', zIndex: '3' }}
       transition={{ duration: 1 }}
     >

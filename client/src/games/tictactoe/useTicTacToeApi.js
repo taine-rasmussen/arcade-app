@@ -22,6 +22,7 @@ const useTicTacToeApi = () => {
 
   };
 
+  return { state, funcs }
 }
 
 export default useTicTacToeApi

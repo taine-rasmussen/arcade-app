@@ -9,10 +9,12 @@ const Gameboard = (props) => {
   const {
     game,
     setGame,
+    players,
     isGameOver,
     playerTurn,
     setPlayerTurn,
     setIsGameOver,
+    setCurrentWinner,
     isSinglePlayerMode,
   } = props
 
@@ -49,11 +51,13 @@ const Gameboard = (props) => {
               key={i}
               cell={cell}
               game={game}
+              players={players}
               setGame={setGame}
               isGameOver={isGameOver}
               playerTurn={playerTurn}
               setIsGameOver={setIsGameOver}
               setPlayerTurn={setPlayerTurn}
+              setCurrentWinner={setCurrentWinner}
               isSinglePlayerMode={isSinglePlayerMode}
             />
           ))}

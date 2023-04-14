@@ -51,8 +51,12 @@ const TicTacToe = () => {
   const [game, setGame] = useState(INITGAME)
   const [playerTurn, setPlayerTurn] = useState(0)
   const [isGameOver, setIsGameOver] = useState(false)
+  const [currentWinner, setCurrentWinner] = useState();
   const [isSinglePlayerMode, setIsSinglePlayerMode] = useState(false);
   const [players, setPlayers] = useState([{ name: loggedInUsername }, { name: 'playerTwo' }])
+
+  console.log(currentWinner)
+
 
   const theme = useTheme();
   const main = theme.palette.background.main
@@ -86,10 +90,12 @@ const TicTacToe = () => {
         <Gameboard
           game={game}
           setGame={setGame}
+          players={players}
           isGameOver={isGameOver}
           playerTurn={playerTurn}
           setIsGameOver={setIsGameOver}
           setPlayerTurn={setPlayerTurn}
+          setCurrentWinner={setCurrentWinner}
           isSinglePlayerMode={isSinglePlayerMode}
         />
       </Box>

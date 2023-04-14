@@ -2,12 +2,15 @@ import { Box, useTheme, useMediaQuery, Typography, Button } from '@mui/material'
 import WidgetWrapper from '../../../wrapper/WidgetWrapper'
 import FlexBetween from '../../../wrapper/FlexBetween'
 import { useNavigate } from 'react-router-dom';
+import Divider from '@mui/material/Divider';
 import { motion } from 'framer-motion';
+import Chip from '@mui/material/Chip';
+import { useState } from 'react'
 
-const NavHeader = () => {
+const SettingsHeader = () => {
   const navigate = useNavigate();
   return (
-    <FlexBetween sx={{ maring: '20px 0' }}>
+    <FlexBetween sx={{ padding: '10px 0px' }}>
       <Button
         variant='outlined'
         onClick={() => { navigate('/dashboard') }}
@@ -40,7 +43,46 @@ const Settings = () => {
         width={100}
         height={100}
       >
-        <NavHeader />
+        <SettingsHeader />
+        <Divider />
+        <Box sx={{
+          height: '87%',
+          width: '100%',
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          padding: '10px'
+        }}>
+          <Box sx={{ width: '45%' }}>
+            <FlexBetween>
+              <Typography
+                variant='h3'
+              >
+                Winner:
+              </Typography>
+              <Typography
+                variant='h3'
+              >
+                name
+              </Typography>
+            </FlexBetween>
+          </Box>
+
+          <Divider
+            orientation="vertical"
+            variant="middle"
+          >
+            <Chip label="Settings" />
+          </Divider>
+
+          <Box sx={{ width: '45%', display: 'flex', justifyContent: 'center' }}>
+            <Typography
+              variant='h3'
+            >
+              Current Session
+            </Typography>
+          </Box>
+        </Box>
       </WidgetWrapper>
     </motion.div>
   )

@@ -9,28 +9,27 @@ const GameboardCell = (props) => {
     },
     game,
     setGame,
+    players,
     playerTurn,
     isGameOver,
     setIsGameOver,
     setPlayerTurn,
+    setCurrentWinner,
     isSinglePlayerMode,
   } = props;
 
   const theme = useTheme();
   const alt = theme.palette.background.alt
 
-
   const handleTwoPlayerMove = (value, id) => {
     if (value != '' || isGameOver) return;
     if (playerTurn === 0) {
       setGame([...game], game[id].value = 'X')
-      setPlayerTurn(1)
-
     } else {
       setGame([...game], game[id].value = 'O')
-      setPlayerTurn(0)
     }
     checkForWin()
+    playerTurn === 0 ? setPlayerTurn(1) : setPlayerTurn(0)
   };
 
   const checkForWin = () => {
@@ -52,7 +51,8 @@ const GameboardCell = (props) => {
       const cellC = game.find(cell => cell.id === c);
 
       if (cellA.value && cellA.value === cellB.value && cellB.value === cellC.value) {
-        setIsGameOver(!isGameOver)
+        setIsGameOver(true)
+        setCurrentWinner(players[playerTurn])
       }
     }
     return null;

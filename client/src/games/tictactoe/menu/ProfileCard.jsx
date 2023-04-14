@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux';
 const ProfileCard = (props) => {
 
   const {
+    isGameOver,
     playerTurn,
     players,
     player: {
@@ -31,9 +32,11 @@ const ProfileCard = (props) => {
       theme={theme}
       width={45}
       sx={
-        isActiveTurn
-          ? { border: `3px solid ${borderColor}` }
-          : { border: `3px solid none` }
+        !isGameOver
+          ? isActiveTurn
+            ? { border: `3px solid ${borderColor}` }
+            : { border: `3px solid black` }
+          : { border: `3px solid black` }
       }
     >
       <Box
@@ -63,8 +66,8 @@ const ProfileCard = (props) => {
         </Typography>
         <Typography variant='h3'>
           {isLoggedInUser
-            ? <TripOriginIcon sx={iconStlye} />
-            : <CloseIcon sx={iconStlye} />}
+            ? < CloseIcon sx={iconStlye} />
+            : <TripOriginIcon sx={iconStlye} />}
         </Typography>
       </Box>
     </WidgetWrapper >

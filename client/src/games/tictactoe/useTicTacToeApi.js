@@ -56,9 +56,6 @@ const useTicTacToeApi = () => {
     }, [isGameOver, playerTurn]
   );
 
-  console.log(currentWinner)
-
-
   const handleTwoPlayerMove = (value, id) => {
     if (value != '' || isGameOver) return;
     if (playerTurn == 0) {

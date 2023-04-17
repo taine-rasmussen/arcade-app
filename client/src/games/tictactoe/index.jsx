@@ -1,4 +1,5 @@
 import { Box, useTheme, useMediaQuery } from '@mui/material';
+import { useReducer, useContext } from 'react';
 import Gameboard from './gameboard'
 import Menu from './menu';
 

@@ -1,12 +1,13 @@
 import { Box, useTheme, useMediaQuery, Typography } from '@mui/material';
 import useTicTacToeApi from './useTicTacToeApi';
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { GameContext } from './index'
 
 const GameboardCell = (props) => {
 
   const {
     state: {
+      game,
       isGameOver,
       isSinglePlayerMode
     },
@@ -23,10 +24,13 @@ const GameboardCell = (props) => {
   const theme = useTheme();
   const alt = theme.palette.background.alt
 
-  const handleTwoPlayerMove = (value, id) => {
-    if (value != '' || isGameOver) return;
-    console.log(value, id)
-  }
+  useEffect(
+    () => {
+      dispatch('checkWin')
+    }, [game]
+  )
+
+
 
   return (
     <Box

@@ -17,8 +17,6 @@ const ProfileCard = ({ name, activeTurn }) => {
     playerTurn,
   } = state
 
-  console.log(state)
-
   const theme = useTheme()
   const main = theme.palette.background.main
   const borderColor = theme.palette.primary.main

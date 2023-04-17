@@ -76,6 +76,8 @@ const TicTacToe = () => {
         game: updateGame(state.game),
         playerTurn: !state.playerTurn
       }
+    } else if (action === 'checkWin') {
+      console.log('checking')
     } else {
       throw Error('Unknown action.');
     }

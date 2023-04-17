@@ -6,8 +6,6 @@ import Divider from '@mui/material/Divider';
 import { motion } from 'framer-motion';
 import Chip from '@mui/material/Chip';
 
-import useTicTacToeApi from '../useTicTacToeApi'
-
 const SettingsHeader = () => {
   const navigate = useNavigate();
   return (
@@ -29,7 +27,6 @@ const SettingsHeader = () => {
 }
 
 const Settings = () => {
-
   const theme = useTheme();
 
   return (

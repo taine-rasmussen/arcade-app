@@ -29,12 +29,14 @@ const Menu = () => {
         transition={{ type: 'tween', duration: 0.75, delay: 1.15 }}
       >
         <FlexBetween>
-          {players.map((player, i) => (
-            <ProfileCard
-              key={i}
-              player={player}
-            />
-          ))}
+          <ProfileCard
+            name={players[0].name}
+            activeTurn={true}
+          />
+          <ProfileCard
+            activeTurn={false}
+            name={players[1].name}
+          />
         </FlexBetween>
       </motion.div>
       <Settings />

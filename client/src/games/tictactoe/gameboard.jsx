@@ -9,12 +9,9 @@ const Gameboard = () => {
 
   const theme = useTheme();
   const main = theme.palette.background.main
-  const { state } = useContext(GameContext)
+  const { state: { game } } = useContext(GameContext)
   const isNonMobileScreens = useMediaQuery('(min-width:1000px)');
 
-  const {
-    game
-  } = state
 
   return (
     <motion.div

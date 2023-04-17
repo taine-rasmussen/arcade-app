@@ -19,7 +19,6 @@ const ProfileCard = (props) => {
   } = useContext(GameContext)
 
   const {
-    players,
     isGameOver,
     playerTurn,
   } = state

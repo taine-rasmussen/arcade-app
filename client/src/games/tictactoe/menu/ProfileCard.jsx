@@ -32,7 +32,7 @@ const ProfileCard = (props) => {
   const loggedInUsername = useSelector((state) => state.user.username)
   const isLoggedInUser = loggedInUsername === name;
 
-  const isActiveTurn = name === players[playerTurn].name
+  const isActiveTurn = playerTurn === true
 
   const iconStlye = {
     fontSize: '4rem'

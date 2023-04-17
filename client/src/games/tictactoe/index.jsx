@@ -1,4 +1,5 @@
 import { Box, useTheme, useMediaQuery } from '@mui/material';
+import { CreateImageRequestResponseFormatEnum } from 'openai';
 import { useReducer, createContext } from 'react';
 import { useSelector } from 'react-redux';
 
@@ -55,13 +56,33 @@ const TicTacToe = () => {
   const initialState = {
     game: INITGAME,
     isGameOver: false,
-    playerTurn: 0,
+    playerTurn: true,
     isSinglePlayerMode: false,
     players: [{ name: loggedInUsername }, { name: 'Player Two' }]
   }
 
   const reducer = (state, action) => {
-    console.log('REDUCER', action)
+
+    if (typeof (action) === 'number') {
+      console.log(action)
+
+      const updateGame = (game) => {
+        for (let i = 0; i < game.length; i++) {
+          if (game[i].id == action) {
+            game[i].value = state.playerTurn ? 'X' : 'O'
+          }
+        }
+        return game
+      }
+
+
+      return {
+        ...state,
+        game: updateGame(state.game),
+        playerTurn: !state.playerTurn
+      }
+    }
+    throw Error('Unknown action.');
   }
 
   const [state, dispatch] = useReducer(reducer, initialState);

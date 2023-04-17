@@ -58,10 +58,14 @@ const TicTacToe = () => {
     players: [{ name: loggedInUsername }, { name: 'Player Two' }]
   }
 
+  function reducer(state, action) {
+    return { ...state, ...action };
+  }
+
   const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
-    <>
+    <GameContext.Provicer value={{ state, dispatch }}>
       <Box
         sx={{
           gap: '3rem',
@@ -79,7 +83,7 @@ const TicTacToe = () => {
         <Menu />
         <Gameboard />
       </Box>
-    </>
+    </GameContext.Provicer>
   )
 }
 

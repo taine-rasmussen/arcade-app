@@ -45,19 +45,20 @@ const INITGAME = [
 
 const TicTacToe = () => {
 
-  const loggedInUsername = useSelector((state) => state.user.username)
-
   const theme = useTheme();
+  const GameContext = createContext();
   const main = theme.palette.background.main
   const isNonMobileScreens = useMediaQuery('(min-width:1000px)');
-
+  const loggedInUsername = useSelector((state) => state.user.username)
   const initialState = {
     game: INITGAME,
     isGameOver: false,
-    playerTurn: false,
+    playerTurn: 0,
     isSinglePlayerMode: false,
     players: [{ name: loggedInUsername }, { name: 'Player Two' }]
   }
+
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
     <>

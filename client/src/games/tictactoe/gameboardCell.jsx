@@ -1,7 +1,14 @@
 import { Box, useTheme, useMediaQuery, Typography } from '@mui/material';
 import useTicTacToeApi from './useTicTacToeApi';
+import { useContext } from 'react'
+import { GameContext } from './index'
 
 const GameboardCell = (props) => {
+
+  const {
+    state: { isSinglePlayerMode },
+    dispatch
+  } = useContext(GameContext)
 
   const {
     cell: {
@@ -10,15 +17,12 @@ const GameboardCell = (props) => {
     }
   } = props
 
-  const {
-    state,
-    funcs
-  } = useTicTacToeApi();
-  const { isSinglePlayerMode } = state
-  const { handleTwoPlayerMove } = funcs
-
   const theme = useTheme();
   const alt = theme.palette.background.alt
+
+  const handleTwoPlayerMove = (value, id) => {
+    console.log(value, id)
+  }
 
   return (
     <Box

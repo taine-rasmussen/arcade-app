@@ -30,10 +30,6 @@ const SettingsHeader = () => {
 
 const Settings = () => {
 
-  const {
-    state: { currentWinner }
-  } = useTicTacToeApi()
-
   const theme = useTheme();
 
   return (
@@ -68,7 +64,7 @@ const Settings = () => {
               <Typography
                 variant='h3'
               >
-                {currentWinner}
+                Winner goes here
               </Typography>
             </FlexBetween>
           </Box>

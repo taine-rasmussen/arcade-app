@@ -20,6 +20,10 @@ const GameboardCell = (props) => {
   const theme = useTheme();
   const alt = theme.palette.background.alt
 
+  const handleTwoPlayerMove = (value, id) => {
+    console.log(value, id)
+  }
+
   return (
     <Box
       key={id}
@@ -30,7 +34,7 @@ const GameboardCell = (props) => {
         borderRadius: '0.75rem',
         justifyContent: 'center',
       }}
-      onClick={() => { isSinglePlayerMode ? console.log('single') : dispatch(value) }}
+      onClick={() => { isSinglePlayerMode ? console.log('single') : handleTwoPlayerMove(value, id) }}
     >
       <Typography
         variant="h1"

@@ -61,7 +61,7 @@ const TicTacToe = () => {
   }
 
   const reducer = (state, action) => {
-    console.log(state, action)
+    console.log('REDUCER', action)
   }
 
   const [state, dispatch] = useReducer(reducer, initialState);

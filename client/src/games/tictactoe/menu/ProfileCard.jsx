@@ -3,7 +3,8 @@ import TripOriginIcon from '@mui/icons-material/TripOrigin';
 import WidgetWrapper from '../../../wrapper/WidgetWrapper'
 import CloseIcon from '@mui/icons-material/Close';
 import { useSelector } from 'react-redux';
-import useTicTacToeApi from '../useTicTacToeApi';
+import { GameContext } from '../index';
+import { useContext } from 'react';
 
 const ProfileCard = (props) => {
 
@@ -14,12 +15,16 @@ const ProfileCard = (props) => {
   } = props;
 
   const {
-    state: {
-      players,
-      isGameOver,
-      playerTurn,
-    }
-  } = useTicTacToeApi();
+    state
+  } = useContext(GameContext)
+
+  const {
+    players,
+    isGameOver,
+    playerTurn,
+  } = state
+
+  console.log(state)
 
   const theme = useTheme()
   const main = theme.palette.background.main

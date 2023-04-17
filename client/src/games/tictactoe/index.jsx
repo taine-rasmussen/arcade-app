@@ -64,8 +64,6 @@ const TicTacToe = () => {
   const reducer = (state, action) => {
 
     if (typeof (action) === 'number') {
-      console.log(action)
-
       const updateGame = (game) => {
         for (let i = 0; i < game.length; i++) {
           if (game[i].id == action) {
@@ -74,8 +72,6 @@ const TicTacToe = () => {
         }
         return game
       }
-
-
       return {
         ...state,
         game: updateGame(state.game),

@@ -6,13 +6,7 @@ import { useSelector } from 'react-redux';
 import { GameContext } from '../index';
 import { useContext } from 'react';
 
-const ProfileCard = (props) => {
-
-  const {
-    player: {
-      name
-    }
-  } = props;
+const ProfileCard = ({ name, activeTurn }) => {
 
   const {
     state
@@ -31,7 +25,7 @@ const ProfileCard = (props) => {
   const loggedInUsername = useSelector((state) => state.user.username)
   const isLoggedInUser = loggedInUsername === name;
 
-  const isActiveTurn = playerTurn === true
+  const isActiveTurn = activeTurn === playerTurn
 
   const iconStlye = {
     fontSize: '4rem'

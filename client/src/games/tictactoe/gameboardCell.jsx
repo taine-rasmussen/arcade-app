@@ -6,7 +6,10 @@ import { GameContext } from './index'
 const GameboardCell = (props) => {
 
   const {
-    state: { isSinglePlayerMode },
+    state: {
+      isGameOver,
+      isSinglePlayerMode
+    },
     dispatch
   } = useContext(GameContext)
 
@@ -21,6 +24,7 @@ const GameboardCell = (props) => {
   const alt = theme.palette.background.alt
 
   const handleTwoPlayerMove = (value, id) => {
+    if (value != '' || isGameOver) return;
     console.log(value, id)
   }
 
@@ -34,7 +38,11 @@ const GameboardCell = (props) => {
         borderRadius: '0.75rem',
         justifyContent: 'center',
       }}
-      onClick={() => { isSinglePlayerMode ? console.log('single') : handleTwoPlayerMove(value, id) }}
+      onClick={
+        value != '' || isGameOver
+          ? () => { console.log('NO!') }
+          : () => { isSinglePlayerMode ? console.log('single') : dispatch(id) }
+      }
     >
       <Typography
         variant="h1"

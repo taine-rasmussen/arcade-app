@@ -61,8 +61,35 @@ const TicTacToe = () => {
     players: [{ name: loggedInUsername }, { name: 'Player Two' }]
   }
 
+  const checkForWin = (game) => {
+    const winningCombos = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6]
+    ];
+
+    for (let i = 0; i < winningCombos.length; i++) {
+      const [a, b, c] = winningCombos[i];
+      const cellA = game.find(cell => cell.id === a);
+      const cellB = game.find(cell => cell.id === b);
+      const cellC = game.find(cell => cell.id === c);
+
+      if (cellA.value && cellA.value === cellB.value && cellB.value === cellC.value) {
+        return true
+      } else {
+        return false
+      }
+    }
+  }
+
   const reducer = (state, action) => {
     if (typeof (action) === 'number') {
+      if (state.isGameOver) return;
       const updateGame = (game) => {
         for (let i = 0; i < game.length; i++) {
           if (game[i].id == action) {
@@ -77,10 +104,17 @@ const TicTacToe = () => {
         playerTurn: !state.playerTurn
       }
     } else if (action === 'checkWin') {
-      console.log('checking')
-      return {
-        ...state
+
+      const isWon = checkForWin(state.game)
+
+      console.log(isWon)
+
+      if (isWon) {
+        return { ...state, isGameOver: true }
+      } else {
+        return { ...state }
       }
+
     } else {
       throw Error('Unknown action.');
     }

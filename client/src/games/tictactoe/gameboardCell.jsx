@@ -27,6 +27,7 @@ const GameboardCell = (props) => {
   const handleTwoPLayerMove = (id) => {
     dispatch(id)
     dispatch('checkWin')
+
   }
 
 

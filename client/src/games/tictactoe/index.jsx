@@ -44,6 +44,16 @@ const INITGAME = [
     value: '',
   },
 ]
+const winningCombos = [
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8],
+  [0, 3, 6],
+  [1, 4, 7],
+  [2, 5, 8],
+  [0, 4, 8],
+  [2, 4, 6]
+];
 
 export const GameContext = createContext();
 
@@ -63,6 +73,7 @@ const TicTacToe = () => {
 
   const reducer = (state, action) => {
     if (typeof (action) === 'number') {
+      if (state.isGameOver) return;
       const updateGame = (game) => {
         for (let i = 0; i < game.length; i++) {
           if (game[i].id == action) {
@@ -75,6 +86,19 @@ const TicTacToe = () => {
         ...state,
         game: updateGame(state.game),
         playerTurn: !state.playerTurn
+      }
+    } else if (action === 'checkWin') {
+      for (let i = 0; i < winningCombos.length; i++) {
+        const [a, b, c] = winningCombos[i];
+        const cellA = state.game.find(cell => cell.id === a);
+        const cellB = state.game.find(cell => cell.id === b);
+        const cellC = state.game.find(cell => cell.id === c);
+
+        if (cellA.value && cellA.value === cellB.value && cellB.value === cellC.value) {
+          return { ...state, isGameOver: true }
+        } else {
+          return { ...state }
+        }
       }
     } else {
       throw Error('Unknown action.');

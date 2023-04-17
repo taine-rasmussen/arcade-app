@@ -15,9 +15,7 @@ const ProfileCard = ({ name, activeTurn }) => {
   const {
     isGameOver,
     playerTurn,
-  } = state
-
-  console.log(state)
+  } = state || {}
 
   const theme = useTheme()
   const main = theme.palette.background.main

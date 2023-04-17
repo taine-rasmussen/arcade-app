@@ -1,5 +1,4 @@
 import { Box, useTheme, useMediaQuery, Typography } from '@mui/material';
-import useTicTacToeApi from './useTicTacToeApi';
 import { useContext } from 'react'
 import { GameContext } from './index'
 
@@ -7,6 +6,7 @@ const GameboardCell = (props) => {
 
   const {
     state: {
+      playerTurn,
       isGameOver,
       isSinglePlayerMode
     },
@@ -23,9 +23,10 @@ const GameboardCell = (props) => {
   const theme = useTheme();
   const alt = theme.palette.background.alt
 
-  const handleTwoPlayerMove = (value, id) => {
-    if (value != '' || isGameOver) return;
-    console.log(value, id)
+  const handleTwoPLayerMove = (id) => {
+    dispatch(id)
+    dispatch('checkWin')
+
   }
 
   return (
@@ -41,7 +42,7 @@ const GameboardCell = (props) => {
       onClick={
         value != '' || isGameOver
           ? () => { console.log('NO!') }
-          : () => { isSinglePlayerMode ? console.log('single') : dispatch(id) }
+          : () => { isSinglePlayerMode ? console.log('single') : handleTwoPLayerMove(id) }
       }
     >
       <Typography

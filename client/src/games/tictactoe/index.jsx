@@ -62,7 +62,6 @@ const TicTacToe = () => {
   }
 
   const reducer = (state, action) => {
-
     if (typeof (action) === 'number') {
       const updateGame = (game) => {
         for (let i = 0; i < game.length; i++) {
@@ -77,8 +76,9 @@ const TicTacToe = () => {
         game: updateGame(state.game),
         playerTurn: !state.playerTurn
       }
+    } else {
+      throw Error('Unknown action.');
     }
-    throw Error('Unknown action.');
   }
 
   const [state, dispatch] = useReducer(reducer, initialState);

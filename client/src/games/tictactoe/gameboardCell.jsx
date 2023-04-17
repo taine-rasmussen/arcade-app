@@ -1,7 +1,14 @@
 import { Box, useTheme, useMediaQuery, Typography } from '@mui/material';
 import useTicTacToeApi from './useTicTacToeApi';
+import { useContext } from 'react'
+import { GameContext } from './index'
 
 const GameboardCell = (props) => {
+
+  const {
+    state: { isSinglePlayerMode },
+    dispatch
+  } = useContext(GameContext)
 
   const {
     cell: {
@@ -9,13 +16,6 @@ const GameboardCell = (props) => {
       id
     }
   } = props
-
-  const {
-    state,
-    funcs
-  } = useTicTacToeApi();
-  const { isSinglePlayerMode } = state
-  const { handleTwoPlayerMove } = funcs
 
   const theme = useTheme();
   const alt = theme.palette.background.alt
@@ -30,7 +30,7 @@ const GameboardCell = (props) => {
         borderRadius: '0.75rem',
         justifyContent: 'center',
       }}
-      onClick={() => { isSinglePlayerMode ? console.log('single') : handleTwoPlayerMove(value, id) }}
+      onClick={() => { isSinglePlayerMode ? console.log('single') : dispatch(value) }}
     >
       <Typography
         variant="h1"

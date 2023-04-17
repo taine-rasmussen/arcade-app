@@ -7,7 +7,7 @@ const GameboardCell = (props) => {
 
   const {
     state: {
-      game,
+      playerTurn,
       isGameOver,
       isSinglePlayerMode
     },
@@ -24,11 +24,10 @@ const GameboardCell = (props) => {
   const theme = useTheme();
   const alt = theme.palette.background.alt
 
-  useEffect(
-    () => {
-      dispatch('checkWin')
-    }, [game]
-  )
+  const handleTwoPLayerMove = (id) => {
+    dispatch(id)
+    dispatch('checkWin')
+  }
 
 
 
@@ -45,7 +44,7 @@ const GameboardCell = (props) => {
       onClick={
         value != '' || isGameOver
           ? () => { console.log('NO!') }
-          : () => { isSinglePlayerMode ? console.log('single') : dispatch(id) }
+          : () => { isSinglePlayerMode ? console.log('single') : handleTwoPLayerMove(id) }
       }
     >
       <Typography

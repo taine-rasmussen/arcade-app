@@ -78,6 +78,9 @@ const TicTacToe = () => {
       }
     } else if (action === 'checkWin') {
       console.log('checking')
+      return {
+        ...state
+      }
     } else {
       throw Error('Unknown action.');
     }

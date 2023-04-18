@@ -35,12 +35,13 @@ const Settings = () => {
   const {
     state: {
       players,
+      session,
       isGameOver,
       playerTurn,
     }
   } = useContext(GameContext)
 
-  console.log(isGameOver, playerTurn)
+  console.log(session)
 
   const winner = useMemo(
     () => {
@@ -96,12 +97,25 @@ const Settings = () => {
             <Chip label="Settings" />
           </Divider>
 
-          <Box sx={{ width: '45%', display: 'flex', justifyContent: 'center' }}>
+          <Box sx={{
+            width: '45%',
+            display: 'flex',
+            justifyContent: 'center'
+          }}>
             <Typography
               variant='h3'
             >
               Current Session
             </Typography>
+            {session.map((gameResult, i) => (
+              <Typography
+                variant='h3'
+                key={i}
+              >
+                {gameResult ? 'X' : 'O'}
+              </Typography>
+            )
+            )}
           </Box>
         </Box>
       </WidgetWrapper>

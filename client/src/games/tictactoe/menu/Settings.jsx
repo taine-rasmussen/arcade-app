@@ -47,7 +47,7 @@ const WinningCard = (result) => {
       transition={{ type: 'tween', duration: 0.75 }}
       style={{
         minHeight: '20%',
-        width: '100%',
+        width: '90%',
         background: bg,
         borderRadius: '10px',
         display: 'flex',
@@ -154,8 +154,10 @@ const Settings = () => {
                 gap: '1rem',
                 height: '90%',
                 display: 'flex',
+                overflowY: 'auto',
+                overflowX: 'hidden',
                 flexDirection: 'column',
-                overflow: 'hidden'
+                alignItems: 'center',
               }}
             >
               {session.map((result, i) => (

@@ -39,7 +39,8 @@ const WinningCard = (result) => {
     <Box
       sx={{
         border: '2px solid red',
-        borderRadius: '10px'
+        borderRadius: '10px',
+
       }}
     >
       <Typography
@@ -75,7 +76,7 @@ const Settings = () => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
-      style={{ height: '100%', width: '100%', zIndex: '2' }}
+      style={{ height: '100%', width: '100%', zIndex: '2', overflow: 'hidden' }}
       animate={{ x: ['300px', '0px'], opacity: 1 }}
       transition={{ type: 'tween', duration: 0.6, delay: 0.75 }}
     >
@@ -119,17 +120,37 @@ const Settings = () => {
           <Box sx={{
             width: '45%',
             display: 'flex',
-            justifyContent: 'center'
+            flexDirection: 'column',
+            gap: '1rem'
           }}>
-            <Typography
-              variant='h3'
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}
             >
-              Current Session
-            </Typography>
-            {session.map((result, i) => (
-              <WinningCard result={result} key={i} />
-            )
-            )}
+              <Typography
+                variant='h3'
+              >
+                Current Session:
+              </Typography>
+
+            </Box>
+            <Box
+              sx={{
+                gap: '1rem',
+                maxWidth: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                overflow: 'hidden'
+              }}
+            >
+              {session.map((result, i) => (
+                <WinningCard result={result} key={i} />
+              )
+              )}
+            </Box>
           </Box>
         </Box>
       </WidgetWrapper>

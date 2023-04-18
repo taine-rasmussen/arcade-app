@@ -38,13 +38,10 @@ const WinningCard = (result) => {
 
   const theme = useTheme()
   const bg = theme.palette.background.main
-  const border = theme.palette.primary.main
-
-
   return (
     <motion.div
       animate={{ x: ['150px', '0px'] }}
-      transition={{ type: 'tween', duration: 0.75 }}
+      transition={{ type: 'tween', duration: 0.45 }}
       style={{
         minHeight: '20%',
         width: '90%',
@@ -156,8 +153,8 @@ const Settings = () => {
                 display: 'flex',
                 overflowY: 'auto',
                 overflowX: 'hidden',
-                flexDirection: 'column',
                 alignItems: 'center',
+                flexDirection: 'column',
               }}
             >
               {session.map((result, i) => (

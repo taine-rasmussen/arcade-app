@@ -42,8 +42,10 @@ const WinningCard = (result) => {
 
 
   return (
-    <Box
-      sx={{
+    <motion.div
+      animate={{ x: ['150px', '0px'] }}
+      transition={{ type: 'tween', duration: 0.75 }}
+      style={{
         minHeight: '20%',
         width: '100%',
         background: bg,
@@ -58,7 +60,7 @@ const WinningCard = (result) => {
       >
         {result.result ? 'X' : 'O'}
       </Typography>
-    </Box>
+    </motion.div>
   )
 }
 

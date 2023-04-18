@@ -35,9 +35,16 @@ const SettingsHeader = () => {
 }
 
 const WinningCard = (result) => {
+
+  const theme = useTheme()
+  const bg = theme.palette.background.main
+
+
   return (
     <Box
       sx={{
+        minHeight: '20%',
+        background: bg,
         border: '2px solid red',
         borderRadius: '10px',
 
@@ -140,7 +147,7 @@ const Settings = () => {
             <Box
               sx={{
                 gap: '1rem',
-                maxWidth: '100%',
+                height: '90%',
                 display: 'flex',
                 flexDirection: 'column',
                 overflow: 'hidden'

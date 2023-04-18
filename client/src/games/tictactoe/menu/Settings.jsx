@@ -38,22 +38,25 @@ const WinningCard = (result) => {
 
   const theme = useTheme()
   const bg = theme.palette.background.main
+  const border = theme.palette.primary.main
 
 
   return (
     <Box
       sx={{
         minHeight: '20%',
+        width: '100%',
         background: bg,
-        border: '2px solid red',
         borderRadius: '10px',
-
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
       }}
     >
       <Typography
         variant='h3'
       >
-        {result.result ? <CloseIcon /> : <TripOriginIcon />}
+        {result.result ? 'X' : 'O'}
       </Typography>
     </Box>
   )

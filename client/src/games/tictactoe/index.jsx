@@ -64,10 +64,12 @@ const TicTacToe = () => {
     isGameOver: false,
     playerTurn: true,
     isSinglePlayerMode: false,
+    session: [],
     players: [{ name: loggedInUsername }, { name: 'Player Two' }]
   }
 
   const reducer = (state, action) => {
+    console.log(state.session)
     if (typeof (action) === 'number') {
       if (state.isGameOver) return;
       const updateGame = (game) => {
@@ -92,7 +94,8 @@ const TicTacToe = () => {
         if (winValues.every(val => val === 'X') || winValues.every(val => val === 'O')) {
           return {
             ...state,
-            isGameOver: true
+            isGameOver: true,
+            session: [...state.session, !state.playerTurn]
           }
         }
       }

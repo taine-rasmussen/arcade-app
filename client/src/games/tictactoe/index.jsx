@@ -43,56 +43,13 @@ const INITGAME = [
     id: 8,
     value: '',
   },
-]
-
-const test = [
-  {
-    id: 0,
-    value: '',
-  },
-  {
-    id: 1,
-    value: '',
-  },
-  {
-    id: 2,
-    value: '',
-  },
-  {
-    id: 3,
-    value: '',
-  },
-  {
-    id: 4,
-    value: '',
-  },
-  {
-    id: 5,
-    value: '',
-  },
-  {
-    id: 6,
-    value: '',
-  },
-  {
-    id: 7,
-    value: '',
-  },
-  {
-    id: 8,
-    value: '',
-  },
-]
-const winningCombos = [
-  [0, 1, 2],
-  [3, 4, 5],
-  [6, 7, 8],
-  [0, 3, 6],
-  [1, 4, 7],
-  [2, 5, 8],
-  [0, 4, 8],
-  [2, 4, 6]
 ];
+
+const winCombinations = [
+  [0, 1, 2], [3, 4, 5], [6, 7, 8],
+  [0, 3, 6], [1, 4, 7], [2, 5, 8],
+  [0, 4, 8], [2, 4, 6]
+]
 
 export const GameContext = createContext();
 
@@ -127,17 +84,20 @@ const TicTacToe = () => {
         playerTurn: !state.playerTurn
       }
     } else if (action === 'checkWin') {
-      for (let i = 0; i < winningCombos.length; i++) {
-        const [a, b, c] = winningCombos[i];
-        const cellA = state.game.find(cell => cell.id === a);
-        const cellB = state.game.find(cell => cell.id === b);
-        const cellC = state.game.find(cell => cell.id === c);
-
-        if (cellA.value && cellA.value === cellB.value && cellB.value === cellC.value) {
-          return { ...state, isGameOver: true }
-        } else {
-          return { ...state }
+      for (const winCombo of winCombinations) {
+        const winValues = winCombo.map(id => {
+          const gameObj = state.game.find(obj => obj.id === id);
+          return gameObj ? gameObj.value : null;
+        });
+        if (winValues.every(val => val === 'X') || winValues.every(val => val === 'O')) {
+          return {
+            ...state,
+            isGameOver: true
+          }
         }
+      }
+      return {
+        ...state
       }
     } else if (action === 'reset') {
       return {

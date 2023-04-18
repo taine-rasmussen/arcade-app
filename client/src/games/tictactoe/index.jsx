@@ -45,6 +45,12 @@ const INITGAME = [
   },
 ];
 
+const winCombinations = [
+  [0, 1, 2], [3, 4, 5], [6, 7, 8],
+  [0, 3, 6], [1, 4, 7], [2, 5, 8],
+  [0, 4, 8], [2, 4, 6]
+]
+
 export const GameContext = createContext();
 
 const TicTacToe = () => {
@@ -78,20 +84,11 @@ const TicTacToe = () => {
         playerTurn: !state.playerTurn
       }
     } else if (action === 'checkWin') {
-      const winCombinations = [
-        [0, 1, 2], [3, 4, 5], [6, 7, 8],
-        [0, 3, 6], [1, 4, 7], [2, 5, 8],
-        [0, 4, 8], [2, 4, 6]
-      ]
-
-      // Loop through each winning combination
       for (const winCombo of winCombinations) {
         const winValues = winCombo.map(id => {
-          // Find the game object with the matching ID and return its value
           const gameObj = state.game.find(obj => obj.id === id);
           return gameObj ? gameObj.value : null;
         });
-        // Check if all values in the winning combination are the same
         if (winValues.every(val => val === 'X') || winValues.every(val => val === 'O')) {
           return {
             ...state,

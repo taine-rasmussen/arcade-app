@@ -3,10 +3,16 @@ import WidgetWrapper from '../../../wrapper/WidgetWrapper'
 import FlexBetween from '../../../wrapper/FlexBetween'
 import { useNavigate } from 'react-router-dom';
 import Divider from '@mui/material/Divider';
+import { GameContext } from '../index';
 import { motion } from 'framer-motion';
 import Chip from '@mui/material/Chip';
+import { useContext } from 'react';
+
 
 const SettingsHeader = () => {
+
+  const { dispatch } = useContext(GameContext)
+
   const navigate = useNavigate();
   return (
     <FlexBetween sx={{ padding: '10px 0px' }}>
@@ -18,7 +24,7 @@ const SettingsHeader = () => {
     </Button>
       <Button
         variant='outlined'
-        onClick={() => { location.reload(); }}
+        onClick={() => { dispatch('reset'); }}
       >
         Reset
     </Button>

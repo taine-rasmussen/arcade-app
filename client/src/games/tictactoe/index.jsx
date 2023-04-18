@@ -100,7 +100,14 @@ const TicTacToe = () => {
           return { ...state }
         }
       }
-    } else {
+    } else if (action === 'reset') {
+      return {
+        ...state,
+        game: INITGAME
+      }
+    }
+
+    else {
       throw Error('Unknown action.');
     }
   }

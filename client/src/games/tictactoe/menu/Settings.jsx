@@ -2,17 +2,15 @@ import { Box, useTheme, useMediaQuery, Typography, Button } from '@mui/material'
 import WidgetWrapper from '../../../wrapper/WidgetWrapper'
 import FlexBetween from '../../../wrapper/FlexBetween'
 import { useNavigate } from 'react-router-dom';
+import { useContext, useMemo } from 'react';
 import Divider from '@mui/material/Divider';
 import { GameContext } from '../index';
 import { motion } from 'framer-motion';
 import Chip from '@mui/material/Chip';
-import { useContext } from 'react';
 
 
 const SettingsHeader = () => {
-
   const { dispatch } = useContext(GameContext)
-
   const navigate = useNavigate();
   return (
     <FlexBetween sx={{ padding: '10px 0px' }}>
@@ -34,6 +32,25 @@ const SettingsHeader = () => {
 
 const Settings = () => {
   const theme = useTheme();
+  const {
+    state: {
+      players,
+      isGameOver,
+      playerTurn,
+    }
+  } = useContext(GameContext)
+
+  console.log(isGameOver, playerTurn)
+
+  const winner = useMemo(
+    () => {
+      if (isGameOver) {
+        return !playerTurn
+      } else {
+        return undefined
+      }
+    }, [playerTurn, isGameOver]
+  )
 
   return (
     <motion.div
@@ -67,7 +84,7 @@ const Settings = () => {
               <Typography
                 variant='h3'
               >
-                Winner goes here
+                {isGameOver ? winner ? players[0].name : players[1].name : ''}
               </Typography>
             </FlexBetween>
           </Box>

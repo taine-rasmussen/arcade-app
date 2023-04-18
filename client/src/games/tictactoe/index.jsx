@@ -71,7 +71,7 @@ const TicTacToe = () => {
   const reducer = (state, action) => {
     console.log(state.session)
     if (typeof (action) === 'number') {
-      if (state.isGameOver) return;
+      // if (state.isGameOver) return;
       const updateGame = (game) => {
         for (let i = 0; i < game.length; i++) {
           if (game[i].id == action) {

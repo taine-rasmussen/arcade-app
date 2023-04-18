@@ -41,8 +41,6 @@ const Settings = () => {
     }
   } = useContext(GameContext)
 
-  console.log(session)
-
   const winner = useMemo(
     () => {
       if (isGameOver) {

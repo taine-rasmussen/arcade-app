@@ -1,12 +1,16 @@
 import { Box, useTheme, useMediaQuery, Typography, Button } from '@mui/material';
+import TripOriginIcon from '@mui/icons-material/TripOrigin';
 import WidgetWrapper from '../../../wrapper/WidgetWrapper'
 import FlexBetween from '../../../wrapper/FlexBetween'
+import CloseIcon from '@mui/icons-material/Close';
 import { useNavigate } from 'react-router-dom';
 import { useContext, useMemo } from 'react';
 import Divider from '@mui/material/Divider';
 import { GameContext } from '../index';
 import { motion } from 'framer-motion';
 import Chip from '@mui/material/Chip';
+
+
 
 
 const SettingsHeader = () => {
@@ -27,6 +31,23 @@ const SettingsHeader = () => {
         Reset
     </Button>
     </FlexBetween>
+  )
+}
+
+const WinningCard = (result) => {
+  return (
+    <Box
+      sx={{
+        border: '2px solid red',
+        borderRadius: '10px'
+      }}
+    >
+      <Typography
+        variant='h3'
+      >
+        {result.result ? <CloseIcon /> : <TripOriginIcon />}
+      </Typography>
+    </Box>
   )
 }
 
@@ -105,13 +126,8 @@ const Settings = () => {
             >
               Current Session
             </Typography>
-            {session.map((gameResult, i) => (
-              <Typography
-                variant='h3'
-                key={i}
-              >
-                {gameResult ? 'X' : 'O'}
-              </Typography>
+            {session.map((result, i) => (
+              <WinningCard result={result} key={i} />
             )
             )}
           </Box>

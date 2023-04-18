@@ -44,6 +44,45 @@ const INITGAME = [
     value: '',
   },
 ]
+
+const test = [
+  {
+    id: 0,
+    value: '',
+  },
+  {
+    id: 1,
+    value: '',
+  },
+  {
+    id: 2,
+    value: '',
+  },
+  {
+    id: 3,
+    value: '',
+  },
+  {
+    id: 4,
+    value: '',
+  },
+  {
+    id: 5,
+    value: '',
+  },
+  {
+    id: 6,
+    value: '',
+  },
+  {
+    id: 7,
+    value: '',
+  },
+  {
+    id: 8,
+    value: '',
+  },
+]
 const winningCombos = [
   [0, 1, 2],
   [3, 4, 5],
@@ -103,7 +142,12 @@ const TicTacToe = () => {
     } else if (action === 'reset') {
       return {
         ...state,
-        game: INITGAME
+        playerTurn: true,
+        isGameOver: false,
+        game: Array.from({ length: 9 }, (_, i) => ({
+          value: '',
+          id: i
+        }))
       }
     }
 

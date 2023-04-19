@@ -1,11 +1,8 @@
 import { Box, useTheme, Typography } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 
-
 const Header = () => {
-
   const theme = useTheme();
-
   const username = 'EXAMPLE NAME'
 
   return (

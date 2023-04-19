@@ -1,5 +1,4 @@
 import { Box, useTheme, Typography } from '@mui/material';
-import { styled } from "@mui/system"
 
 import MenuItemWrapper from '../../../wrapper/MenuItemWrapper'
 

@@ -1,5 +1,5 @@
-import { Box, useTheme, useMediaQuery, Typography, Button } from '@mui/material';
 import WidgetWrapper from '../../../wrapper/WidgetWrapper';
+import { Box, useTheme, Typography } from '@mui/material';
 import FlexBetween from '../../../wrapper/FlexBetween';
 import SettingsHeader from './SettingsHeader';
 import { useContext, useMemo } from 'react';

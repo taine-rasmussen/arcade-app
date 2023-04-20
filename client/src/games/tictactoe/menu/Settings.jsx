@@ -12,6 +12,12 @@ import { motion } from 'framer-motion';
 import Chip from '@mui/material/Chip';
 import ScoreCard from './ScoreCard';
 
+const SettingsDivder = () => (
+  <Divider orientation="vertical" variant="middle">
+    <Chip label="Settings" />
+  </Divider>
+)
+
 const Settings = () => {
   const theme = useTheme();
   const {
@@ -70,12 +76,7 @@ const Settings = () => {
             </FlexBetween>
           </Box>
 
-          <Divider
-            orientation="vertical"
-            variant="middle"
-          >
-            <Chip label="Settings" />
-          </Divider>
+          <SettingsDivder />
 
           <Box sx={{
             width: '45%',

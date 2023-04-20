@@ -74,7 +74,7 @@ const Settings = () => {
               height={40}
               style={{ background: main }}
             >
-
+              PLayerMode
             </WidgetWrapper>
             <WidgetWrapper
               theme={theme}
@@ -82,7 +82,7 @@ const Settings = () => {
               height={40}
               style={{ background: main }}
             >
-
+              Edit
             </WidgetWrapper>
           </Box>
 

@@ -110,6 +110,8 @@ const TicTacToe = () => {
           id: i
         }))
       }
+    } else if (action.type === 'update2pName') {
+      console.log(action)
     }
 
     else {

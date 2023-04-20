@@ -112,15 +112,20 @@ const TicTacToe = () => {
       }
     } else if (action.type === 'update2pName') {
       console.log(action)
+      return {
+        ...state,
+        players: state.players[0] = { name: action.payload },
+      }
     }
-
     else {
       throw Error('Unknown action.');
     }
   }
 
+
   const [state, dispatch] = useReducer(reducer, initialState);
 
+  console.log(state.players)
   return (
     <GameContext.Provider value={{ state, dispatch }}>
       <Box

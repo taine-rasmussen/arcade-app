@@ -16,14 +16,8 @@ const SettingsDivder = () => (
 
 const Settings = () => {
   const theme = useTheme();
-  const {
-    state: {
-      session,
-      isGameOver,
-      playerTurn,
-    }
-  } = useContext(GameContext)
-  const main = theme.palette.background.main
+  const main = theme.palette.background.main;
+  const { state: { session }, dispatch } = useContext(GameContext);
 
   return (
     <motion.div
@@ -69,8 +63,9 @@ const Settings = () => {
               width={100}
               height={40}
               style={{ background: main }}
+              onClick={() => { dispatch({ type: 'update2pName', payload: 'test' }) }}
             >
-
+              Edit
             </WidgetWrapper>
           </Box>
 

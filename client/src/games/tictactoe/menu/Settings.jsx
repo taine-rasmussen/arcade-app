@@ -25,6 +25,7 @@ const Settings = () => {
       playerTurn,
     }
   } = useContext(GameContext)
+  const main = theme.palette.background.main
 
   const winner = useMemo(
     () => {
@@ -51,26 +52,56 @@ const Settings = () => {
         <SettingsHeader />
         <Divider />
         <Box sx={{
-          height: '87%',
+          height: '80%',
           width: '100%',
           display: 'flex',
           flexDirection: 'row',
           justifyContent: 'space-between',
           padding: '10px'
         }}>
-          <Box sx={{ width: '45%' }}>
-            <FlexBetween>
-              <Typography
-                variant='h3'
-              >
-                Winner:
-              </Typography>
-              <Typography
-                variant='h3'
-              >
-                {isGameOver ? winner ? players[0].name : players[1].name : ''}
-              </Typography>
-            </FlexBetween>
+          <Box
+            sx={{
+              width: '45%',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+            }}
+          >
+            <WidgetWrapper
+              theme={theme}
+              width={100}
+              height={20}
+              style={{ background: main }}
+            >
+              <FlexBetween>
+                <Typography
+                  variant='h3'
+                >
+                  Winner:
+                </Typography>
+                <Typography
+                  variant='h3'
+                >
+                  {isGameOver ? winner ? players[0].name : players[1].name : ''}
+                </Typography>
+              </FlexBetween>
+            </WidgetWrapper>
+            <WidgetWrapper
+              theme={theme}
+              width={100}
+              height={20}
+              style={{ background: main }}
+            >
+
+            </WidgetWrapper>
+            <WidgetWrapper
+              theme={theme}
+              width={100}
+              height={20}
+              style={{ background: main }}
+            >
+
+            </WidgetWrapper>
           </Box>
 
           <SettingsDivder />

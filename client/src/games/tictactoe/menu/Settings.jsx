@@ -1,5 +1,6 @@
 import WidgetWrapper from '../../../wrapper/WidgetWrapper';
 import { Box, useTheme, Typography } from '@mui/material';
+import EditGameModeWidget from './EditGameModeWidget';
 import EditNameWidget from './EditNameWidget';
 import SettingsHeader from './SettingsHeader';
 import { useContext, useMemo } from 'react';
@@ -8,6 +9,7 @@ import { GameContext } from '../index';
 import { motion } from 'framer-motion';
 import Chip from '@mui/material/Chip';
 import ScoreCard from './ScoreCard';
+
 
 const SettingsDivder = () => (
   <Divider orientation="vertical" variant="middle">
@@ -57,7 +59,7 @@ const Settings = () => {
               height={40}
               style={{ background: main }}
             >
-              PLayerMode
+              <EditGameModeWidget />
             </WidgetWrapper>
             <WidgetWrapper
               theme={theme}

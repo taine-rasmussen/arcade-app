@@ -2,8 +2,7 @@ import { useState, useContext } from 'react';
 import { GameContext } from '../index';
 import { Box, useTheme, Typography } from '@mui/material';
 
-const EditGameModeWidget = () => {
-  const [isEdit, setIsEdit] = useState(false);
+const Display = () => {
   const { dispatch, state: { isSinglePlayerMode } } = useContext(GameContext);
 
   return (
@@ -18,6 +17,17 @@ const EditGameModeWidget = () => {
         }
       </Typography>
     </Box>
+  )
+}
+
+const EditGameModeWidget = () => {
+  const [isEdit, setIsEdit] = useState(false);
+  return (
+    <>
+      {isEdit
+        ? <Input />
+        : <Display />}
+    </>
   )
 }
 

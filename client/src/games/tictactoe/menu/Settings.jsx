@@ -25,16 +25,6 @@ const Settings = () => {
   } = useContext(GameContext)
   const main = theme.palette.background.main
 
-  const winner = useMemo(
-    () => {
-      if (isGameOver) {
-        return !playerTurn
-      } else {
-        return undefined
-      }
-    }, [playerTurn, isGameOver]
-  )
-
   return (
     <motion.div
       initial={{ opacity: 0 }}

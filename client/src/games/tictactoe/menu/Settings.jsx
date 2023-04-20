@@ -1,5 +1,6 @@
 import WidgetWrapper from '../../../wrapper/WidgetWrapper';
 import { Box, useTheme, Typography } from '@mui/material';
+import EditNameWidget from './EditNameWidget';
 import SettingsHeader from './SettingsHeader';
 import { useContext, useMemo } from 'react';
 import Divider from '@mui/material/Divider';
@@ -65,7 +66,7 @@ const Settings = () => {
               style={{ background: main }}
               onClick={() => { dispatch({ type: 'update2pName', payload: 'test' }) }}
             >
-              Edit
+              <EditNameWidget />
             </WidgetWrapper>
           </Box>
 

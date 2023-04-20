@@ -13,7 +13,7 @@ export const colorTokens = {
     800: "#1A1A1A",
     900: "#0A0A0A",
     1000: "#000000",
-    1100: '#232B2B'
+    1100: '#282828'
   },
   primary: {
     50: "#E6FBFF",

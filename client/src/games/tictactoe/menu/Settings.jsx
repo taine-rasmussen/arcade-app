@@ -42,9 +42,9 @@ const Settings = () => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
-      style={{ height: '100%', width: '100%', zIndex: '2', overflow: 'hidden' }}
       animate={{ x: ['300px', '0px'], opacity: 1 }}
       transition={{ type: 'tween', duration: 0.6, delay: 0.75 }}
+      style={{ height: '100%', width: '100%', zIndex: '2', overflow: 'hidden' }}
     >
       <WidgetWrapper
         theme={theme}

@@ -3,8 +3,7 @@ import { GameContext } from '../index';
 import { Box, useTheme, Typography } from '@mui/material';
 
 const Display = () => {
-  const { dispatch, state: { isSinglePlayerMode } } = useContext(GameContext);
-
+  const { state: { isSinglePlayerMode } } = useContext(GameContext);
   return (
     <Box>
       <Typography

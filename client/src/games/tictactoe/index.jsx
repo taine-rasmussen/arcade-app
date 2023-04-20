@@ -111,10 +111,9 @@ const TicTacToe = () => {
         }))
       }
     } else if (action.type === 'update2pName') {
-      console.log(action)
       return {
         ...state,
-        players: state.players[0] = { name: action.payload },
+        players: [initialState.players[0], { name: action.payload }],
       }
     }
     else {
@@ -125,7 +124,6 @@ const TicTacToe = () => {
 
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  console.log(state.players)
   return (
     <GameContext.Provider value={{ state, dispatch }}>
       <Box

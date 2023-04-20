@@ -61,35 +61,17 @@ const Settings = () => {
         }}>
           <Box
             sx={{
+              gap: '2rem',
               width: '45%',
               display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'space-between',
+              justifyContent: 'center',
             }}
           >
             <WidgetWrapper
               theme={theme}
               width={100}
-              height={20}
-              style={{ background: main }}
-            >
-              <FlexBetween>
-                <Typography
-                  variant='h3'
-                >
-                  Winner:
-                </Typography>
-                <Typography
-                  variant='h3'
-                >
-                  {isGameOver ? winner ? players[0].name : players[1].name : ''}
-                </Typography>
-              </FlexBetween>
-            </WidgetWrapper>
-            <WidgetWrapper
-              theme={theme}
-              width={100}
-              height={20}
+              height={40}
               style={{ background: main }}
             >
 
@@ -97,7 +79,7 @@ const Settings = () => {
             <WidgetWrapper
               theme={theme}
               width={100}
-              height={20}
+              height={40}
               style={{ background: main }}
             >
 

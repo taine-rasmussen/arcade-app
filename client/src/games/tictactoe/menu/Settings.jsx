@@ -1,6 +1,5 @@
 import WidgetWrapper from '../../../wrapper/WidgetWrapper';
 import { Box, useTheme, Typography } from '@mui/material';
-import FlexBetween from '../../../wrapper/FlexBetween';
 import SettingsHeader from './SettingsHeader';
 import { useContext, useMemo } from 'react';
 import Divider from '@mui/material/Divider';
@@ -19,7 +18,6 @@ const Settings = () => {
   const theme = useTheme();
   const {
     state: {
-      players,
       session,
       isGameOver,
       playerTurn,
@@ -82,7 +80,7 @@ const Settings = () => {
               height={40}
               style={{ background: main }}
             >
-              Edit
+
             </WidgetWrapper>
           </Box>
 

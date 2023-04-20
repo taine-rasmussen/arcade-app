@@ -1,15 +1,15 @@
 import FlexBetween from '../../../wrapper/FlexBetween'
 import { Box, useMediaQuery } from '@mui/material';
-import useTicTacToeApi from '../useTicTacToeApi';
 import { motion } from "framer-motion";
+import { GameContext } from '../index';
+import { useContext } from 'react';
 
 import ProfileCard from './ProfileCard';
 import Settings from './Settings';
 
 const Menu = () => {
 
-  const { state: { players } } = useTicTacToeApi();
-
+  const { state: { players } } = useContext(GameContext)
   const isNonMobileScreens = useMediaQuery('(min-width:1000px)');
 
   return (

@@ -110,12 +110,21 @@ const TicTacToe = () => {
           id: i
         }))
       }
-    }
-
+    } else if (action.type === 'update2pName') {
+      return {
+        ...state,
+        players: [initialState.players[0], { name: action.payload }],
+      }
+    } else if (action.type === 'toggleGameMode')
+      return {
+        ...state,
+        isSinglePlayerMode: !state.isSinglePlayerMode
+      }
     else {
       throw Error('Unknown action.');
     }
   }
+
 
   const [state, dispatch] = useReducer(reducer, initialState);
 

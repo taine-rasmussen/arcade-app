@@ -1,6 +1,7 @@
 import WidgetWrapper from '../../../wrapper/WidgetWrapper';
 import { Box, useTheme, Typography } from '@mui/material';
-import FlexBetween from '../../../wrapper/FlexBetween';
+import EditNameWidget from './EditNameWidget';
+import EditGameMode from './EditGameMode';
 import SettingsHeader from './SettingsHeader';
 import { useContext, useMemo } from 'react';
 import Divider from '@mui/material/Divider';
@@ -8,6 +9,7 @@ import { GameContext } from '../index';
 import { motion } from 'framer-motion';
 import Chip from '@mui/material/Chip';
 import ScoreCard from './ScoreCard';
+
 
 const SettingsDivder = () => (
   <Divider orientation="vertical" variant="middle">
@@ -17,25 +19,8 @@ const SettingsDivder = () => (
 
 const Settings = () => {
   const theme = useTheme();
-  const {
-    state: {
-      players,
-      session,
-      isGameOver,
-      playerTurn,
-    }
-  } = useContext(GameContext)
-  const main = theme.palette.background.main
-
-  const winner = useMemo(
-    () => {
-      if (isGameOver) {
-        return !playerTurn
-      } else {
-        return undefined
-      }
-    }, [playerTurn, isGameOver]
-  )
+  const main = theme.palette.background.main;
+  const { state: { session }, dispatch } = useContext(GameContext);
 
   return (
     <motion.div
@@ -61,46 +46,29 @@ const Settings = () => {
         }}>
           <Box
             sx={{
+              gap: '2rem',
               width: '45%',
               display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'space-between',
+              justifyContent: 'center',
             }}
           >
             <WidgetWrapper
               theme={theme}
               width={100}
-              height={20}
+              height={40}
               style={{ background: main }}
             >
-              <FlexBetween>
-                <Typography
-                  variant='h3'
-                >
-                  Winner:
-                </Typography>
-                <Typography
-                  variant='h3'
-                >
-                  {isGameOver ? winner ? players[0].name : players[1].name : ''}
-                </Typography>
-              </FlexBetween>
+              <EditGameMode />
             </WidgetWrapper>
             <WidgetWrapper
               theme={theme}
               width={100}
-              height={20}
+              height={40}
               style={{ background: main }}
+              onClick={() => { dispatch({ type: 'update2pName', payload: 'test' }) }}
             >
-
-            </WidgetWrapper>
-            <WidgetWrapper
-              theme={theme}
-              width={100}
-              height={20}
-              style={{ background: main }}
-            >
-
+              <EditNameWidget />
             </WidgetWrapper>
           </Box>
 

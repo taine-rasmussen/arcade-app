@@ -1,7 +1,7 @@
 import WidgetWrapper from '../../../wrapper/WidgetWrapper';
 import { Box, useTheme, Typography } from '@mui/material';
 import EditNameWidget from './EditNameWidget';
-import Test from './test';
+import EditGameMode from './EditGameMode';
 import SettingsHeader from './SettingsHeader';
 import { useContext, useMemo } from 'react';
 import Divider from '@mui/material/Divider';
@@ -59,7 +59,7 @@ const Settings = () => {
               height={40}
               style={{ background: main }}
             >
-              <Test />
+              <EditGameMode />
             </WidgetWrapper>
             <WidgetWrapper
               theme={theme}

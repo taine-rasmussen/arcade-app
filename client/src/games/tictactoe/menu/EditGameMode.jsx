@@ -1,14 +1,8 @@
-import { Box, useTheme, Typography, Button } from '@mui/material';
-import InputAdornment from '@mui/material/InputAdornment';
-import OutlinedInput from '@mui/material/OutlinedInput';
-import InputLabel from '@mui/material/InputLabel';
-import IconButton from '@mui/material/IconButton';
-import SendIcon from '@mui/icons-material/Send';
-import { useState, useContext } from 'react';
+import { Box, Typography, Button } from '@mui/material';
+import { useContext } from 'react';
 import { GameContext } from '../index';
 
-const Test = () => {
-  const theme = useTheme();
+const EditGameMode = () => {
   const { dispatch, state: { isSinglePlayerMode } } = useContext(GameContext);
 
   return (
@@ -41,4 +35,4 @@ const Test = () => {
   )
 }
 
-export default Test
+export default EditGameMode

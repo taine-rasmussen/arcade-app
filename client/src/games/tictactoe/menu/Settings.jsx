@@ -4,62 +4,13 @@ import WidgetWrapper from '../../../wrapper/WidgetWrapper'
 import FlexBetween from '../../../wrapper/FlexBetween'
 import CloseIcon from '@mui/icons-material/Close';
 import { useNavigate } from 'react-router-dom';
+import SettingsHeader from './SettingsHeader';
 import { useContext, useMemo } from 'react';
 import Divider from '@mui/material/Divider';
 import { GameContext } from '../index';
 import { motion } from 'framer-motion';
 import Chip from '@mui/material/Chip';
-
-
-
-
-const SettingsHeader = () => {
-  const { dispatch } = useContext(GameContext)
-  const navigate = useNavigate();
-  return (
-    <FlexBetween sx={{ padding: '10px 0px' }}>
-      <Button
-        variant='outlined'
-        onClick={() => { navigate('/dashboard') }}
-      >
-        Return
-    </Button>
-      <Button
-        variant='outlined'
-        onClick={() => { dispatch('reset'); }}
-      >
-        Reset
-    </Button>
-    </FlexBetween>
-  )
-}
-
-const WinningCard = (result) => {
-
-  const theme = useTheme()
-  const bg = theme.palette.background.main
-  return (
-    <motion.div
-      animate={{ x: ['150px', '0px'] }}
-      transition={{ type: 'tween', duration: 0.45 }}
-      style={{
-        minHeight: '20%',
-        width: '90%',
-        background: bg,
-        borderRadius: '10px',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
-    >
-      <Typography
-        variant='h3'
-      >
-        {result.result ? 'X' : 'O'}
-      </Typography>
-    </motion.div>
-  )
-}
+import ScoreCard from './ScoreCard';
 
 const Settings = () => {
   const theme = useTheme();
@@ -158,7 +109,7 @@ const Settings = () => {
               }}
             >
               {session.map((result, i) => (
-                <WinningCard result={result} key={i} />
+                <ScoreCard result={result} key={i} />
               )
               )}
             </Box>

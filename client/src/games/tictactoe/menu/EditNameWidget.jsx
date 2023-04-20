@@ -3,34 +3,33 @@ import InputAdornment from '@mui/material/InputAdornment';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import InputLabel from '@mui/material/InputLabel';
 import IconButton from '@mui/material/IconButton';
+import EditIcon from '@mui/icons-material/Edit';
 import SendIcon from '@mui/icons-material/Send';
 import { useState, useContext } from 'react';
 import { GameContext } from '../index';
 
-
 const Display = ({ isEdit, setIsEdit }) => {
-  const { state: { isSinglePlayerMode } } = useContext(GameContext);
   return (
     <Box
       sx={{
-
+        display: 'flex',
+        alignItems: 'center',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        height: '100%'
       }}
     >
       <Typography
         variant='h2'
       >
-        {
-          isSinglePlayerMode
-            ? 'Single player'
-            : 'Two player'
-        }
+        Edit names
       </Typography>
-
       <Button
         variant='outlined'
+        endIcon={<EditIcon />}
         onClick={() => { setIsEdit(!isEdit) }}
       >
-
+        Edit name
       </Button>
     </Box>
   )
@@ -54,7 +53,7 @@ const Input = ({ isEdit, setIsEdit }) => {
         onChange={(e) => setNewName(e.target.value)}
         sx={{ background: bgLight }}
         value={newName}
-        label="Enter name..."
+        label="Enter new name..."
         endAdornment={
           <InputAdornment position="end">
             <IconButton
@@ -70,7 +69,7 @@ const Input = ({ isEdit, setIsEdit }) => {
 }
 
 const EditGameModeWidget = () => {
-  const [isEdit, setIsEdit] = useState(true);
+  const [isEdit, setIsEdit] = useState(false);
   return (
     <>
       {isEdit

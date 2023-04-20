@@ -115,7 +115,11 @@ const TicTacToe = () => {
         ...state,
         players: [initialState.players[0], { name: action.payload }],
       }
-    }
+    } else if (action.type === 'toggleGameMode')
+      return {
+        ...state,
+        isSinglePlayerMode: !state.isSinglePlayerMode
+      }
     else {
       throw Error('Unknown action.');
     }

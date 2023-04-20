@@ -1,9 +1,6 @@
 import { Box, useTheme, useMediaQuery, Typography, Button } from '@mui/material';
-import TripOriginIcon from '@mui/icons-material/TripOrigin';
-import WidgetWrapper from '../../../wrapper/WidgetWrapper'
-import FlexBetween from '../../../wrapper/FlexBetween'
-import CloseIcon from '@mui/icons-material/Close';
-import { useNavigate } from 'react-router-dom';
+import WidgetWrapper from '../../../wrapper/WidgetWrapper';
+import FlexBetween from '../../../wrapper/FlexBetween';
 import SettingsHeader from './SettingsHeader';
 import { useContext, useMemo } from 'react';
 import Divider from '@mui/material/Divider';

@@ -23,6 +23,7 @@ const Gameboard = () => {
         width={100}
         height={100}
         theme={theme}
+        border={false}
         style={{ padding: '0px' }}
       >
         <Box

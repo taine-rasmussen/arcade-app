@@ -30,9 +30,10 @@ const Settings = () => {
       style={{ height: '100%', width: '100%', zIndex: '2', overflow: 'hidden' }}
     >
       <WidgetWrapper
-        theme={theme}
         width={100}
         height={100}
+        theme={theme}
+        border={true}
       >
         <SettingsHeader />
         <Divider />
@@ -54,17 +55,19 @@ const Settings = () => {
             }}
           >
             <WidgetWrapper
-              theme={theme}
-              width={100}
               height={40}
+              width={100}
+              border={true}
+              theme={theme}
               style={{ background: main }}
             >
               <EditGameMode />
             </WidgetWrapper>
             <WidgetWrapper
-              theme={theme}
               width={100}
               height={40}
+              border={true}
+              theme={theme}
               style={{ background: main }}
               onClick={() => { dispatch({ type: 'update2pName', payload: 'test' }) }}
             >

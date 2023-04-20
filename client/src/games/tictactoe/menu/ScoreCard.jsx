@@ -9,13 +9,14 @@ const ScoreCard = (result) => {
       animate={{ x: ['150px', '0px'] }}
       transition={{ type: 'tween', duration: 0.45 }}
       style={{
-        minHeight: '20%',
         width: '90%',
         background: bg,
-        borderRadius: '10px',
         display: 'flex',
+        minHeight: '20%',
         alignItems: 'center',
+        borderRadius: '10px',
         justifyContent: 'center',
+        border: '3px solid #000',
       }}
     >
       <Typography

@@ -12,7 +12,6 @@ const Gameboard = () => {
   const { state: { game } } = useContext(GameContext)
   const isNonMobileScreens = useMediaQuery('(min-width:1000px)');
 
-
   return (
     <motion.div
       animate={{ y: ['-1500px', '0px'] }}

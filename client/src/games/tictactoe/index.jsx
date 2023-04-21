@@ -1,7 +1,8 @@
 import { Box, useTheme, useMediaQuery } from '@mui/material';
-import { CreateImageRequestResponseFormatEnum } from 'openai';
+import { useSelector, useDispatch } from 'react-redux';
 import { useReducer, createContext } from 'react';
-import { useSelector } from 'react-redux';
+import { setRecentlyPlayed } from '../../state/index'
+
 
 import Gameboard from './gameboard'
 import Menu from './menu';
@@ -55,6 +56,8 @@ export const GameContext = createContext();
 
 const TicTacToe = () => {
 
+  const reduxDispatch = useDispatch()
+
   const theme = useTheme();
   const main = theme.palette.background.main
   const isNonMobileScreens = useMediaQuery('(min-width:1000px)');
@@ -90,6 +93,7 @@ const TicTacToe = () => {
           return gameObj ? gameObj.value : null;
         });
         if (winValues.every(val => val === 'X') || winValues.every(val => val === 'O')) {
+          reduxDispatch(setRecentlyPlayed({ game: 'TicTacToe' }))
           return {
             ...state,
             isGameOver: true,

@@ -4,11 +4,6 @@ import GameboardCell from '../gameboardCell'
 
 const ScoreCardModal = ({ openModal, setOpenModal, result }) => {
 
-  const theme = useTheme();
-  const main = theme.palette.background.main
-
-  console.log(result.result)
-
   return (
     <Modal
       open={openModal}

@@ -4,7 +4,8 @@ const initialState = {
   mode: "dark",
   user: null,
   token: null,
-  loading: false
+  loading: false,
+  recentlyPlayed: []
 };
 
 export const authSlice = createSlice({
@@ -22,13 +23,17 @@ export const authSlice = createSlice({
       state.user = null;
       state.token = null;
     },
+    setRecentlyPlayed: (state, action) => {
+      console.log(action)
+      // state.recentlyPlayed.push(action.payload)
+    }
   }
 });
 
 export const {
-  setPost,
   setMode,
-  setLogin
+  setLogin,
+  setRecentlyPlayed
 } = authSlice.actions;
 
 export default authSlice.reducer;

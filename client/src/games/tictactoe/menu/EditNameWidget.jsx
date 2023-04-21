@@ -44,6 +44,7 @@ const Input = ({ isEdit, setIsEdit }) => {
   const handleNameChange = () => {
     dispatch({ type: 'update2pName', payload: newName })
     setIsEdit(!isEdit)
+    setNewName('')
   }
 
   return (

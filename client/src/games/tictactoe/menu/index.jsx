@@ -9,9 +9,6 @@ import Settings from './Settings';
 
 const Menu = () => {
 
-  const { state: { players } } = useContext(GameContext)
-  const isNonMobileScreens = useMediaQuery('(min-width:1000px)');
-
   return (
     <Box
       sx={{
@@ -30,12 +27,10 @@ const Menu = () => {
       >
         <FlexBetween>
           <ProfileCard
-            name={players[0].name}
             activeTurn={true}
           />
           <ProfileCard
             activeTurn={false}
-            name={players[1].name}
           />
         </FlexBetween>
       </motion.div>

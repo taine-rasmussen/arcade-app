@@ -33,12 +33,13 @@ const ProfileCard = ({ name, activeTurn }) => {
     <WidgetWrapper
       theme={theme}
       width={45}
+      border={true}
       sx={
         !isGameOver
           ? isActiveTurn
             ? { border: `3px solid ${borderColor}` }
-            : { border: `3px solid black` }
-          : { border: `3px solid black` }
+            : {}
+          : {}
       }
     >
       <Box

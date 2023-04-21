@@ -38,6 +38,7 @@ const GameboardCell = (props) => {
         alignItems: 'center',
         borderRadius: '0.75rem',
         justifyContent: 'center',
+        border: '3px solid #000',
       }}
       onClick={
         value != '' || isGameOver

@@ -18,17 +18,17 @@ const ScoreCardModal = ({ openModal, setOpenModal, result }) => {
     >
       <Box
         sx={{
-          border: '2px solid #000',
-          position: 'absolute',
-          height: '70%',
-          width: '50%',
           top: '50%',
           left: '50%',
-          transform: 'translate(-50%, -50%)',
+          width: '50%',
+          height: '70%',
           display: 'grid',
           gridGap: '15px',
+          position: 'absolute',
+          border: '2px solid #000',
           backgroundColor: 'transparent',
           gridTemplateRows: 'repeat(3, 1fr)',
+          transform: 'translate(-50%, -50%)',
           gridTemplateColumns: 'repeat(3, 1fr)',
         }}
       >

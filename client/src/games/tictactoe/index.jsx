@@ -1,8 +1,6 @@
 import { Box, useTheme, useMediaQuery } from '@mui/material';
 import { useReducer, createContext } from 'react';
 import { useSelector } from 'react-redux';
-
-
 import Gameboard from './gameboard'
 import Menu from './menu';
 
@@ -115,11 +113,12 @@ const TicTacToe = () => {
         ...state,
         players: [initialState.players[0], { name: action.payload }],
       }
-    } else if (action.type === 'toggleGameMode')
+    } else if (action.type === 'toggleGameMode') {
       return {
         ...state,
         isSinglePlayerMode: !state.isSinglePlayerMode
       }
+    }
     else {
       throw Error('Unknown action.');
     }

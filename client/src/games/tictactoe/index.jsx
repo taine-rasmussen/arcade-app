@@ -1,7 +1,7 @@
 import { Box, useTheme, useMediaQuery } from '@mui/material';
-import { CreateImageRequestResponseFormatEnum } from 'openai';
 import { useReducer, createContext } from 'react';
 import { useSelector } from 'react-redux';
+
 
 import Gameboard from './gameboard'
 import Menu from './menu';
@@ -124,7 +124,6 @@ const TicTacToe = () => {
       throw Error('Unknown action.');
     }
   }
-
 
   const [state, dispatch] = useReducer(reducer, initialState);
 

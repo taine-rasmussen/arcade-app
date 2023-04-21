@@ -1,9 +1,14 @@
 import { Box, useTheme } from '@mui/material';
 import WidgetWrapper from '../../../wrapper/WidgetWrapper'
+import { useSelector } from 'react-redux'
 
 const RecentlyPlayed = () => {
 
   const theme = useTheme();
+
+  const recentlyPlayed = useSelector((state) => state.recentlyPlayed)
+  console.log(recentlyPlayed)
+
 
   return (
     <WidgetWrapper theme={theme} height={80} width={55} sx={{ transition: 'ease-out all 0.35s' }}>

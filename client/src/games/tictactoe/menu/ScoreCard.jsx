@@ -2,6 +2,7 @@ import { useTheme, Typography, Box } from '@mui/material';
 import Modal from '@mui/material/Modal';
 import { motion } from 'framer-motion';
 import { useState } from 'react'
+import ScoreCardModal from './ScoreCardModal'
 
 const ScoreCard = (result) => {
 
@@ -52,19 +53,11 @@ const ScoreCard = (result) => {
         </Typography>
       </motion.div>
 
-      <Modal
-        open={openModal}
-        onClose={() => setOpenModal(false)}
-        aria-labelledby="parent-modal-title"
-        aria-describedby="parent-modal-description"
-      >
-        <Box
-          sx={modalStyle}
-        >
-          'working???'
-          {console.log(result)}
-        </Box>
-      </Modal>
+      <ScoreCardModal
+        openModal={openModal}
+        setOpenModal={setOpenModal}
+        result={result}
+      />
     </>
   )
 }

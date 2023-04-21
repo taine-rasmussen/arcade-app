@@ -1,7 +1,6 @@
 import { Box, useTheme, useMediaQuery } from '@mui/material';
-import { useSelector, useDispatch } from 'react-redux';
 import { useReducer, createContext } from 'react';
-import { setRecentlyPlayed } from '../../state/index'
+import { useSelector } from 'react-redux';
 
 
 import Gameboard from './gameboard'
@@ -55,6 +54,7 @@ const winCombinations = [
 export const GameContext = createContext();
 
 const TicTacToe = () => {
+
   const theme = useTheme();
   const main = theme.palette.background.main
   const isNonMobileScreens = useMediaQuery('(min-width:1000px)');

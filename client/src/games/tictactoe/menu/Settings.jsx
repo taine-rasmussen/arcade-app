@@ -69,7 +69,6 @@ const Settings = () => {
               border={true}
               theme={theme}
               style={{ background: main }}
-              onClick={() => { dispatch({ type: 'update2pName', payload: 'test' }) }}
             >
               <EditNameWidget />
             </WidgetWrapper>

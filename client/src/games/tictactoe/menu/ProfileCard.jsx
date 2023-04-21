@@ -6,13 +6,14 @@ import { useSelector } from 'react-redux';
 import { GameContext } from '../index';
 import { useContext } from 'react';
 
-const ProfileCard = ({ name, activeTurn }) => {
+const ProfileCard = ({ activeTurn }) => {
 
   const {
     state
   } = useContext(GameContext)
 
   const {
+    players,
     isGameOver,
     playerTurn,
   } = state || {}
@@ -65,7 +66,7 @@ const ProfileCard = ({ name, activeTurn }) => {
           Pic
         </Box>
         <Typography variant='h2'>
-          {name}
+          {activeTurn ? players[0].name : players[1].name}
         </Typography>
         <Typography variant='h3'>
           {isLoggedInUser

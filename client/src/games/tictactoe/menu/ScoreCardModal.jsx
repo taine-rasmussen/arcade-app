@@ -1,28 +1,15 @@
-import { useTheme, Typography, Box } from '@mui/material';
+import { useTheme, Box } from '@mui/material';
 import Modal from '@mui/material/Modal';
-import { motion } from 'framer-motion';
-import { useState } from 'react'
+import GameboardCell from '../gameboardCell'
 
 const ScoreCardModal = ({ openModal, setOpenModal, result }) => {
 
+  const theme = useTheme();
+  const main = theme.palette.background.main
 
-  console.log(result)
-
-  const modalStyle = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: 400,
-    bgcolor: 'background.paper',
-    border: '2px solid #000',
-    boxShadow: 24,
-    p: 4,
-  };
-
+  console.log(result.result)
 
   return (
-
     <Modal
       open={openModal}
       onClose={() => setOpenModal(false)}
@@ -30,9 +17,27 @@ const ScoreCardModal = ({ openModal, setOpenModal, result }) => {
       aria-describedby="parent-modal-description"
     >
       <Box
-        sx={modalStyle}
+        sx={{
+          border: '2px solid #000',
+          position: 'absolute',
+          height: '70%',
+          width: '50%',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          display: 'grid',
+          gridGap: '15px',
+          backgroundColor: 'transparent',
+          gridTemplateRows: 'repeat(3, 1fr)',
+          gridTemplateColumns: 'repeat(3, 1fr)',
+        }}
       >
-
+        {result.result.gameState.map((cell, i) => (
+          <GameboardCell
+            key={i}
+            cell={cell}
+          />
+        ))}
       </Box>
     </Modal>
   )

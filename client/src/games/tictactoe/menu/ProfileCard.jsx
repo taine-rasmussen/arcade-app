@@ -21,9 +21,6 @@ const ProfileCard = ({ activeTurn }) => {
   const theme = useTheme()
   const main = theme.palette.background.main
   const borderColor = theme.palette.primary.main
-  const loggedInUsername = useSelector((state) => state.user.username)
-  const isLoggedInUser = loggedInUsername === name;
-
   const isActiveTurn = activeTurn === playerTurn
 
   const iconStlye = {
@@ -69,8 +66,8 @@ const ProfileCard = ({ activeTurn }) => {
           {activeTurn ? players[0].name : players[1].name}
         </Typography>
         <Typography variant='h3'>
-          {isLoggedInUser
-            ? < CloseIcon sx={iconStlye} />
+          {activeTurn
+            ? <CloseIcon sx={iconStlye} />
             : <TripOriginIcon sx={iconStlye} />}
         </Typography>
       </Box>

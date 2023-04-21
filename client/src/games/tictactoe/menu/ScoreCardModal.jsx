@@ -1,6 +1,6 @@
-import { useTheme, Box } from '@mui/material';
-import Modal from '@mui/material/Modal';
 import GameboardCell from '../gameboardCell'
+import Modal from '@mui/material/Modal';
+import { Box } from '@mui/material';
 
 const ScoreCardModal = ({ openModal, setOpenModal, result }) => {
 

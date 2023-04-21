@@ -20,7 +20,7 @@ const SettingsDivder = () => (
 const Settings = () => {
   const theme = useTheme();
   const main = theme.palette.background.main;
-  const { state: { session }, dispatch } = useContext(GameContext);
+  const { state: { session } } = useContext(GameContext);
 
   return (
     <motion.div

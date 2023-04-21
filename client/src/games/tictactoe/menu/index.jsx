@@ -16,9 +16,9 @@ const Menu = () => {
     <Box
       sx={{
         gap: '2rem',
-        width: '30%',
         height: '75%',
         display: 'flex',
+        minWidth: 'maxContext',
         flexDirection: 'column',
       }}
     >

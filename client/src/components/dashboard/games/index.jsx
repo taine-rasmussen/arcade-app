@@ -10,7 +10,7 @@ const Games = () => {
   const dispatch = useDispatch()
 
   const navToGame = (game) => {
-    navigate(`./${game}`)
+    navigate(`/${game}`)
     dispatch(setRecentlyPlayed({ game: game }))
   }
 

@@ -24,8 +24,7 @@ export const authSlice = createSlice({
       state.token = null;
     },
     setRecentlyPlayed: (state, action) => {
-      console.log(action)
-      // state.recentlyPlayed.push(action.payload)
+      state.recentlyPlayed.push(action.payload.game)
     }
   }
 });

@@ -55,9 +55,6 @@ const winCombinations = [
 export const GameContext = createContext();
 
 const TicTacToe = () => {
-
-  const reduxDispatch = useDispatch()
-
   const theme = useTheme();
   const main = theme.palette.background.main
   const isNonMobileScreens = useMediaQuery('(min-width:1000px)');
@@ -93,7 +90,6 @@ const TicTacToe = () => {
           return gameObj ? gameObj.value : null;
         });
         if (winValues.every(val => val === 'X') || winValues.every(val => val === 'O')) {
-          reduxDispatch(setRecentlyPlayed({ game: 'TicTacToe' }))
           return {
             ...state,
             isGameOver: true,
@@ -128,7 +124,6 @@ const TicTacToe = () => {
       throw Error('Unknown action.');
     }
   }
-
 
   const [state, dispatch] = useReducer(reducer, initialState);
 

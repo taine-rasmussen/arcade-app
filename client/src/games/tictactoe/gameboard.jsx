@@ -17,14 +17,19 @@ const Gameboard = () => {
     <motion.div
       animate={{ y: ['-1500px', '0px'] }}
       style={{ height: '75%', width: '45%', zIndex: '3' }}
-      transition={{ duration: 1 }}
+      transition={{
+        type: "spring",
+        stiffness: 160,
+        damping: 20,
+        duration: 2,
+      }}
     >
       <WidgetWrapper
         width={100}
         height={100}
         theme={theme}
         border={false}
-        style={{ padding: '0px' }}
+        style={{ padding: '0px', zIndex: '3' }}
       >
         <Box
           sx={{

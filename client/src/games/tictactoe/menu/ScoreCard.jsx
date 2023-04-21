@@ -7,7 +7,11 @@ const ScoreCard = (result) => {
   return (
     <motion.div
       animate={{ x: ['150px', '0px'] }}
-      transition={{ type: 'tween', duration: 0.45 }}
+      transition={{
+        type: "spring",
+        stiffness: 260,
+        damping: 20
+      }}
       style={{
         width: '90%',
         background: bg,

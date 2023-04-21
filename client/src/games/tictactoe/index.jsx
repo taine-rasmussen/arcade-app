@@ -1,5 +1,5 @@
+import { useReducer, createContext, useEffect } from 'react';
 import { Box, useTheme, useMediaQuery } from '@mui/material';
-import { useReducer, createContext } from 'react';
 import { useSelector } from 'react-redux';
 import Gameboard from './gameboard'
 import Menu from './menu';
@@ -125,6 +125,12 @@ const TicTacToe = () => {
   }
 
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  useEffect(
+    () => {
+      dispatch('reset')
+    }, []
+  )
 
   return (
     <GameContext.Provider value={{ state, dispatch }}>

@@ -135,7 +135,6 @@ const TicTacToe = () => {
           gap: '3rem',
           width: '100%',
           height: '100%',
-          padding: '3rem',
           display: 'flex',
           flexWrap: 'wrap',
           background: main,

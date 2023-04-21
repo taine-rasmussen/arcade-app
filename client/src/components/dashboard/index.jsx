@@ -19,7 +19,6 @@ const Dashboard = () => {
         height: '100%',
         width: '100%',
         flexWrap: 'wrap',
-        padding: '3rem',
         background: main,
         flexDirection: 'column',
         justifyContent: 'space-between'

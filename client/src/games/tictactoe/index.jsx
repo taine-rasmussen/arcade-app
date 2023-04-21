@@ -93,7 +93,7 @@ const TicTacToe = () => {
           return {
             ...state,
             isGameOver: true,
-            session: [...state.session, !state.playerTurn]
+            session: [...state.session, { winner: !state.playerTurn, gameState: state.game }]
           }
         }
       }

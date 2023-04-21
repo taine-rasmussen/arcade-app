@@ -48,7 +48,7 @@ const ScoreCard = (result) => {
         <Typography
           variant='h3'
         >
-          {result.result ? 'X' : 'O'}
+          {result.result.winner ? 'X' : 'O'}
         </Typography>
       </motion.div>
 
@@ -62,6 +62,7 @@ const ScoreCard = (result) => {
           sx={modalStyle}
         >
           'working???'
+          {console.log(result)}
         </Box>
       </Modal>
     </>

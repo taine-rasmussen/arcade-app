@@ -27,9 +27,10 @@ a:hover {
 }
 
 ::-webkit-scrollbar-corner {
-  background:transparent,;
+  background:transparent;
 }
 
-.hover:hover{
-  cursor: pointer;
+.primary_hover:hover{
+  border: 3px solid #00D5FA !important;
+  cursor: pointer
 }

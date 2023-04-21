@@ -58,7 +58,7 @@ const Input = ({ isEdit, setIsEdit }) => {
         endAdornment={
           <InputAdornment position="end">
             <IconButton
-              onClick={() => { handleNameChange }}
+              onClick={handleNameChange}
             >
               <SendIcon />
             </IconButton>

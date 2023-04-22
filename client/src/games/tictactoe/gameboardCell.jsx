@@ -3,7 +3,6 @@ import { useContext } from 'react'
 import { GameContext } from './index'
 
 const GameboardCell = (props) => {
-
   const {
     state: {
       playerTurn,
@@ -17,28 +16,34 @@ const GameboardCell = (props) => {
     cell: {
       value,
       id
-    }
+    },
+    preview,
+    winCells
   } = props
 
   const theme = useTheme();
   const alt = theme.palette.background.alt
+  const main = theme.palette.primary.main
 
   const handleTwoPLayerMove = (id) => {
     dispatch(id)
     dispatch('checkWin')
-
   }
+
+  const isWinningCell = preview
+    ? winCells[0] === id || winCells[1] === id || winCells[2] === id
+    : false
 
   return (
     <Box
       key={id}
       sx={{
         display: 'flex',
-        backgroundColor: alt,
         alignItems: 'center',
         borderRadius: '0.75rem',
         justifyContent: 'center',
         border: '3px solid #000',
+        backgroundColor: isWinningCell ? main : alt,
       }}
       onClick={
         value != '' || isGameOver

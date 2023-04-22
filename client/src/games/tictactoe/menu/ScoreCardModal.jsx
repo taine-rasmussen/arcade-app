@@ -3,6 +3,11 @@ import Modal from '@mui/material/Modal';
 import { Box } from '@mui/material';
 
 const ScoreCardModal = ({ openModal, setOpenModal, result }) => {
+  const {
+    result: {
+      winCells
+    }
+  } = result;
 
   return (
     <Modal
@@ -32,6 +37,8 @@ const ScoreCardModal = ({ openModal, setOpenModal, result }) => {
           <GameboardCell
             key={i}
             cell={cell}
+            preview={true}
+            winCells={winCells}
           />
         ))}
       </Box>

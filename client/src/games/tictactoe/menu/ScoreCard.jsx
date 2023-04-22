@@ -5,12 +5,9 @@ import { useState } from 'react'
 import ScoreCardModal from './ScoreCardModal'
 
 const ScoreCard = (result) => {
-
   const [openModal, setOpenModal] = useState(false)
-
   const theme = useTheme()
   const bg = theme.palette.background.main
-  const main = theme.palette.primary.main
 
   return (
     <>
@@ -38,7 +35,6 @@ const ScoreCard = (result) => {
           {result.result.winner ? 'X' : 'O'}
         </Typography>
       </motion.div>
-
       <ScoreCardModal
         openModal={openModal}
         setOpenModal={setOpenModal}

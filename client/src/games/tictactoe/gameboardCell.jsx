@@ -44,8 +44,8 @@ const GameboardCell = (props) => {
         justifyContent: 'center',
         border: '3px solid #000',
         backgroundColor: isWinningCell ? main : alt,
-        width: !isNonMobileScreens ? '100px' : 'auto',
-        height: !isNonMobileScreens ? '100px' : 'auto',
+        width: !isNonMobileScreens ? '150px' : 'auto',
+        height: !isNonMobileScreens ? '150px' : 'auto',
 
       }}
       onClick={

@@ -5,24 +5,9 @@ import { useState } from 'react'
 import ScoreCardModal from './ScoreCardModal'
 
 const ScoreCard = (result) => {
-
   const [openModal, setOpenModal] = useState(false)
-
   const theme = useTheme()
   const bg = theme.palette.background.main
-
-
-  const modalStyle = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: 400,
-    bgcolor: 'background.paper',
-    border: '2px solid #000',
-    boxShadow: 24,
-    p: 4,
-  };
 
   return (
     <>
@@ -43,16 +28,13 @@ const ScoreCard = (result) => {
           justifyContent: 'center',
           border: '3px solid #000',
         }}
-        className='hover'
         onClick={() => { setOpenModal(true) }}
+        className='primary_hover'
       >
-        <Typography
-          variant='h3'
-        >
+        <Typography variant='h3'>
           {result.result.winner ? 'X' : 'O'}
         </Typography>
       </motion.div>
-
       <ScoreCardModal
         openModal={openModal}
         setOpenModal={setOpenModal}

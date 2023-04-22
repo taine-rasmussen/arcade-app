@@ -3,6 +3,11 @@ import Modal from '@mui/material/Modal';
 import { Box } from '@mui/material';
 
 const ScoreCardModal = ({ openModal, setOpenModal, result }) => {
+  const {
+    result: {
+      winCells
+    }
+  } = result;
 
   return (
     <Modal
@@ -12,6 +17,7 @@ const ScoreCardModal = ({ openModal, setOpenModal, result }) => {
       aria-describedby="parent-modal-description"
     >
       <Box
+        p='15px'
         sx={{
           top: '50%',
           left: '50%',
@@ -20,10 +26,10 @@ const ScoreCardModal = ({ openModal, setOpenModal, result }) => {
           display: 'grid',
           gridGap: '15px',
           position: 'absolute',
+          backgroundColor: '#000',
           border: '2px solid #000',
-          backgroundColor: 'transparent',
-          gridTemplateRows: 'repeat(3, 1fr)',
           transform: 'translate(-50%, -50%)',
+          gridTemplateRows: 'repeat(3, 1fr)',
           gridTemplateColumns: 'repeat(3, 1fr)',
         }}
       >
@@ -31,6 +37,8 @@ const ScoreCardModal = ({ openModal, setOpenModal, result }) => {
           <GameboardCell
             key={i}
             cell={cell}
+            preview={true}
+            winCells={winCells}
           />
         ))}
       </Box>

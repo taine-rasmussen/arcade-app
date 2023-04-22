@@ -10,12 +10,12 @@ const Gameboard = () => {
   const theme = useTheme();
   const main = theme.palette.background.main
   const { state: { game } } = useContext(GameContext)
-  const isNonMobileScreens = useMediaQuery('(min-width:1000px)');
+  const isNonMobileScreens = useMediaQuery('(min-width:1150px)');
 
   return (
     <motion.div
       animate={{ y: ['-1500px', '0px'] }}
-      style={{ height: '75%', width: '45%', zIndex: '3' }}
+      style={{ height: '75%', width: isNonMobileScreens ? '45%' : '100%', zIndex: '3' }}
       transition={{
         type: "spring",
         stiffness: 160,
@@ -25,20 +25,20 @@ const Gameboard = () => {
     >
       <WidgetWrapper
         width={100}
-        height={100}
+        height={isNonMobileScreens ? 100 : null}
         theme={theme}
         border={false}
         style={{ padding: '0px', zIndex: '3' }}
       >
         <Box
           sx={{
-            width: '100%',
-            height: '100%',
             display: 'grid',
-            gridGap: '15px',
             backgroundColor: main,
             gridTemplateRows: 'repeat(3, 1fr)',
             gridTemplateColumns: 'repeat(3, 1fr)',
+            width: isNonMobileScreens ? '100%' : 'auto',
+            height: isNonMobileScreens ? '100%' : 'auto',
+            gridGap: isNonMobileScreens ? '15px' : '5px',
           }}
         >
           {game.map((cell, i) => (

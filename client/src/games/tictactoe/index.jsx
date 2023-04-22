@@ -55,7 +55,7 @@ const TicTacToe = () => {
 
   const theme = useTheme();
   const main = theme.palette.background.main
-  const isNonMobileScreens = useMediaQuery('(min-width:1000px)');
+  const isNonMobileScreens = useMediaQuery('(min-width:1150px)');
   const loggedInUsername = useSelector((state) => state.user.username)
   const initialState = {
     game: INITGAME,
@@ -143,12 +143,23 @@ const TicTacToe = () => {
           flexWrap: 'wrap',
           background: main,
           alignItems: 'center',
-          flexDirection: 'row',
           justifyContent: 'center',
+          flexDirection: isNonMobileScreens ? 'row' : 'column',
         }}
       >
-        <Menu />
-        <Gameboard />
+        {isNonMobileScreens
+          ? (
+            <>
+              <Menu />
+              <Gameboard />
+            </>
+          )
+          : (
+            <>
+              {'asdf'}
+              <Gameboard />
+            </>
+          )}
       </Box>
     </GameContext.Provider >
   )

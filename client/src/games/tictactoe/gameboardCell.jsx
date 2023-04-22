@@ -5,7 +5,6 @@ import { GameContext } from './index'
 const GameboardCell = (props) => {
   const {
     state: {
-      playerTurn,
       isGameOver,
       isSinglePlayerMode
     },
@@ -24,6 +23,7 @@ const GameboardCell = (props) => {
   const theme = useTheme();
   const alt = theme.palette.background.alt
   const main = theme.palette.primary.main
+  const isNonMobileScreens = useMediaQuery('(min-width:1150px)');
 
   const handleTwoPLayerMove = (id) => {
     dispatch(id)
@@ -44,6 +44,9 @@ const GameboardCell = (props) => {
         justifyContent: 'center',
         border: '3px solid #000',
         backgroundColor: isWinningCell ? main : alt,
+        width: !isNonMobileScreens ? '150px' : 'auto',
+        height: !isNonMobileScreens ? '150px' : 'auto',
+
       }}
       onClick={
         value != '' || isGameOver || preview

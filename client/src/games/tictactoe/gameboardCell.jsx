@@ -46,7 +46,7 @@ const GameboardCell = (props) => {
         backgroundColor: isWinningCell ? main : alt,
       }}
       onClick={
-        value != '' || isGameOver
+        value != '' || isGameOver || preview
           ? () => { console.log('NO!') }
           : () => { isSinglePlayerMode ? console.log('single') : handleTwoPLayerMove(id) }
       }

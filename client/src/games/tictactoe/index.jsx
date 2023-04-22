@@ -143,8 +143,8 @@ const TicTacToe = () => {
           flexWrap: 'wrap',
           background: main,
           alignItems: 'center',
-          flexDirection: 'row',
           justifyContent: 'center',
+          flexDirection: isNonMobileScreens ? 'row' : 'column',
         }}
       >
         {isNonMobileScreens

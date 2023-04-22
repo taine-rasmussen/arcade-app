@@ -12,6 +12,7 @@ const ScoreCardModal = ({ openModal, setOpenModal, result }) => {
       aria-describedby="parent-modal-description"
     >
       <Box
+        p='15px'
         sx={{
           top: '50%',
           left: '50%',
@@ -21,7 +22,7 @@ const ScoreCardModal = ({ openModal, setOpenModal, result }) => {
           gridGap: '15px',
           position: 'absolute',
           border: '2px solid #000',
-          backgroundColor: 'transparent',
+          backgroundColor: '#000',
           gridTemplateRows: 'repeat(3, 1fr)',
           transform: 'translate(-50%, -50%)',
           gridTemplateColumns: 'repeat(3, 1fr)',

@@ -21,10 +21,10 @@ const ScoreCardModal = ({ openModal, setOpenModal, result }) => {
           display: 'grid',
           gridGap: '15px',
           position: 'absolute',
-          border: '2px solid #000',
           backgroundColor: '#000',
-          gridTemplateRows: 'repeat(3, 1fr)',
+          border: '2px solid #000',
           transform: 'translate(-50%, -50%)',
+          gridTemplateRows: 'repeat(3, 1fr)',
           gridTemplateColumns: 'repeat(3, 1fr)',
         }}
       >

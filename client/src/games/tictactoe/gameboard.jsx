@@ -19,7 +19,7 @@ const Gameboard = () => {
       transition={{
         type: "spring",
         stiffness: 160,
-        damping: 20,
+        damping: 30,
         duration: 2,
       }}
     >

@@ -16,8 +16,9 @@ const Dashboard = () => {
     <Box
       sx={{
         gap: '1rem',
-        height: '100%',
         width: '100%',
+        height: '100%',
+        padding: '2rem',
         flexWrap: 'wrap',
         background: main,
         flexDirection: 'column',

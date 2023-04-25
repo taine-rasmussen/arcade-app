@@ -23,9 +23,6 @@ const Footer = () => {
       <MenuItemWrapper width={100} height={95}>
         SHOP
         </MenuItemWrapper>
-      <MenuItemWrapper width={100} height={95}>
-        SOMETHING??
-        </MenuItemWrapper>
     </Box>
   )
 }

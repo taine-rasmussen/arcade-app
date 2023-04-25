@@ -70,9 +70,6 @@ const Body = () => {
             <MonetizationOnIcon />
           </FlexBetween>
         </MenuItemWrapper>
-        <MenuItemWrapper width={100} height={20}>
-          SOMETHING??
-        </MenuItemWrapper>
       </Box>
     </Box>
   )

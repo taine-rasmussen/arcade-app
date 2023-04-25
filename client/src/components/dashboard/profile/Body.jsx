@@ -44,7 +44,6 @@ const Body = () => {
               padding: '5px',
               display: 'flex',
               flexDirection: 'row',
-              border: '1.5px solid red',
               justifyContent: 'space-between',
             }}
           >

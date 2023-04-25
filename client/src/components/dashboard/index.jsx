@@ -43,9 +43,7 @@ const Dashboard = () => {
           display: 'flex',
           flexWrap: 'flex',
           alignItems: 'center',
-          gap: '3rem',
-
-          // justifyContent: 'space-between',
+          justifyContent: 'space-between',
           flexDirection: !isNonMobileScreens ? 'column' : 'row',
         }}
       >

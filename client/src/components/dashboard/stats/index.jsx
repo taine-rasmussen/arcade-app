@@ -6,7 +6,12 @@ const Stats = () => {
   const theme = useTheme();
 
   return (
-    <WidgetWrapper theme={theme} height={80} width={35} sx={{ transition: 'ease-out all 0.35s' }}>
+    <WidgetWrapper
+      width={35}
+      height={80}
+      theme={theme}
+      border={true}
+      sx={{ transition: 'ease-out all 0.35s' }}>
       <Box>
         STATS
       </Box>

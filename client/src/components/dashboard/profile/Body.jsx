@@ -44,7 +44,6 @@ const Body = () => {
               padding: '5px',
               display: 'flex',
               flexDirection: 'row',
-              border: '1.5px solid red',
               justifyContent: 'space-between',
             }}
           >
@@ -69,9 +68,6 @@ const Body = () => {
             </Typography>
             <MonetizationOnIcon />
           </FlexBetween>
-        </MenuItemWrapper>
-        <MenuItemWrapper width={100} height={20}>
-          SOMETHING??
         </MenuItemWrapper>
       </Box>
     </Box>

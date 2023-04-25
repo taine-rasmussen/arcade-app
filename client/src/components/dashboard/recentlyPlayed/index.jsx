@@ -11,7 +11,12 @@ const RecentlyPlayed = () => {
 
 
   return (
-    <WidgetWrapper theme={theme} height={80} width={55} sx={{ transition: 'ease-out all 0.35s' }}>
+    <WidgetWrapper
+      width={61}
+      height={80}
+      border={true}
+      theme={theme}
+      sx={{ transition: 'ease-out all 0.35s' }}>
       <Box>
         Recently played
       </Box>

@@ -1,9 +1,13 @@
 import { Box, useTheme, Typography } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
+import { useSelector } from 'react-redux';
 
 const Header = () => {
   const theme = useTheme();
-  const username = 'EXAMPLE NAME'
+  const user = useSelector(state => state.user)
+  const {
+    username
+  } = user
 
   return (
     <Box

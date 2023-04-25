@@ -11,9 +11,8 @@ const Profile = () => {
 
   return (
     <WidgetWrapper
-      width={35}
-      height={100}
       border={true}
+      width={100}
       theme={theme}
       sx={{ transition: 'ease-out all 0.35s' }}
     >

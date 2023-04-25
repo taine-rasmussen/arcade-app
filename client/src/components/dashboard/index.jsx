@@ -15,40 +15,48 @@ const Dashboard = () => {
   return (
     <Box
       sx={{
-        gap: '1rem',
         width: '100%',
         height: '100%',
-        padding: '2rem',
-        flexWrap: 'wrap',
+        display: 'flex',
+        padding: '3rem',
         background: main,
-        flexDirection: 'column',
-        justifyContent: 'space-between'
+        flexDirection: 'row',
+        gap: '1.5rem'
       }}
     >
       <Box
         sx={{
-          height: '50%',
+          width: '40%',
+          height: '100%',
           display: 'flex',
-          justifyContent: 'space-between',
-          flexDirection: !isNonMobileScreens ? 'column' : 'row',
         }}
       >
         <Profile />
-        <Games />
       </Box>
 
       <Box
         sx={{
-          height: '50%',
+          height: '100%',
+          width: '100%',
           display: 'flex',
-          flexWrap: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          flexDirection: !isNonMobileScreens ? 'column' : 'row',
+          flexDirection: 'column',
+          gap: '1.5rem',
+
         }}
       >
+        <Box
+          sx={{
+            display: 'flex',
+            gap: '1.5rem',
+            flexDirection: 'row',
+            width: '100%',
+            height: '80%'
+          }}
+        >
+          <Stats />
+          <Games />
+        </Box>
         <RecentlyPlayed />
-        <Stats />
       </Box>
     </Box >
   )

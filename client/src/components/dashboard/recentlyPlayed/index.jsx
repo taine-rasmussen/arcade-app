@@ -9,8 +9,8 @@ const RecentlyPlayed = () => {
   const recentlyPlayed = useSelector((state) => state.recentlyPlayed)
   return (
     <WidgetWrapper
-      width={61}
-      height={80}
+      width={100}
+      height={50}
       border={true}
       theme={theme}
       sx={{ transition: 'ease-out all 0.35s' }}>

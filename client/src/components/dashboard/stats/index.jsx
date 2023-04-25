@@ -7,8 +7,8 @@ const Stats = () => {
 
   return (
     <WidgetWrapper
-      width={35}
-      height={80}
+      width={33}
+      height={100}
       theme={theme}
       border={true}
       sx={{ transition: 'ease-out all 0.35s' }}>

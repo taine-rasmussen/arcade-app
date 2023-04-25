@@ -18,8 +18,8 @@ const Games = () => {
     <WidgetWrapper
       theme={theme}
       height={100}
+      width={77}
       border={true}
-      width={35}
       sx={{ transition: 'ease-out all 0.35s' }}
     >
       <Box

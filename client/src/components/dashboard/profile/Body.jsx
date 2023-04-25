@@ -1,6 +1,7 @@
-import { Box, useTheme, Typography } from '@mui/material';
-
+import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 import MenuItemWrapper from '../../../wrapper/MenuItemWrapper'
+import { Box, useTheme, Typography } from '@mui/material';
+import FlexBetween from '../../../wrapper/FlexBetween'
 
 const Body = () => {
   return (
@@ -60,7 +61,14 @@ const Body = () => {
           </Box>
         </MenuItemWrapper>
         <MenuItemWrapper width={100} height={20}>
-          COINS HERE
+          <FlexBetween sx={{ width: '100%' }}>
+            <Typography
+              variant="h4"
+            >
+              40
+            </Typography>
+            <MonetizationOnIcon />
+          </FlexBetween>
         </MenuItemWrapper>
         <MenuItemWrapper width={100} height={20}>
           SOMETHING??

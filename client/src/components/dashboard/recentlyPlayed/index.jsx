@@ -7,9 +7,6 @@ const RecentlyPlayed = () => {
   const theme = useTheme();
 
   const recentlyPlayed = useSelector((state) => state.recentlyPlayed)
-  console.log(recentlyPlayed)
-
-
   return (
     <WidgetWrapper
       width={61}

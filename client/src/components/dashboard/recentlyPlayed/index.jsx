@@ -7,13 +7,10 @@ const RecentlyPlayed = () => {
   const theme = useTheme();
 
   const recentlyPlayed = useSelector((state) => state.recentlyPlayed)
-  console.log(recentlyPlayed)
-
-
   return (
     <WidgetWrapper
-      width={61}
-      height={80}
+      width={100}
+      height={50}
       border={true}
       theme={theme}
       sx={{ transition: 'ease-out all 0.35s' }}>

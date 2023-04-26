@@ -11,7 +11,6 @@ const Stats = () => {
       bg={dark}
       width={43}
       height={100}
-      border={true}
       sx={{ transition: 'ease-out all 0.35s' }}>
       <Box>
         STATS

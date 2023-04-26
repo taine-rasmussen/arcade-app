@@ -20,7 +20,6 @@ const Games = () => {
       bg={light}
       width={77}
       height={100}
-      border={true}
       sx={{ transition: 'ease-out all 0.35s' }}
     >
       <Box

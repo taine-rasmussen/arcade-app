@@ -14,7 +14,7 @@ const RecentlyPlayed = () => {
       bg={alt}
       width={100}
       height={50}
-      border={true}
+
       sx={{ transition: 'ease-out all 0.35s' }}>
       <Box>
         Recently played

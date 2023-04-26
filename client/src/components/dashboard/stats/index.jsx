@@ -4,12 +4,13 @@ import WidgetWrapper from '../../../wrapper/WidgetWrapper'
 const Stats = () => {
 
   const theme = useTheme();
+  const dark = theme.palette.primary.dark
 
   return (
     <WidgetWrapper
+      bg={dark}
       width={43}
       height={100}
-      theme={theme}
       border={true}
       sx={{ transition: 'ease-out all 0.35s' }}>
       <Box>

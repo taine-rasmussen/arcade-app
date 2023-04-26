@@ -8,6 +8,7 @@ const Games = () => {
   const theme = useTheme();
   const navigate = useNavigate();
   const dispatch = useDispatch()
+  const light = theme.palette.primary.light
 
   const navToGame = (game) => {
     navigate(`/${game}`)
@@ -16,9 +17,9 @@ const Games = () => {
 
   return (
     <WidgetWrapper
-      theme={theme}
-      height={100}
+      bg={light}
       width={77}
+      height={100}
       border={true}
       sx={{ transition: 'ease-out all 0.35s' }}
     >

@@ -13,9 +13,9 @@ import TicTacToe from './games/tictactoe';
 
 const App = () => {
 
-  // const mode = useSelector(state => state.mode) Unknown update to dark mode
+  const mode = useSelector((state) => state.mode)
   const isAuth = Boolean(useSelector((state) => state.token));
-  const theme = useMemo(() => createTheme(themeSettings('light')), [])
+  const theme = useMemo(() => createTheme(themeSettings(mode)), [mode])
 
   return (
     <div className="App">

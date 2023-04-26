@@ -13,7 +13,7 @@ export const authSlice = createSlice({
   initialState,
   reducers: {
     setMode: (state, action) => {
-      state.mode = state.mode === action.payload
+      state.mode = action.payload
     },
     setLogin: (state, action) => {
       state.user = action.payload.user;

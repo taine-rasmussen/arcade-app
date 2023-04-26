@@ -1,13 +1,16 @@
 import WidgetWrapper from '../../../wrapper/WidgetWrapper';
-import { Box, useTheme } from '@mui/material';
-
-import Header from './Header'
-import Body from './Body'
-import Footer from './Footer'
+import { Box, useTheme, Typography } from '@mui/material';
 
 const Profile = () => {
 
   const theme = useTheme();
+  const alt = theme.palette.primary.alt
+
+  const spanHighlight = {
+    backgroundColor: alt,
+    borderRadius: '0.75rem',
+    padding: '5px 0px 5px 10px'
+  }
 
   return (
     <Box
@@ -17,12 +20,15 @@ const Profile = () => {
         height: '100%',
         display: 'flex',
         minWidth: 'max-content',
+        alignItems: 'center',
         flexDirection: 'column',
       }}
     >
-      <Header />
-      <Body />
-      <Footer />
+      <Typography
+        variant='h2'
+      >
+        <span style={spanHighlight}>Mini</span>clip
+      </Typography>
     </Box>
   )
 }

@@ -8,49 +8,52 @@ import RecentlyPlayed from './recentlyPlayed';
 const Dashboard = () => {
 
   const theme = useTheme();
-  const main = theme.palette.background.main
+  const main = theme.palette.background.default
+  const alt = theme.palette.background.alt
 
   const isNonMobileScreens = useMediaQuery('(min-width:1000px)');
 
   return (
     <Box
       sx={{
+        gap: '1.5rem',
         width: '100%',
         height: '100%',
-        display: 'flex',
-        padding: '3rem',
         background: main,
+        display: 'flex',
         flexDirection: 'row',
-        gap: '1.5rem'
       }}
     >
       <Box
         sx={{
-          width: '40%',
+          width: '20%',
           height: '100%',
           display: 'flex',
+          padding: '1.5rem',
+          background: main
         }}
       >
         <Profile />
       </Box>
-
       <Box
         sx={{
-          height: '100%',
-          width: '100%',
-          display: 'flex',
-          flexDirection: 'column',
           gap: '1.5rem',
-
+          width: '100%',
+          padding: '3rem',
+          height: '100%',
+          display: 'flex',
+          background: alt,
+          borderRadius: '2rem',
+          flexDirection: 'column',
         }}
       >
         <Box
           sx={{
-            display: 'flex',
-            gap: '1.5rem',
-            flexDirection: 'row',
             width: '100%',
-            height: '80%'
+            gap: '1.5rem',
+            height: '80%',
+            display: 'flex',
+            flexDirection: 'row',
           }}
         >
           <Stats />

@@ -5,14 +5,16 @@ import { useSelector } from 'react-redux'
 const RecentlyPlayed = () => {
 
   const theme = useTheme();
+  const alt = theme.palette.primary.alt
+
 
   const recentlyPlayed = useSelector((state) => state.recentlyPlayed)
   return (
     <WidgetWrapper
+      bg={alt}
       width={100}
       height={50}
-      border={true}
-      theme={theme}
+
       sx={{ transition: 'ease-out all 0.35s' }}>
       <Box>
         Recently played

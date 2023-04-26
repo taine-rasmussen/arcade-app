@@ -1,7 +1,7 @@
 export const colorTokens = {
   grey: {
     0: "#FFFFFF",
-    10: "#F6F6F6",
+    10: "#f3f1ef",
     50: "#F0F0F0",
     100: "#E0E0E0",
     200: "#C2C2C2",
@@ -16,16 +16,17 @@ export const colorTokens = {
     1100: '#282828'
   },
   primary: {
-    50: "#E6FBFF",
+    50: "#94cfd9",
     100: "#CCF7FE",
     200: "#99EEFD",
     300: "#66E6FC",
     400: "#33DDFB",
     500: "#00D5FA",
     600: "#00A0BC",
-    700: "#006B7D",
+    700: "#0f1322",
     800: "#00353F",
     900: "#001519",
+    1000: "#dabda9"
   },
 };
 
@@ -61,6 +62,7 @@ export const themeSettings = (mode) => {
             dark: colorTokens.primary[700],
             main: colorTokens.primary[500],
             light: colorTokens.primary[50],
+            alt: colorTokens.primary[1000]
           },
           neutral: {
             dark: colorTokens.grey[700],
@@ -70,8 +72,8 @@ export const themeSettings = (mode) => {
             light: colorTokens.grey[50],
           },
           background: {
-            default: colorTokens.grey[10],
-            alt: colorTokens.grey[0],
+            alt: colorTokens.grey[10],
+            default: colorTokens.grey[0],
           },
         }),
     },

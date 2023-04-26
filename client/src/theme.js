@@ -1,7 +1,7 @@
 export const colorTokens = {
   grey: {
     0: "#FFFFFF",
-    10: "#F6F6F6",
+    10: "#f3f1ef",
     50: "#F0F0F0",
     100: "#E0E0E0",
     200: "#C2C2C2",
@@ -70,8 +70,8 @@ export const themeSettings = (mode) => {
             light: colorTokens.grey[50],
           },
           background: {
-            default: colorTokens.grey[10],
-            alt: colorTokens.grey[0],
+            alt: colorTokens.grey[10],
+            default: colorTokens.grey[0],
           },
         }),
     },

@@ -7,7 +7,7 @@ const Stats = () => {
 
   return (
     <WidgetWrapper
-      width={33}
+      width={43}
       height={100}
       theme={theme}
       border={true}

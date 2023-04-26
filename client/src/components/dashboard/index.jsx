@@ -26,7 +26,7 @@ const Dashboard = () => {
     >
       <Box
         sx={{
-          width: '40%',
+          width: '20%',
           height: '100%',
           display: 'flex',
           padding: '1.5rem',

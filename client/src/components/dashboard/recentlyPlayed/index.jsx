@@ -17,11 +17,29 @@ const RecentlyPlayed = () => {
       bg={alt}
       width={100}
       height={50}
-      sx={{ transition: 'ease-out all 0.35s' }}>
-      <Box>
+      sx={{
+        display: 'flex',
+        flexDirection: 'row',
+        transition: 'ease-out all 0.35s',
+      }}>
+      <Box
+        sx={{
+          width: '20%',
+          display: 'flex',
+          alignItems: 'center',
+          flexDirection: 'column',
+        }}
+      >
         Recently played
       </Box>
-      <Box>
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          flexDirection: 'row',
+          gap: '1.5rem'
+        }}
+      >
         {recentlyPlayed.map((game, i) => (
           <GameCard
             game={game}
@@ -29,7 +47,7 @@ const RecentlyPlayed = () => {
           />
         ))}
       </Box>
-    </WidgetWrapper>
+    </WidgetWrapper >
   )
 }
 

@@ -7,7 +7,7 @@ const RecentlyPlayed = () => {
 
   const theme = useTheme();
   const alt = theme.palette.primary.alt
-
+  const hightlight = theme.palette.primary.hightlight
 
   const recentlyPlayed = useSelector((state) => state.recentlyPlayed)
   console.log(recentlyPlayed)
@@ -24,13 +24,36 @@ const RecentlyPlayed = () => {
       }}>
       <Box
         sx={{
+          gap: '3rem',
           width: '20%',
+          height: '90%',
           display: 'flex',
           alignItems: 'center',
           flexDirection: 'column',
+          justifyContent: 'center'
         }}
       >
-        Recently played
+        <Box>
+          <Typography variant='h2'>
+            Recently
+          </Typography>
+          <Typography variant='h2'>
+            Played
+          </Typography>
+        </Box>
+        <Box
+          sx={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            width: '60%',
+          }}
+        >
+          <Typography
+            variant='h4'
+          >
+            What you've been <span style={{ color: hightlight }}>loving</span> recently
+          </Typography>
+        </Box>
       </Box>
       <Box
         sx={{

@@ -1,6 +1,7 @@
-import { Box, useTheme } from '@mui/material';
+import { Box, useTheme, Typography } from '@mui/material';
 import WidgetWrapper from '../../../wrapper/WidgetWrapper'
 import { useSelector } from 'react-redux'
+import GameCard from './gameCard'
 
 const RecentlyPlayed = () => {
 
@@ -9,15 +10,24 @@ const RecentlyPlayed = () => {
 
 
   const recentlyPlayed = useSelector((state) => state.recentlyPlayed)
+  console.log(recentlyPlayed)
+
   return (
     <WidgetWrapper
       bg={alt}
       width={100}
       height={50}
-
       sx={{ transition: 'ease-out all 0.35s' }}>
       <Box>
         Recently played
+      </Box>
+      <Box>
+        {recentlyPlayed.map((game, i) => (
+          <GameCard
+            game={game}
+            key={i}
+          />
+        ))}
       </Box>
     </WidgetWrapper>
   )

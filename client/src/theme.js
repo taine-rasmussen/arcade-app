@@ -47,14 +47,14 @@ export const themeSettings = (mode) => {
           neutral: {
             dark: colorTokens.grey[100],
             main: colorTokens.grey[200],
-            mediumMain: colorTokens.grey[300],
-            medium: colorTokens.grey[400],
             light: colorTokens.grey[700],
+            medium: colorTokens.grey[400],
+            mediumMain: colorTokens.grey[300],
           },
           background: {
-            default: colorTokens.grey[900],
             alt: colorTokens.grey[800],
-            main: colorTokens.grey[1100]
+            main: colorTokens.grey[1100],
+            default: colorTokens.grey[900],
           },
         }
         : {
@@ -67,11 +67,11 @@ export const themeSettings = (mode) => {
             hightlight: colorTokens.primary[1100]
           },
           neutral: {
+            light: colorTokens.grey[50],
             dark: colorTokens.grey[700],
             main: colorTokens.grey[500],
-            mediumMain: colorTokens.grey[400],
             medium: colorTokens.grey[300],
-            light: colorTokens.grey[50],
+            mediumMain: colorTokens.grey[400],
           },
           background: {
             alt: colorTokens.grey[10],

@@ -12,11 +12,12 @@ const GameCard = ({ game }) => {
         height: '60%',
         width: '80%',
         display: 'flex',
-        flexDirection: 'column'
+        flexDirection: 'column',
       }}
     >
       <Box
         sx={{
+          zIndex: '3',
           width: '40px',
           height: '40px',
           display: 'flex',
@@ -25,12 +26,15 @@ const GameCard = ({ game }) => {
           background: hightlight,
           borderRadius: '0.75rem',
           justifyContent: 'center',
+          margin: '0px 0px -15px 30px',
+
         }}
       >
         <EmojiEventsIcon sx={{ color: '#fff' }} />
       </Box>
       <Box
         sx={{
+          zIndex: '1',
           height: '60%',
           width: '80%',
           background: '#fff',

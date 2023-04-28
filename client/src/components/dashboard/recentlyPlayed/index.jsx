@@ -10,7 +10,6 @@ const RecentlyPlayed = () => {
   const hightlight = theme.palette.primary.hightlight
 
   const recentlyPlayed = useSelector((state) => state.recentlyPlayed)
-  console.log(recentlyPlayed)
 
   return (
     <WidgetWrapper

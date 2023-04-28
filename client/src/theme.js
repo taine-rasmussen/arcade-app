@@ -53,7 +53,7 @@ export const themeSettings = (mode) => {
           },
           background: {
             alt: colorTokens.grey[800],
-            main: colorTokens.grey[1100]
+            main: colorTokens.grey[1100],
             default: colorTokens.grey[900],
           },
         }

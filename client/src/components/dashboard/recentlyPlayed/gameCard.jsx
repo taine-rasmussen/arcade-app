@@ -1,8 +1,20 @@
+import { Box, useTheme, Typography } from '@mui/material';
+
 const GameCard = ({ game }) => {
+
+  const theme = useTheme();
+  const main = theme.palette.primary.alt
+
   return (
-    <div>
+    <Box
+      sx={{
+        background: main,
+        height: '40%',
+        width: '40%'
+      }}
+    >
       {game}
-    </div>
+    </Box>
   )
 }
 

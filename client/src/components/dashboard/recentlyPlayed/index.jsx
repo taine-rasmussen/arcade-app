@@ -56,10 +56,12 @@ const RecentlyPlayed = () => {
       </Box>
       <Box
         sx={{
+          width: '80%',
+          height: '80%',
+          gap: '1.5rem',
           display: 'flex',
-          alignItems: 'center',
           flexDirection: 'row',
-          gap: '1.5rem'
+          alignItems: 'center',
         }}
       >
         {recentlyPlayed.map((game, i) => (

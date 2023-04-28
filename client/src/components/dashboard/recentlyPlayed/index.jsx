@@ -57,7 +57,7 @@ const RecentlyPlayed = () => {
       <Box
         sx={{
           width: '80%',
-          height: '80%',
+          height: '100%',
           gap: '1.5rem',
           display: 'flex',
           flexDirection: 'row',

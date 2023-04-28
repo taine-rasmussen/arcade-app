@@ -8,7 +8,7 @@ const GameCard = ({ game }) => {
   return (
     <Box
       sx={{
-        height: '80%',
+        height: '60%',
         width: '80%',
         background: '#fff',
         borderRadius: '0.75rem',

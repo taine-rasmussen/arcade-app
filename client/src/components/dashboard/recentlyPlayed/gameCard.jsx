@@ -7,14 +7,21 @@ const GameCard = ({ game }) => {
   const hightlight = theme.palette.primary.hightlight
 
   return (
-    <>
+    <Box
+      sx={{
+        width: '100%',
+        height: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center'
+      }}
+    >
       <Box
         sx={{
           zIndex: '3',
-          width: '20px',
-          height: '20px',
+          width: '50px',
+          height: '50px',
           display: 'flex',
-          padding: '15px',
           alignItems: 'center',
           background: hightlight,
           borderRadius: '0.75rem',
@@ -27,15 +34,15 @@ const GameCard = ({ game }) => {
       <Box
         sx={{
           zIndex: '1',
-          height: '80%',
-          width: '90%',
-          background: '#fff',
+          width: '175px',
+          height: '175px',
           borderRadius: '2rem',
+          background: '#fff',
         }}
       >
         {game}
       </Box>
-    </>
+    </Box>
   )
 }
 

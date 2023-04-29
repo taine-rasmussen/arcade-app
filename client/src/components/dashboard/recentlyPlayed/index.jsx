@@ -11,12 +11,11 @@ const RecentlyPlayed = () => {
   return (
     <WidgetWrapper
       bg={alt}
-      width={100}
       height={50}
+      width={100}
       sx={{
         display: 'flex',
         flexDirection: 'row',
-        overflow: 'hidden'
       }}>
       <Box
         sx={{
@@ -27,7 +26,6 @@ const RecentlyPlayed = () => {
           alignItems: 'center',
           flexDirection: 'column',
           justifyContent: 'center',
-          overflow: 'hidden'
         }}
       >
         <Box>
@@ -52,9 +50,7 @@ const RecentlyPlayed = () => {
           </Typography>
         </Box>
       </Box>
-      <Box sx={{ maxWidth: '60%', overflow: 'hidden' }}>
-        <SwiperWidget />
-      </Box>
+      <SwiperWidget />
     </WidgetWrapper >
   )
 }

@@ -17,7 +17,7 @@ const Dashboard = () => {
     <Box
       sx={{
         gap: '1.5rem',
-        width: '100%',
+        // width: '100%',
         height: '100%',
         background: main,
         display: 'flex',
@@ -26,7 +26,7 @@ const Dashboard = () => {
     >
       <Box
         sx={{
-          width: '20%',
+          width: '15%',
           height: '100%',
           display: 'flex',
           padding: '1.5rem',
@@ -38,7 +38,7 @@ const Dashboard = () => {
       <Box
         sx={{
           gap: '1.5rem',
-          width: '100%',
+          width: '85%',
           padding: '3rem',
           height: '100%',
           display: 'flex',
@@ -49,7 +49,6 @@ const Dashboard = () => {
       >
         <Box
           sx={{
-            width: '100%',
             gap: '1.5rem',
             height: '80%',
             display: 'flex',

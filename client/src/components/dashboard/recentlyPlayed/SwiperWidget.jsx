@@ -9,10 +9,12 @@ const SwiperWidget = () => {
   return (
     <Box
       sx={{
-        gap: '1rem',
+        gap: '2rem',
+        width: '100%',
         display: 'flex',
         overflow: 'scroll',
         flexDirection: 'row',
+        justifyContent: 'space-between',
       }}
     >
       {recentlyPlayed.map((game, i) => (

@@ -26,7 +26,7 @@ const GameCard = ({ game }) => {
           background: hightlight,
           borderRadius: '0.75rem',
           justifyContent: 'center',
-          margin: '0px 0px -15px 30px',
+          margin: '0px 0px -25px 35px',
         }}
       >
         <EmojiEventsIcon sx={{ color: '#fff', fontSize: '2rem' }} />
@@ -34,8 +34,8 @@ const GameCard = ({ game }) => {
       <Box
         sx={{
           zIndex: '1',
-          width: '175px',
-          height: '175px',
+          width: '100%',
+          height: '60%',
           borderRadius: '2rem',
           background: '#fff',
         }}

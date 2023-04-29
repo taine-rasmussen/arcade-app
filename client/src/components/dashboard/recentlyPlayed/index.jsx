@@ -27,7 +27,6 @@ const RecentlyPlayed = () => {
           alignItems: 'center',
           flexDirection: 'column',
           justifyContent: 'center',
-          overflow: 'hidden'
         }}
       >
         <Box>
@@ -52,7 +51,7 @@ const RecentlyPlayed = () => {
           </Typography>
         </Box>
       </Box>
-      <Box sx={{ maxWidth: '60%', overflow: 'hidden' }}>
+      <Box sx={{ maxWidth: '80%', overflow: 'hidden' }}>
         <SwiperWidget />
       </Box>
     </WidgetWrapper >

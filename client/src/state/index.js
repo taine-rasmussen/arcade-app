@@ -24,7 +24,12 @@ export const authSlice = createSlice({
       state.token = null;
     },
     setRecentlyPlayed: (state, action) => {
+      console.log(state.recentlyPlayed.length)
+      if (state.recentlyPlayed.length >= 4) {
+        state.recentlyPlayed.pop()
+      }
       state.recentlyPlayed.push(action.payload.game)
+
     }
   }
 });

@@ -1,15 +1,12 @@
+import WidgetWrapper from '../../../wrapper/WidgetWrapper';
 import { Box, useTheme, Typography } from '@mui/material';
-import WidgetWrapper from '../../../wrapper/WidgetWrapper'
-import { useSelector } from 'react-redux'
-import GameCard from './gameCard'
+import SwiperWidget from './SwiperWidget';
 
 const RecentlyPlayed = () => {
 
   const theme = useTheme();
   const alt = theme.palette.primary.alt
   const hightlight = theme.palette.primary.hightlight
-
-  const recentlyPlayed = useSelector((state) => state.recentlyPlayed)
 
   return (
     <WidgetWrapper
@@ -19,7 +16,7 @@ const RecentlyPlayed = () => {
       sx={{
         display: 'flex',
         flexDirection: 'row',
-        transition: 'ease-out all 0.35s',
+        overflow: 'hidden'
       }}>
       <Box
         sx={{
@@ -29,7 +26,8 @@ const RecentlyPlayed = () => {
           display: 'flex',
           alignItems: 'center',
           flexDirection: 'column',
-          justifyContent: 'center'
+          justifyContent: 'center',
+          overflow: 'hidden'
         }}
       >
         <Box>
@@ -54,22 +52,8 @@ const RecentlyPlayed = () => {
           </Typography>
         </Box>
       </Box>
-      <Box
-        sx={{
-          width: '80%',
-          height: '100%',
-          gap: '1.5rem',
-          display: 'flex',
-          flexDirection: 'row',
-          alignItems: 'center',
-        }}
-      >
-        {recentlyPlayed.map((game, i) => (
-          <GameCard
-            game={game}
-            key={i}
-          />
-        ))}
+      <Box sx={{ maxWidth: '60%', overflow: 'hidden' }}>
+        <SwiperWidget />
       </Box>
     </WidgetWrapper >
   )

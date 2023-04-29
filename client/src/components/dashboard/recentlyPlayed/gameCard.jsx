@@ -9,7 +9,7 @@ const GameCard = ({ game }) => {
   return (
     <Box
       sx={{
-        height: '60%',
+        height: '70%',
         width: '80%',
         display: 'flex',
         flexDirection: 'column',

@@ -34,6 +34,8 @@ const GameCard = ({ game }) => {
       <Box
         sx={{
           zIndex: '1',
+          width: '100%',
+          height: '60%',
           borderRadius: '2rem',
           background: '#fff',
         }}

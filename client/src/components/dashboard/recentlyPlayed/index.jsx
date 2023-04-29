@@ -51,9 +51,7 @@ const RecentlyPlayed = () => {
           </Typography>
         </Box>
       </Box>
-      <Box sx={{ maxWidth: '80%', overflow: 'hidden' }}>
-        <SwiperWidget />
-      </Box>
+      <SwiperWidget />
     </WidgetWrapper >
   )
 }

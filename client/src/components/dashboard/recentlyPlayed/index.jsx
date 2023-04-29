@@ -16,7 +16,6 @@ const RecentlyPlayed = () => {
       sx={{
         display: 'flex',
         flexDirection: 'row',
-        overflow: 'hidden'
       }}>
       <Box
         sx={{

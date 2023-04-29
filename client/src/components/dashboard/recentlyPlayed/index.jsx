@@ -2,6 +2,9 @@ import { Box, useTheme, Typography } from '@mui/material';
 import WidgetWrapper from '../../../wrapper/WidgetWrapper'
 import { useSelector } from 'react-redux'
 import GameCard from './gameCard'
+import "swiper/css/pagination";
+import "swiper/css/free-mode";
+import "swiper/css";
 
 const RecentlyPlayed = () => {
 

@@ -9,7 +9,7 @@ const SwiperWidget = () => {
   return (
     <Box
       sx={{
-        gap: '1rem',
+        gap: '2rem',
         display: 'flex',
         overflow: 'scroll',
         flexDirection: 'row',

@@ -16,7 +16,6 @@ const RecentlyPlayed = () => {
       sx={{
         display: 'flex',
         flexDirection: 'row',
-        transition: 'ease-out all 0.35s',
       }}>
       <Box
         sx={{
@@ -50,6 +49,9 @@ const RecentlyPlayed = () => {
             What you've been <span style={{ color: hightlight }}>loving</span> recently
           </Typography>
         </Box>
+      </Box>
+      <Box sx={{ maxWidth: '80%' }}>
+        <SwiperWidget />
       </Box>
     </WidgetWrapper >
   )

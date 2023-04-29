@@ -1,19 +1,23 @@
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import { Box, useTheme, Typography } from '@mui/material';
+import { SwiperSlide } from "swiper/react";
 
 const GameCard = ({ game }) => {
 
   const theme = useTheme();
   const hightlight = theme.palette.primary.hightlight
+  const swiperSlideStyle = {
+    textAlign: 'center',
+    fontSize: '18px',
+    background: ' #fff',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  }
 
   return (
-    <Box
-      sx={{
-        height: '70%',
-        width: '80%',
-        display: 'flex',
-        flexDirection: 'column',
-      }}
+    <SwiperSlide
+      style={swiperSlideStyle}
     >
       <Box
         sx={{
@@ -43,7 +47,7 @@ const GameCard = ({ game }) => {
       >
         {game}
       </Box>
-    </Box>
+    </SwiperSlide>
   )
 }
 

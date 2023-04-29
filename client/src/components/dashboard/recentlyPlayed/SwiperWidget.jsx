@@ -1,5 +1,5 @@
 import { Box, useTheme, Typography } from '@mui/material';
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper } from "swiper/react";
 import { FreeMode, Pagination } from "swiper";
 import { useSelector } from 'react-redux'
 import GameCard from './gameCard'
@@ -21,51 +21,32 @@ const SwiperWidget = () => {
   }
 
   return (
-    <Swiper
-      slidesPerView={4}
-      spaceBetween={30}
-      freeMode={true}
-      pagination={{
-        clickable: true,
-      }}
-      modules={[FreeMode, Pagination]}
-      style={{
-        width: '100 %',
-        height: '100 %'
+    <Box
+      sx={{
+        width: '90%',
+        height: '100%',
+        dispaly: 'flex',
+        flexDirection: 'row'
       }}
     >
-      <Box
-        sx={{
-          width: '100%',
-          height: '100%',
-          gap: '1.5rem',
-          display: 'flex',
-          flexDirection: 'row',
-          alignItems: 'center',
+      <Swiper
+        slidesPerView={4}
+        spaceBetween={30}
+        freeMode={true}
+        pagination={{
+          clickable: true,
         }}
-
+        modules={[FreeMode, Pagination]}
       >
-        <SwiperSlide style={swiperSlideStyle}>
-          {/* {recentlyPlayed.map((game, i) => (
-              <GameCard
-                game={game}
-                key={i}
-              />
-            ))} */}
-            hello
-          </SwiperSlide>
-        <SwiperSlide style={swiperSlideStyle}>
-          {/* {recentlyPlayed.map((game, i) => (
-              <GameCard
-                game={game}
-                key={i}
-              />
-            ))} */}
-            hello
-          </SwiperSlide>
-
-      </Box>
-    </Swiper>
+        {recentlyPlayed.map((game, i) => (
+          <GameCard
+            game={game}
+            key
+            ={i}
+          />
+        ))}
+      </Swiper>
+    </Box>
   )
 }
 

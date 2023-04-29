@@ -19,14 +19,14 @@ const GameCard = ({ game }) => {
       <Box
         sx={{
           zIndex: '3',
-          width: '50px',
-          height: '50px',
+          width: '70px',
+          height: '70px',
           display: 'flex',
           alignItems: 'center',
           background: hightlight,
           borderRadius: '0.75rem',
           justifyContent: 'center',
-          margin: '0px 0px -25px 35px',
+          margin: '0px 0px -35px 35px',
         }}
       >
         <EmojiEventsIcon sx={{ color: '#fff', fontSize: '2rem' }} />
@@ -40,7 +40,6 @@ const GameCard = ({ game }) => {
           background: '#fff',
         }}
       >
-        {game}
       </Box>
     </Box>
   )

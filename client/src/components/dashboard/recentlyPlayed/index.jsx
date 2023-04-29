@@ -11,8 +11,8 @@ const RecentlyPlayed = () => {
   return (
     <WidgetWrapper
       bg={alt}
-      width={100}
       height={50}
+      width={100}
       sx={{
         display: 'flex',
         flexDirection: 'row',

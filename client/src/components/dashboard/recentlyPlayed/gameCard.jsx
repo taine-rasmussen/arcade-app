@@ -13,6 +13,7 @@ const GameCard = ({ game }) => {
         height: '100%',
         display: 'flex',
         flexDirection: 'column',
+        justifyContent: 'center'
       }}
     >
       <Box
@@ -21,7 +22,6 @@ const GameCard = ({ game }) => {
           width: '50px',
           height: '50px',
           display: 'flex',
-
           alignItems: 'center',
           background: hightlight,
           borderRadius: '0.75rem',
@@ -34,8 +34,8 @@ const GameCard = ({ game }) => {
       <Box
         sx={{
           zIndex: '1',
-          width: '150px',
-          height: '150px',
+          width: '175px',
+          height: '175px',
           borderRadius: '2rem',
           background: '#fff',
         }}

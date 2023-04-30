@@ -44,9 +44,10 @@ const Dashboard = () => {
               animate={{ x: ['-500px', '0px'] }}
               exit={{ x: ['0px', '-500px'] }}
               transition={{
-                type: "spring",
+                type: "tween",
                 stiffness: 160,
                 damping: 30,
+                duration: 0.5,
               }}
               key="menu"
             >

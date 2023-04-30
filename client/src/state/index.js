@@ -25,9 +25,7 @@ export const authSlice = createSlice({
     },
     setRecentlyPlayed: (state, action) => {
       console.log(state.recentlyPlayed.length)
-      if (state.recentlyPlayed.length >= 4) {
-        state.recentlyPlayed.pop()
-      }
+      state.recentlyPlayed.splice(5);
       state.recentlyPlayed.push(action.payload.game)
 
     }

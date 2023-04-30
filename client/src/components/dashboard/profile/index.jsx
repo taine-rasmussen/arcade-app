@@ -6,17 +6,16 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import LogoutIcon from '@mui/icons-material/Logout';
-import { resetState } from '../../../state/index';
 import StoreIcon from '@mui/icons-material/Store';
+import { useNavigate } from 'react-router-dom';
 import ListItem from '@mui/material/ListItem';
-import { useDispatch } from 'react-redux';
 import Button from '@mui/material/Button';
 import List from '@mui/material/List';
 
 const Profile = () => {
 
   const theme = useTheme();
-  const dispatch = useDispatch()
+  const navigate = useNavigate();
   const alt = theme.palette.primary.alt
   const dark = theme.palette.primary.dark
   const highlight = theme.palette.primary.highlight
@@ -34,14 +33,6 @@ const Profile = () => {
       boxShadow: `0px 0px 7px -2px ${highlight}`
     }
   }
-
-  const initialState = {
-    mode: "light",
-    user: null,
-    token: null,
-    loading: false,
-    recentlyPlayed: []
-  };
 
   return (
     <Box
@@ -154,7 +145,7 @@ const Profile = () => {
               pointer: 'cursor'
             }
           }}
-          onClick={() => { dispatch(resetState(initialState)) }}
+          onClick={() => { navigate('/') }}
         >
           Logout
       </Button>

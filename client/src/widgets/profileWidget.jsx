@@ -6,7 +6,9 @@ import { useSelector } from 'react-redux';
 const ProfileWidget = ({ preview }) => {
 
   const theme = useTheme();
-  const username = useSelector(state => state.user.username)
+  const alt = theme.palette.primary.alt;
+  const username = useSelector(state => state.user.username);
+
 
   const imgStyles = {
     height: '115px',
@@ -21,8 +23,10 @@ const ProfileWidget = ({ preview }) => {
   return (
     <Box
       sx={{
+        gap: '1rem',
         display: 'flex',
-        flexDirection: 'column'
+        alignItems: 'center',
+        flexDirection: 'column',
       }}
     >
       <img
@@ -30,12 +34,26 @@ const ProfileWidget = ({ preview }) => {
         alt='profile image'
         style={preview ? previewImgStyles : imgStyles}
       />
-      <Typography
-        variant='h1'
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          flexDirection: 'column',
+        }}
       >
-        {username}
-      </Typography>
-    </Box>
+        <Typography
+          variant='h2'
+        >
+          {username}
+        </Typography>
+        <Typography
+          variant='h5'
+          color={alt}
+        >
+          Silver
+        </Typography>
+      </Box>
+    </Box >
   )
 }
 

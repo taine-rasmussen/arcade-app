@@ -25,7 +25,7 @@ const Profile = () => {
       }}
     >
       <Typography
-        variant='h2'
+        variant='h1'
       >
         <span style={spanHighlight}>Mini</span>clip
       </Typography>

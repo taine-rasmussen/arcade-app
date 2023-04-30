@@ -64,9 +64,9 @@ const Profile = () => {
         <List >
           <ListItem
             disablePadding
-            sx={{ padding: '0.5rem 2rem', }}
+            sx={{ padding: '0.5rem 0rem' }}
           >
-            <ListItemButton sx={{ borderRadius: '1rem', }}>
+            <ListItemButton sx={{ borderRadius: '1rem', padding: '1rem 2.25rem' }}>
               <ListItemIcon>
                 <StoreIcon sx={{ fontSize: '32px', color: dark }} />
               </ListItemIcon>
@@ -84,7 +84,7 @@ const Profile = () => {
             disablePadding
             sx={{ padding: '0.5rem 0rem' }}
           >
-            <ListItemButton sx={{ borderRadius: '1rem', }}>
+            <ListItemButton sx={{ borderRadius: '1rem', padding: '1rem 2.25rem' }}>
               <ListItemIcon>
                 <LeaderboardIcon sx={{ fontSize: '32px', color: dark }} />
               </ListItemIcon>
@@ -101,7 +101,7 @@ const Profile = () => {
             disablePadding
             sx={{ padding: '0.5rem 0rem' }}
           >
-            <ListItemButton sx={{ borderRadius: '1rem', }}>
+            <ListItemButton sx={{ borderRadius: '1rem', padding: '1rem 2.25rem' }}>
               <ListItemIcon>
                 <SettingsIcon sx={{ fontSize: '32px', color: dark }} />
               </ListItemIcon>
@@ -138,7 +138,7 @@ const Profile = () => {
           Logout
       </Button>
       </Box>
-    </Box>
+    </Box >
   )
 }
 

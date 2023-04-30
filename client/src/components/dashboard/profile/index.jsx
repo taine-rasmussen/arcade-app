@@ -1,6 +1,5 @@
-import WidgetWrapper from '../../../wrapper/WidgetWrapper';
 import { Box, useTheme, Typography } from '@mui/material';
-import { useSelector } from 'react-redux';
+import ProfileWidget from '../../../widgets/profileWidget'
 
 const Profile = () => {
 
@@ -30,7 +29,7 @@ const Profile = () => {
       >
         <span style={spanHighlight}>Mini</span>clip
       </Typography>
-
+      <ProfileWidget />
     </Box>
   )
 }

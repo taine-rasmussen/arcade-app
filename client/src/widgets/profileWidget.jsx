@@ -3,7 +3,7 @@ import profile from '../assets/profile.jpeg';
 import { useSelector } from 'react-redux';
 
 
-const profileWidget = () => {
+const ProfileWidget = () => {
 
   const username = useSelector(state => state.user.username)
 
@@ -14,7 +14,10 @@ const profileWidget = () => {
         flexDirection: 'column'
       }}
     >
-      <img src={profile} alt='profile image' />
+      <img
+        src={profile}
+        alt='profile image'
+      />
       <Typography>
         {username}
       </Typography>
@@ -22,4 +25,4 @@ const profileWidget = () => {
   )
 }
 
-export default profileWidget
+export default ProfileWidget

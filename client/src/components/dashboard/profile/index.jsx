@@ -16,11 +16,20 @@ const Profile = () => {
   const theme = useTheme();
   const alt = theme.palette.primary.alt
   const dark = theme.palette.primary.dark
+  const highlight = theme.palette.primary.highlight
 
   const spanHighlight = {
     backgroundColor: alt,
     borderRadius: '0.75rem',
     padding: '5px 0px 5px 10px'
+  }
+
+  const listBtnStyle = {
+    borderRadius: '1rem',
+    padding: '1rem 2.25rem',
+    '&:hover': {
+      boxShadow: `2px 2px 2px 2px ${highlight}`
+    }
   }
 
   return (
@@ -66,7 +75,7 @@ const Profile = () => {
             disablePadding
             sx={{ padding: '0.5rem 0rem' }}
           >
-            <ListItemButton sx={{ borderRadius: '1rem', padding: '1rem 2.25rem' }}>
+            <ListItemButton sx={listBtnStyle}>
               <ListItemIcon>
                 <StoreIcon sx={{ fontSize: '32px', color: dark }} />
               </ListItemIcon>
@@ -84,7 +93,7 @@ const Profile = () => {
             disablePadding
             sx={{ padding: '0.5rem 0rem' }}
           >
-            <ListItemButton sx={{ borderRadius: '1rem', padding: '1rem 2.25rem' }}>
+            <ListItemButton sx={listBtnStyle}>
               <ListItemIcon>
                 <LeaderboardIcon sx={{ fontSize: '32px', color: dark }} />
               </ListItemIcon>
@@ -101,7 +110,7 @@ const Profile = () => {
             disablePadding
             sx={{ padding: '0.5rem 0rem' }}
           >
-            <ListItemButton sx={{ borderRadius: '1rem', padding: '1rem 2.25rem' }}>
+            <ListItemButton sx={listBtnStyle}>
               <ListItemIcon>
                 <SettingsIcon sx={{ fontSize: '32px', color: dark }} />
               </ListItemIcon>

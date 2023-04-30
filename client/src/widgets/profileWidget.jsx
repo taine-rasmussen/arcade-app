@@ -8,7 +8,7 @@ const ProfileWidget = ({ preview }) => {
 
   const theme = useTheme();
   const alt = theme.palette.primary.alt;
-  const hightlight = theme.palette.primary.hightlight;
+  const highlight = theme.palette.primary.highlight;
   const username = useSelector(state => state.user.username);
 
 

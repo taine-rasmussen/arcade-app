@@ -6,6 +6,7 @@ import StoreIcon from '@mui/icons-material/Store';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import LeaderboardIcon from '@mui/icons-material/Leaderboard';
+import ListItemButton from '@mui/material/ListItemButton';
 import SettingsIcon from '@mui/icons-material/Settings';
 import LogoutIcon from '@mui/icons-material/Logout';
 import Button from '@mui/material/Button';
@@ -14,6 +15,7 @@ const Profile = () => {
 
   const theme = useTheme();
   const alt = theme.palette.primary.alt
+  const bgAlt = theme.palette.background.bgAlt
 
   const spanHighlight = {
     backgroundColor: alt,
@@ -41,23 +43,29 @@ const Profile = () => {
       <ProfileWidget preview={false} />
       <Box>
         <List>
-          <ListItem>
-            <ListItemIcon>
-              <StoreIcon />
-            </ListItemIcon>
-            <ListItemText primary='Store' />
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <StoreIcon />
+              </ListItemIcon>
+              <ListItemText primary='Store' />
+            </ListItemButton>
           </ListItem>
-          <ListItem>
-            <ListItemIcon>
-              <LeaderboardIcon />
-            </ListItemIcon>
-            <ListItemText primary='Rankigns' />
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <LeaderboardIcon />
+              </ListItemIcon>
+              <ListItemText primary='Rankigns' />
+            </ListItemButton>
           </ListItem>
-          <ListItem>
-            <ListItemIcon>
-              <SettingsIcon />
-            </ListItemIcon>
-            <ListItemText primary='Settings' />
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <SettingsIcon />
+              </ListItemIcon>
+              <ListItemText primary='Settings' />
+            </ListItemButton>
           </ListItem>
         </List>
       </Box>

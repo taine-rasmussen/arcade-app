@@ -1,9 +1,9 @@
 import { Box, useTheme, useMediaQuery } from '@mui/material';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useDispatch, useSelector } from 'react-redux';
 import { setMenuToggle } from '../../state/index';
 import ListIcon from '@mui/icons-material/List';
 import RecentlyPlayed from './recentlyPlayed';
-import { motion } from 'framer-motion';
 import Profile from './profile';
 import Stats from './stats';
 import Games from './games';
@@ -29,42 +29,46 @@ const Dashboard = () => {
 
       }}
     >
-      { menuToggle
-        ? (
-          <motion.div
-            style={{
-              zIndex: '1',
-              width: '20%',
-              height: '100%',
-              display: 'flex',
-              padding: '1.5rem',
-              background: main,
-            }}
-            animate={{ x: ['-500px', '0px'] }}
-            transition={{
-              type: "spring",
-              stiffness: 160,
-              damping: 30,
-              duration: 4,
-            }}
-          >
-            <Profile />
-          </motion.div>
-        ) : (
-          <ListIcon
-            onClick={() => { dispatch(setMenuToggle(true)) }}
-            sx={{
-              zIndex: '4',
-              width: '70px',
-              height: '70px',
-              padding: '1rem',
-              position: 'absolute',
-              '&:hover': {
-                cursor: 'pointer'
-              },
-            }}
-          />
-        )}
+      <AnimatePresence>
+        {menuToggle
+          ? (
+            <motion.div
+              style={{
+                zIndex: '1',
+                width: '20%',
+                height: '100%',
+                display: 'flex',
+                padding: '1.5rem',
+                background: main,
+              }}
+              animate={{ x: ['-500px', '0px'] }}
+              exit={{ x: ['0px', '-500px'] }}
+              transition={{
+                type: "tween",
+                stiffness: 160,
+                damping: 30,
+                duration: 0.5,
+              }}
+              key="menu"
+            >
+              <Profile />
+            </motion.div>
+          ) : (
+            <ListIcon
+              onClick={() => { dispatch(setMenuToggle(true)) }}
+              sx={{
+                zIndex: '4',
+                width: '70px',
+                height: '70px',
+                padding: '1rem',
+                position: 'absolute',
+                '&:hover': {
+                  cursor: 'pointer'
+                },
+              }}
+            />
+          )}
+      </AnimatePresence>
       <motion.div
         style={{
           zIndex: '2',

@@ -43,24 +43,24 @@ const Profile = () => {
       <ProfileWidget preview={false} />
       <Box>
         <List>
-          <ListItem disablePadding>
-            <ListItemButton>
+          <ListItem >
+            <ListItemButton sx={{ borderRadius: '3rem', padding: '1.25rem' }}>
               <ListItemIcon>
                 <StoreIcon />
               </ListItemIcon>
               <ListItemText primary='Store' />
-            </ListItemButton>
+            </ListItemButton >
           </ListItem>
-          <ListItem disablePadding>
-            <ListItemButton>
+          <ListItem >
+            <ListItemButton sx={{ borderRadius: '3rem', padding: '1.25rem' }}>
               <ListItemIcon>
                 <LeaderboardIcon />
               </ListItemIcon>
-              <ListItemText primary='Rankigns' />
+              <ListItemText primary='Rankings' />
             </ListItemButton>
           </ListItem>
-          <ListItem disablePadding>
-            <ListItemButton>
+          <ListItem >
+            <ListItemButton sx={{ borderRadius: '3rem', padding: '1.25rem' }}>
               <ListItemIcon>
                 <SettingsIcon />
               </ListItemIcon>

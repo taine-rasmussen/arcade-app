@@ -43,18 +43,20 @@ const ProfileWidget = ({ preview }) => {
           alt='profile image'
           style={preview ? previewImgStyles : imgStyles}
         />
-        <button
-          style={{
-            borderRadius: '50%',
-            postition: 'relative',
-            margin: '-45px 0px 0px 100px',
-            background: '#fff',
-            border: 'none',
-            boxShadow: '0px 0px 6px 2px #000'
-          }}
-        >
-          <ModeEditIcon />
-        </button>
+        {!preview && (
+          <button
+            style={{
+              borderRadius: '50%',
+              postition: 'relative',
+              margin: '-45px 0px 0px 100px',
+              background: '#fff',
+              border: 'none',
+              boxShadow: '0px 0px 6px 2px #000'
+            }}
+          >
+            <ModeEditIcon />
+          </button>
+        )}
       </Box>
       <Box
         sx={{

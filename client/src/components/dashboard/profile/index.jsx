@@ -28,7 +28,7 @@ const Profile = () => {
     borderRadius: '1rem',
     padding: '1rem 2.25rem',
     '&:hover': {
-      boxShadow: `2px 2px 2px 2px ${highlight}`
+      boxShadow: `0px 0px 7px -2px ${highlight}`
     }
   }
 

@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 
 const ProfileWidget = ({ preview }) => {
 
+  const theme = useTheme();
   const username = useSelector(state => state.user.username)
 
   const imgStyles = {
@@ -29,7 +30,9 @@ const ProfileWidget = ({ preview }) => {
         alt='profile image'
         style={preview ? previewImgStyles : imgStyles}
       />
-      <Typography>
+      <Typography
+        variant='h1'
+      >
         {username}
       </Typography>
     </Box>

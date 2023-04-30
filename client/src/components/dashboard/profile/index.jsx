@@ -15,6 +15,7 @@ const Profile = () => {
 
   const theme = useTheme();
   const alt = theme.palette.primary.alt
+  const dark = theme.palette.primary.dark
 
   const spanHighlight = {
     backgroundColor: alt,
@@ -48,10 +49,10 @@ const Profile = () => {
       </Box>
       <Box
         sx={{
-          padding: '150px 0rem',
           height: '30%',
           display: 'flex',
           alignItems: 'center',
+          padding: '75px 0px 0px 0px',
         }}
       >
         <ProfileWidget preview={false} />
@@ -59,45 +60,48 @@ const Profile = () => {
       <Box sx={{
         height: '50%',
         display: 'flex',
+        padding: '50px 0px',
+        justifyContent: 'center',
       }}>
         <List>
-          <ListItem disablePadding>
-            <ListItemButton sx={{ borderRadius: '1.5rem', padding: '1.25rem' }}>
+          <ListItem disablePadding sx={{ padding: '0.5rem 0rem' }}>
+            <ListItemButton sx={{ borderRadius: '1rem', }}>
               <ListItemIcon>
-                <StoreIcon sx={{ fontSize: '32px' }} />
+                <StoreIcon sx={{ fontSize: '32px', color: dark }} />
               </ListItemIcon>
               <ListItemText
                 primary='Store'
                 primaryTypographyProps={{
-                  fontSize: 24,
-                  fontWeight: 500
+                  fontSize: 20,
+                  fontWeight: 500,
+                  color: dark
                 }}
               />
             </ListItemButton >
           </ListItem>
-          <ListItem disablePadding>
-            <ListItemButton sx={{ borderRadius: '1.5rem', padding: '1rem 1.5rem' }}>
+          <ListItem disablePadding sx={{ padding: '0.5rem 0rem' }}>
+            <ListItemButton sx={{ borderRadius: '1rem', }}>
               <ListItemIcon>
-                <LeaderboardIcon sx={{ fontSize: '32px' }} />
+                <LeaderboardIcon sx={{ fontSize: '32px', color: dark }} />
               </ListItemIcon>
               <ListItemText
                 primary='Rankings'
                 primaryTypographyProps={{
-                  fontSize: 24,
+                  fontSize: 20,
                   fontWeight: 500
                 }}
               />
             </ListItemButton>
           </ListItem>
-          <ListItem disablePadding>
-            <ListItemButton sx={{ borderRadius: '1.5rem', padding: '1.25rem' }}>
+          <ListItem disablePadding sx={{ padding: '0.5rem 0rem' }}>
+            <ListItemButton sx={{ borderRadius: '1rem', }}>
               <ListItemIcon>
-                <SettingsIcon sx={{ fontSize: '32px' }} />
+                <SettingsIcon sx={{ fontSize: '32px', color: dark }} />
               </ListItemIcon>
               <ListItemText
                 primary='Settings'
                 primaryTypographyProps={{
-                  fontSize: 24,
+                  fontSize: 20,
                   fontWeight: 500
                 }}
               />

@@ -3,9 +3,19 @@ import profile from '../assets/profile.jpeg';
 import { useSelector } from 'react-redux';
 
 
-const ProfileWidget = () => {
+const ProfileWidget = ({ preview }) => {
 
   const username = useSelector(state => state.user.username)
+
+  const imgStyles = {
+    height: '115px',
+    width: '115px',
+  }
+
+  const previewImgStyles = {
+    height: '55px',
+    width: '55px',
+  }
 
   return (
     <Box
@@ -17,6 +27,7 @@ const ProfileWidget = () => {
       <img
         src={profile}
         alt='profile image'
+        style={preview ? previewImgStyles : imgStyles}
       />
       <Typography>
         {username}

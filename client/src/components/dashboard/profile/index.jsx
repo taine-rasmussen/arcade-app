@@ -29,7 +29,7 @@ const Profile = () => {
       >
         <span style={spanHighlight}>Mini</span>clip
       </Typography>
-      <ProfileWidget />
+      <ProfileWidget preview={false} />
     </Box>
   )
 }

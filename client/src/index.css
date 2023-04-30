@@ -17,6 +17,14 @@ a:hover {
   cursor: pointer;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
 
 ::-webkit-scrollbar {
   width: 0.05px;
@@ -33,4 +41,8 @@ a:hover {
 .primary_hover:hover{
   border: 3px solid #00D5FA !important;
   cursor: pointer
+}
+
+img{
+  border-radius: 50%;
 }

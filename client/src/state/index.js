@@ -5,7 +5,8 @@ const initialState = {
   user: null,
   token: null,
   loading: false,
-  recentlyPlayed: []
+  menuToggle: false,
+  recentlyPlayed: [],
 };
 
 export const authSlice = createSlice({
@@ -27,12 +28,16 @@ export const authSlice = createSlice({
       state.recentlyPlayed.splice(5);
       state.recentlyPlayed.push(action.payload.game)
     },
+    setMenuToggle: (state) => {
+      state.menuToggle = !state.menuToggle
+    }
   }
 });
 
 export const {
   setMode,
   setLogin,
+  setMenuToggle,
   setRecentlyPlayed
 } = authSlice.actions;
 

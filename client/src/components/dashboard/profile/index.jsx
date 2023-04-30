@@ -23,7 +23,6 @@ const Profile = () => {
   const dispatch = useDispatch();
   const alt = theme.palette.primary.alt
   const dark = theme.palette.primary.dark
-  const highlight = theme.palette.primary.highlight
 
   const spanHighlight = {
     backgroundColor: alt,
@@ -34,9 +33,6 @@ const Profile = () => {
   const listBtnStyle = {
     borderRadius: '1rem',
     padding: '1rem 2.25rem',
-    '&:hover': {
-      boxShadow: `0px 0px 7px -2px ${highlight}`
-    }
   }
 
   return (
@@ -167,7 +163,7 @@ const Profile = () => {
               pointer: 'cursor'
             }
           }}
-          onClick={() => { dispatch(setMenuToggle()) }}
+          onClick={() => { dispatch(setMenuToggle(false)) }}
         >
           Menu
       </Button>

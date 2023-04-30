@@ -1,11 +1,11 @@
 import { Box, useTheme, useMediaQuery } from '@mui/material';
+import { useDispatch, useSelector } from 'react-redux';
 import { setMenuToggle } from '../../state/index';
-import { useDispatch } from 'react-redux';
-
+import RecentlyPlayed from './recentlyPlayed';
+import { useEffect } from 'react';
+import Profile from './profile';
 import Stats from './stats';
 import Games from './games';
-import Profile from './profile';
-import RecentlyPlayed from './recentlyPlayed';
 
 const Dashboard = () => {
 
@@ -13,7 +13,7 @@ const Dashboard = () => {
   const dispatch = useDispatch()
   const alt = theme.palette.background.alt
   const main = theme.palette.background.default
-
+  const menuToggle = useSelector(state => state.menuToggle)
   const isNonMobileScreens = useMediaQuery('(min-width:1300px)');
 
   return (
@@ -26,19 +26,26 @@ const Dashboard = () => {
         flexDirection: 'row',
       }}
     >
-      {isNonMobileScreens && (
-        <Box
-          sx={{
-            width: '20%',
-            height: '100%',
-            display: 'flex',
-            padding: '1.5rem',
-            background: main
-          }}
-        >
-          <Profile />
-        </Box>
-      )}
+      { menuToggle
+        ? (
+          <Box
+            sx={{
+              width: '20%',
+              height: '100%',
+              display: 'flex',
+              padding: '1.5rem',
+              background: main
+            }}
+          >
+            <Profile />
+          </Box>
+        ) : (
+          <Box
+            onClick={() => { dispatch(setMenuToggle(true)) }}
+          >
+            open menu
+          </Box>
+        )}
       <Box
         sx={{
           gap: '1.5rem',

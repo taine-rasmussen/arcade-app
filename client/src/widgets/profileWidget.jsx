@@ -51,7 +51,7 @@ const ProfileWidget = ({ preview }) => {
               margin: '-45px 0px 0px 100px',
               background: '#fff',
               border: 'none',
-              boxShadow: '0px 0px 6px 2px #000'
+              boxShadow: '0px 0px 6px 1px #000'
             }}
           >
             <ModeEditIcon />

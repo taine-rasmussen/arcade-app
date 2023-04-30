@@ -4,7 +4,7 @@ import { Box, useTheme, Typography } from '@mui/material';
 const GameCard = ({ game }) => {
 
   const theme = useTheme();
-  const hightlight = theme.palette.primary.hightlight
+  const highlight = theme.palette.primary.highlight
 
   return (
     <Box
@@ -23,7 +23,7 @@ const GameCard = ({ game }) => {
           height: '70px',
           display: 'flex',
           alignItems: 'center',
-          background: hightlight,
+          background: highlight,
           borderRadius: '0.75rem',
           justifyContent: 'center',
           margin: '0px 0px -35px 35px',

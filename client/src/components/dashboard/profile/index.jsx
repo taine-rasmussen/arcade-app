@@ -1,3 +1,4 @@
+import CloseFullscreenIcon from '@mui/icons-material/CloseFullscreen';
 import LeaderboardIcon from '@mui/icons-material/Leaderboard';
 import ProfileWidget from '../../../widgets/profileWidget';
 import ListItemButton from '@mui/material/ListItemButton';
@@ -5,15 +6,21 @@ import { Box, useTheme, Typography } from '@mui/material';
 import SettingsIcon from '@mui/icons-material/Settings';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
+import { setMenuToggle } from '../../../state/index';
 import LogoutIcon from '@mui/icons-material/Logout';
 import StoreIcon from '@mui/icons-material/Store';
+import { useNavigate } from 'react-router-dom';
 import ListItem from '@mui/material/ListItem';
+import { useDispatch } from 'react-redux';
 import Button from '@mui/material/Button';
 import List from '@mui/material/List';
+
 
 const Profile = () => {
 
   const theme = useTheme();
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const alt = theme.palette.primary.alt
   const dark = theme.palette.primary.dark
 
@@ -21,6 +28,11 @@ const Profile = () => {
     backgroundColor: alt,
     borderRadius: '0.75rem',
     padding: '5px 0px 5px 10px'
+  }
+
+  const listBtnStyle = {
+    borderRadius: '1rem',
+    padding: '1rem 2.25rem',
   }
 
   return (
@@ -31,7 +43,6 @@ const Profile = () => {
         display: 'flex',
         alignItems: 'center',
         flexDirection: 'column',
-        minWidth: 'max-content',
       }}
     >
       <Box
@@ -60,12 +71,14 @@ const Profile = () => {
       <Box sx={{
         height: '50%',
         display: 'flex',
-        padding: '50px 0px',
-        justifyContent: 'center',
+        padding: '75px 0px',
       }}>
-        <List>
-          <ListItem disablePadding sx={{ padding: '0.5rem 0rem' }}>
-            <ListItemButton sx={{ borderRadius: '1rem', }}>
+        <List >
+          <ListItem
+            disablePadding
+            sx={{ padding: '0.5rem 0rem' }}
+          >
+            <ListItemButton sx={listBtnStyle}>
               <ListItemIcon>
                 <StoreIcon sx={{ fontSize: '32px', color: dark }} />
               </ListItemIcon>
@@ -79,8 +92,11 @@ const Profile = () => {
               />
             </ListItemButton >
           </ListItem>
-          <ListItem disablePadding sx={{ padding: '0.5rem 0rem' }}>
-            <ListItemButton sx={{ borderRadius: '1rem', }}>
+          <ListItem
+            disablePadding
+            sx={{ padding: '0.5rem 0rem' }}
+          >
+            <ListItemButton sx={listBtnStyle}>
               <ListItemIcon>
                 <LeaderboardIcon sx={{ fontSize: '32px', color: dark }} />
               </ListItemIcon>
@@ -93,8 +109,11 @@ const Profile = () => {
               />
             </ListItemButton>
           </ListItem>
-          <ListItem disablePadding sx={{ padding: '0.5rem 0rem' }}>
-            <ListItemButton sx={{ borderRadius: '1rem', }}>
+          <ListItem
+            disablePadding
+            sx={{ padding: '0.5rem 0rem' }}
+          >
+            <ListItemButton sx={listBtnStyle}>
               <ListItemIcon>
                 <SettingsIcon sx={{ fontSize: '32px', color: dark }} />
               </ListItemIcon>
@@ -111,8 +130,10 @@ const Profile = () => {
       </Box>
       <Box
         sx={{
+          gap: '1.5rem',
           height: '10%',
           display: 'flex',
+          flexDirection: 'row',
           alignItems: 'center',
         }}
       >
@@ -127,11 +148,27 @@ const Profile = () => {
               pointer: 'cursor'
             }
           }}
+          onClick={() => { navigate('/') }}
         >
           Logout
       </Button>
+        <Button
+          variant="outlined"
+          color="success"
+          endIcon={<CloseFullscreenIcon />}
+          sx={{
+            fontSize: '20px',
+            fontWeight: '500',
+            '&:hover': {
+              pointer: 'cursor'
+            }
+          }}
+          onClick={() => { dispatch(setMenuToggle(false)) }}
+        >
+          Menu
+      </Button>
       </Box>
-    </Box>
+    </Box >
   )
 }
 

@@ -8,13 +8,13 @@ const ProfileWidget = ({ preview }) => {
 
   const theme = useTheme();
   const alt = theme.palette.primary.alt;
-  const hightlight = theme.palette.primary.hightlight;
+  const highlight = theme.palette.primary.highlight;
   const username = useSelector(state => state.user.username);
 
 
   const imgStyles = {
-    height: '145px',
-    width: '145px',
+    height: '135px',
+    width: '135px',
   }
 
   const previewImgStyles = {

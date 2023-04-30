@@ -36,7 +36,6 @@ const Dashboard = () => {
         >
           <Profile />
         </Box>
-
       )}
       <Box
         sx={{

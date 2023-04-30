@@ -15,6 +15,7 @@ const Profile = () => {
 
   const theme = useTheme();
   const alt = theme.palette.primary.alt
+  const dark = theme.palette.primary.dark
 
   const spanHighlight = {
     backgroundColor: alt,
@@ -64,13 +65,14 @@ const Profile = () => {
           <ListItem disablePadding>
             <ListItemButton sx={{ borderRadius: '1.5rem', padding: '1.25rem' }}>
               <ListItemIcon>
-                <StoreIcon sx={{ fontSize: '32px' }} />
+                <StoreIcon sx={{ fontSize: '32px', color: dark }} />
               </ListItemIcon>
               <ListItemText
                 primary='Store'
                 primaryTypographyProps={{
                   fontSize: 24,
-                  fontWeight: 500
+                  fontWeight: 500,
+                  color: dark
                 }}
               />
             </ListItemButton >
@@ -78,7 +80,7 @@ const Profile = () => {
           <ListItem disablePadding>
             <ListItemButton sx={{ borderRadius: '1.5rem', padding: '1rem 1.5rem' }}>
               <ListItemIcon>
-                <LeaderboardIcon sx={{ fontSize: '32px' }} />
+                <LeaderboardIcon sx={{ fontSize: '32px', color: dark }} />
               </ListItemIcon>
               <ListItemText
                 primary='Rankings'
@@ -92,7 +94,7 @@ const Profile = () => {
           <ListItem disablePadding>
             <ListItemButton sx={{ borderRadius: '1.5rem', padding: '1.25rem' }}>
               <ListItemIcon>
-                <SettingsIcon sx={{ fontSize: '32px' }} />
+                <SettingsIcon sx={{ fontSize: '32px', color: dark }} />
               </ListItemIcon>
               <ListItemText
                 primary='Settings'

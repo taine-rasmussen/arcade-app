@@ -31,16 +31,35 @@ const Profile = () => {
         alignItems: 'center',
         flexDirection: 'column',
         minWidth: 'max-content',
-        justifyContent: 'space-between'
       }}
     >
-      <Typography
-        variant='h1'
+      <Box
+        sx={{
+          height: '10%',
+          display: 'flex',
+          paddingTop: '1.8rem'
+        }}
       >
-        <span style={spanHighlight}>Mini</span>clip
-      </Typography>
-      <ProfileWidget preview={false} />
-      <Box>
+        <Typography
+          variant='h1'
+        >
+          <span style={spanHighlight}>Mini</span>clip
+        </Typography>
+      </Box>
+      <Box
+        sx={{
+          padding: '150px 0rem',
+          height: '30%',
+          display: 'flex',
+          alignItems: 'center',
+        }}
+      >
+        <ProfileWidget preview={false} />
+      </Box>
+      <Box sx={{
+        height: '50%',
+        display: 'flex',
+      }}>
         <List>
           <ListItem disablePadding>
             <ListItemButton sx={{ borderRadius: '1.5rem', padding: '1.25rem' }}>
@@ -86,18 +105,28 @@ const Profile = () => {
           </ListItem>
         </List>
       </Box>
-      <Button
-        variant="text"
-        color="error"
-        endIcon={<LogoutIcon />}
+      <Box
         sx={{
-          '&:hover': {
-            pointer: 'cursor'
-          }
+          height: '10%',
+          display: 'flex',
+          alignItems: 'center',
         }}
       >
-        Logout
+        <Button
+          variant="outlined"
+          color="error"
+          endIcon={<LogoutIcon />}
+          sx={{
+            fontSize: '20px',
+            fontWeight: '500',
+            '&:hover': {
+              pointer: 'cursor'
+            }
+          }}
+        >
+          Logout
       </Button>
+      </Box>
     </Box>
   )
 }

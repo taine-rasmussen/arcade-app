@@ -16,7 +16,6 @@ const Dashboard = () => {
   return (
     <Box
       sx={{
-        gap: '1.5rem',
         width: '100%',
         height: '100%',
         background: main,
@@ -27,7 +26,7 @@ const Dashboard = () => {
       {isNonMobileScreens && (
         <Box
           sx={{
-            width: '15%',
+            width: '20%',
             height: '100%',
             display: 'flex',
             padding: '1.5rem',
@@ -45,7 +44,7 @@ const Dashboard = () => {
           background: alt,
           borderRadius: '2rem',
           flexDirection: 'column',
-          width: isNonMobileScreens ? '85%' : '100%',
+          width: isNonMobileScreens ? '80%' : '100%',
           height: isNonMobileScreens ? '100%' : '90%',
         }}
       >

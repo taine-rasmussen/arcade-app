@@ -49,7 +49,7 @@ const Profile = () => {
       </Box>
       <Box
         sx={{
-          padding: '150px 0rem',
+          padding: '75px 0px 0px 0px',
           height: '30%',
           display: 'flex',
           alignItems: 'center',
@@ -60,7 +60,8 @@ const Profile = () => {
       <Box sx={{
         height: '50%',
         display: 'flex',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        padding: '50px 0px'
       }}>
         <List>
           <ListItem disablePadding sx={{ padding: '0.5rem 0rem' }}>

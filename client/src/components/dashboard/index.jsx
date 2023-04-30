@@ -2,10 +2,10 @@ import { Box, useTheme, useMediaQuery } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { setMenuToggle } from '../../state/index';
 import RecentlyPlayed from './recentlyPlayed';
-import { useEffect } from 'react';
 import Profile from './profile';
 import Stats from './stats';
 import Games from './games';
+import { motion } from 'framer-motion'
 
 const Dashboard = () => {
 
@@ -24,21 +24,31 @@ const Dashboard = () => {
         background: main,
         display: 'flex',
         flexDirection: 'row',
+        zIndex: '2'
+
       }}
     >
       { menuToggle
         ? (
-          <Box
-            sx={{
+          <motion.div
+            style={{
               width: '20%',
               height: '100%',
               display: 'flex',
               padding: '1.5rem',
-              background: main
+              background: main,
+              zIndex: '1'
+            }}
+            animate={{ x: ['-500px', '0px'] }}
+            transition={{
+              type: "spring",
+              stiffness: 160,
+              damping: 30,
+              duration: 4,
             }}
           >
             <Profile />
-          </Box>
+          </motion.div>
         ) : (
           <Box
             onClick={() => { dispatch(setMenuToggle(true)) }}
@@ -46,8 +56,8 @@ const Dashboard = () => {
             open menu
           </Box>
         )}
-      <Box
-        sx={{
+      <motion.div
+        style={{
           gap: '1.5rem',
           padding: '3rem',
           display: 'flex',
@@ -56,6 +66,7 @@ const Dashboard = () => {
           flexDirection: 'column',
           width: isNonMobileScreens ? '80%' : '100%',
           height: isNonMobileScreens ? '100%' : '90%',
+          zIndex: '2'
         }}
       >
         <Box
@@ -70,7 +81,7 @@ const Dashboard = () => {
           <Games />
         </Box>
         <RecentlyPlayed />
-      </Box>
+      </motion.div>
     </Box >
   )
 }

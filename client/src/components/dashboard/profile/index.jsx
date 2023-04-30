@@ -6,10 +6,6 @@ const Profile = () => {
 
   const theme = useTheme();
   const alt = theme.palette.primary.alt
-  const user = useSelector(state => state.user)
-  const {
-    username
-  } = user
 
   const spanHighlight = {
     backgroundColor: alt,
@@ -34,11 +30,7 @@ const Profile = () => {
       >
         <span style={spanHighlight}>Mini</span>clip
       </Typography>
-      <Typography
-        variant='h2'
-      >
-        {username}
-      </Typography>
+
     </Box>
   )
 }

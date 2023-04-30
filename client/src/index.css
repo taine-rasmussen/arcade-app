@@ -17,6 +17,14 @@ a:hover {
   cursor: pointer;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
 
 ::-webkit-scrollbar {
   width: 0.05px;

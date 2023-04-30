@@ -15,13 +15,13 @@ const Profile = () => {
   return (
     <Box
       sx={{
-        gap: '1rem',
         width: '100%',
         height: '100%',
         display: 'flex',
-        minWidth: 'max-content',
         alignItems: 'center',
         flexDirection: 'column',
+        minWidth: 'max-content',
+        justifyContent: 'space-between'
       }}
     >
       <Typography

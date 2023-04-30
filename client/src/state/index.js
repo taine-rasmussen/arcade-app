@@ -30,7 +30,6 @@ export const authSlice = createSlice({
     },
     setMenuToggle: (state, action) => {
       state.menuToggle = action.payload
-      console.log(action, state.menuToggle)
     }
   }
 });

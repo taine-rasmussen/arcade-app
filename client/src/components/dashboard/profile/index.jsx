@@ -43,28 +43,46 @@ const Profile = () => {
       <ProfileWidget preview={false} />
       <Box>
         <List>
-          <ListItem >
-            <ListItemButton sx={{ borderRadius: '3rem', padding: '1.25rem' }}>
+          <ListItem disablePadding>
+            <ListItemButton sx={{ borderRadius: '1.5rem', padding: '1.25rem' }}>
               <ListItemIcon>
-                <StoreIcon />
+                <StoreIcon sx={{ fontSize: '32px' }} />
               </ListItemIcon>
-              <ListItemText primary='Store' />
+              <ListItemText
+                primary='Store'
+                primaryTypographyProps={{
+                  fontSize: 24,
+                  fontWeight: 500
+                }}
+              />
             </ListItemButton >
           </ListItem>
-          <ListItem >
-            <ListItemButton sx={{ borderRadius: '3rem', padding: '1.25rem' }}>
+          <ListItem disablePadding>
+            <ListItemButton sx={{ borderRadius: '1.5rem', padding: '1rem 1.5rem' }}>
               <ListItemIcon>
-                <LeaderboardIcon />
+                <LeaderboardIcon sx={{ fontSize: '32px' }} />
               </ListItemIcon>
-              <ListItemText primary='Rankings' />
+              <ListItemText
+                primary='Rankings'
+                primaryTypographyProps={{
+                  fontSize: 24,
+                  fontWeight: 500
+                }}
+              />
             </ListItemButton>
           </ListItem>
-          <ListItem >
-            <ListItemButton sx={{ borderRadius: '3rem', padding: '1.25rem' }}>
+          <ListItem disablePadding>
+            <ListItemButton sx={{ borderRadius: '1.5rem', padding: '1.25rem' }}>
               <ListItemIcon>
-                <SettingsIcon />
+                <SettingsIcon sx={{ fontSize: '32px' }} />
               </ListItemIcon>
-              <ListItemText primary='Settings' />
+              <ListItemText
+                primary='Settings'
+                primaryTypographyProps={{
+                  fontSize: 24,
+                  fontWeight: 500
+                }}
+              />
             </ListItemButton>
           </ListItem>
         </List>

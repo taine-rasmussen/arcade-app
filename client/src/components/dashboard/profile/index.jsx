@@ -31,7 +31,6 @@ const Profile = () => {
         display: 'flex',
         alignItems: 'center',
         flexDirection: 'column',
-        minWidth: 'max-content',
       }}
     >
       <Box
@@ -60,11 +59,13 @@ const Profile = () => {
       <Box sx={{
         height: '50%',
         display: 'flex',
-        padding: '50px 0px',
-        justifyContent: 'center',
+        padding: '75px 0px',
       }}>
-        <List>
-          <ListItem disablePadding sx={{ padding: '0.5rem 0rem' }}>
+        <List >
+          <ListItem
+            disablePadding
+            sx={{ padding: '0.5rem 2rem', }}
+          >
             <ListItemButton sx={{ borderRadius: '1rem', }}>
               <ListItemIcon>
                 <StoreIcon sx={{ fontSize: '32px', color: dark }} />
@@ -79,7 +80,10 @@ const Profile = () => {
               />
             </ListItemButton >
           </ListItem>
-          <ListItem disablePadding sx={{ padding: '0.5rem 0rem' }}>
+          <ListItem
+            disablePadding
+            sx={{ padding: '0.5rem 0rem' }}
+          >
             <ListItemButton sx={{ borderRadius: '1rem', }}>
               <ListItemIcon>
                 <LeaderboardIcon sx={{ fontSize: '32px', color: dark }} />
@@ -93,7 +97,10 @@ const Profile = () => {
               />
             </ListItemButton>
           </ListItem>
-          <ListItem disablePadding sx={{ padding: '0.5rem 0rem' }}>
+          <ListItem
+            disablePadding
+            sx={{ padding: '0.5rem 0rem' }}
+          >
             <ListItemButton sx={{ borderRadius: '1rem', }}>
               <ListItemIcon>
                 <SettingsIcon sx={{ fontSize: '32px', color: dark }} />

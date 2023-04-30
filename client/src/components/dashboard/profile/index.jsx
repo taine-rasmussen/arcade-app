@@ -1,21 +1,20 @@
-import { Box, useTheme, Typography } from '@mui/material';
+import LeaderboardIcon from '@mui/icons-material/Leaderboard';
 import ProfileWidget from '../../../widgets/profileWidget';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import StoreIcon from '@mui/icons-material/Store';
+import ListItemButton from '@mui/material/ListItemButton';
+import { Box, useTheme, Typography } from '@mui/material';
+import SettingsIcon from '@mui/icons-material/Settings';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import LeaderboardIcon from '@mui/icons-material/Leaderboard';
-import ListItemButton from '@mui/material/ListItemButton';
-import SettingsIcon from '@mui/icons-material/Settings';
 import LogoutIcon from '@mui/icons-material/Logout';
+import StoreIcon from '@mui/icons-material/Store';
+import ListItem from '@mui/material/ListItem';
 import Button from '@mui/material/Button';
+import List from '@mui/material/List';
 
 const Profile = () => {
 
   const theme = useTheme();
   const alt = theme.palette.primary.alt
-  const bgAlt = theme.palette.background.bgAlt
 
   const spanHighlight = {
     backgroundColor: alt,

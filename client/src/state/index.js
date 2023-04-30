@@ -29,6 +29,7 @@ export const authSlice = createSlice({
       state.recentlyPlayed.push(action.payload.game)
     },
     setMenuToggle: (state) => {
+      console.log(state.menuToggle)
       state.menuToggle = !state.menuToggle
     }
   }

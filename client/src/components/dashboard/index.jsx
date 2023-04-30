@@ -1,4 +1,6 @@
 import { Box, useTheme, useMediaQuery } from '@mui/material';
+import { setMenuToggle } from '../../state/index';
+import { useDispatch } from 'react-redux';
 
 import Stats from './stats';
 import Games from './games';
@@ -8,8 +10,9 @@ import RecentlyPlayed from './recentlyPlayed';
 const Dashboard = () => {
 
   const theme = useTheme();
-  const main = theme.palette.background.default
+  const dispatch = useDispatch()
   const alt = theme.palette.background.alt
+  const main = theme.palette.background.default
 
   const isNonMobileScreens = useMediaQuery('(min-width:1300px)');
 

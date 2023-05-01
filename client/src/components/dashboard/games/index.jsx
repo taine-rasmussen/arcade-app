@@ -1,8 +1,8 @@
-import { Box, useTheme } from '@mui/material';
-import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import WidgetWrapper from '../../../wrapper/WidgetWrapper';
+import { Box, useTheme, Typography } from '@mui/material';
 import { setRecentlyPlayed } from '../../../state/index';
-import WidgetWrapper from '../../../wrapper/WidgetWrapper'
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 const Games = () => {
   const theme = useTheme();

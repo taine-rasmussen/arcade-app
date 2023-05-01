@@ -40,6 +40,7 @@ const Dashboard = () => {
                 display: 'flex',
                 padding: '1.5rem',
                 background: main,
+
               }}
               animate={{ x: ['-500px', '0px'] }}
               exit={{ x: ['0px', '-500px'] }}
@@ -80,6 +81,7 @@ const Dashboard = () => {
           flexDirection: 'column',
           width: menuToggle ? '80%' : '100%',
           height: '100%',
+          transition: 'ease 2s'
         }}
       >
         <Box

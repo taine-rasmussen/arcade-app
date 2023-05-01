@@ -25,7 +25,12 @@ const Games = () => {
       <Box
         onClick={() => { navToGame('TicTacToe') }}
       >
-        tictactoe
+        <Typography
+          variant='h1'
+          color='white'
+        >
+          TicTacToe
+        </Typography>
       </Box>
     </WidgetWrapper >
   )

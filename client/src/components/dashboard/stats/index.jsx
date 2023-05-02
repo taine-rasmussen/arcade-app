@@ -1,5 +1,5 @@
-import { Box, useTheme } from '@mui/material';
-import WidgetWrapper from '../../../wrapper/WidgetWrapper'
+import WidgetWrapper from '../../../wrapper/WidgetWrapper';
+import { Box, useTheme, Typography } from '@mui/material';
 
 const Stats = () => {
 
@@ -11,10 +11,19 @@ const Stats = () => {
       bg={dark}
       width={43}
       height={100}
-      sx={{ transition: 'ease-out all 0.35s' }}>
-      <Box>
-        STATS
-      </Box>
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        transition: 'ease-out all 0.35s',
+      }}
+    >
+      <Typography
+        variant='h2'
+        color='white'
+      >
+        Stats
+        </Typography>
     </WidgetWrapper>
   )
 }

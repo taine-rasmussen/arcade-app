@@ -6,7 +6,7 @@ import { Box, useTheme, Typography } from '@mui/material';
 import SettingsIcon from '@mui/icons-material/Settings';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import { setMode } from '../../../state/index';
+import { setLogout } from '../../../state/index';
 import LogoutIcon from '@mui/icons-material/Logout';
 import StoreIcon from '@mui/icons-material/Store';
 import { useNavigate } from 'react-router-dom';
@@ -148,7 +148,7 @@ const Profile = () => {
               pointer: 'cursor'
             }
           }}
-          onClick={() => { navigate('/') }}
+          onClick={() => { dispatch(setLogout()) }}
         >
           Logout
       </Button>

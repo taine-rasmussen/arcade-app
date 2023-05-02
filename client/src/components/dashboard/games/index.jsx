@@ -4,6 +4,13 @@ import { setRecentlyPlayed } from '../../../state/index';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
+const GAMESLIST = [
+  'Pong',
+  'Snake',
+  'Memory',
+  'TicTacToe',
+  'MineSweeper',
+];
 
 const Games = () => {
   const theme = useTheme();
@@ -17,14 +24,6 @@ const Games = () => {
     navigate(`/${game}`)
     dispatch(setRecentlyPlayed({ game: game }))
   }
-
-  const games = [
-    'Pong',
-    'Snake',
-    'Memory',
-    'TicTacToe',
-    'MineSweeper',
-  ]
 
   return (
     <WidgetWrapper
@@ -40,7 +39,7 @@ const Games = () => {
       }}
     >
       {
-        games.map((title, i) => {
+        GAMESLIST.map((title, i) => {
           return (
             <Box
               key={i}

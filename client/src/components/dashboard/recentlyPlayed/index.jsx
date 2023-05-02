@@ -43,9 +43,7 @@ const RecentlyPlayed = () => {
             width: '60%',
           }}
         >
-          <Typography
-            variant='h4'
-          >
+          <Typography variant='h4'>
             What you've been <span style={{ color: hightlight }}>loving</span> recently
           </Typography>
         </Box>

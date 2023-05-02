@@ -6,7 +6,7 @@ import { Box, useTheme, Typography } from '@mui/material';
 import SettingsIcon from '@mui/icons-material/Settings';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import { setMenuToggle } from '../../../state/index';
+import { setMode } from '../../../state/index';
 import LogoutIcon from '@mui/icons-material/Logout';
 import StoreIcon from '@mui/icons-material/Store';
 import { useNavigate } from 'react-router-dom';
@@ -151,21 +151,6 @@ const Profile = () => {
           onClick={() => { navigate('/') }}
         >
           Logout
-      </Button>
-        <Button
-          variant="outlined"
-          color="success"
-          endIcon={<CloseFullscreenIcon />}
-          sx={{
-            fontSize: '20px',
-            fontWeight: '500',
-            '&:hover': {
-              pointer: 'cursor'
-            }
-          }}
-          onClick={() => { dispatch(setMenuToggle(false)) }}
-        >
-          Menu
       </Button>
       </Box>
     </Box >

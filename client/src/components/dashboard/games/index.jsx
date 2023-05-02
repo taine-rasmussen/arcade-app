@@ -11,7 +11,7 @@ const Games = () => {
   const dispatch = useDispatch()
   const light = theme.palette.primary.light
   const dark = theme.palette.primary.dark
-  const bgColor = theme.palette.background.alt
+  const bgColor = theme.palette.background.default
 
   const navToGame = (game) => {
     navigate(`/${game}`)

@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, current } from "@reduxjs/toolkit";
 
 const initialState = {
   mode: "light",
@@ -25,8 +25,7 @@ export const authSlice = createSlice({
       state.token = null;
     },
     setRecentlyPlayed: (state, action) => {
-      state.recentlyPlayed.splice(5);
-      state.recentlyPlayed.push(action.payload.game)
+      state.recentlyPlayed = [action.payload.game, state.recentlyPlayed[0], state.recentlyPlayed[1], state.recentlyPlayed[2]]
     },
     setMenuToggle: (state, action) => {
       state.menuToggle = action.payload

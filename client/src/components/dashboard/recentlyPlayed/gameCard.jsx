@@ -5,6 +5,8 @@ const GameCard = ({ game }) => {
 
   const theme = useTheme();
   const highlight = theme.palette.primary.highlight
+  const dark = theme.palette.primary.dark
+
 
   return (
     <Box
@@ -13,7 +15,7 @@ const GameCard = ({ game }) => {
         height: '100%',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center'
+        justifyContent: 'center',
       }}
     >
       <Box
@@ -34,12 +36,22 @@ const GameCard = ({ game }) => {
       <Box
         sx={{
           zIndex: '1',
-          width: '100%',
           height: '60%',
-          borderRadius: '2rem',
+          width: '100%',
+          display: 'flex',
           background: '#fff',
+          borderRadius: '2rem',
+          alignItems: 'center',
+          flexDirection: 'column',
+          justifyContent: 'center',
         }}
       >
+        <Typography
+          variant='h2'
+          color={dark}
+        >
+          {game}
+        </Typography>
       </Box>
     </Box>
   )

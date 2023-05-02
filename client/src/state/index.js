@@ -36,6 +36,7 @@ export const authSlice = createSlice({
 export const {
   setMode,
   setLogin,
+  setLogout,
   setMenuToggle,
   setRecentlyPlayed
 } = authSlice.actions;

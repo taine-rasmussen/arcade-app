@@ -30,47 +30,21 @@ const Dashboard = () => {
       }}
     >
       <AnimatePresence>
-        {menuToggle
-          ? (
-            <motion.div
-              style={{
-                zIndex: '1',
-                width: '20%',
-                height: '100%',
-                display: 'flex',
-                padding: '1.5rem',
-                background: main,
+        <Box
+          sx={{
+            zIndex: '1',
+            width: '20%',
+            height: '100%',
+            display: 'flex',
+            padding: '1.5rem',
+            background: main,
 
-              }}
-              animate={{ x: ['-500px', '0px'] }}
-              exit={{ x: ['0px', '-500px'] }}
-              transition={{
-                type: "tween",
-                stiffness: 160,
-                damping: 30,
-                duration: 0.5,
-              }}
-              key="menu"
-            >
-              <Profile />
-            </motion.div>
-          ) : (
-            <ListIcon
-              onClick={() => { dispatch(setMenuToggle(true)) }}
-              sx={{
-                zIndex: '4',
-                width: '70px',
-                height: '70px',
-                padding: '1rem',
-                position: 'absolute',
-                '&:hover': {
-                  cursor: 'pointer'
-                },
-              }}
-            />
-          )}
+          }}
+        >
+          <Profile />
+        </Box>
       </AnimatePresence>
-      <motion.div
+      <Box
         style={{
           zIndex: '2',
           gap: '1.5rem',
@@ -96,7 +70,7 @@ const Dashboard = () => {
           <Games />
         </Box>
         <RecentlyPlayed />
-      </motion.div>
+      </Box>
     </Box >
   )
 }

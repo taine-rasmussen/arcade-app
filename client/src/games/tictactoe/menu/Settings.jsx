@@ -20,6 +20,7 @@ const SettingsDivder = () => (
 const Settings = () => {
   const theme = useTheme();
   const main = theme.palette.background.main;
+  const dark = theme.palette.primary.dark;
   const { state: { session } } = useContext(GameContext);
 
   return (
@@ -27,12 +28,17 @@ const Settings = () => {
       initial={{ opacity: 0 }}
       animate={{ x: ['300px', '0px'], opacity: 1 }}
       transition={{ type: 'tween', duration: 0.6, delay: 0.75 }}
-      style={{ height: '100%', width: '100%', zIndex: '2', overflow: 'hidden' }}
+      style={{
+        height: '100%',
+        width: '100%',
+        zIndex: '2',
+        overflow: 'hidden'
+      }}
     >
       <WidgetWrapper
+        bg={dark}
         width={100}
         height={100}
-        theme={theme}
         border={true}
       >
         <SettingsHeader />
@@ -52,13 +58,14 @@ const Settings = () => {
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center',
+              background: dark
             }}
           >
             <WidgetWrapper
               height={40}
               width={100}
               border={true}
-              theme={theme}
+              bg={dark}
               style={{ background: main }}
             >
               <EditGameMode />

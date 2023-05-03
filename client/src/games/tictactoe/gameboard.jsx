@@ -9,6 +9,7 @@ const Gameboard = () => {
 
   const theme = useTheme();
   const main = theme.palette.background.main
+  const alt = theme.palette.background.alt
   const { state: { game } } = useContext(GameContext)
   const isNonMobileScreens = useMediaQuery('(min-width:1150px)');
 
@@ -26,7 +27,6 @@ const Gameboard = () => {
       <WidgetWrapper
         width={100}
         height={isNonMobileScreens ? 100 : null}
-        theme={theme}
         border={false}
         style={{ padding: '0px', zIndex: '3' }}
       >

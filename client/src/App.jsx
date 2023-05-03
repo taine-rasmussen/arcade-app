@@ -5,14 +5,14 @@ import { useSelector } from 'react-redux';
 import { themeSettings } from './theme';
 import { useMemo } from 'react';
 
-import Dashboard from './components/dashboard';
-import Login from './components/login';
-
-import TicTacToe from './games/tictactoe';
-import memory from './games/memory';
 import pong from './games/pong';
-import minesweeper from './games/minesweeper';
 import snake from './games/snake';
+import memory from './games/memory';
+import Login from './components/login';
+import TicTacToe from './games/tictactoe';
+import Dashboard from './components/dashboard';
+import minesweeper from './games/minesweeper';
+
 
 
 const App = () => {

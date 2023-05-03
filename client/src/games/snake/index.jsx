@@ -1,7 +1,7 @@
 const Snake = () => {
   return (
     <div>
-
+      SNAKE
     </div>
   )
 }

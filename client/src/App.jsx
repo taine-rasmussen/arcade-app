@@ -9,6 +9,10 @@ import Dashboard from './components/dashboard';
 import Login from './components/login';
 
 import TicTacToe from './games/tictactoe';
+import memory from './games/memory';
+import pong from './games/pong';
+import minesweeper from './games/minesweeper';
+import snake from './games/snake';
 
 
 const App = () => {

@@ -1,9 +1,11 @@
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import { Box, useTheme, Typography } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const GameCard = ({ game }) => {
 
   const theme = useTheme();
+  const navigate = useNavigate();
   const highlight = theme.palette.primary.highlight
   const dark = theme.palette.primary.dark
 
@@ -49,6 +51,12 @@ const GameCard = ({ game }) => {
         <Typography
           variant='h2'
           color={dark}
+          onClick={() => { navigate(`/${game}`) }}
+          sx={{
+            '&:hover': {
+              cursor: 'pointer'
+            }
+          }}
         >
           {game}
         </Typography>

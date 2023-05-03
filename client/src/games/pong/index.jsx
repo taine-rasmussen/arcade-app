@@ -1,7 +1,7 @@
 const Pong = () => {
   return (
     <div>
-
+      PONG
     </div>
   )
 }

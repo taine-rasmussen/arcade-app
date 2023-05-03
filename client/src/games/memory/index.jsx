@@ -1,7 +1,7 @@
 const Memory = () => {
   return (
     <div>
-
+      MEMORY
     </div>
   )
 }

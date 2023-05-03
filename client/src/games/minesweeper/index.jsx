@@ -1,7 +1,7 @@
 const Minesweeper = () => {
   return (
     <div>
-
+      MINESWEEPER
     </div>
   )
 }

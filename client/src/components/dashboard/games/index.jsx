@@ -57,6 +57,11 @@ const Games = () => {
                 variant='h2'
                 color={dark}
                 onClick={() => navToGame(title)}
+                sx={{
+                  '&:hover': {
+                    cursor: 'pointer'
+                  }
+                }}
               >
                 {title}
               </Typography>

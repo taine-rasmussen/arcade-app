@@ -26,6 +26,7 @@ export const authSlice = createSlice({
     },
     setRecentlyPlayed: (state, action) => {
       state.recentlyPlayed = [action.payload.game, state.recentlyPlayed[0], state.recentlyPlayed[1], state.recentlyPlayed[2]]
+      // Need to account for when array is not max length yet
     },
     setMenuToggle: (state, action) => {
       state.menuToggle = action.payload

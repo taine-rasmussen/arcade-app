@@ -13,8 +13,6 @@ import TicTacToe from './games/tictactoe';
 import Dashboard from './components/dashboard';
 import Minesweeper from './games/minesweeper';
 
-
-
 const App = () => {
 
   const mode = useSelector((state) => state.mode)

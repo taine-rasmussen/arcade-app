@@ -19,37 +19,27 @@ const Settings = () => {
         height: '100%',
         width: '100%',
         zIndex: '2',
-        overflow: 'hidden',
         display: 'flex',
+        overflow: 'hidden',
         alignItems: 'center',
-        flexDirection: 'column',
-        justifyContent: 'space-between'
+        flexDirection: 'column'
       }}
     >
       <BtnGroup />
-
-      <Box sx={{
-        width: '55%',
-        display: 'flex',
-        flexWrap: 'wrap',
-        flexDirection: 'row',
-      }}>
-        <Box
-          sx={{
-            gap: '1rem',
-            height: '90%',
-            display: 'flex',
-            overflowY: 'auto',
-            overflowX: 'hidden',
-            alignItems: 'center',
-            border: '4px solid #fff'
-          }}
-        >
-          {session.map((result, i) => (
-            <ScoreCard result={result} key={i} />
-          )
-          )}
-        </Box>
+      <Box
+        sx={{
+          gap: '1rem',
+          display: 'flex',
+          flexWrap: 'wrap',
+          overflowY: 'auto',
+          overflowX: 'hidden',
+          flexDirection: 'row',
+        }}
+      >
+        {session.map((result, i) => (
+          <ScoreCard result={result} key={i} />
+        )
+        )}
       </Box>
     </motion.div >
   )

@@ -38,7 +38,7 @@ const ProfileCard = ({ activeTurn }) => {
           ? isActiveTurn
             ? { border: `4px solid ${borderColor}` }
             : {}
-          : {}
+          : { border: `4px solid ${alt}` }
       }
     >
       <Box

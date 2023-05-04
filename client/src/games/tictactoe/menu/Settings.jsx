@@ -14,7 +14,6 @@ const SettingsDivder = () => (
 )
 
 const Settings = () => {
-  const theme = useTheme();
   const { state: { session } } = useContext(GameContext);
 
   return (

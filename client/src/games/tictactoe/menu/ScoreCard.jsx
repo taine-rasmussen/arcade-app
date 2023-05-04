@@ -7,7 +7,7 @@ import ScoreCardModal from './ScoreCardModal'
 const ScoreCard = (result) => {
   const [openModal, setOpenModal] = useState(false)
   const theme = useTheme()
-  const bg = theme.palette.background.main
+  const light = theme.palette.primary.light
 
   return (
     <>
@@ -19,19 +19,19 @@ const ScoreCard = (result) => {
           damping: 20
         }}
         style={{
-          width: '90%',
-          background: bg,
+          width: '125px',
+          height: '75px',
           display: 'flex',
-          minHeight: '20%',
+          background: light,
           alignItems: 'center',
-          borderRadius: '10px',
+          borderRadius: '0.75rem',
           justifyContent: 'center',
           border: '3px solid #000',
         }}
         onClick={() => { setOpenModal(true) }}
         className='primary_hover'
       >
-        <Typography variant='h3'>
+        <Typography variant='h2'>
           {result.result.winner ? 'X' : 'O'}
         </Typography>
       </motion.div>

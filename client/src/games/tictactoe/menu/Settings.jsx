@@ -1,25 +1,13 @@
-import WidgetWrapper from '../../../wrapper/WidgetWrapper';
-import { Box, useTheme, Typography } from '@mui/material';
-import EditNameWidget from './EditNameWidget';
-import EditGameMode from './EditGameMode';
-import SettingsHeader from './SettingsHeader';
-import { useContext, useMemo } from 'react';
+import { Box, useTheme } from '@mui/material';
 import Divider from '@mui/material/Divider';
 import { GameContext } from '../index';
 import { motion } from 'framer-motion';
 import Chip from '@mui/material/Chip';
 import ScoreCard from './ScoreCard';
-
-const SettingsDivder = () => (
-  <Divider orientation="vertical" variant="middle">
-    <Chip label="Settings / Session" />
-  </Divider>
-)
+import { useContext } from 'react';
+import BtnGroup from './BtnGroup';
 
 const Settings = () => {
-  const theme = useTheme();
-  const alt = theme.palette.background.alt;
-  const main = theme.palette.background.main;
   const { state: { session } } = useContext(GameContext);
 
   return (
@@ -31,79 +19,38 @@ const Settings = () => {
         height: '100%',
         width: '100%',
         zIndex: '2',
-        overflow: 'hidden'
+        overflow: 'hidden',
+        display: 'flex',
+        alignItems: 'center',
+        flexDirection: 'column',
+        justifyContent: 'space-between'
       }}
     >
-      <WidgetWrapper
-        bg={alt}
-        width={100}
-        height={100}
-      >
-        <SettingsHeader />
-        <Divider />
-        <Box sx={{
-          height: '80%',
-          width: '100%',
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          padding: '10px'
-        }}>
-          <Box
-            sx={{
-              gap: '2rem',
-              width: '100%',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center'
-            }}
-          >
-            <WidgetWrapper
-              height={40}
-              width={100}
-              border={true}
-              style={{ background: main }}
-            >
-              <EditGameMode />
-            </WidgetWrapper>
-            <WidgetWrapper
-              width={100}
-              height={40}
-              border={true}
-              theme={theme}
-              style={{ background: main }}
-            >
-              <EditNameWidget />
-            </WidgetWrapper>
-          </Box>
+      <BtnGroup />
 
-          <SettingsDivder />
-
-          <Box sx={{
-            width: '55%',
+      <Box sx={{
+        width: '55%',
+        display: 'flex',
+        flexWrap: 'wrap',
+        flexDirection: 'row',
+      }}>
+        <Box
+          sx={{
+            gap: '1rem',
+            height: '90%',
             display: 'flex',
-            flexDirection: 'column',
-            gap: '1rem'
-          }}>
-            <Box
-              sx={{
-                gap: '1rem',
-                height: '90%',
-                display: 'flex',
-                overflowY: 'auto',
-                overflowX: 'hidden',
-                alignItems: 'center',
-                flexDirection: 'column',
-              }}
-            >
-              {session.map((result, i) => (
-                <ScoreCard result={result} key={i} />
-              )
-              )}
-            </Box>
-          </Box>
+            overflowY: 'auto',
+            overflowX: 'hidden',
+            alignItems: 'center',
+            border: '4px solid #fff'
+          }}
+        >
+          {session.map((result, i) => (
+            <ScoreCard result={result} key={i} />
+          )
+          )}
         </Box>
-      </WidgetWrapper>
+      </Box>
     </motion.div >
   )
 }

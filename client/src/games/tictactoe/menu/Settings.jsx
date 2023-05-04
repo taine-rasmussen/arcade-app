@@ -36,7 +36,7 @@ const Settings = () => {
       }}
     >
       <WidgetWrapper
-        bg={dark}
+        // bg={dark}
         width={100}
         height={100}
         border={true}
@@ -57,15 +57,13 @@ const Settings = () => {
               width: '45%',
               display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'center',
-              background: dark
+              justifyContent: 'center'
             }}
           >
             <WidgetWrapper
               height={40}
               width={100}
               border={true}
-              bg={dark}
               style={{ background: main }}
             >
               <EditGameMode />

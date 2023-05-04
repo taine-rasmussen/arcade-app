@@ -54,7 +54,7 @@ export const GameContext = createContext();
 const TicTacToe = () => {
 
   const theme = useTheme();
-  const main = theme.palette.background.main
+  const dark = theme.palette.primary.dark
   const isNonMobileScreens = useMediaQuery('(min-width:1150px)');
   const loggedInUsername = useSelector((state) => state.user.username)
   const initialState = {
@@ -141,7 +141,7 @@ const TicTacToe = () => {
           height: '100%',
           display: 'flex',
           flexWrap: 'wrap',
-          background: main,
+          background: dark,
           alignItems: 'center',
           justifyContent: 'center',
           flexDirection: isNonMobileScreens ? 'row' : 'column',

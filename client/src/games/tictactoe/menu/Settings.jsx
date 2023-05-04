@@ -12,7 +12,7 @@ import ScoreCard from './ScoreCard';
 
 const SettingsDivder = () => (
   <Divider orientation="vertical" variant="middle">
-    <Chip label="Settings" />
+    <Chip label="Settings / Session" />
   </Divider>
 )
 
@@ -38,7 +38,6 @@ const Settings = () => {
         bg={alt}
         width={100}
         height={100}
-        border={true}
       >
         <SettingsHeader />
         <Divider />
@@ -53,7 +52,7 @@ const Settings = () => {
           <Box
             sx={{
               gap: '2rem',
-              width: '45%',
+              width: '100%',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center'
@@ -81,25 +80,11 @@ const Settings = () => {
           <SettingsDivder />
 
           <Box sx={{
-            width: '45%',
+            width: '55%',
             display: 'flex',
             flexDirection: 'column',
             gap: '1rem'
           }}>
-            <Box
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
-              }}
-            >
-              <Typography
-                variant='h3'
-              >
-                Current Session:
-              </Typography>
-
-            </Box>
             <Box
               sx={{
                 gap: '1rem',

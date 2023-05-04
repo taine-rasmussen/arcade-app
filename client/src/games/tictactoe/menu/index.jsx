@@ -13,6 +13,7 @@ const Menu = () => {
     <Box
       sx={{
         gap: '2rem',
+        width: '25%',
         height: '75%',
         display: 'flex',
         minWidth: 'maxContext',
@@ -35,7 +36,7 @@ const Menu = () => {
         </FlexBetween>
       </motion.div>
       <Settings />
-    </Box>
+    </Box >
   )
 }
 

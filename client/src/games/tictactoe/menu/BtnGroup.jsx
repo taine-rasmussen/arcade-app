@@ -1,23 +1,34 @@
+import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import FlexBetween from '../../../wrapper/FlexBetween';
 import ButtonGroup from '@mui/material/ButtonGroup';
+import PersonIcon from '@mui/icons-material/Person';
+import { Button, useTheme } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import { Button } from '@mui/material';
 import { GameContext } from '../index'
 import { useContext } from 'react';
 
-
-const SettingsHeader = () => {
-  const { dispatch } = useContext(GameContext)
+const BtnGroup = (props) => {
+  const theme = useTheme();
   const navigate = useNavigate();
-
+  const light = theme.palette.primary.light
+  const highlight = theme.palette.primary.highlight
+  const { dispatch, state: { isSinglePlayerMode } } = useContext(GameContext);
 
   const btnStyle = {
-    fontSize: '1.25rem'
+    fontSize: '1.25rem',
+    borderRadius: '0.75rem',
+    background: light,
+    '&:hover': {
+      background: light,
+      color: highlight
+    }
   }
 
   return (
     <FlexBetween sx={{ padding: '10px 0px' }}>
-      <ButtonGroup variant="contained">
+      <ButtonGroup
+        variant="contained"
+      >
         <Button
           onClick={() => { navigate('/dashboard') }}
           sx={btnStyle}
@@ -31,8 +42,13 @@ const SettingsHeader = () => {
           Reset
       </Button>
         <Button
-          onClick={() => { dispatch('reset'); }}
+          onClick={() => { dispatch({ type: 'toggleGameMode' }) }}
           sx={btnStyle}
+          endIcon={
+            isSinglePlayerMode
+              ? <PersonIcon />
+              : <PeopleAltIcon />
+          }
         >
           Mode
       </Button>
@@ -47,4 +63,4 @@ const SettingsHeader = () => {
   )
 }
 
-export default SettingsHeader
+export default BtnGroup

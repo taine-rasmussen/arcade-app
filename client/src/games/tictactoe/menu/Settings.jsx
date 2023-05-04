@@ -2,7 +2,7 @@ import WidgetWrapper from '../../../wrapper/WidgetWrapper';
 import { Box, useTheme, Typography } from '@mui/material';
 import EditNameWidget from './EditNameWidget';
 import EditGameMode from './EditGameMode';
-import SettingsHeader from './SettingsHeader';
+import BtnGroup from './BtnGroup';
 import { useContext, useMemo } from 'react';
 import Divider from '@mui/material/Divider';
 import { GameContext } from '../index';
@@ -34,76 +34,38 @@ const Settings = () => {
         overflow: 'hidden'
       }}
     >
-      <WidgetWrapper
-        bg={alt}
-        width={100}
-        height={100}
-      >
-        <SettingsHeader />
-        <Divider />
-        <Box sx={{
-          height: '80%',
-          width: '100%',
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          padding: '10px'
-        }}>
-          <Box
-            sx={{
-              gap: '2rem',
-              width: '100%',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center'
-            }}
-          >
-            <WidgetWrapper
-              height={40}
-              width={100}
-              border={true}
-              style={{ background: main }}
-            >
-              <EditGameMode />
-            </WidgetWrapper>
-            <WidgetWrapper
-              width={100}
-              height={40}
-              border={true}
-              theme={theme}
-              style={{ background: main }}
-            >
-              <EditNameWidget />
-            </WidgetWrapper>
-          </Box>
+      <BtnGroup />
+      <Divider />
 
-          <SettingsDivder />
+      <EditGameMode />
 
-          <Box sx={{
-            width: '55%',
+      <EditNameWidget />
+
+      <SettingsDivder />
+
+      <Box sx={{
+        width: '55%',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '1rem'
+      }}>
+        <Box
+          sx={{
+            gap: '1rem',
+            height: '90%',
             display: 'flex',
+            overflowY: 'auto',
+            overflowX: 'hidden',
+            alignItems: 'center',
             flexDirection: 'column',
-            gap: '1rem'
-          }}>
-            <Box
-              sx={{
-                gap: '1rem',
-                height: '90%',
-                display: 'flex',
-                overflowY: 'auto',
-                overflowX: 'hidden',
-                alignItems: 'center',
-                flexDirection: 'column',
-              }}
-            >
-              {session.map((result, i) => (
-                <ScoreCard result={result} key={i} />
-              )
-              )}
-            </Box>
-          </Box>
+          }}
+        >
+          {session.map((result, i) => (
+            <ScoreCard result={result} key={i} />
+          )
+          )}
         </Box>
-      </WidgetWrapper>
+      </Box>
     </motion.div >
   )
 }

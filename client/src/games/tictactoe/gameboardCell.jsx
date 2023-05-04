@@ -21,7 +21,7 @@ const GameboardCell = (props) => {
   } = props
 
   const theme = useTheme();
-  const alt = theme.palette.background.alt
+  const bgAlt = theme.palette.primary.light
   const main = theme.palette.primary.main
   const isNonMobileScreens = useMediaQuery('(min-width:1150px)');
 
@@ -43,7 +43,7 @@ const GameboardCell = (props) => {
         borderRadius: '0.75rem',
         justifyContent: 'center',
         border: '3px solid #000',
-        backgroundColor: isWinningCell ? main : alt,
+        backgroundColor: isWinningCell ? main : bgAlt,
         width: !isNonMobileScreens ? '150px' : 'auto',
         height: !isNonMobileScreens ? '150px' : 'auto',
 

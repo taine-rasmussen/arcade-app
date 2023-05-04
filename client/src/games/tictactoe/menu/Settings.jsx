@@ -20,7 +20,7 @@ const SettingsDivder = () => (
 const Settings = () => {
   const theme = useTheme();
   const main = theme.palette.background.main;
-  const dark = theme.palette.primary.dark;
+  const alt = theme.palette.primary.alt;
   const { state: { session } } = useContext(GameContext);
 
   return (
@@ -36,7 +36,7 @@ const Settings = () => {
       }}
     >
       <WidgetWrapper
-        bg={dark}
+        bg={alt}
         width={100}
         height={100}
         border={true}
@@ -57,15 +57,13 @@ const Settings = () => {
               width: '45%',
               display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'center',
-              background: dark
+              justifyContent: 'center'
             }}
           >
             <WidgetWrapper
               height={40}
               width={100}
               border={true}
-              bg={dark}
               style={{ background: main }}
             >
               <EditGameMode />

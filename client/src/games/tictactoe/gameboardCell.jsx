@@ -55,7 +55,9 @@ const GameboardCell = (props) => {
       }
     >
       <Typography
-        variant="h1"
+        sx={{
+          fontSize: '10rem'
+        }}
       >
         {value}
       </Typography>

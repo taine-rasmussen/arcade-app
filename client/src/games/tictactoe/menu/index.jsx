@@ -22,9 +22,10 @@ const Menu = () => {
     >
       <motion.div
         initial={{ opacity: 0 }}
-        style={{ zIndex: '1' }}
+        style={{ zIndex: '1', height: '40%' }}
         animate={{ y: ['300px', '0px'], opacity: 1 }}
         transition={{ type: 'tween', duration: 0.75, delay: 1.15 }}
+
       >
         <FlexBetween>
           <ProfileCard

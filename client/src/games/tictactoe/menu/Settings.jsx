@@ -7,12 +7,6 @@ import ScoreCard from './ScoreCard';
 import { useContext } from 'react';
 import BtnGroup from './BtnGroup';
 
-const SettingsDivder = () => (
-  <Divider orientation="vertical" variant="middle">
-    <Chip label="Settings / Session" />
-  </Divider>
-)
-
 const Settings = () => {
   const { state: { session } } = useContext(GameContext);
 
@@ -28,19 +22,17 @@ const Settings = () => {
         overflow: 'hidden',
         display: 'flex',
         alignItems: 'center',
-        flexDirection: 'column'
+        flexDirection: 'column',
+        justifyContent: 'space-between'
       }}
     >
       <BtnGroup />
-      <Divider />
-
-      <SettingsDivder />
 
       <Box sx={{
         width: '55%',
         display: 'flex',
-        flexDirection: 'column',
-        gap: '1rem'
+        flexWrap: 'wrap',
+        flexDirection: 'row',
       }}>
         <Box
           sx={{
@@ -50,7 +42,7 @@ const Settings = () => {
             overflowY: 'auto',
             overflowX: 'hidden',
             alignItems: 'center',
-            flexDirection: 'column',
+            border: '4px solid #fff'
           }}
         >
           {session.map((result, i) => (

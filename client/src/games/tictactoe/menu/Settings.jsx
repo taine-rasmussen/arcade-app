@@ -1,14 +1,11 @@
-import WidgetWrapper from '../../../wrapper/WidgetWrapper';
-import { Box, useTheme, Typography } from '@mui/material';
-import EditNameWidget from './EditNameWidget';
-import EditGameMode from './EditGameMode';
-import BtnGroup from './BtnGroup';
-import { useContext, useMemo } from 'react';
+import { Box, useTheme } from '@mui/material';
 import Divider from '@mui/material/Divider';
 import { GameContext } from '../index';
 import { motion } from 'framer-motion';
 import Chip from '@mui/material/Chip';
 import ScoreCard from './ScoreCard';
+import { useContext } from 'react';
+import BtnGroup from './BtnGroup';
 
 const SettingsDivder = () => (
   <Divider orientation="vertical" variant="middle">
@@ -18,8 +15,6 @@ const SettingsDivder = () => (
 
 const Settings = () => {
   const theme = useTheme();
-  const alt = theme.palette.background.alt;
-  const main = theme.palette.background.main;
   const { state: { session } } = useContext(GameContext);
 
   return (
@@ -31,15 +26,14 @@ const Settings = () => {
         height: '100%',
         width: '100%',
         zIndex: '2',
-        overflow: 'hidden'
+        overflow: 'hidden',
+        display: 'flex',
+        alignItems: 'center',
+        flexDirection: 'column'
       }}
     >
       <BtnGroup />
       <Divider />
-
-      <EditGameMode />
-
-      <EditNameWidget />
 
       <SettingsDivder />
 

@@ -10,7 +10,6 @@ import { motion } from 'framer-motion';
 import Chip from '@mui/material/Chip';
 import ScoreCard from './ScoreCard';
 
-
 const SettingsDivder = () => (
   <Divider orientation="vertical" variant="middle">
     <Chip label="Settings" />
@@ -19,8 +18,8 @@ const SettingsDivder = () => (
 
 const Settings = () => {
   const theme = useTheme();
-  const main = theme.palette.background.main;
   const alt = theme.palette.background.alt;
+  const main = theme.palette.background.main;
   const { state: { session } } = useContext(GameContext);
 
   return (

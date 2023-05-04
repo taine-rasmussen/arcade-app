@@ -21,7 +21,7 @@ const ProfileCard = ({ activeTurn }) => {
   const theme = useTheme()
   const main = theme.palette.background.main
   const alt = theme.palette.primary.alt
-  const borderColor = theme.palette.primary.main
+  const borderColor = theme.palette.primary.highlight
   const isActiveTurn = activeTurn === playerTurn
 
   const iconStlye = {
@@ -36,7 +36,7 @@ const ProfileCard = ({ activeTurn }) => {
       sx={
         !isGameOver
           ? isActiveTurn
-            ? { border: `3px solid ${borderColor}` }
+            ? { border: `4px solid ${borderColor}` }
             : {}
           : {}
       }

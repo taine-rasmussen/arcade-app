@@ -20,6 +20,7 @@ const ProfileCard = ({ activeTurn }) => {
 
   const theme = useTheme()
   const main = theme.palette.background.main
+  const alt = theme.palette.primary.alt
   const borderColor = theme.palette.primary.main
   const isActiveTurn = activeTurn === playerTurn
 
@@ -29,7 +30,7 @@ const ProfileCard = ({ activeTurn }) => {
 
   return (
     <WidgetWrapper
-      theme={theme}
+      bg={alt}
       width={45}
       border={true}
       sx={

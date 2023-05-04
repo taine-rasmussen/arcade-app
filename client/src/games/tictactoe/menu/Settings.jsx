@@ -20,7 +20,7 @@ const SettingsDivder = () => (
 const Settings = () => {
   const theme = useTheme();
   const main = theme.palette.background.main;
-  const alt = theme.palette.primary.alt;
+  const alt = theme.palette.background.alt;
   const { state: { session } } = useContext(GameContext);
 
   return (
@@ -120,7 +120,7 @@ const Settings = () => {
           </Box>
         </Box>
       </WidgetWrapper>
-    </motion.div>
+    </motion.div >
   )
 }
 

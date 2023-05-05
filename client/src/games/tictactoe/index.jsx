@@ -129,7 +129,7 @@ const TicTacToe = () => {
   useEffect(
     () => {
       const allMovesPlayed = state.game.filter(i => i.value != '')
-      if (allMovesPlayed.length === 9) {
+      if (allMovesPlayed.length === 9 && !state.isGameOver) {
         return dispatch('draw')
       }
     }, [state.playerTurn]

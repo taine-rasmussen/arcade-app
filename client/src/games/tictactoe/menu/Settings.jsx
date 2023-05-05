@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Box } from '@mui/material';
 import ScoreCard from './ScoreCard';
 import BtnGroup from './BtnGroup';
+import EditNameWidget from './EditNameWidget'
 
 const Settings = () => {
   const { state: { session } } = useContext(GameContext);
@@ -25,6 +26,9 @@ const Settings = () => {
         flexDirection: 'column'
       }}
     >
+      {isEdit && (
+        <EditNameWidget setIsEdit={setIsEdit} isEdit={isEdit} />
+      )}
       <BtnGroup setIsEdit={setIsEdit} isEdit={isEdit} />
       <Box
         sx={{

@@ -1,12 +1,14 @@
+import { useContext, useState } from 'react';
 import { GameContext } from '../index';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Box } from '@mui/material';
 import ScoreCard from './ScoreCard';
-import { useContext } from 'react';
 import BtnGroup from './BtnGroup';
+import EditNameWidget from './EditNameWidget'
 
 const Settings = () => {
   const { state: { session } } = useContext(GameContext);
+  const [isEdit, setIsEdit] = useState(false)
 
   return (
     <motion.div
@@ -24,7 +26,12 @@ const Settings = () => {
         flexDirection: 'column'
       }}
     >
-      <BtnGroup />
+      <AnimatePresence>
+        {isEdit && (
+          <EditNameWidget setIsEdit={setIsEdit} isEdit={isEdit} />
+        )}
+      </AnimatePresence>
+      <BtnGroup setIsEdit={setIsEdit} isEdit={isEdit} />
       <Box
         sx={{
           gap: '1rem',

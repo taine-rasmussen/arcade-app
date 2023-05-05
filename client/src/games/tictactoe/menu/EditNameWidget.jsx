@@ -1,44 +1,16 @@
-import { Box, useTheme, Typography, Button } from '@mui/material';
 import InputAdornment from '@mui/material/InputAdornment';
 import OutlinedInput from '@mui/material/OutlinedInput';
-import InputLabel from '@mui/material/InputLabel';
 import IconButton from '@mui/material/IconButton';
-import EditIcon from '@mui/icons-material/Edit';
 import SendIcon from '@mui/icons-material/Send';
 import { useState, useContext } from 'react';
+import { useTheme } from '@mui/material';
 import { GameContext } from '../index';
+import { motion } from 'framer-motion';
 
-const Display = ({ isEdit, setIsEdit }) => {
-  return (
-    <Box
-      sx={{
-        display: 'flex',
-        alignItems: 'center',
-        flexDirection: 'column',
-        justifyContent: 'space-between',
-        height: '100%'
-      }}
-    >
-      <Typography
-        variant='h2'
-      >
-        Edit names
-      </Typography>
-      <Button
-        variant='outlined'
-        endIcon={<EditIcon />}
-        onClick={() => { setIsEdit(!isEdit) }}
-      >
-        Edit name
-      </Button>
-    </Box>
-  )
-}
-
-const Input = ({ isEdit, setIsEdit }) => {
+const EditNameWidget = ({ isEdit, setIsEdit }) => {
   const theme = useTheme();
   const [newName, setNewName] = useState('');
-  const bgLight = theme.palette.neutral.light;
+  const bgLight = theme.palette.primary.alt;
   const { dispatch } = useContext(GameContext);
 
   const handleNameChange = () => {
@@ -48,13 +20,17 @@ const Input = ({ isEdit, setIsEdit }) => {
   }
 
   return (
-    <>
-      <InputLabel >Enter name</InputLabel>
+    <motion.div
+      exit={{ y: 100, opacity: 0 }}
+      initial={{ opacity: 0 }}
+      animate={{ y: ['100px', '0px'], opacity: 1 }}
+      transition={{ type: 'tween', duration: 0.5, delay: 0.3 }}
+    >
       <OutlinedInput
         onChange={(e) => setNewName(e.target.value)}
-        sx={{ background: bgLight }}
+        sx={{ background: bgLight, fontSize: '1.25rem' }}
         value={newName}
-        label="Enter new name..."
+        placeholder="Enter new name..."
         endAdornment={
           <InputAdornment position="end">
             <IconButton
@@ -65,26 +41,8 @@ const Input = ({ isEdit, setIsEdit }) => {
           </InputAdornment>
         }
       />
-    </>
+    </motion.div>
   )
 }
 
-const EditGameModeWidget = () => {
-  const [isEdit, setIsEdit] = useState(false);
-  return (
-    <>
-      {isEdit
-        ? <Input
-          setIsEdit={setIsEdit}
-          isEdit={isEdit}
-        />
-        : <Display
-          setIsEdit={setIsEdit}
-          isEdit={isEdit}
-        />
-      }
-    </>
-  )
-}
-
-export default EditGameModeWidget
+export default EditNameWidget

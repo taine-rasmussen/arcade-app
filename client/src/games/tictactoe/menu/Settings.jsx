@@ -1,10 +1,10 @@
+import { motion, AnimatePresence } from 'framer-motion';
+import EditNameWidget from './EditNameWidget';
 import { useContext, useState } from 'react';
 import { GameContext } from '../index';
-import { motion, AnimatePresence } from 'framer-motion';
 import { Box } from '@mui/material';
 import ScoreCard from './ScoreCard';
 import BtnGroup from './BtnGroup';
-import EditNameWidget from './EditNameWidget'
 
 const Settings = () => {
   const { state: { session } } = useContext(GameContext);

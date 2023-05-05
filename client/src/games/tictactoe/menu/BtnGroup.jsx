@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { GameContext } from '../index'
 import { useContext } from 'react';
 
-const BtnGroup = ({ setIsEdit }) => {
+const BtnGroup = ({ setIsEdit, isEdit }) => {
   const theme = useTheme();
   const navigate = useNavigate();
   const alt = theme.palette.primary.alt
@@ -53,7 +53,7 @@ const BtnGroup = ({ setIsEdit }) => {
           Mode
       </Button>
         <Button
-          onClick={() => { setIsEdit(True); }}
+          onClick={() => { setIsEdit(!isEdit); }}
           sx={btnStyle}
         >
           Edit

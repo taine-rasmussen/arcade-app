@@ -25,7 +25,7 @@ const Settings = () => {
         flexDirection: 'column'
       }}
     >
-      <BtnGroup setIsEdit={setIsEdit} />
+      <BtnGroup setIsEdit={setIsEdit} isEdit={isEdit} />
       <Box
         sx={{
           gap: '1rem',

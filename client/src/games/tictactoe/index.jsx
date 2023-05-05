@@ -1,4 +1,4 @@
-import { useReducer, createContext, useEffect } from 'react';
+import { useReducer, createContext, useEffect, useMemo } from 'react';
 import { Box, useTheme, useMediaQuery } from '@mui/material';
 import { useSelector } from 'react-redux';
 import Gameboard from './gameboard'
@@ -118,6 +118,12 @@ const TicTacToe = () => {
         ...state,
         isSinglePlayerMode: !state.isSinglePlayerMode
       }
+    } else if (action.type === 'draw') {
+      return {
+        ...state,
+        isGameOver: true,
+        session: [...state.session, { winner: 'Tie', gameState: state.game, winCells: [] }]
+      }
     }
     else {
       throw Error('Unknown action.');
@@ -125,6 +131,15 @@ const TicTacToe = () => {
   }
 
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  useEffect(
+    () => {
+      const allMovesPlayed = state.game.filter(i => i.value != '')
+      if (allMovesPlayed.length === 9 && !state.isGameOver) {
+        return dispatch({ type: 'draw' })
+      }
+    }, [state.playerTurn]
+  )
 
   useEffect(
     () => {

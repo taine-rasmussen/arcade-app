@@ -1,8 +1,6 @@
-import { Box, useTheme } from '@mui/material';
-import Divider from '@mui/material/Divider';
 import { GameContext } from '../index';
 import { motion } from 'framer-motion';
-import Chip from '@mui/material/Chip';
+import { Box } from '@mui/material';
 import ScoreCard from './ScoreCard';
 import { useContext } from 'react';
 import BtnGroup from './BtnGroup';

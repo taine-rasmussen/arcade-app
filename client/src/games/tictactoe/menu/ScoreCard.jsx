@@ -1,16 +1,15 @@
-import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import { useTheme, Typography } from '@mui/material';
-import PersonIcon from '@mui/icons-material/Person';
-import { useState, useContext } from 'react';
 import ScoreCardModal from './ScoreCardModal';
 import { motion } from 'framer-motion';
-import { GameContext } from '../index';
+import { useState } from 'react';
 
 const ScoreCard = (result) => {
   const theme = useTheme()
   const light = theme.palette.primary.light
   const [openModal, setOpenModal] = useState(false)
-  const { state: { isSinglePlayerMode } } = useContext(GameContext);
+  const {
+    winner
+  } = result.result
 
   return (
     <>
@@ -35,7 +34,7 @@ const ScoreCard = (result) => {
         className='primary_hover'
       >
         <Typography variant='h2'>
-          {result.result.winner ? 'X' : 'O'}
+          {winner === 'Tie' ? 'Tie' : winner ? 'X' : 'O'}
         </Typography>
       </motion.div>
       <ScoreCardModal

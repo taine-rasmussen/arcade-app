@@ -10,16 +10,16 @@ import { useContext } from 'react';
 const BtnGroup = (props) => {
   const theme = useTheme();
   const navigate = useNavigate();
-  const light = theme.palette.primary.light
+  const alt = theme.palette.primary.alt
   const highlight = theme.palette.primary.highlight
   const { dispatch, state: { isSinglePlayerMode } } = useContext(GameContext);
 
   const btnStyle = {
     fontSize: '1.25rem',
     borderRadius: '0.75rem',
-    background: light,
+    background: alt,
     '&:hover': {
-      background: light,
+      background: alt,
       color: highlight
     }
   }

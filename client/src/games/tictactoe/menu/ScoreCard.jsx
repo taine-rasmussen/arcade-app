@@ -1,13 +1,16 @@
-import { useTheme, Typography, Box } from '@mui/material';
-import Modal from '@mui/material/Modal';
+import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
+import { useTheme, Typography } from '@mui/material';
+import PersonIcon from '@mui/icons-material/Person';
+import { useState, useContext } from 'react';
+import ScoreCardModal from './ScoreCardModal';
 import { motion } from 'framer-motion';
-import { useState } from 'react'
-import ScoreCardModal from './ScoreCardModal'
+import { GameContext } from '../index';
 
 const ScoreCard = (result) => {
-  const [openModal, setOpenModal] = useState(false)
   const theme = useTheme()
   const light = theme.palette.primary.light
+  const [openModal, setOpenModal] = useState(false)
+  const { state: { isSinglePlayerMode } } = useContext(GameContext);
 
   return (
     <>

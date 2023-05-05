@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react';
 import { GameContext } from '../index';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Box } from '@mui/material';
 import ScoreCard from './ScoreCard';
 import BtnGroup from './BtnGroup';
@@ -26,9 +26,11 @@ const Settings = () => {
         flexDirection: 'column'
       }}
     >
-      {isEdit && (
-        <EditNameWidget setIsEdit={setIsEdit} isEdit={isEdit} />
-      )}
+      <AnimatePresence>
+        {isEdit && (
+          <EditNameWidget setIsEdit={setIsEdit} isEdit={isEdit} />
+        )}
+      </AnimatePresence>
       <BtnGroup setIsEdit={setIsEdit} isEdit={isEdit} />
       <Box
         sx={{

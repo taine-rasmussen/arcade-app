@@ -1,11 +1,11 @@
 import InputAdornment from '@mui/material/InputAdornment';
 import OutlinedInput from '@mui/material/OutlinedInput';
-import InputLabel from '@mui/material/InputLabel';
 import IconButton from '@mui/material/IconButton';
 import SendIcon from '@mui/icons-material/Send';
 import { useState, useContext } from 'react';
 import { useTheme } from '@mui/material';
 import { GameContext } from '../index';
+import { motion } from 'framer-motion';
 
 const EditNameWidget = ({ isEdit, setIsEdit }) => {
   const theme = useTheme();
@@ -20,7 +20,13 @@ const EditNameWidget = ({ isEdit, setIsEdit }) => {
   }
 
   return (
-    <>
+    <motion.div
+      key={newName}
+      exit={{ y: 100, opacity: 0 }}
+      initial={{ opacity: 0 }}
+      animate={{ y: ['100px', '0px'], opacity: 1 }}
+      transition={{ type: 'tween', duration: 0.5, delay: 0.3 }}
+    >
       <OutlinedInput
         onChange={(e) => setNewName(e.target.value)}
         sx={{ background: bgLight, fontSize: '1.25rem' }}
@@ -36,7 +42,7 @@ const EditNameWidget = ({ isEdit, setIsEdit }) => {
           </InputAdornment>
         }
       />
-    </>
+    </motion.div>
   )
 }
 

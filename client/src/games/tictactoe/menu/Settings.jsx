@@ -14,9 +14,10 @@ const Settings = () => {
       animate={{ x: ['300px', '0px'], opacity: 1 }}
       transition={{ type: 'tween', duration: 0.6, delay: 0.75 }}
       style={{
-        height: '100%',
-        width: '100%',
+        gap: '2rem',
         zIndex: '2',
+        width: '100%',
+        height: '100%',
         display: 'flex',
         overflow: 'hidden',
         alignItems: 'center',

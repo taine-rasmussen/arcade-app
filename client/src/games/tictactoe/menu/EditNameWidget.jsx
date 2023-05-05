@@ -21,7 +21,6 @@ const EditNameWidget = ({ isEdit, setIsEdit }) => {
 
   return (
     <motion.div
-      key={newName}
       exit={{ y: 100, opacity: 0 }}
       initial={{ opacity: 0 }}
       animate={{ y: ['100px', '0px'], opacity: 1 }}

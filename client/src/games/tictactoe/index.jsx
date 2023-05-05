@@ -1,4 +1,4 @@
-import { useReducer, createContext, useEffect } from 'react';
+import { useReducer, createContext, useEffect, useMemo } from 'react';
 import { Box, useTheme, useMediaQuery } from '@mui/material';
 import { useSelector } from 'react-redux';
 import Gameboard from './gameboard'
@@ -125,6 +125,15 @@ const TicTacToe = () => {
   }
 
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  useEffect(
+    () => {
+      const allMovesPlayed = state.game.filter(i => i.value != '')
+      if (allMovesPlayed.length === 9) {
+        return dispatch('draw')
+      }
+    }, [state.playerTurn]
+  )
 
   useEffect(
     () => {

@@ -30,7 +30,9 @@ const GameboardCell = (props) => {
     dispatch('checkWin')
   }
 
-  const isWinningCell = preview
+  const isDraw = winCells === false
+
+  const isWinningCell = preview && !isDraw
     ? winCells[0] === id || winCells[1] === id || winCells[2] === id
     : false
 

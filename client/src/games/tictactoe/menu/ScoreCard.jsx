@@ -10,7 +10,7 @@ const ScoreCard = (result) => {
   const theme = useTheme()
   const light = theme.palette.primary.light
   const [openModal, setOpenModal] = useState(false)
-  const { state: { isSinglePlayerMode } } = useContext(GameContext);
+  const { state: { game } } = useContext(GameContext);
 
   return (
     <>

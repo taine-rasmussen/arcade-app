@@ -39,7 +39,7 @@ button:active {
 }
 
 .primary_hover:hover{
-  border: 3px solid #00D5FA !important;
+  border: 3px solid #fe4c23 !important;
   cursor: pointer
 }
 

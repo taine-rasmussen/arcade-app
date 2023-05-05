@@ -1,12 +1,13 @@
+import { useContext, useState } from 'react';
 import { GameContext } from '../index';
 import { motion } from 'framer-motion';
 import { Box } from '@mui/material';
 import ScoreCard from './ScoreCard';
-import { useContext } from 'react';
 import BtnGroup from './BtnGroup';
 
 const Settings = () => {
   const { state: { session } } = useContext(GameContext);
+  const [isEdit, setIsEdit] = useState(false)
 
   return (
     <motion.div
@@ -24,7 +25,7 @@ const Settings = () => {
         flexDirection: 'column'
       }}
     >
-      <BtnGroup />
+      <BtnGroup setIsEdit={setIsEdit} />
       <Box
         sx={{
           gap: '1rem',

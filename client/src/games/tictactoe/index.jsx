@@ -118,6 +118,12 @@ const TicTacToe = () => {
         ...state,
         isSinglePlayerMode: !state.isSinglePlayerMode
       }
+    } else if (action === 'draw') {
+      return {
+        ...state,
+        isGameOver: true,
+        session: [...state.session, { winner: !state.playerTurn, gameState: state.game, winCells: winCombo }]
+      }
     }
     else {
       throw Error('Unknown action.');
@@ -130,7 +136,7 @@ const TicTacToe = () => {
     () => {
       const allMovesPlayed = state.game.filter(i => i.value != '')
       if (allMovesPlayed.length === 9 && !state.isGameOver) {
-        return dispatch('draw')
+        return dispatch()
       }
     }, [state.playerTurn]
   )

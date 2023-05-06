@@ -12,12 +12,12 @@ const GameboardCell = (props) => {
   } = useContext(GameContext)
 
   const {
+    preview,
+    winCells,
     cell: {
       value,
       id
-    },
-    preview,
-    winCells
+    }
   } = props
 
   const theme = useTheme();
@@ -27,6 +27,11 @@ const GameboardCell = (props) => {
 
   const handleTwoPLayerMove = (id) => {
     dispatch(id)
+    dispatch('checkWin')
+  }
+
+  const handleSinglePlayerMove = (id) => {
+    dispatch({ type: 'singlePlayer', payload: id })
     dispatch('checkWin')
   }
 
@@ -51,7 +56,7 @@ const GameboardCell = (props) => {
       onClick={
         value != '' || isGameOver || preview
           ? () => { console.log('NO!') }
-          : () => { isSinglePlayerMode ? console.log('single') : handleTwoPLayerMove(id) }
+          : () => { isSinglePlayerMode ? handleSinglePlayerMove(id) : handleTwoPLayerMove(id) }
       }
     >
       <Typography

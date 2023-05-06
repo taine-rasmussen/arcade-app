@@ -36,6 +36,7 @@ const Settings = () => {
         sx={{
           gap: '1rem',
           display: 'flex',
+          padding: '1rem',
           flexWrap: 'wrap',
           overflowY: 'auto',
           overflowX: 'hidden',

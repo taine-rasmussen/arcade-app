@@ -1,10 +1,11 @@
 import { Box, useTheme, useMediaQuery, Typography } from '@mui/material';
-import { useContext } from 'react'
-import { GameContext } from './index'
+import { useContext, useEffect } from 'react';
+import { GameContext } from './index';
 
 const GameboardCell = (props) => {
   const {
     state: {
+      playerTurn,
       isGameOver,
       isSinglePlayerMode
     },
@@ -31,13 +32,25 @@ const GameboardCell = (props) => {
   }
 
   const handleSinglePlayerMove = (id) => {
-    dispatch({ type: 'singlePlayer', payload: id })
-    dispatch('checkWin')
+    if (!id) {
+      dispatch({ type: 'singlePlayer', payload: 'botMove' })
+      dispatch('checkWin')
+    } else {
+      dispatch({ type: 'singlePlayer', payload: id })
+    }
   }
 
   const isWinningCell = preview
     ? winCells[0] === id || winCells[1] === id || winCells[2] === id
     : false
+
+  useEffect(
+    () => {
+      if (!playerTurn && isSinglePlayerMode) {
+        handleSinglePlayerMove()
+      }
+    }, [playerTurn]
+  )
 
   return (
     <Box

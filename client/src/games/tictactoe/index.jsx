@@ -125,36 +125,32 @@ const TicTacToe = () => {
         session: [...state.session, { winner: 'Tie', gameState: state.game, winCells: [] }]
       }
     } else if (action.type === 'singlePlayer') {
-      console.log(state.game)
-      if (state.playerTurn === true) {
-        const updateGame = (game) => {
-          for (let i = 0; i < game.length; i++) {
-            if (game[i].id == action.payload) {
-              game[i].value = 'X'
-            }
-          }
-          return game
-        }
-        return {
-          ...state,
-          game: updateGame(state.game),
-          playerTurn: !state.playerTurn
-        }
-      } else if (state.playerTurn === false) {
-        const generateMove = (game) => {
-          for (let i = 0; i < game.length; i++) {
-            if (game[i].id == action.payload) {
-              game[i].value = '0'
-            }
-          }
-          return game
-        }
-        return {
-          ...state,
-          game: generateMove(state.game),
-          playerTurn: !state.playerTurn
-        }
-      }
+      console.log(state.game, 'Single')
+      // if (state.playerTurn === true) {
+      //   const updateGame = (game) => {
+      //     for (let i = 0; i < game.length; i++) {
+      //       if (game[i].id == action.payload) {
+      //         game[i].value = 'X'
+      //       }
+      //     }
+      //     return game
+      //   }
+      //   return {
+      //     ...state,
+      //     game: updateGame(state.game),
+      //     playerTurn: !state.playerTurn
+      //   }
+      // } else if (state.playerTurn === false) {
+      //   const generateMove = (game) => {
+
+      //     console.log(game)
+      //   }
+      //   return {
+      //     ...state,
+      //     game: generateMove(state.game),
+      //     playerTurn: !state.playerTurn
+      //   }
+      // }
     }
     else {
       throw Error('Unknown action.');

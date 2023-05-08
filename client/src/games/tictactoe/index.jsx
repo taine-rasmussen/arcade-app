@@ -120,10 +120,14 @@ const TicTacToe = () => {
     return game
   }
 
-
-
   const reducer = (state, action) => {
-    if (action.type === 'play') {
+    if (action.type === 'playBot') {
+      return {
+        ...state,
+        game: makeBotMove(state.game),
+        playerTurn: !state.playerTurn
+      }
+    } else if (action.type === 'play') {
       if (!state.isSinglePlayerMode || state.isSinglePlayerMode && state.playerTurn) {
         const updateGame = (game) => {
           for (let i = 0; i < game.length; i++) {
@@ -138,12 +142,6 @@ const TicTacToe = () => {
           game: updateGame(state.game),
           playerTurn: !state.playerTurn
         }
-      }
-    } else if (action.type === 'playBot') {
-      return {
-        ...state,
-        game: makeBotMove(state.game),
-        playerTurn: !state.playerTurn
       }
     } else if (action.type === 'checkWin') {
       console.log('win check firing')

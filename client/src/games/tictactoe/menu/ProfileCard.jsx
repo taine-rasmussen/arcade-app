@@ -19,11 +19,11 @@ const ProfileCard = ({ activeTurn }) => {
   } = state || {}
 
   const theme = useTheme()
-  const main = theme.palette.background.main
   const alt = theme.palette.primary.alt
   const light = theme.palette.primary.light
-  const borderColor = theme.palette.primary.highlight
+  const main = theme.palette.background.main
   const isActiveTurn = activeTurn === playerTurn
+  const borderColor = theme.palette.primary.highlight
 
   const iconStlye = {
     fontSize: '4rem'
@@ -32,14 +32,14 @@ const ProfileCard = ({ activeTurn }) => {
   return (
     <WidgetWrapper
       bg={light}
-      width={45}
+      width={50}
       border={true}
       sx={
         !isGameOver
           ? isActiveTurn
             ? { border: `4px solid ${borderColor}` }
             : {}
-          : { border: `4px solid ${alt}` }
+          : { border: `4px solid ${alt} ` }
       }
     >
       <Box
@@ -63,7 +63,7 @@ const ProfileCard = ({ activeTurn }) => {
         >
           Pic
         </Box>
-        <Typography variant='h2'>
+        <Typography variant='h3'>
           {activeTurn ? players[0].name : players[1].name}
         </Typography>
         <Typography variant='h3'>

@@ -27,7 +27,9 @@ const Menu = () => {
         transition={{ type: 'tween', duration: 0.6, delay: 0.75 }}
 
       >
-        <FlexBetween>
+        <FlexBetween
+          sx={{ gap: '1rem' }}
+        >
           <ProfileCard
             activeTurn={true}
           />

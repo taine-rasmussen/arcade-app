@@ -1,10 +1,11 @@
 import { Box, useTheme, useMediaQuery, Typography } from '@mui/material';
-import { useContext } from 'react'
-import { GameContext } from './index'
+import { useContext, useEffect } from 'react';
+import { GameContext } from './index';
 
 const GameboardCell = (props) => {
   const {
     state: {
+      playerTurn,
       isGameOver,
       isSinglePlayerMode
     },
@@ -25,9 +26,9 @@ const GameboardCell = (props) => {
   const highlight = theme.palette.primary.highlight
   const isNonMobileScreens = useMediaQuery('(min-width:1150px)');
 
-  const handleTwoPLayerMove = (id) => {
-    dispatch(id)
-    dispatch('checkWin')
+  const handleMove = (id) => {
+    dispatch({ type: 'play', payload: id })
+    // dispatch('checkWin')
   }
 
   const isWinningCell = preview
@@ -51,7 +52,7 @@ const GameboardCell = (props) => {
       onClick={
         value != '' || isGameOver || preview
           ? () => { console.log('NO!') }
-          : () => { isSinglePlayerMode ? console.log('single') : handleTwoPLayerMove(id) }
+          : () => { handleMove(id) }
       }
     >
       <Typography

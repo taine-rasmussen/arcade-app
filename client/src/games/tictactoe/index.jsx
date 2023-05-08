@@ -67,21 +67,46 @@ const TicTacToe = () => {
   }
 
   const reducer = (state, action) => {
-    if (typeof (action) === 'number') {
-      const updateGame = (game) => {
-        for (let i = 0; i < game.length; i++) {
-          if (game[i].id == action) {
-            game[i].value = state.playerTurn ? 'X' : 'O'
+    if (action.type === 'play') {
+      if (!state.isSinglePlayerMode || state.isSinglePlayerMode && state.playerTurn) {
+        const updateGame = (game) => {
+          for (let i = 0; i < game.length; i++) {
+            if (game[i].id == action.payload) {
+              game[i].value = state.playerTurn ? 'X' : 'O'
+            }
           }
+          return game
         }
-        return game
+        return {
+          ...state,
+          game: updateGame(state.game),
+          playerTurn: !state.playerTurn
+        }
+      } else if (state.isSinglePlayerMode && !state.playerTurn) {
+        const handleBotMove = (game) => {
+          const emptycells = game.filter(i => i.value === '');
+          if (emptycells.length > 0) {
+            const randomCell = Math.floor(Math.random() * emptycells.length);
+            const updatedGame = game.map(cell => {
+              if (cell.id === emptycells[randomCell].id) {
+                cell.value = 'O';
+              }
+              return cell;
+            });
+            return updatedGame;
+          }
+          return game;
+        }
+
+
+        return {
+          ...state,
+          game: handleBotMove(state.game),
+          playerTurn: true
+        }
       }
-      return {
-        ...state,
-        game: updateGame(state.game),
-        playerTurn: !state.playerTurn
-      }
-    } else if (action === 'checkWin') {
+    } else if (action.type === 'checkWin') {
+      console.log('win check firing')
       for (const winCombo of winCombinations) {
         const winValues = winCombo.map(id => {
           const gameObj = state.game.find(obj => obj.id === id);
@@ -124,56 +149,30 @@ const TicTacToe = () => {
         isGameOver: true,
         session: [...state.session, { winner: 'Tie', gameState: state.game, winCells: [] }]
       }
-    } else if (action.type === 'singlePlayer') {
-      console.log(state.game)
-      if (state.playerTurn === true) {
-        const updateGame = (game) => {
-          for (let i = 0; i < game.length; i++) {
-            if (game[i].id == action.payload) {
-              game[i].value = 'X'
-            }
-          }
-          return game
-        }
-        return {
-          ...state,
-          game: updateGame(state.game),
-          playerTurn: !state.playerTurn,
-        }
-      } else if (state.playerTurn === false) {
-        const generateMove = (game) => {
-
-          console.lgo
-          return game
-        }
-        return {
-          ...state,
-          game: generateMove(state.game),
-          playerTurn: !state.playerTurn
-        }
-      }
-    }
-    else {
+    } else {
       throw Error('Unknown action.');
     }
   }
 
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  useEffect(
-    () => {
-      const allMovesPlayed = state.game.filter(i => i.value != '')
-      if (allMovesPlayed.length === 9 && !state.isGameOver) {
-        return dispatch({ type: 'draw' })
-      }
-    }, [state.playerTurn]
-  )
+  useEffect(() => {
+    const allMovesPlayed = state.game.filter(i => i.value != '')
+    if (allMovesPlayed.length === 9 && !state.isGameOver) {
+      dispatch({ type: 'draw' })
+    }
+
+    if (state.isSinglePlayerMode && !state.playerTurn && !state.isGameOver) {
+      dispatch({ type: 'play' })
+    }
+  }, [state.playerTurn, state.isSinglePlayerMode, state.game])
 
   useEffect(
     () => {
       dispatch('reset')
     }, []
-  )
+  );
+
 
   return (
     <GameContext.Provider value={{ state, dispatch }}>

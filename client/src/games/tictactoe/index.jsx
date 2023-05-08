@@ -117,7 +117,7 @@ const TicTacToe = () => {
     const availableSquares = game.filter(square => square.value === '');
     const randomIndex = Math.floor(Math.random() * availableSquares.length);
     game[randomIndex].value = 'O';
-    return game;
+    return game
   }
 
 
@@ -212,6 +212,7 @@ const TicTacToe = () => {
     }, []
   );
 
+  console.log(state.game)
 
   return (
     <GameContext.Provider value={{ state, dispatch }}>

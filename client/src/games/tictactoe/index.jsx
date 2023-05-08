@@ -198,12 +198,13 @@ const TicTacToe = () => {
 
   useEffect(() => {
     if (state.isSinglePlayerMode && !state.playerTurn) {
-      dispatch({ type: 'playBot' });
+      return dispatch({ type: 'playBot' });
     }
     const allMovesPlayed = state.game.filter(i => i.value != '')
     if (allMovesPlayed.length === 9 && !state.isGameOver) {
       dispatch({ type: 'draw' })
     }
+    dispatch({ type: 'checkWin' })
   }, [state.playerTurn])
 
   useEffect(

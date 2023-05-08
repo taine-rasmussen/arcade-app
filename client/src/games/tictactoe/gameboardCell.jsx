@@ -28,7 +28,6 @@ const GameboardCell = (props) => {
 
   const handleMove = (id) => {
     dispatch({ type: 'play', payload: id })
-    // dispatch('checkWin')
   }
 
   const isWinningCell = preview

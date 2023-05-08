@@ -83,25 +83,26 @@ const TicTacToe = () => {
           playerTurn: !state.playerTurn
         }
       } else if (state.isSinglePlayerMode && !state.playerTurn) {
-
         const handleBotMove = (game) => {
           const emptycells = game.filter(i => i.value === '');
-          const randomCell = Math.floor(Math.random() * emptycells.length);
-
-          const updatedGame = game.map(cell => {
-            if (cell.id === emptycells[randomCell].id) {
-              cell.value = 'O';
-            }
-            return cell;
-          });
-
-          return updatedGame;
+          if (emptycells.length > 0) {
+            const randomCell = Math.floor(Math.random() * emptycells.length);
+            const updatedGame = game.map(cell => {
+              if (cell.id === emptycells[randomCell].id) {
+                cell.value = 'O';
+              }
+              return cell;
+            });
+            return updatedGame;
+          }
+          return game;
         }
+
 
         return {
           ...state,
           game: handleBotMove(state.game),
-          playerTurn: !state.playerTurn
+          playerTurn: true
         }
       }
     } else if (action.type === 'checkWin') {
@@ -164,9 +165,7 @@ const TicTacToe = () => {
     if (state.isSinglePlayerMode && !state.playerTurn && !state.isGameOver) {
       dispatch({ type: 'play' })
     }
-  }, [state.playerTurn, state.isSinglePlayerMode, state.isGameOver])
-
-
+  }, [state.playerTurn, state.isSinglePlayerMode, state.game])
 
   useEffect(
     () => {

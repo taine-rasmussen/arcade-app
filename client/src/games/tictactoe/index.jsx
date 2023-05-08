@@ -86,45 +86,51 @@ const TicTacToe = () => {
     return false;
   }
 
-  const makeBotMove = (game) => {
-    // Check center square
-    if (game[4].value === '') {
-      game[4].value = 'O';
+  const makeBotMove = (game, isGameOver) => {
+    if (isGameOver) {
       return game;
+    }
+    const newGame = game.map(square => ({ ...square }));
+    // Check center square
+    if (newGame[4].value === '') {
+      newGame[4].value = 'O';
+      return newGame;
     }
     //Check for winning move
     for (let i = 0; i < 9; i++) {
-      if (game[i].value === '') {
-        game[i].value = 'O';
-        if (checkWin(game, 'O')) {
-          return game;
+      if (newGame[i].value === '') {
+        newGame[i].value = 'O';
+        if (checkWin(newGame, 'O')) {
+          newGame[i].value = 'O';
+          return newGame;
         }
-        game[i].value = '';
+        newGame[i].value = '';
       }
     };
     // Check for a blocking move
     for (let i = 0; i < 9; i++) {
-      if (game[i].value === '') {
-        game[i].value = 'X';
-        if (checkWin(game, 'X')) {
-          game[i].value = 'O';
-          return game;
+      if (newGame[i].value === '') {
+        newGame[i].value = 'X';
+        if (checkWin(newGame, 'X')) {
+          newGame[i].value = 'O';
+          return newGame;
         }
-        game[i].value = '';
+        newGame[i].value = '';
       }
     }
     // Choose a random available square
-    const availableSquares = game.filter(square => square.value === '');
+    const availableSquares = newGame.filter(square => square.value === '');
     const randomIndex = Math.floor(Math.random() * availableSquares.length);
-    game[randomIndex].value = 'O';
-    return game
+    newGame[randomIndex].value = 'O';
+    return newGame;
   }
+
 
   const reducer = (state, action) => {
     if (action.type === 'playBot') {
       return {
         ...state,
-        game: makeBotMove(state.game),
+        game: makeBotMove(state.game, state.isGameOver),
         playerTurn: !state.playerTurn
       }
     } else if (action.type === 'play') {
@@ -144,7 +150,6 @@ const TicTacToe = () => {
         }
       }
     } else if (action.type === 'checkWin') {
-      console.log('win check firing')
       for (const winCombo of winCombinations) {
         const winValues = winCombo.map(id => {
           const gameObj = state.game.find(obj => obj.id === id);
@@ -194,13 +199,11 @@ const TicTacToe = () => {
         session: [...state.session, { winner: 'Tie', gameState: state.game, winCells: [] }]
       }
     } else {
-      return state
+      return { ...state }
     }
   }
 
   const [state, dispatch] = useReducer(reducer, initialState);
-
-  console.log(state)
 
   useEffect(() => {
     if (state.isSinglePlayerMode && !state.playerTurn) {

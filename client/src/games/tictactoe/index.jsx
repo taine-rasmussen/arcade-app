@@ -82,19 +82,29 @@ const TicTacToe = () => {
           game: updateGame(state.game),
           playerTurn: !state.playerTurn
         }
-      } else {
-        if (state.isSinglePlayerMode && !state.playerTurn) {
+      } else if (state.isSinglePlayerMode && !state.playerTurn) {
 
-          console.log('bot move!')
+        const handleBotMove = (game) => {
+          const emptycells = game.filter(i => i.value === '');
+          const randomCell = Math.floor(Math.random() * emptycells.length);
 
-          return {
-            ...state,
-            // game: handleBotMove(state.game),
-            playerTurn: !state.playerTurn
-          }
+          const updatedGame = game.map(cell => {
+            if (cell.id === emptycells[randomCell].id) {
+              cell.value = 'O';
+            }
+            return cell;
+          });
+
+          return updatedGame;
+        }
+
+        return {
+          ...state,
+          game: handleBotMove(state.game),
+          playerTurn: !state.playerTurn
         }
       }
-    } else if (action === 'checkWin') {
+    } else if (action.type === 'checkWin') {
       console.log('win check firing')
       for (const winCombo of winCombinations) {
         const winValues = winCombo.map(id => {
@@ -145,14 +155,18 @@ const TicTacToe = () => {
 
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  useEffect(
-    () => {
-      const allMovesPlayed = state.game.filter(i => i.value != '')
-      if (allMovesPlayed.length === 9 && !state.isGameOver) {
-        return dispatch({ type: 'draw' })
-      }
-    }, [state.playerTurn]
-  )
+  useEffect(() => {
+    const allMovesPlayed = state.game.filter(i => i.value != '')
+    if (allMovesPlayed.length === 9 && !state.isGameOver) {
+      dispatch({ type: 'draw' })
+    }
+
+    if (state.isSinglePlayerMode && !state.playerTurn && !state.isGameOver) {
+      dispatch({ type: 'play' })
+    }
+  }, [state.playerTurn, state.isSinglePlayerMode, state.isGameOver])
+
+
 
   useEffect(
     () => {
@@ -160,13 +174,6 @@ const TicTacToe = () => {
     }, []
   );
 
-  useEffect(
-    () => {
-      if (state.isSinglePlayerMode && !state.playerTurn) {
-        dispatch({ type: 'play' })
-      }
-    }, [state.playerTurn, state.isSinglePlayerMode]
-  )
 
   return (
     <GameContext.Provider value={{ state, dispatch }}>

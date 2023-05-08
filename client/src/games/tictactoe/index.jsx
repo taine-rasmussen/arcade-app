@@ -66,18 +66,56 @@ const TicTacToe = () => {
     players: [{ name: loggedInUsername }, { name: 'Player Two' }]
   }
 
+  const checkWin = (board, player) => {
+    for (let i = 0; i < 9; i += 3) {
+      if (board[i].value === player && board[i + 1].value === player && board[i + 2].value === player) {
+        return true;
+      }
+    }
+    for (let i = 0; i < 3; i++) {
+      if (board[i].value === player && board[i + 3].value === player && board[i + 6].value === player) {
+        return true;
+      }
+    }
+    if (board[0].value === player && board[4].value === player && board[8].value === player) {
+      return true;
+    }
+    if (board[2].value === player && board[4].value === player && board[6].value === player) {
+      return true;
+    }
+    return false;
+  }
+
 
   const handleBotMove = (game) => {
-
+    // Check center square
     if (game[4].value === '') {
       return [...game, game[4].value = 'O']
+    };
+    //Check for winning move
+    for (let i = 0; i < 9; i++) {
+      if (game[i].value === '') {
+        game[i].value = 'O';
+        if (checkWin(game, 'O')) {
+          return game
+        }
+        game[i].value = '';
+      }
+    };
+    // Check for a blocking move
+    for (let i = 0; i < 9; i++) {
+      if (game[i].value === '') {
+        game[i].value = 'X';
+        if (checkWin(game, 'X')) {
+          return [...game, game[i].value = 'O']
+        }
+        game[i].value = '';
+      }
     }
-
-
-
-
-
-    return game
+    // Choose a random available square
+    const availableSquares = game.filter(square => square.value === '');
+    const randomIndex = Math.floor(Math.random() * availableSquares.length);
+    return [...game, game[randomIndex].value = 'O']
   }
 
   const reducer = (state, action) => {

@@ -124,36 +124,7 @@ const TicTacToe = () => {
         isGameOver: true,
         session: [...state.session, { winner: 'Tie', gameState: state.game, winCells: [] }]
       }
-    } else if (action.type === 'singlePlayer') {
-      console.log(state.game)
-      if (state.playerTurn === true) {
-        const updateGame = (game) => {
-          for (let i = 0; i < game.length; i++) {
-            if (game[i].id == action.payload) {
-              game[i].value = 'X'
-            }
-          }
-          return game
-        }
-        return {
-          ...state,
-          game: updateGame(state.game),
-          playerTurn: !state.playerTurn,
-        }
-      } else if (state.playerTurn === false) {
-        const generateMove = (game) => {
-
-          console.lgo
-          return game
-        }
-        return {
-          ...state,
-          game: generateMove(state.game),
-          playerTurn: !state.playerTurn
-        }
-      }
-    }
-    else {
+    } else {
       throw Error('Unknown action.');
     }
   }

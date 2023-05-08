@@ -28,7 +28,7 @@ const GameboardCell = (props) => {
 
   const handleMove = (id) => {
     dispatch({ type: 'play', payload: id })
-    dispatch('checkWin')
+    // dispatch('checkWin')
   }
 
   const isWinningCell = preview
@@ -52,7 +52,7 @@ const GameboardCell = (props) => {
       onClick={
         value != '' || isGameOver || preview
           ? () => { console.log('NO!') }
-          : () => { isSinglePlayerMode && !playerTurn ? handleMove() : handleMove(id) }
+          : () => { handleMove(id) }
       }
     >
       <Typography

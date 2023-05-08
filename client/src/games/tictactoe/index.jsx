@@ -84,17 +84,12 @@ const TicTacToe = () => {
         }
       } else {
         if (state.isSinglePlayerMode && !state.playerTurn) {
-          const emptyCells = state.game.filter(i => i.value === '')
-          const test = Math.floor(Math.random() * emptyCells.length);
 
-          const handleBotMove = (game) => {
-            game[test].value = 'O'
-            return game
-          }
+          console.log('bot move!')
 
           return {
             ...state,
-            game: handleBotMove(state.game),
+            // game: handleBotMove(state.game),
             playerTurn: !state.playerTurn
           }
         }
@@ -163,6 +158,14 @@ const TicTacToe = () => {
     () => {
       dispatch('reset')
     }, []
+  );
+
+  useEffect(
+    () => {
+      if (state.isSinglePlayerMode && !state.playerTurn) {
+        dispatch({ type: 'play' })
+      }
+    }, [state.playerTurn, state.isSinglePlayerMode]
   )
 
   return (

@@ -144,9 +144,8 @@ const TicTacToe = () => {
       return {
         ...state,
         game: makeBotMove(state.game),
-        playerTurn: true
+        playerTurn: !state.playerTurn
       }
-
     } else if (action.type === 'checkWin') {
       console.log('win check firing')
       for (const winCombo of winCombinations) {

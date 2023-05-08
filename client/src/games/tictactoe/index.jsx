@@ -1,4 +1,4 @@
-import { useReducer, createContext, useEffect, useMemo } from 'react';
+import { useReducer, createContext, useEffect } from 'react';
 import { Box, useTheme, useMediaQuery } from '@mui/material';
 import { useSelector } from 'react-redux';
 import Gameboard from './gameboard'
@@ -87,17 +87,18 @@ const TicTacToe = () => {
   }
 
 
-  const handleBotMove = (game) => {
+  const makeBotMove = (game) => {
     // Check center square
     if (game[4].value === '') {
-      return [...game, game[4].value = 'O']
-    };
+      game[4].value = 'O';
+      return game;
+    }
     //Check for winning move
     for (let i = 0; i < 9; i++) {
       if (game[i].value === '') {
         game[i].value = 'O';
         if (checkWin(game, 'O')) {
-          return game
+          return game;
         }
         game[i].value = '';
       }
@@ -107,7 +108,8 @@ const TicTacToe = () => {
       if (game[i].value === '') {
         game[i].value = 'X';
         if (checkWin(game, 'X')) {
-          return [...game, game[i].value = 'O']
+          game[i].value = 'O';
+          return game;
         }
         game[i].value = '';
       }
@@ -115,8 +117,11 @@ const TicTacToe = () => {
     // Choose a random available square
     const availableSquares = game.filter(square => square.value === '');
     const randomIndex = Math.floor(Math.random() * availableSquares.length);
-    return [...game, game[randomIndex].value = 'O']
+    game[randomIndex].value = 'O';
+    return game;
   }
+
+
 
   const reducer = (state, action) => {
     if (action.type === 'play') {
@@ -138,7 +143,7 @@ const TicTacToe = () => {
     } else if (action.type === 'playBot') {
       return {
         ...state,
-        game: handleBotMove(state.game),
+        game: makeBotMove(state.game),
         playerTurn: true
       }
 
@@ -187,22 +192,19 @@ const TicTacToe = () => {
         session: [...state.session, { winner: 'Tie', gameState: state.game, winCells: [] }]
       }
     } else {
-      throw Error('Unknown action.');
+      return state
     }
   }
 
   const [state, dispatch] = useReducer(reducer, initialState);
 
-
-
   useEffect(() => {
+    if (state.isSinglePlayerMode && !state.playerTurn) {
+      dispatch({ type: 'playBot' });
+    }
     const allMovesPlayed = state.game.filter(i => i.value != '')
     if (allMovesPlayed.length === 9 && !state.isGameOver) {
       dispatch({ type: 'draw' })
-    }
-
-    if (state.isSinglePlayerMode && !state.playerTurn && !state.isGameOver) {
-      dispatch({ type: 'playBot' })
     }
   }, [state.playerTurn])
 

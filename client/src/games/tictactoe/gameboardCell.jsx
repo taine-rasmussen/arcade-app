@@ -46,7 +46,6 @@ const GameboardCell = (props) => {
         backgroundColor: isWinningCell ? highlight : bgAlt,
         width: !isNonMobileScreens ? '150px' : 'auto',
         height: !isNonMobileScreens ? '150px' : 'auto',
-
       }}
       onClick={
         value != '' || isGameOver || preview

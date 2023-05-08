@@ -64,6 +64,7 @@ const ProfileCard = ({ activeTurn }) => {
             style={{
               width: '125px',
               height: '125px',
+              border: '3px solid #000'
             }}
           />
         </Box>

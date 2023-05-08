@@ -44,8 +44,8 @@ const GameboardCell = (props) => {
         justifyContent: 'center',
         border: '3px solid #000',
         backgroundColor: isWinningCell ? highlight : bgAlt,
-        width: !isNonMobileScreens ? '150px' : 'auto',
-        height: !isNonMobileScreens ? '150px' : 'auto',
+        height: 'auto',
+        width: 'auto'
       }}
       onClick={
         value != '' || isGameOver || preview
@@ -55,7 +55,7 @@ const GameboardCell = (props) => {
     >
       <Typography
         sx={{
-          fontSize: '10rem'
+          fontSize: '9rem'
         }}
       >
         {value}

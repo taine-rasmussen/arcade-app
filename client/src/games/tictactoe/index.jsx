@@ -215,11 +215,10 @@ const TicTacToe = () => {
     <GameContext.Provider value={{ state, dispatch }}>
       <Box
         sx={{
-          gap: '3rem',
+          gap: '3em',
           width: '100%',
           height: '100%',
           display: 'flex',
-          flexWrap: 'wrap',
           background: dark,
           alignItems: 'center',
           justifyContent: 'center',

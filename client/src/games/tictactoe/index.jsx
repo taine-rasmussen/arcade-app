@@ -86,7 +86,6 @@ const TicTacToe = () => {
     return false;
   }
 
-
   const makeBotMove = (game) => {
     // Check center square
     if (game[4].value === '') {

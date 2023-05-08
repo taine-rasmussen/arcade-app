@@ -179,7 +179,13 @@ const TicTacToe = () => {
     } else if (action.type === 'toggleGameMode') {
       return {
         ...state,
-        isSinglePlayerMode: !state.isSinglePlayerMode
+        isGameOver: false,
+        playerTurn: true,
+        isSinglePlayerMode: !state.isSinglePlayerMode,
+        game: Array.from({ length: 9 }, (_, i) => ({
+          value: '',
+          id: i
+        }))
       }
     } else if (action.type === 'draw') {
       return {
@@ -193,6 +199,8 @@ const TicTacToe = () => {
   }
 
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  console.log(state)
 
   useEffect(() => {
     if (state.isSinglePlayerMode && !state.playerTurn) {

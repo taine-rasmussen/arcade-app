@@ -28,20 +28,12 @@ const GameboardCell = (props) => {
 
   const handleMove = (id) => {
     dispatch({ type: 'play', payload: id })
-    // dispatch('checkWin')
+    dispatch('checkWin')
   }
 
   const isWinningCell = preview
     ? winCells[0] === id || winCells[1] === id || winCells[2] === id
     : false
-
-  useEffect(
-    () => {
-      if (!playerTurn && isSinglePlayerMode) {
-        dispatch({ type: 'play', payload: null })
-      }
-    }, [playerTurn]
-  )
 
   return (
     <Box

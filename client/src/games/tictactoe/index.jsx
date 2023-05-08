@@ -68,7 +68,7 @@ const TicTacToe = () => {
 
   const reducer = (state, action) => {
     if (action.type === 'play') {
-      if (state.isSinglePlayerMode === false) {
+      if (!state.isSinglePlayerMode || state.isSinglePlayerMode && state.playerTurn) {
         const updateGame = (game) => {
           for (let i = 0; i < game.length; i++) {
             if (game[i].id == action.payload) {
@@ -83,29 +83,24 @@ const TicTacToe = () => {
           playerTurn: !state.playerTurn
         }
       } else {
-        if (action.payload === null) {
-          console.log('botmove')
-          return {
-            ...state,
-            playerTurn: !state.playerTurn
-          }
-        } else {
-          const updateGame = (game) => {
-            for (let i = 0; i < game.length; i++) {
-              if (game[i].id == action.payload) {
-                game[i].value = state.playerTurn ? 'X' : 'O'
-              }
-            }
+        if (state.isSinglePlayerMode && !state.playerTurn) {
+          const emptyCells = state.game.filter(i => i.value === '')
+          const test = Math.floor(Math.random() * emptyCells.length);
+
+          const handleBotMove = (game) => {
+            game[test].value = 'O'
             return game
           }
+
           return {
             ...state,
-            game: updateGame(state.game),
+            game: handleBotMove(state.game),
             playerTurn: !state.playerTurn
           }
         }
       }
     } else if (action === 'checkWin') {
+      console.log('win check firing')
       for (const winCombo of winCombinations) {
         const winValues = winCombo.map(id => {
           const gameObj = state.game.find(obj => obj.id === id);

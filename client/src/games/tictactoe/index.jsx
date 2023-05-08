@@ -212,8 +212,6 @@ const TicTacToe = () => {
     }, []
   );
 
-  console.log(state.game)
-
   return (
     <GameContext.Provider value={{ state, dispatch }}>
       <Box

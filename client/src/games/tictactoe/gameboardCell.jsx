@@ -1,6 +1,6 @@
 import { Box, useTheme, useMediaQuery, Typography } from '@mui/material';
-import { useContext } from 'react'
-import { GameContext } from './index'
+import { useContext, useEffect } from 'react';
+import { GameContext } from './index';
 
 const GameboardCell = (props) => {
   const {
@@ -27,17 +27,21 @@ const GameboardCell = (props) => {
   const isNonMobileScreens = useMediaQuery('(min-width:1150px)');
 
   const handleMove = (id) => {
-    if (id === undefined) {
-      dispatch({ type: 'play', })
-    } else {
-      dispatch({ type: 'play', payload: id })
-    }
+    dispatch({ type: 'play', payload: id })
     // dispatch('checkWin')
   }
 
   const isWinningCell = preview
     ? winCells[0] === id || winCells[1] === id || winCells[2] === id
     : false
+
+  useEffect(
+    () => {
+      if (!playerTurn && isSinglePlayerMode) {
+        dispatch({ type: 'play', payload: null })
+      }
+    }, [playerTurn]
+  )
 
   return (
     <Box

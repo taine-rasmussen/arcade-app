@@ -67,19 +67,24 @@ const TicTacToe = () => {
   }
 
   const reducer = (state, action) => {
-    if (typeof (action) === 'number') {
-      const updateGame = (game) => {
-        for (let i = 0; i < game.length; i++) {
-          if (game[i].id == action) {
-            game[i].value = state.playerTurn ? 'X' : 'O'
+    if (action.type === 'play') {
+      console.log(action)
+      if (state.isSinglePlayerMode === false) {
+        const updateGame = (game) => {
+          for (let i = 0; i < game.length; i++) {
+            if (game[i].id == action.payload) {
+              game[i].value = state.playerTurn ? 'X' : 'O'
+            }
           }
+          return game
         }
-        return game
-      }
-      return {
-        ...state,
-        game: updateGame(state.game),
-        playerTurn: !state.playerTurn
+        return {
+          ...state,
+          game: updateGame(state.game),
+          playerTurn: !state.playerTurn
+        }
+      } else {
+
       }
     } else if (action === 'checkWin') {
       for (const winCombo of winCombinations) {

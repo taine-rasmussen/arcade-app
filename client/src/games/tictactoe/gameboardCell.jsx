@@ -25,9 +25,13 @@ const GameboardCell = (props) => {
   const highlight = theme.palette.primary.highlight
   const isNonMobileScreens = useMediaQuery('(min-width:1150px)');
 
-  const handleTwoPLayerMove = (id) => {
-    dispatch(id)
-    dispatch('checkWin')
+  const handleMove = (id) => {
+    if (id === undefined) {
+      dispatch({ type: 'play', })
+    } else {
+      dispatch({ type: 'play', payload: id })
+    }
+    // dispatch('checkWin')
   }
 
   const isWinningCell = preview
@@ -51,7 +55,7 @@ const GameboardCell = (props) => {
       onClick={
         value != '' || isGameOver || preview
           ? () => { console.log('NO!') }
-          : () => { isSinglePlayerMode ? console.log('single') : handleTwoPLayerMove(id) }
+          : () => { isSinglePlayerMode ? console.log('single') : handleMove(id) }
       }
     >
       <Typography

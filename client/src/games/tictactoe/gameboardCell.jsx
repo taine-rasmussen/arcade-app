@@ -52,7 +52,7 @@ const GameboardCell = (props) => {
       onClick={
         value != '' || isGameOver || preview
           ? () => { console.log('NO!') }
-          : () => { handleMove(id) }
+          : () => { isSinglePlayerMode && !playerTurn ? null : handleMove(id) }
       }
     >
       <Typography

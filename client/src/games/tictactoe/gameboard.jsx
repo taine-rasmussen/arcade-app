@@ -36,8 +36,8 @@ const Gameboard = () => {
             backgroundColor: main,
             gridTemplateRows: 'repeat(3, 1fr)',
             gridTemplateColumns: 'repeat(3, 1fr)',
-            width: isNonMobileScreens ? '100%' : 'auto',
-            height: isNonMobileScreens ? '100%' : 'auto',
+            width: '100%',
+            height: '100%',
             gridGap: isNonMobileScreens ? '15px' : '5px',
           }}
         >

@@ -1,10 +1,10 @@
-import { Box, useTheme, useMediaQuery, Typography } from '@mui/material';
 import TripOriginIcon from '@mui/icons-material/TripOrigin';
-import WidgetWrapper from '../../../wrapper/WidgetWrapper'
+import WidgetWrapper from '../../../wrapper/WidgetWrapper';
+import { Box, useTheme, Typography } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
-import { useSelector } from 'react-redux';
 import { GameContext } from '../index';
 import { useContext } from 'react';
+import profile from '../../../assets/profile.jpeg'
 
 const ProfileCard = ({ activeTurn }) => {
 
@@ -52,8 +52,6 @@ const ProfileCard = ({ activeTurn }) => {
       >
         <Box
           sx={{
-            width: '100px',
-            height: '100px',
             display: 'flex',
             borderRadius: '50%',
             alignItems: 'center',
@@ -61,7 +59,14 @@ const ProfileCard = ({ activeTurn }) => {
             justifyContent: 'center',
           }}
         >
-          Pic
+          <img
+            src={profile}
+            style={{
+              width: '125px',
+              height: '125px',
+              border: '3px solid #000'
+            }}
+          />
         </Box>
         <Typography variant='h3'>
           {activeTurn ? players[0].name : players[1].name}

@@ -5,6 +5,7 @@ import { GameContext } from './index'
 const GameboardCell = (props) => {
   const {
     state: {
+      playerTurn,
       isGameOver,
       isSinglePlayerMode
     },
@@ -55,7 +56,7 @@ const GameboardCell = (props) => {
       onClick={
         value != '' || isGameOver || preview
           ? () => { console.log('NO!') }
-          : () => { isSinglePlayerMode ? console.log('single') : handleMove(id) }
+          : () => { isSinglePlayerMode && !playerTurn ? handleMove() : handleMove(id) }
       }
     >
       <Typography

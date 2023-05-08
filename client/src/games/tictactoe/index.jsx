@@ -66,6 +66,20 @@ const TicTacToe = () => {
     players: [{ name: loggedInUsername }, { name: 'Player Two' }]
   }
 
+
+  const handleBotMove = (game) => {
+
+    if (game[4].value === '') {
+      return [...game, game[4].value = 'O']
+    }
+
+
+
+
+
+    return game
+  }
+
   const reducer = (state, action) => {
     if (action.type === 'play') {
       if (!state.isSinglePlayerMode || state.isSinglePlayerMode && state.playerTurn) {
@@ -82,29 +96,14 @@ const TicTacToe = () => {
           game: updateGame(state.game),
           playerTurn: !state.playerTurn
         }
-      } else if (state.isSinglePlayerMode && !state.playerTurn) {
-        const handleBotMove = (game) => {
-          const emptycells = game.filter(i => i.value === '');
-          if (emptycells.length > 0) {
-            const randomCell = Math.floor(Math.random() * emptycells.length);
-            const updatedGame = game.map(cell => {
-              if (cell.id === emptycells[randomCell].id) {
-                cell.value = 'O';
-              }
-              return cell;
-            });
-            return updatedGame;
-          }
-          return game;
-        }
-
-
-        return {
-          ...state,
-          game: handleBotMove(state.game),
-          playerTurn: true
-        }
       }
+    } else if (action.type === 'playBot') {
+      return {
+        ...state,
+        game: handleBotMove(state.game),
+        playerTurn: true
+      }
+
     } else if (action.type === 'checkWin') {
       console.log('win check firing')
       for (const winCombo of winCombinations) {
@@ -156,15 +155,17 @@ const TicTacToe = () => {
 
   const [state, dispatch] = useReducer(reducer, initialState);
 
+
+
   useEffect(() => {
     const allMovesPlayed = state.game.filter(i => i.value != '')
     if (allMovesPlayed.length === 9 && !state.isGameOver) {
       dispatch({ type: 'draw' })
     }
 
-    // if (state.isSinglePlayerMode && !state.playerTurn && !state.isGameOver) {
-    //   dispatch({ type: 'play' })
-    // }
+    if (state.isSinglePlayerMode && !state.playerTurn && !state.isGameOver) {
+      dispatch({ type: 'playBot' })
+    }
   }, [state.playerTurn])
 
   useEffect(

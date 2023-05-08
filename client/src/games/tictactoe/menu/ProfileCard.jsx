@@ -59,10 +59,12 @@ const ProfileCard = ({ activeTurn }) => {
             justifyContent: 'center',
           }}
         >
-          <img src={profile} style={{
-            width: '125px',
-            height: '125px',
-          }}
+          <img
+            src={profile}
+            style={{
+              width: '125px',
+              height: '125px',
+            }}
           />
         </Box>
         <Typography variant='h3'>

@@ -1,4 +1,4 @@
-import { useReducer, createContext, useEffect, useMemo } from 'react';
+import { useReducer, createContext, useEffect } from 'react';
 import { Box, useTheme, useMediaQuery } from '@mui/material';
 import { useSelector } from 'react-redux';
 import Gameboard from './gameboard'
@@ -66,6 +66,63 @@ const TicTacToe = () => {
     players: [{ name: loggedInUsername }, { name: 'Player Two' }]
   }
 
+  const checkWin = (board, player) => {
+    for (let i = 0; i < 9; i += 3) {
+      if (board[i].value === player && board[i + 1].value === player && board[i + 2].value === player) {
+        return true;
+      }
+    }
+    for (let i = 0; i < 3; i++) {
+      if (board[i].value === player && board[i + 3].value === player && board[i + 6].value === player) {
+        return true;
+      }
+    }
+    if (board[0].value === player && board[4].value === player && board[8].value === player) {
+      return true;
+    }
+    if (board[2].value === player && board[4].value === player && board[6].value === player) {
+      return true;
+    }
+    return false;
+  }
+
+
+  const makeBotMove = (game) => {
+    // Check center square
+    if (game[4].value === '') {
+      game[4].value = 'O';
+      return game;
+    }
+    //Check for winning move
+    for (let i = 0; i < 9; i++) {
+      if (game[i].value === '') {
+        game[i].value = 'O';
+        if (checkWin(game, 'O')) {
+          return game;
+        }
+        game[i].value = '';
+      }
+    };
+    // Check for a blocking move
+    for (let i = 0; i < 9; i++) {
+      if (game[i].value === '') {
+        game[i].value = 'X';
+        if (checkWin(game, 'X')) {
+          game[i].value = 'O';
+          return game;
+        }
+        game[i].value = '';
+      }
+    }
+    // Choose a random available square
+    const availableSquares = game.filter(square => square.value === '');
+    const randomIndex = Math.floor(Math.random() * availableSquares.length);
+    game[randomIndex].value = 'O';
+    return game;
+  }
+
+
+
   const reducer = (state, action) => {
     if (action.type === 'play') {
       if (!state.isSinglePlayerMode || state.isSinglePlayerMode && state.playerTurn) {
@@ -82,29 +139,14 @@ const TicTacToe = () => {
           game: updateGame(state.game),
           playerTurn: !state.playerTurn
         }
-      } else if (state.isSinglePlayerMode && !state.playerTurn) {
-        const handleBotMove = (game) => {
-          const emptycells = game.filter(i => i.value === '');
-          if (emptycells.length > 0) {
-            const randomCell = Math.floor(Math.random() * emptycells.length);
-            const updatedGame = game.map(cell => {
-              if (cell.id === emptycells[randomCell].id) {
-                cell.value = 'O';
-              }
-              return cell;
-            });
-            return updatedGame;
-          }
-          return game;
-        }
-
-
-        return {
-          ...state,
-          game: handleBotMove(state.game),
-          playerTurn: true
-        }
       }
+    } else if (action.type === 'playBot') {
+      return {
+        ...state,
+        game: makeBotMove(state.game),
+        playerTurn: true
+      }
+
     } else if (action.type === 'checkWin') {
       console.log('win check firing')
       for (const winCombo of winCombinations) {
@@ -150,22 +192,21 @@ const TicTacToe = () => {
         session: [...state.session, { winner: 'Tie', gameState: state.game, winCells: [] }]
       }
     } else {
-      throw Error('Unknown action.');
+      return state
     }
   }
 
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
+    if (state.isSinglePlayerMode && !state.playerTurn) {
+      dispatch({ type: 'playBot' });
+    }
     const allMovesPlayed = state.game.filter(i => i.value != '')
     if (allMovesPlayed.length === 9 && !state.isGameOver) {
       dispatch({ type: 'draw' })
     }
-
-    if (state.isSinglePlayerMode && !state.playerTurn && !state.isGameOver) {
-      dispatch({ type: 'play' })
-    }
-  }, [state.playerTurn, state.isSinglePlayerMode, state.game])
+  }, [state.playerTurn])
 
   useEffect(
     () => {

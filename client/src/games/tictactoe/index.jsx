@@ -86,7 +86,6 @@ const TicTacToe = () => {
     return false;
   }
 
-
   const makeBotMove = (game) => {
     // Check center square
     if (game[4].value === '') {
@@ -118,7 +117,7 @@ const TicTacToe = () => {
     const availableSquares = game.filter(square => square.value === '');
     const randomIndex = Math.floor(Math.random() * availableSquares.length);
     game[randomIndex].value = 'O';
-    return game;
+    return game
   }
 
 
@@ -144,9 +143,8 @@ const TicTacToe = () => {
       return {
         ...state,
         game: makeBotMove(state.game),
-        playerTurn: true
+        playerTurn: !state.playerTurn
       }
-
     } else if (action.type === 'checkWin') {
       console.log('win check firing')
       for (const winCombo of winCombinations) {
@@ -214,6 +212,7 @@ const TicTacToe = () => {
     }, []
   );
 
+  console.log(state.game)
 
   return (
     <GameContext.Provider value={{ state, dispatch }}>

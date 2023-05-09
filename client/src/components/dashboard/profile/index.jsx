@@ -8,7 +8,6 @@ import ListItemText from '@mui/material/ListItemText';
 import { setLogout } from '../../../state/index';
 import LogoutIcon from '@mui/icons-material/Logout';
 import StoreIcon from '@mui/icons-material/Store';
-import { useNavigate } from 'react-router-dom';
 import ListItem from '@mui/material/ListItem';
 import { useDispatch } from 'react-redux';
 import Button from '@mui/material/Button';

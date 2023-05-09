@@ -87,9 +87,8 @@ const TicTacToe = () => {
   }
 
   const makeBotMove = (game, isGameOver) => {
-    if (isGameOver) {
-      return game;
-    }
+    if (isGameOver) return game;
+
     const newGame = game.map(square => ({ ...square }));
     // Check center square
     if (newGame[4].value === '') {

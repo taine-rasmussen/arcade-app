@@ -13,7 +13,7 @@ import SettingsModal from './SettingsModal';
 import { useDispatch } from 'react-redux';
 import Button from '@mui/material/Button';
 import List from '@mui/material/List';
-import { useSate } from 'react';
+import { useState } from 'react';
 
 const Profile = () => {
 
@@ -35,124 +35,133 @@ const Profile = () => {
   }
 
   return (
-    <Box
-      sx={{
-        width: '100%',
-        height: '100%',
-        display: 'flex',
-        alignItems: 'center',
-        flexDirection: 'column',
-      }}
-    >
+    <>
       <Box
         sx={{
-          height: '10%',
-          display: 'flex',
-          paddingTop: '1.8rem'
-        }}
-      >
-        <Typography
-          variant='h1'
-        >
-          <span style={spanHighlight}>Mini</span>clip
-        </Typography>
-      </Box>
-      <Box
-        sx={{
-          height: '30%',
+          width: '100%',
+          height: '100%',
           display: 'flex',
           alignItems: 'center',
-          padding: '75px 0px 0px 0px',
+          flexDirection: 'column',
         }}
       >
-        <ProfileWidget preview={false} />
-      </Box>
-      <Box sx={{
-        height: '50%',
-        display: 'flex',
-        padding: '75px 0px',
-      }}>
-        <List >
-          <ListItem
-            disablePadding
-            sx={{ padding: '0.5rem 0rem' }}
-          >
-            <ListItemButton sx={listBtnStyle}>
-              <ListItemIcon>
-                <StoreIcon sx={{ fontSize: '32px', color: dark }} />
-              </ListItemIcon>
-              <ListItemText
-                primary='Store'
-                primaryTypographyProps={{
-                  fontSize: 20,
-                  fontWeight: 500,
-                  color: dark
-                }}
-              />
-            </ListItemButton >
-          </ListItem>
-          <ListItem
-            disablePadding
-            sx={{ padding: '0.5rem 0rem' }}
-          >
-            <ListItemButton sx={listBtnStyle}>
-              <ListItemIcon>
-                <LeaderboardIcon sx={{ fontSize: '32px', color: dark }} />
-              </ListItemIcon>
-              <ListItemText
-                primary='Rankings'
-                primaryTypographyProps={{
-                  fontSize: 20,
-                  fontWeight: 500
-                }}
-              />
-            </ListItemButton>
-          </ListItem>
-          <ListItem
-            disablePadding
-            sx={{ padding: '0.5rem 0rem' }}
-          >
-            <ListItemButton sx={listBtnStyle}>
-              <ListItemIcon>
-                <SettingsIcon sx={{ fontSize: '32px', color: dark }} />
-              </ListItemIcon>
-              <ListItemText
-                primary='Settings'
-                primaryTypographyProps={{
-                  fontSize: 20,
-                  fontWeight: 500
-                }}
-              />
-            </ListItemButton>
-          </ListItem>
-        </List>
-      </Box>
-      <Box
-        sx={{
-          gap: '1.5rem',
-          height: '10%',
-          display: 'flex',
-          flexDirection: 'row',
-          alignItems: 'center',
-        }}
-      >
-        <Button
-          variant="outlined"
-          color="error"
-          endIcon={<LogoutIcon />}
+        <Box
           sx={{
-            fontSize: '20px',
-            fontWeight: '500',
-            '&:hover': {
-              pointer: 'cursor'
-            }
+            height: '10%',
+            display: 'flex',
+            paddingTop: '1.8rem'
           }}
-          onClick={() => { dispatch(setLogout()) }}
         >
-          Logout
+          <Typography
+            variant='h1'
+          >
+            <span style={spanHighlight}>Mini</span>clip
+        </Typography>
+        </Box>
+        <Box
+          sx={{
+            height: '30%',
+            display: 'flex',
+            alignItems: 'center',
+            padding: '75px 0px 0px 0px',
+          }}
+        >
+          <ProfileWidget preview={false} />
+        </Box>
+        <Box sx={{
+          height: '50%',
+          display: 'flex',
+          padding: '75px 0px',
+        }}>
+          <List >
+            <ListItem
+              disablePadding
+              sx={{ padding: '0.5rem 0rem' }}
+            >
+              <ListItemButton sx={listBtnStyle}>
+                <ListItemIcon>
+                  <StoreIcon sx={{ fontSize: '32px', color: dark }} />
+                </ListItemIcon>
+                <ListItemText
+                  primary='Store'
+                  primaryTypographyProps={{
+                    fontSize: 20,
+                    fontWeight: 500,
+                    color: dark
+                  }}
+                />
+              </ListItemButton >
+            </ListItem>
+            <ListItem
+              disablePadding
+              sx={{ padding: '0.5rem 0rem' }}
+            >
+              <ListItemButton sx={listBtnStyle}>
+                <ListItemIcon>
+                  <LeaderboardIcon sx={{ fontSize: '32px', color: dark }} />
+                </ListItemIcon>
+                <ListItemText
+                  primary='Rankings'
+                  primaryTypographyProps={{
+                    fontSize: 20,
+                    fontWeight: 500
+                  }}
+                />
+              </ListItemButton>
+            </ListItem>
+            <ListItem
+              disablePadding
+              sx={{ padding: '0.5rem 0rem' }}
+            >
+              <ListItemButton
+                sx={listBtnStyle}
+                onClick={() => { setOpenSettingsModal(true) }}
+              >
+                <ListItemIcon>
+                  <SettingsIcon sx={{ fontSize: '32px', color: dark }} />
+                </ListItemIcon>
+                <ListItemText
+                  primary='Settings'
+                  primaryTypographyProps={{
+                    fontSize: 20,
+                    fontWeight: 500
+                  }}
+                />
+              </ListItemButton>
+            </ListItem>
+          </List>
+        </Box>
+        <Box
+          sx={{
+            gap: '1.5rem',
+            height: '10%',
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+          }}
+        >
+          <Button
+            variant="outlined"
+            color="error"
+            endIcon={<LogoutIcon />}
+            sx={{
+              fontSize: '20px',
+              fontWeight: '500',
+              '&:hover': {
+                pointer: 'cursor'
+              }
+            }}
+            onClick={() => { dispatch(setLogout()) }}
+          >
+            Logout
       </Button>
-      </Box>
-    </Box >
+        </Box>
+      </Box >
+      <SettingsModal
+        openSettingsModal={openSettingsModal}
+        setOpenSettingsModal={setOpenSettingsModal}
+      />
+    </>
   )
 }
 

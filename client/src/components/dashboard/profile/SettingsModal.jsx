@@ -1,11 +1,11 @@
 import Modal from '@mui/material/Modal';
 import { Box } from '@mui/material';
 
-const SettingsModal = () => {
+const SettingsModal = ({ openSettingsModal, setOpenSettingsModal }) => {
   return (
     <Modal
-      open={openModal}
-      onClose={() => setOpenSettings(false)}
+      open={openSettingsModal}
+      onClose={() => setOpenSettingsModal(false)}
     >
       <Box
         sx={{

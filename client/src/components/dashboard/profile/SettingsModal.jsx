@@ -1,10 +1,13 @@
+import { Box, useTheme, Typography } from '@mui/material';
+import SettingsIcon from '@mui/icons-material/Settings';
 import Modal from '@mui/material/Modal';
-import { Box, useTheme } from '@mui/material';
 
 const SettingsModal = ({ openSettingsModal, setOpenSettingsModal }) => {
 
   const theme = useTheme();
+  const dark = theme.palette.primary.dark
   const modalBg = theme.palette.background.alt
+
 
 
   return (
@@ -18,7 +21,6 @@ const SettingsModal = ({ openSettingsModal, setOpenSettingsModal }) => {
           left: '50%',
           width: '50%',
           height: '90%',
-          display: 'grid',
           padding: '2rem',
           gridGap: '15px',
           position: 'absolute',
@@ -27,7 +29,19 @@ const SettingsModal = ({ openSettingsModal, setOpenSettingsModal }) => {
           transform: 'translate(-50%, -50%)',
         }}
       >
-        SETTINGS
+        <Box
+          sx={{
+            gap: '0.5rem',
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+          }}
+        >
+          <SettingsIcon sx={{ fontSize: '48px', color: dark }} />
+          <Typography variant='h1'>
+            Settings
+          </Typography>
+        </Box>
       </Box>
     </Modal>
   )

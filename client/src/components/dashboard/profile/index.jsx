@@ -1,4 +1,3 @@
-import CloseFullscreenIcon from '@mui/icons-material/CloseFullscreen';
 import LeaderboardIcon from '@mui/icons-material/Leaderboard';
 import ProfileWidget from '../../../widgets/profileWidget';
 import ListItemButton from '@mui/material/ListItemButton';

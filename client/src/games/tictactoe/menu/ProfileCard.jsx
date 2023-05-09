@@ -16,6 +16,7 @@ const ProfileCard = ({ activeTurn }) => {
     players,
     isGameOver,
     playerTurn,
+    isSinglePlayerMode
   } = state || {}
 
   const theme = useTheme()
@@ -69,7 +70,7 @@ const ProfileCard = ({ activeTurn }) => {
           />
         </Box>
         <Typography variant='h3'>
-          {activeTurn ? players[0].name : players[1].name}
+          {activeTurn ? players[0].name : isSinglePlayerMode ? 'AI' : players[1].name}
         </Typography>
         <Typography variant='h3'>
           {activeTurn

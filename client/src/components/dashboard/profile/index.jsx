@@ -9,9 +9,11 @@ import { setLogout } from '../../../state/index';
 import LogoutIcon from '@mui/icons-material/Logout';
 import StoreIcon from '@mui/icons-material/Store';
 import ListItem from '@mui/material/ListItem';
+import SettingsModal from './SettingsModal';
 import { useDispatch } from 'react-redux';
 import Button from '@mui/material/Button';
 import List from '@mui/material/List';
+import { useSate } from 'react';
 
 const Profile = () => {
 

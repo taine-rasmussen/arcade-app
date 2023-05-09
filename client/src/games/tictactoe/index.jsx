@@ -120,7 +120,11 @@ const TicTacToe = () => {
     // Choose a random available square
     const availableSquares = newGame.filter(square => square.value === '');
     const randomIndex = Math.floor(Math.random() * availableSquares.length);
-    newGame[randomIndex].value = 'O';
+    for (let i = 0; i < newGame.length; i++) {
+      if (availableSquares[randomIndex].id == newGame[i].id) {
+        newGame[i].value = 'O'
+      }
+    }
     return newGame;
   }
 

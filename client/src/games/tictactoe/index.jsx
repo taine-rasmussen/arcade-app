@@ -216,7 +216,9 @@ const TicTacToe = () => {
     if (state.isSinglePlayerMode && !state.playerTurn) {
       return dispatch({ type: 'playBot' });
     }
-    dispatch({ type: 'checkWin' })
+    if (!state.isGameOver) {
+      dispatch({ type: 'checkWin' })
+    }
   }, [state.playerTurn, state.isSinglePlayerMode, state.isGameOver])
 
   useEffect(

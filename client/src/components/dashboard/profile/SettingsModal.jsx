@@ -18,7 +18,6 @@ const SettingsModal = ({ openSettingsModal, setOpenSettingsModal }) => {
           left: '50%',
           width: '50%',
           height: '90%',
-          display: 'grid',
           padding: '2rem',
           gridGap: '15px',
           position: 'absolute',

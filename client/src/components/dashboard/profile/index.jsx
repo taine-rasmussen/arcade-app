@@ -21,6 +21,7 @@ const Profile = () => {
   const dispatch = useDispatch();
   const alt = theme.palette.primary.alt
   const dark = theme.palette.primary.dark
+  const [openSettingsModal, setOpenSettingsModal] = useState(false)
 
   const spanHighlight = {
     backgroundColor: alt,

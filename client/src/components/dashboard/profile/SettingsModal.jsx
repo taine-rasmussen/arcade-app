@@ -30,12 +30,17 @@ const SettingsModal = ({ openSettingsModal, setOpenSettingsModal }) => {
         }}
       >
         <Box
-          sx={{ display: 'flex', flexDirection: 'row' }}
+          sx={{
+            gap: '0.5rem',
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+          }}
         >
-          <Typography>
+          <SettingsIcon sx={{ fontSize: '48px', color: dark }} />
+          <Typography variant='h1'>
             Settings
           </Typography>
-          <SettingsIcon sx={{ fontSize: '32px', color: dark }} />
         </Box>
       </Box>
     </Modal>

@@ -14,11 +14,9 @@ import { useDispatch } from 'react-redux';
 import Button from '@mui/material/Button';
 import List from '@mui/material/List';
 
-
 const Profile = () => {
 
   const theme = useTheme();
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const alt = theme.palette.primary.alt
   const dark = theme.palette.primary.dark

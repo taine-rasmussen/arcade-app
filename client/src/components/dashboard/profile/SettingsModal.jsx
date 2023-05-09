@@ -1,10 +1,13 @@
+import { Box, useTheme, Typography } from '@mui/material';
+import SettingsIcon from '@mui/icons-material/Settings';
 import Modal from '@mui/material/Modal';
-import { Box, useTheme } from '@mui/material';
 
 const SettingsModal = ({ openSettingsModal, setOpenSettingsModal }) => {
 
   const theme = useTheme();
+  const dark = theme.palette.primary.dark
   const modalBg = theme.palette.background.alt
+
 
 
   return (
@@ -26,7 +29,14 @@ const SettingsModal = ({ openSettingsModal, setOpenSettingsModal }) => {
           transform: 'translate(-50%, -50%)',
         }}
       >
-        SETTINGS
+        <Box
+          sx={{ display: 'flex', flexDirection: 'row' }}
+        >
+          <Typography>
+            Settings
+          </Typography>
+          <SettingsIcon sx={{ fontSize: '32px', color: dark }} />
+        </Box>
       </Box>
     </Modal>
   )

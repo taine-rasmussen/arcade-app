@@ -1,10 +1,9 @@
 import { Box, Typography, useTheme } from "@mui/material";
 import { setRecentlyPlayed } from '../../../state/index';
+import tictactoe from '../../../assets/tictactoe.png';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-
-import tictactoe from '../../../assets/tictactoe.png'
-
+import { useMemo } from 'react';
 
 const GamePreviewCard = ({ title }) => {
 
@@ -19,29 +18,23 @@ const GamePreviewCard = ({ title }) => {
     dispatch(setRecentlyPlayed({ game: game }))
   }
 
-  const previewImage = (title) => {
-    if (title == 'tictactoe') {
-      return tictactoe
-    }
-  }
-
   const imgStyles = {
-    height: '135px',
-    width: '135px',
+    height: '70%',
+    width: '70%',
+    borderRadius: '0.25rem',
   }
-
-
 
   return (
     <Box
       sx={{
-        background: bgColor,
-        height: '225px',
         width: '250px',
-        borderRadius: '2rem',
+        height: '225px',
         display: 'flex',
+        background: bgColor,
         alignItems: 'center',
-        justifyContent: 'center'
+        borderRadius: '2rem',
+        flexDirection: 'column',
+        justifyContent: 'center',
       }}
     >
       <Typography
@@ -56,7 +49,6 @@ const GamePreviewCard = ({ title }) => {
       >
         {title}
       </Typography>
-
       <img src={tictactoe} alt='game preview' style={imgStyles} />
     </Box>
   )

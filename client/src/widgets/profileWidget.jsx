@@ -15,11 +15,13 @@ const ProfileWidget = ({ preview }) => {
   const imgStyles = {
     height: '135px',
     width: '135px',
+    borderRadius: '50%',
   }
 
   const previewImgStyles = {
     height: '55px',
     width: '55px',
+    borderRadius: '50%',
   }
 
   return (

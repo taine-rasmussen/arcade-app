@@ -26,8 +26,9 @@ const GamePreviewCard = ({ title }) => {
   }
 
   const imgStyles = {
-    height: '135px',
-    width: '135px',
+    height: '70%',
+    width: '70%',
+    borderRadius: '0.25rem',
   }
 
 
@@ -41,7 +42,8 @@ const GamePreviewCard = ({ title }) => {
         background: bgColor,
         alignItems: 'center',
         borderRadius: '2rem',
-        justifyContent: 'center'
+        flexDirection: 'column',
+        justifyContent: 'center',
       }}
     >
       <Typography
@@ -56,7 +58,6 @@ const GamePreviewCard = ({ title }) => {
       >
         {title}
       </Typography>
-
       <img src={tictactoe} alt='game preview' style={imgStyles} />
     </Box>
   )

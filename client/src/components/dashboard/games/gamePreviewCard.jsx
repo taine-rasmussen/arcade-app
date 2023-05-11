@@ -35,12 +35,12 @@ const GamePreviewCard = ({ title }) => {
   return (
     <Box
       sx={{
-        background: bgColor,
-        height: '225px',
         width: '250px',
-        borderRadius: '2rem',
+        height: '225px',
         display: 'flex',
+        background: bgColor,
         alignItems: 'center',
+        borderRadius: '2rem',
         justifyContent: 'center'
       }}
     >

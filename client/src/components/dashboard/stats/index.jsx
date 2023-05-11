@@ -14,6 +14,7 @@ const Stats = () => {
       sx={{
         display: 'flex',
         alignItems: 'center',
+        flexDirection: 'column',
         justifyContent: 'center',
         transition: 'ease-out all 0.35s',
       }}
@@ -23,6 +24,18 @@ const Stats = () => {
         color='white'
       >
         Stats
+        </Typography>
+      <Typography
+        variant='h2'
+        color='white'
+      >
+        Coming
+        </Typography>
+      <Typography
+        variant='h2'
+        color='white'
+      >
+        Soon
         </Typography>
     </WidgetWrapper>
   )

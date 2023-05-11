@@ -1,8 +1,6 @@
 import WidgetWrapper from '../../../wrapper/WidgetWrapper';
-import { Box, useTheme, Typography } from '@mui/material';
-import { setRecentlyPlayed } from '../../../state/index';
-import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useTheme } from '@mui/material';
+import GamePreviewCard from './gamePreviewCard'
 
 const GAMESLIST = [
   'Pong',
@@ -14,16 +12,7 @@ const GAMESLIST = [
 
 const Games = () => {
   const theme = useTheme();
-  const navigate = useNavigate();
-  const dispatch = useDispatch()
   const light = theme.palette.primary.light
-  const dark = theme.palette.primary.dark
-  const bgColor = theme.palette.background.default
-
-  const navToGame = (game) => {
-    navigate(`/${game}`)
-    dispatch(setRecentlyPlayed({ game: game }))
-  }
 
   return (
     <WidgetWrapper
@@ -41,31 +30,7 @@ const Games = () => {
       {
         GAMESLIST.map((title, i) => {
           return (
-            <Box
-              key={i}
-              sx={{
-                background: bgColor,
-                height: '225px',
-                width: '250px',
-                borderRadius: '2rem',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
-              }}
-            >
-              <Typography
-                variant='h2'
-                color={dark}
-                onClick={() => navToGame(title)}
-                sx={{
-                  '&:hover': {
-                    cursor: 'pointer'
-                  }
-                }}
-              >
-                {title}
-              </Typography>
-            </Box>
+            <GamePreviewCard title={title} key={i} />
           )
         })
       }

@@ -6,7 +6,7 @@ const RecentlyPlayed = () => {
 
   const theme = useTheme();
   const alt = theme.palette.primary.alt
-  const hightlight = theme.palette.primary.hightlight
+  const highlight = theme.palette.primary.highlight
 
   return (
     <WidgetWrapper
@@ -44,7 +44,7 @@ const RecentlyPlayed = () => {
           }}
         >
           <Typography variant='h4'>
-            What you've been <span style={{ color: hightlight }}>loving</span> recently
+            What you've been <span style={{ color: highlight }}>loving</span> recently
           </Typography>
         </Box>
       </Box>

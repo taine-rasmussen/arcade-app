@@ -18,11 +18,32 @@ const GamePreviewCard = ({ title }) => {
     dispatch(setRecentlyPlayed({ game: game }))
   }
 
+  const imageSources = [
+    { pong: tictactoe, },
+    { snake: tictactoe, },
+    { memory: tictactoe, },
+    { tictactoe: tictactoe, },
+    { mineSweeper: tictactoe, },
+  ];
+
   const imgStyles = {
     height: '70%',
     width: '70%',
     borderRadius: '0.25rem',
   }
+
+  const currentPreviewImage = useMemo(
+    () => {
+      imageSources.map((game) => {
+        if (Object.keys(game)[0] == title) {
+          console.log(title, game)
+        }
+      })
+    }, []
+  )
+
+  // console.log(Object.keys(imageSources[0])[0])
+  console.log(currentPreviewImage)
 
   return (
     <Box

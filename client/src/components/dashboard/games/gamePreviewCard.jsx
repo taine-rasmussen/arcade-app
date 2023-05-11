@@ -3,6 +3,8 @@ import { setRecentlyPlayed } from '../../../state/index';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
+import tictactoe from '../../../assets/tictactoe.png'
+
 
 const GamePreviewCard = ({ title }) => {
 
@@ -16,6 +18,19 @@ const GamePreviewCard = ({ title }) => {
     navigate(`/${game}`)
     dispatch(setRecentlyPlayed({ game: game }))
   }
+
+  const previewImage = (title) => {
+    if (title == 'tictactoe') {
+      return tictactoe
+    }
+  }
+
+  const imgStyles = {
+    height: '135px',
+    width: '135px',
+  }
+
+
 
   return (
     <Box
@@ -41,6 +56,8 @@ const GamePreviewCard = ({ title }) => {
       >
         {title}
       </Typography>
+
+      <img src={tictactoe} alt='game preview' style={imgStyles} />
     </Box>
   )
 }

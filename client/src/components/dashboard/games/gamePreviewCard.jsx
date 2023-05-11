@@ -3,6 +3,7 @@ import { setRecentlyPlayed } from '../../../state/index';
 import tictactoe from '../../../assets/tictactoe.png';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { useMemo } from 'react';
 
 const GamePreviewCard = ({ title }) => {
 

@@ -1,10 +1,8 @@
 import { Box, Typography, useTheme } from "@mui/material";
 import { setRecentlyPlayed } from '../../../state/index';
+import tictactoe from '../../../assets/tictactoe.png';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-
-import tictactoe from '../../../assets/tictactoe.png'
-
 
 const GamePreviewCard = ({ title }) => {
 
@@ -19,19 +17,11 @@ const GamePreviewCard = ({ title }) => {
     dispatch(setRecentlyPlayed({ game: game }))
   }
 
-  const previewImage = (title) => {
-    if (title == 'tictactoe') {
-      return tictactoe
-    }
-  }
-
   const imgStyles = {
     height: '70%',
     width: '70%',
     borderRadius: '0.25rem',
   }
-
-
 
   return (
     <Box

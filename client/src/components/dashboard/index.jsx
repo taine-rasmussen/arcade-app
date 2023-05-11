@@ -48,14 +48,14 @@ const Dashboard = () => {
         style={{
           zIndex: '2',
           gap: '1.5rem',
+          height: '100%',
           padding: '3rem',
           display: 'flex',
           background: alt,
-          borderRadius: '2rem',
           flexDirection: 'column',
+          transition: 'ease 2s',
           width: menuToggle ? '80%' : '100%',
-          height: '100%',
-          transition: 'ease 2s'
+          borderRadius: '2rem 0 0 2rem',
         }}
       >
         <Box

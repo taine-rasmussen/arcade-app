@@ -8,6 +8,7 @@ const GAMESLIST = [
   'Memory',
   'TicTacToe',
   'MineSweeper',
+  'Tetris',
 ];
 
 const Games = () => {

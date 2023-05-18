@@ -22,7 +22,11 @@ const useGameClock = () => {
     setTimer(0);
   };
 
-  return { timer }
+  return {
+    timer,
+    resetTimer,
+    toggleTimer,
+  }
 }
 
 export default useGameClock

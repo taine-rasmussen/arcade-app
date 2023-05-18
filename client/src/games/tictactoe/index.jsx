@@ -1,5 +1,5 @@
 import { useReducer, createContext, useEffect } from 'react';
-import { Box, useTheme, useMediaQuery } from '@mui/material';
+import { Box, useTheme, useMediaQuery, Typography } from '@mui/material';
 import { useSelector } from 'react-redux';
 import Gameboard from './gameboard'
 import useGameClock from '../../hooks/useGameClock'
@@ -68,7 +68,6 @@ const TicTacToe = () => {
   }
 
   const { timer } = useGameClock()
-  console.log(timer)
 
   const checkWin = (board, player) => {
     for (let i = 0; i < 9; i += 3) {
@@ -250,6 +249,9 @@ const TicTacToe = () => {
             <>
               <Menu />
               <Gameboard />
+              <Typography variant='h2' sx={{ color: 'red' }}>
+                {timer}
+              </Typography>
             </>
           )
           : (

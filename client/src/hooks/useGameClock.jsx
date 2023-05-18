@@ -2,10 +2,13 @@ import { useState, useEffect } from 'react';
 
 const useGameClock = () => {
   const [timer, setTimer] = useState(0)
+  const [isPaused, setIsPaused] = useState(true)
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTimer((prevTimer) => prevTimer + 1);
+      if (!isPaused) {
+        setTimer((prevTimer) => prevTimer + 1);
+      }
     }, 1000);
 
     return () => {
@@ -13,7 +16,19 @@ const useGameClock = () => {
     };
   }, []);
 
-  return { timer }
+  const toggleTimer = () => {
+    setIsPaused(!isPaused);
+  };
+
+  const resetTimer = () => {
+    setTimer(0);
+  };
+
+  return {
+    timer,
+    resetTimer,
+    toggleTimer,
+  }
 }
 
 export default useGameClock

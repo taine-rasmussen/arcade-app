@@ -1,11 +1,20 @@
 import { useState, useEffect } from 'react';
 
-
 const useGameClock = () => {
+  const [timer, setTimer] = useState(0)
 
-  let timer = 0
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTimer((prevTimer) => prevTimer + 1);
+    }, 1000);
 
-  return { timer }
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
+
+  return timer
 }
 
 export default useGameClock

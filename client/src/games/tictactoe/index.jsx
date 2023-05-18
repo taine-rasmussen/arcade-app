@@ -2,7 +2,7 @@ import { useReducer, createContext, useEffect } from 'react';
 import { Box, useTheme, useMediaQuery } from '@mui/material';
 import { useSelector } from 'react-redux';
 import Gameboard from './gameboard'
-import { useGameClock } from '../../hooks/useGameClock'
+import useGameClock from '../../hooks/useGameClock'
 import Menu from './menu';
 
 const INITGAME = [

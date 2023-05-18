@@ -254,9 +254,11 @@ const TicTacToe = () => {
             <>
               <Menu />
               <Gameboard />
-              <Typography variant='h2' sx={{ color: 'red' }}>
-                {timer}
-              </Typography>
+              {!isPaused && (
+                <Typography variant='h2' sx={{ color: 'red' }}>
+                  {timer}
+                </Typography>
+              )}
             </>
           )
           : (

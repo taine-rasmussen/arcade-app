@@ -67,7 +67,12 @@ const TicTacToe = () => {
     players: [{ name: loggedInUsername }, { name: 'Player Two' }]
   }
 
-  const { timer } = useGameClock()
+  const {
+    timer,
+    isPaused,
+    resetTimer,
+    toggleTimer
+  } = useGameClock()
 
   const checkWin = (board, player) => {
     for (let i = 0; i < 9; i += 3) {

@@ -67,6 +67,9 @@ const TicTacToe = () => {
     players: [{ name: loggedInUsername }, { name: 'Player Two' }]
   }
 
+  const { timer } = useGameClock()
+  console.log(timer)
+
   const checkWin = (board, player) => {
     for (let i = 0; i < 9; i += 3) {
       if (board[i].value === player && board[i + 1].value === player && board[i + 2].value === player) {

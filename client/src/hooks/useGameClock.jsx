@@ -14,7 +14,7 @@ const useGameClock = () => {
   }, []);
 
 
-  return timer
+  return { timer }
 }
 
 export default useGameClock

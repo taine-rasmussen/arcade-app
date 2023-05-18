@@ -13,7 +13,6 @@ const useGameClock = () => {
     };
   }, []);
 
-
   return { timer }
 }
 

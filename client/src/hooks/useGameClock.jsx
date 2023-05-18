@@ -13,6 +13,14 @@ const useGameClock = () => {
     };
   }, []);
 
+  const toggleTimer = () => {
+    setIsPaused(!isPaused);
+  };
+
+  const resetTimer = () => {
+    setTimer(0);
+  };
+
   return { timer }
 }
 

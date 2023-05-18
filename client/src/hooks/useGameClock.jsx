@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 
 const useGameClock = () => {
   const [timer, setTimer] = useState(0)
+  const [isPaused, setIsPaused] = useState(true)
 
   useEffect(() => {
     const interval = setInterval(() => {

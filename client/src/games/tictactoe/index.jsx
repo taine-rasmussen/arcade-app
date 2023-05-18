@@ -67,7 +67,12 @@ const TicTacToe = () => {
     players: [{ name: loggedInUsername }, { name: 'Player Two' }]
   }
 
-  const { timer } = useGameClock()
+  const {
+    timer,
+    isPaused,
+    resetTimer,
+    toggleTimer
+  } = useGameClock()
 
   const checkWin = (board, player) => {
     for (let i = 0; i < 9; i += 3) {
@@ -140,6 +145,7 @@ const TicTacToe = () => {
         playerTurn: !state.playerTurn
       }
     } else if (action.type === 'play') {
+      if (isPaused) toggleTimer()
       if (!state.isSinglePlayerMode || state.isSinglePlayerMode && state.playerTurn) {
         const updateGame = (game) => {
           for (let i = 0; i < game.length; i++) {
@@ -162,6 +168,7 @@ const TicTacToe = () => {
           return gameObj ? gameObj.value : null;
         });
         if (winValues.every(val => val === 'X') || winValues.every(val => val === 'O')) {
+          toggleTimer()
           return {
             ...state,
             isGameOver: true,
@@ -249,9 +256,11 @@ const TicTacToe = () => {
             <>
               <Menu />
               <Gameboard />
-              <Typography variant='h2' sx={{ color: 'red' }}>
-                {timer}
-              </Typography>
+              {!isPaused && (
+                <Typography variant='h2' sx={{ color: 'red' }}>
+                  {timer}
+                </Typography>
+              )}
             </>
           )
           : (

@@ -26,6 +26,7 @@ const useGameClock = () => {
 
   return {
     timer,
+    isPaused,
     resetTimer,
     toggleTimer,
   }

@@ -9,8 +9,6 @@ const GameCard = ({ game }) => {
   const highlight = theme.palette.primary.highlight
   const dark = theme.palette.primary.dark
 
-  console.log(game)
-
   return (
     <Box
       sx={{

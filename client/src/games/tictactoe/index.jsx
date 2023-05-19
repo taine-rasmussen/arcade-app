@@ -1,7 +1,8 @@
 import { useReducer, createContext, useEffect } from 'react';
 import { Box, useTheme, useMediaQuery } from '@mui/material';
+import { useSelector, useDispatch } from 'react-redux';
+import { setRecentlyPlayed } from '../../state/index';
 import useGameClock from '../../hooks/useGameClock';
-import { useSelector } from 'react-redux';
 import Gameboard from './gameboard';
 import Menu from './menu';
 
@@ -55,7 +56,8 @@ export const GameContext = createContext();
 const TicTacToe = () => {
 
   const theme = useTheme();
-  const dark = theme.palette.primary.dark
+  const dispatch = useDispatch();
+  const dark = theme.palette.primary.dark;
   const isNonMobileScreens = useMediaQuery('(min-width:1150px)');
   const loggedInUsername = useSelector((state) => state.user.username)
   const initialState = {

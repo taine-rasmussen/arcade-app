@@ -6,7 +6,7 @@ import { Box } from '@mui/material';
 import ScoreCard from './ScoreCard';
 import BtnGroup from './BtnGroup';
 
-const Settings = () => {
+const Settings = ({ seconds }) => {
   const { state: { session } } = useContext(GameContext);
   const [isEdit, setIsEdit] = useState(false)
 
@@ -31,7 +31,7 @@ const Settings = () => {
           <EditNameWidget setIsEdit={setIsEdit} isEdit={isEdit} />
         )}
       </AnimatePresence>
-      <BtnGroup setIsEdit={setIsEdit} isEdit={isEdit} />
+      <BtnGroup setIsEdit={setIsEdit} isEdit={isEdit} seconds={seconds} />
       <Box
         sx={{
           gap: '1rem',

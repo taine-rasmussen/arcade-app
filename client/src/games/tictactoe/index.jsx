@@ -257,11 +257,8 @@ const TicTacToe = () => {
         {isNonMobileScreens
           ? (
             <>
-              <Menu />
+              <Menu seconds={seconds} />
               <Gameboard />
-              <Typography variant='h2' sx={{ color: 'red' }}>
-                {seconds}
-              </Typography>
             </>
           )
           : (

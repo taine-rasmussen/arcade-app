@@ -1,28 +1,29 @@
 import { useState, useEffect } from 'react';
 
 const useGameClock = () => {
-  const [timer, setTimer] = useState(0)
-  const [isPaused, setIsPaused] = useState(true)
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (!isPaused) {
-        setTimer((prevTimer) => prevTimer + 1);
-      }
-    }, 1000);
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
+  const [seconds, setSeconds] = useState(0);
+  const [isActive, setIsActive] = useState(false);
 
   const toggleTimer = () => {
-    setIsPaused(!isPaused);
-  };
+    setIsActive(!isActive);
+  }
 
   const resetTimer = () => {
-    setTimer(0);
-  };
+    setSeconds(0);
+    setIsActive(false);
+  }
+
+  useEffect(() => {
+    let interval = null;
+    if (isActive) {
+      interval = setInterval(() => {
+        setSeconds(seconds => seconds + 1);
+      }, 1000);
+    } else if (!isActive && seconds !== 0) {
+      clearInterval(interval);
+    }
+    return () => clearInterval(interval);
+  }, [isActive, seconds]);
 
   return {
     timer,

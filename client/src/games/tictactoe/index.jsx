@@ -168,7 +168,6 @@ const TicTacToe = () => {
           return gameObj ? gameObj.value : null;
         });
         if (winValues.every(val => val === 'X') || winValues.every(val => val === 'O')) {
-          toggleTimer()
           return {
             ...state,
             isGameOver: true,

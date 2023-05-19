@@ -68,8 +68,8 @@ const TicTacToe = () => {
   }
 
   const {
-    timer,
-    isPaused,
+    seconds,
+    isActive,
     resetTimer,
     toggleTimer
   } = useGameClock()
@@ -255,9 +255,9 @@ const TicTacToe = () => {
             <>
               <Menu />
               <Gameboard />
-              {!isPaused && (
+              {!isActive && (
                 <Typography variant='h2' sx={{ color: 'red' }}>
-                  {timer}
+                  {seconds}
                 </Typography>
               )}
             </>

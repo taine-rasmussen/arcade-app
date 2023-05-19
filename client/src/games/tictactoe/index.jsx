@@ -168,6 +168,7 @@ const TicTacToe = () => {
           return gameObj ? gameObj.value : null;
         });
         if (winValues.every(val => val === 'X') || winValues.every(val => val === 'O')) {
+          toggleTimer()
           return {
             ...state,
             isGameOver: true,
@@ -179,6 +180,7 @@ const TicTacToe = () => {
         ...state
       }
     } else if (action === 'reset') {
+      resetTimer()
       return {
         ...state,
         playerTurn: true,
@@ -194,6 +196,7 @@ const TicTacToe = () => {
         players: [initialState.players[0], { name: action.payload }],
       }
     } else if (action.type === 'toggleGameMode') {
+      resetTimer()
       return {
         ...state,
         isGameOver: false,
@@ -205,6 +208,7 @@ const TicTacToe = () => {
         }))
       }
     } else if (action.type === 'draw') {
+      toggleTimer()
       return {
         ...state,
         isGameOver: true,
@@ -255,11 +259,9 @@ const TicTacToe = () => {
             <>
               <Menu />
               <Gameboard />
-              {isActive && (
-                <Typography variant='h2' sx={{ color: 'red' }}>
-                  {seconds}
-                </Typography>
-              )}
+              <Typography variant='h2' sx={{ color: 'red' }}>
+                {seconds}
+              </Typography>
             </>
           )
           : (

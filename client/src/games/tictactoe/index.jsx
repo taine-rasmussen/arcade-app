@@ -145,7 +145,7 @@ const TicTacToe = () => {
         playerTurn: !state.playerTurn
       }
     } else if (action.type === 'play') {
-      if (isPaused) toggleTimer()
+      if (!isActive) toggleTimer()
       if (!state.isSinglePlayerMode || state.isSinglePlayerMode && state.playerTurn) {
         const updateGame = (game) => {
           for (let i = 0; i < game.length; i++) {
@@ -255,7 +255,7 @@ const TicTacToe = () => {
             <>
               <Menu />
               <Gameboard />
-              {!isActive && (
+              {isActive && (
                 <Typography variant='h2' sx={{ color: 'red' }}>
                   {seconds}
                 </Typography>

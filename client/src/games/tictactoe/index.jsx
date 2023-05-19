@@ -1,8 +1,9 @@
 import { useReducer, createContext, useEffect } from 'react';
-import { Box, useTheme, useMediaQuery, Typography } from '@mui/material';
-import { useSelector } from 'react-redux';
-import Gameboard from './gameboard'
-import useGameClock from '../../hooks/useGameClock'
+import { Box, useTheme, useMediaQuery } from '@mui/material';
+import { useSelector, useDispatch } from 'react-redux';
+import { setRecentlyPlayed } from '../../state/index';
+import useGameClock from '../../hooks/useGameClock';
+import Gameboard from './gameboard';
 import Menu from './menu';
 
 const INITGAME = [
@@ -55,7 +56,8 @@ export const GameContext = createContext();
 const TicTacToe = () => {
 
   const theme = useTheme();
-  const dark = theme.palette.primary.dark
+  const reduxDispatch = useDispatch();
+  const dark = theme.palette.primary.dark;
   const isNonMobileScreens = useMediaQuery('(min-width:1150px)');
   const loggedInUsername = useSelector((state) => state.user.username)
   const initialState = {
@@ -169,6 +171,7 @@ const TicTacToe = () => {
         });
         if (winValues.every(val => val === 'X') || winValues.every(val => val === 'O')) {
           toggleTimer()
+          reduxDispatch(setRecentlyPlayed({ game: state.game, title: 'TicTacToe' }))
           return {
             ...state,
             isGameOver: true,

@@ -28,7 +28,7 @@ export const authSlice = createSlice({
       if (state.recentlyPlayed.length < 3) {
         state.recentlyPlayed.push(action.payload.game)
       } else {
-        state.recentlyPlayed = [action.payload.game, state.recentlyPlayed[0], state.recentlyPlayed[1], state.recentlyPlayed[2]]
+        state.recentlyPlayed = [action.payload, state.recentlyPlayed[0], state.recentlyPlayed[1], state.recentlyPlayed[2]]
       }
     },
     setMenuToggle: (state, action) => {

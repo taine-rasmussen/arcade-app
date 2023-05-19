@@ -9,6 +9,7 @@ const GameCard = ({ game }) => {
   const highlight = theme.palette.primary.highlight
   const dark = theme.palette.primary.dark
 
+  console.log(game)
 
   return (
     <Box
@@ -58,7 +59,7 @@ const GameCard = ({ game }) => {
             }
           }}
         >
-          {game}
+          {game.title}
         </Typography>
       </Box>
     </Box>

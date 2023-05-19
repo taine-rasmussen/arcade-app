@@ -7,7 +7,7 @@ import { useContext } from 'react';
 import ProfileCard from './ProfileCard';
 import Settings from './Settings';
 
-const Menu = () => {
+const Menu = ({ seconds }) => {
 
   return (
     <Box
@@ -36,7 +36,7 @@ const Menu = () => {
           />
         </FlexBetween>
       </motion.div>
-      <Settings />
+      <Settings seconds={seconds} />
     </Box >
   )
 }

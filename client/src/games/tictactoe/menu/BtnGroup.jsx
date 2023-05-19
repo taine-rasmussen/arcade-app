@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { GameContext } from '../index'
 import { useContext } from 'react';
 
-const BtnGroup = ({ setIsEdit, isEdit }) => {
+const BtnGroup = ({ setIsEdit, isEdit, seconds }) => {
   const theme = useTheme();
   const navigate = useNavigate();
   const alt = theme.palette.primary.alt
@@ -58,6 +58,11 @@ const BtnGroup = ({ setIsEdit, isEdit }) => {
         >
           Edit
       </Button>
+        <Button
+          sx={btnStyle}
+        >
+          {seconds}
+        </Button>
       </ButtonGroup>
     </FlexBetween>
   )

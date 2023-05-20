@@ -50,7 +50,7 @@ const GameCard = ({ game }) => {
         <Typography
           variant='h2'
           color={dark}
-          onClick={() => { navigate(`/${game}`) }}
+          onClick={() => { navigate(`/${game.title}`) }}
           sx={{
             '&:hover': {
               cursor: 'pointer'

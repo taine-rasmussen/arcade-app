@@ -11,6 +11,15 @@ const GAMESLIST = [
   'Tetris',
 ];
 
+// const GAMESLIST = [
+//   { title: 'Pong', img: '' },
+//   { title: 'Snake', img: '' },
+//   { title: 'Tetris', img: '' },
+//   { title: 'Memory', img: '' },
+//   { title: 'TicTacToe', img: '' },
+//   { title: 'MineSweeper', img: '' },
+// ];
+
 const Games = () => {
   const theme = useTheme();
   const light = theme.palette.primary.light

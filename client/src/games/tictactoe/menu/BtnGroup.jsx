@@ -71,6 +71,7 @@ const BtnGroup = ({ setIsEdit, isEdit, seconds }) => {
         </Button>
         <Button
           sx={timerBtnStyles}
+          disableRipple={true}
         >
           {seconds}
         </Button>

@@ -1,4 +1,5 @@
 import WidgetWrapper from '../../../wrapper/WidgetWrapper';
+import tictactoe from '../../../assets/tictactoe.png';
 import GamePreviewCard from './gamePreviewCard';
 import { useTheme } from '@mui/material';
 
@@ -7,8 +8,8 @@ const GAMESLIST = [
   { title: 'Snake', img: '' },
   { title: 'Tetris', img: '' },
   { title: 'Memory', img: '' },
-  { title: 'TicTacToe', img: '' },
   { title: 'MineSweeper', img: '' },
+  { title: 'TicTacToe', img: tictactoe },
 ];
 
 // LeetCode for front end

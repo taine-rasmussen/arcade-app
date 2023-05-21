@@ -234,6 +234,9 @@ const TicTacToe = () => {
     if (!state.isGameOver) {
       dispatch({ type: 'checkWin' })
     }
+    if (state.isGameOver) {
+      reduxDispatch(setRecentlyPlayed({ game: state.game, title: 'TicTacToe' }))
+    }
   }, [state.playerTurn, state.isSinglePlayerMode, state.isGameOver])
 
   useEffect(

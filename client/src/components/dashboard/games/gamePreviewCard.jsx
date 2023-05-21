@@ -2,7 +2,7 @@ import { Box, Typography, useTheme } from "@mui/material";
 import tictactoe from '../../../assets/tictactoe.png';
 import { useNavigate } from 'react-router-dom';
 
-const GamePreviewCard = ({ title }) => {
+const GamePreviewCard = ({ game }) => {
 
   const theme = useTheme();
   const navigate = useNavigate();
@@ -12,14 +12,6 @@ const GamePreviewCard = ({ title }) => {
   const navToGame = (game) => {
     navigate(`/${game}`)
   }
-
-  const imageSources = [
-    { pong: tictactoe, },
-    { snake: tictactoe, },
-    { memory: tictactoe, },
-    { tictactoe: tictactoe, },
-    { mineSweeper: tictactoe, },
-  ];
 
   const imgStyles = {
     height: '70%',
@@ -43,16 +35,16 @@ const GamePreviewCard = ({ title }) => {
       <Typography
         variant='h2'
         color={dark}
-        onClick={() => navToGame(title)}
+        onClick={() => navToGame(game.title)}
         sx={{
           '&:hover': {
             cursor: 'pointer'
           }
         }}
       >
-        {title}
+        {game.title}
       </Typography>
-      <img src={tictactoe} alt='game preview' style={imgStyles} />
+      <img src={game.img} alt='game preview' style={imgStyles} />
     </Box>
   )
 }

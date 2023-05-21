@@ -13,14 +13,6 @@ const GamePreviewCard = ({ title }) => {
     navigate(`/${game}`)
   }
 
-  const imageSources = [
-    { pong: tictactoe, },
-    { snake: tictactoe, },
-    { memory: tictactoe, },
-    { tictactoe: tictactoe, },
-    { mineSweeper: tictactoe, },
-  ];
-
   const imgStyles = {
     height: '70%',
     width: '70%',

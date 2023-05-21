@@ -1,5 +1,5 @@
-import { Box, useTheme, Typography } from '@mui/material';
 import { useSelector } from 'react-redux'
+import { Box } from '@mui/material';
 import GameCard from './gameCard'
 
 const SwiperWidget = () => {

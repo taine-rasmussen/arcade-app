@@ -171,7 +171,6 @@ const TicTacToe = () => {
         });
         if (winValues.every(val => val === 'X') || winValues.every(val => val === 'O')) {
           toggleTimer()
-          reduxDispatch(setRecentlyPlayed({ game: state.game, title: 'TicTacToe' }))
           return {
             ...state,
             isGameOver: true,

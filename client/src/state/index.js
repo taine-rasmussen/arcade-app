@@ -26,7 +26,7 @@ export const authSlice = createSlice({
     },
     setRecentlyPlayed: (state, action) => {
       if (state.recentlyPlayed.length < 3) {
-        state.recentlyPlayed.push(action.payload.game)
+        state.recentlyPlayed.push(action.payload)
       } else {
         state.recentlyPlayed = [action.payload, state.recentlyPlayed[0], state.recentlyPlayed[1], state.recentlyPlayed[2]]
       }

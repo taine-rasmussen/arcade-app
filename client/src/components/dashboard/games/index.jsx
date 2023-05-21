@@ -32,9 +32,9 @@ const Games = () => {
       }}
     >
       {
-        GAMESLIST.map((title, i) => {
+        GAMESLIST.map((game, i) => {
           return (
-            <GamePreviewCard title={title} key={i} />
+            <GamePreviewCard game={game} key={i} />
           )
         })
       }

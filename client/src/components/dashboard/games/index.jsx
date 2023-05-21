@@ -1,24 +1,17 @@
 import WidgetWrapper from '../../../wrapper/WidgetWrapper';
+import GamePreviewCard from './gamePreviewCard';
 import { useTheme } from '@mui/material';
-import GamePreviewCard from './gamePreviewCard'
 
 const GAMESLIST = [
-  'Pong',
-  'Snake',
-  'Memory',
-  'TicTacToe',
-  'MineSweeper',
-  'Tetris',
+  { title: 'Pong', img: '' },
+  { title: 'Snake', img: '' },
+  { title: 'Tetris', img: '' },
+  { title: 'Memory', img: '' },
+  { title: 'TicTacToe', img: '' },
+  { title: 'MineSweeper', img: '' },
 ];
 
-// const GAMESLIST = [
-//   { title: 'Pong', img: '' },
-//   { title: 'Snake', img: '' },
-//   { title: 'Tetris', img: '' },
-//   { title: 'Memory', img: '' },
-//   { title: 'TicTacToe', img: '' },
-//   { title: 'MineSweeper', img: '' },
-// ];
+// LeetCode for front end
 
 const Games = () => {
   const theme = useTheme();

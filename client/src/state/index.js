@@ -25,7 +25,6 @@ export const authSlice = createSlice({
       state.token = null;
     },
     setRecentlyPlayed: (state, action) => {
-      console.log(action)
       if (state.recentlyPlayed.length < 3) {
         state.recentlyPlayed.push(action.payload.game)
       } else {

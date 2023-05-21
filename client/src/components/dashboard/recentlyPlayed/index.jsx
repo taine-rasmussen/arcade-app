@@ -1,6 +1,6 @@
 import WidgetWrapper from '../../../wrapper/WidgetWrapper';
 import { Box, useTheme, Typography } from '@mui/material';
-import SwiperWidget from './SwiperWidget';
+import RecentlyPLayedSlider from './RecentlyPLayedSlider';
 
 const RecentlyPlayed = () => {
 
@@ -48,7 +48,7 @@ const RecentlyPlayed = () => {
           </Typography>
         </Box>
       </Box>
-      <SwiperWidget />
+      <RecentlyPLayedSlider />
     </WidgetWrapper >
   )
 }
